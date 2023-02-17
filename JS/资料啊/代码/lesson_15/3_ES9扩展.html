@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //ES9 2018
+        let obj = {name:1,age:2}
+        let obj1 = {age:3}
+        console.log({...obj,...obj1});
+
+        //指定传参
+        // function func(name,age){
+        //     return [name,age]
+        // }
+
+        // console.log(func(18));
+
+        function foo({name,age}){
+            return [name,age]
+        }   
+        console.log(foo({age:18}));
+
+        //对正则表达式进行了扩展,但是是Nodejs用的
+    </script>
+</body>
+</html>

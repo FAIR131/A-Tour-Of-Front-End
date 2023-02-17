@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">它的姓名是{{name}},它的年龄是{{age}}</div>
+
+    <script>
+        let app = document.querySelector("#app");
+        /*
+            数据代理是ES6出现的
+            是ES6当中定义的语法
+
+            功能和defiendProperties相似
+        */
+        let obj = { name: "jack", age: 18 };
+        // console.log(obj);
+
+        /*
+            let obj = { name: "jack", age: 18 }
+            let res = {}
+        */
+        let res = new Proxy(obj, {
+            get(target,property){
+                /*
+                    target是代理的对象
+                    property 是对象的属性
+                */
+                //obj[sex]
+                return target[property]
+            },
+            set(target,property,val){
+                //val 值
+                //obj[sex] = 传递进来的值 val = "男"
+                target[property] = val;
+                app.innerHTML = `姓名${obj.name},年龄${obj.age},性别${obj.sex}`;
+            }
+           
+        })
+
+        app.innerHTML = `姓名${obj.name},年龄${obj.age},性别${obj.sex}`;
+
+        //res数据代理
+        res.sex = "男";
+
+
+    </script>
+
+    <script src="Ana3.js"></script>
+    <script>
+        let a = new Ana({
+            el:"#app",
+            data:{
+                name:"tom",
+            }
+        })
+
+        //Vue3把代理模式换成了 数据代理,放弃是数据劫持
+        //所以可以后期补充数据       
+    </script>
+</body>
+
+</html>

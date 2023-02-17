@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <!-- 模板语法,mustache表达式 -->
+        {{ message }}
+        <hr/>
+        {{username + ',你好'}}
+        <hr/>
+        {{age+20}}
+        <hr/>
+        {{weather.substring(2,8)}}
+        <hr/>
+        {{score>=60?"及格":"不及格"}}
+        <hr/>
+        <p>123123{{message123}}123123</p>
+        <p v-text="message123"></p>
+        <hr/>
+        {{code}}
+        <p v-text="code"></p>
+        <p v-html="code"></p>
+    </div>
+
+    <script>
+
+        Vue.config.productionTip=false;
+
+        var app = new Vue({
+            el: '#app',
+            data: {//数据项
+                message: 'Hello Vue!',
+                message123:"hello world!",
+                username:"张三",
+                age:20,
+                weather:"today is a nice day",
+                score:50,
+                code:"<h1>我是标题一</h1>"
+            }
+        })
+        console.log(app);
+    </script>
+</body>
+
+</html>

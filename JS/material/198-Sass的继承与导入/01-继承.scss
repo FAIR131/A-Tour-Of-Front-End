@@ -1,0 +1,22 @@
+.base{
+    width: 100px;
+    height: 100px;
+    outline: none;
+}
+
+
+.btn_primary{
+    @extend .base;
+    background-color: green;
+}
+
+.btn_default{
+    @extend .base;
+    background-color: gray;
+}
+
+
+.btn_warn{
+    @extend .base;
+    background-color: red;
+}

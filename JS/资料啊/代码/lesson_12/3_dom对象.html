@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        //获取id = div1
+
+        //事件 : 已经发生或即将发生的事情
+        //当网页加载完成时
+        //onload是一个函数
+        window.onload = function(){
+            //window.onload
+            //当前函数作用域当中的代码,暂时不执行
+            //等网页中其它内容全部加载完毕,才执行
+            var div1 = document.getElementById("div1");
+            // console.log(div1);
+
+            //把div中的内容换一换
+            //双边标记中间的内容 一般使用inner(里面的)
+            div1.innerText = "徐技师手艺不错,加钟";
+
+            //把文字的颜色进行修改
+            div1.style.fontSize = "50px";
+            div1.style.color = "pink";
+        }
+        
+    </script>
+</head>
+<body>
+    <div id="div1">王总，欢迎来到红浪漫,那好手牌,上楼左转,徐技师为您服务</div>
+    <script>
+        /*
+            文档对象模型(DOM)
+            - document对象 属于 window对象
+            - DOM的主要作用 是
+                - 控制html(dom流)
+                - 控制css(cssom流)
+
+            浏览器解析html的步骤?
+            - 先读取html代码,形成dom-tree
+            - 再读取css代码,形成cssom-tree
+            - 组合dom-tree和cssom-tree
+            - 最后加载JS V8引擎
+                - JS代码执行
+                - 解析dom结构
+        */
+
+    
+        
+        
+    </script>
+</body>
+</html>

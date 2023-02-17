@@ -1,0 +1,29 @@
+{
+  "users": [
+    {
+      "username": "shanzhen",
+      "password": "456",
+      "id": 3
+    },
+    {
+      "username": "xiaoming",
+      "password": "123",
+      "id": 4
+    },
+    {
+      "username": "tiechui",
+      "password": "123",
+      "id": 5
+    },
+    {
+      "username": "shanzhen",
+      "password": "234",
+      "id": 6
+    }
+  ],
+  "list": [
+    "1111",
+    "2222",
+    "3333"
+  ]
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Document</title>
+  <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <script>
+    /*
+                作业1
+    
+                把data的数据放置到<table>标签当中
+                
+                    table 
+                        th
+                            td
+                        tr
+                            td
+            */
+
+    var data = [
+      { a: 1, b: 2, c: 3, d: 4, e: 5, f: 6 },
+      { a: 1, b: 2, c: 3, d: 4, e: 5, f: 6 },
+      { a: 1, b: 2, c: 3, d: 4, e: 5, f: 6 },
+      { a: 1, b: 2, c: 3, d: 4, e: 5, f: 6 },
+      { a: 1, b: 2, c: 3, d: 4, e: 5, f: 6 },
+      { a: 1, b: 2, c: 3, d: 4, e: 5, f: 6 },
+    ]
+
+
+    function createTable() {
+      var str = "<table border='1' width='600'>";
+      if (data.length == 0) return
+
+      str += "<tr>";
+      for (var k in data[0]) {
+        str +="<th>"
+        str += k ;
+        str += "</th>"
+
+      }
+      str += "</tr>";
+      for (var i = 0; i < 10; i++) {
+        str += "<tr align='center'>";
+
+        for (var k in data[i]) {
+          // str += "<td>" +k + "</td>";
+          str += "<td>" + data[i][k] + "</td>";
+        }
+
+        str += "</tr>";
+      }
+      str += "</table>";
+      return str
+    }
+
+    document.write(createTable());
+  </script>
+</body>
+
+</html>

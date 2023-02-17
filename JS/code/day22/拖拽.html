@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    ul, li {
+        list-style: none;
+    }
+
+    .list {
+
+        margin: 40px auto;
+        width: 500px;
+        height: 300px;
+        border: 2px solid black;
+    }
+
+
+    li {
+        cursor: pointer;
+        display: inline;
+        margin-right: 10px;
+        background-color: pink;
+    }
+
+    div {
+        margin: 40px auto;
+        width: 500px;
+        height: 300px;
+        border: 2px solid red;
+    }
+
+    span {
+        background-color: bisque;
+    }
+</style>
+<body>
+<!--1.设置div,把ul当中的li拖拽到div中-->
+<ul class="list">
+    <li>1111</li>
+    <li>222222</li>
+    <li>333333333</li>
+    <li>44444</li>
+    <li>555555</li>
+</ul>
+
+<div class="box"></div>
+
+<script>
+    let list = document.querySelector('.list');
+    let lis = document.querySelectorAll('li');
+    let box = document.querySelector('.box');
+    let obj = null;
+    //默认鼠标没有弹起
+    let status = false;
+
+    list.onmousedown = (e) => {
+        let target = e.target;
+        if (target.nodeName === 'LI') {
+            obj = target;
+            target.style.display = 'block';
+            target.style.position = 'absolute';
+            //获取宽高
+            let [w, h] = [target.offsetWidth / 2, target.offsetHeight / 2];
+            //    鼠标移动
+            document.onmousemove = function (e) {
+                //    鼠标停止
+                let X = e.clientX;
+                let Y = e.clientY;
+                //改变target坐标
+                target.style.left = X - w + 'px';
+                target.style.top = Y - h + 'px';
+            }
+
+            document.onmouseup = () => {
+                target.style.position = 'static';
+                target.style.display = 'inline';
+                document.onmouseup = document.onmouseout = null;
+                status = true;
+            }
+        }
+        return false
+    }
+
+    box.onmouseover = function () {
+        // console.log(1)
+        if (obj !== null && status) {
+            let new_li = document.createElement(obj.nodeName);
+            // new_li.innerTHML= obj.innerText + " <span>&times;</span>";
+            new_li.innerHTML= obj.innerText + "<span>&times;</span>"
+
+            console.log(new_li);
+            this.append(new_li);
+
+            obj = null;
+
+            status = false;
+        }
+    }
+
+    box.onclick = function (e) {
+        let target = e.target;
+        if (target.nodeName === 'SPAN') {
+            target.parentElement.remove();
+        }
+    }
+
+</script>
+</body>
+</html>

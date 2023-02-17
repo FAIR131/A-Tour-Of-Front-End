@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function foo(a){
+           
+        //     console.log(arguments);//[1,2,3]
+        // }
+        // foo(1,2,3);
+
+        // let fo = ()=>{
+        //     console.log(arguments);
+        // }
+        // fo(1,2,3);
+
+        rest参数只能写在最后
+        let fo = (...args)=>{
+            console.log(args);
+        }
+        fo(1,2,3);
+
+        // function foo(...args){
+        //     console.log(args);
+        // }
+
+        // foo("a","b","c");
+
+
+    </script>
+</body>
+</html>

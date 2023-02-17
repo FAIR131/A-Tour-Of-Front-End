@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        //函数对象
+        //不管如何使用,都返回一个 引用对象
+        function Person(name,age){
+            //null 是不是 Person 的引用对象
+            if(this instanceof Person){//false -> true
+                this.name = name;
+                this.age = age;
+            }else{//如果不是
+                return new Person(name,age);
+            }
+        }
+        //私有
+        // Person._this = window;
+       
+        // var a = Person("张三",13);
+        /*
+            函数调用  this : window
+            windwo instanceof Person = false
+
+            new Person(name,age);
+            this : 引用对象
+            引用对象 instanceof Person = true
+            引用生成,并且拿到属性
+        */
+
+        // console.log(a);
+
+      
+    </script>
+
+    <script>
+        //函数对象
+        //不管如何使用,都返回一个 引用对象
+        function Person(name,age){
+            //null 是不是 Person 的引用对象
+            if(Person._this !== null){//false -> true
+                this.name = name;
+                this.age = age;
+
+                //实例化完成以后,Person._this 要恢复原来的样子,不影响下一次使用
+                Person._this = null;
+            }else{//如果不是
+                Person._this = 1;
+                // console.log(Person._this !== null);
+                return new Person(name,age);
+            }
+        }
+
+        //私有的不能被引用对象调用
+        Person._this = null;
+
+        var a = Person("李四",13);
+        var b = Person("王五",12);
+        /*
+            Person_this !== null   ///false
+
+            new Person(name,age);
+        */
+
+        console.log(a);
+        console.log(b);
+       
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,17 @@
+.box {
+  transition: all 1s;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+}
+
+.box1 {
+  transition: width 2s;
+  -webkit-transition: width 2s;
+  -moz-transition: width 2s;
+}
+
+.box2 {
+  transition: height 1s;
+  -webkit-transition: height 1s;
+  -moz-transition: height 1s;
+}

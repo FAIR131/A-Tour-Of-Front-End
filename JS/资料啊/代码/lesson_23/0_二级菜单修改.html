@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 1000px;
+            height: 500px;
+            border: 1px solid black;
+        }
+        #left{
+            float: left;
+            width: 298px;
+            height: 500px;
+            border: 1px solid black;
+        }
+        #right{
+            float: left;
+            width: 698px;
+            height: 500px;
+            border: 1px solid black;
+        }
+
+        #left > div{
+            float: left;
+            width: 298px;
+            height: 98px;
+            border: 1px solid black;
+        }
+        #hidden-laye>div{
+            float: left;
+            width: 698px;
+            height: 500px;
+            border: 1px solid black;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="left">
+            <div sign="1">臭豆腐/豆腐乳</div>
+            <div sign="1">鲱鱼罐头/臭猪肉</div>
+            <div sign="1">黑蒜</div>
+            <div sign="1">牛瘪汤</div>
+            <div sign="1">吴行文最爱?</div>
+        </div>
+        <div id="right">
+            轮播图
+        </div>
+        <div id="hidden-laye">
+            <div sign="2">臭豆腐/豆腐乳.....</div>
+            <div sign="2">鲱鱼罐头/臭猪肉/......</div>
+            <div sign="2">黑蒜/.......</div>
+            <div sign="2">牛瘪汤/.....</div>
+            <div sign="2">吴行文最爱?/......</div>
+        </div>
+    </div>
+
+    <script>
+        //找到left
+        let left = document.querySelector("#left");
+        let right = left.nextElementSibling;
+        let laye = right.nextElementSibling;
+    
+        let old = null;//记录移入过那个菜单
+        //循环添加索引
+        [...left.children].forEach((item,ind)=>{
+            item.index = ind;
+        })
+
+        left.onmouseover = function (e){
+            if(e.target.getAttribute("sign")==="1"){//undefined
+                old = e.target;
+                [...left.children].forEach(item=>item.style.color="black");
+                e.target.style.color = "red";
+                //拿到索引了
+                //先把right藏起来
+                right.style.display = "none";
+                //排它
+                [...laye.children].forEach(item=>item.style.display="none");
+                //把laye的子元素展示出来
+                laye.children[e.target.index].style.display = "block";
+                
+            }
+        }
+
+        left.onmouseout = laye.onmouseout = function (e){
+                let target = e.target;
+                if(target.getAttribute("sign")){//undefined
+                    if(target !== old){//判断区域问题
+                    //排它
+                        [...left.children].forEach(item=>item.style.color="black");
+                        [...laye.children].forEach(item=>item.style.display="none");
+
+                        right.style.display = "block";
+                    }
+                }
+        }
+    </script>
+</body>
+</html>

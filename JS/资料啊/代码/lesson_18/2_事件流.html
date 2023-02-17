@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #laoda {
+            position: relative;
+            width:500px;
+            height: 500px;
+            background-color: crimson;
+        }
+
+        #laoer {
+            position: absolute;
+            left: 50%;
+            top : 50%;
+            transform: translate(-50%,-50%);
+            width:300px;
+            height: 300px;
+            background-color: greenyellow;
+        }
+
+        #laosan {
+            position: absolute;
+            left: 50%;
+            top : 50%;
+            transform: translate(-50%,-50%);
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="laoda">
+        <div id="laoer">
+            <div id="laosan">
+
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        //事件流 
+        /*
+            事件流程 : 点击了最外层,内层所有的区域都会触发
+
+            冒泡事件流 : 点击了最内层,外层所有的区域都会触发
+        
+        */
+        let [laoda,laoer,laosan] = document.querySelectorAll("div");
+
+        laoda.onclick = function(){
+            alert("我用双股剑");
+        }
+
+        laoer.onclick = function(){
+            alert("我有高血压");
+        }
+
+        laosan.onclick = function(){
+            alert("我是非洲人");
+        }
+
+        document.body.onclick = function(){
+            alert("我是body");
+        }
+
+        document.documentElement.onclick = function(){
+            alert("我是documentElement");
+        }
+
+        document.onclick = function(){
+            alert("我是document");
+        }
+    </script>
+</body>
+</html>

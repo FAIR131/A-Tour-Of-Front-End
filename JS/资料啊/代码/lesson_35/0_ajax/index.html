@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            form
+                - 同步提交 : 页面卡顿 , 页面跳转
+                - get post
+                - 可以携带cookie
+
+            ajax
+                - 异步提交
+                - 支持所有的方式
+                - 很难携带cookie
+
+
+            ajax - 
+
+            let xhr = new XHRHttpRequest();
+            
+            xhr.open(method,url); //?key=val&key=val
+
+            //xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+
+            xhr.send();//xhr.send(key=val&key=val)
+
+            xhr.onreadystatechange = function(data){
+                if(xhr.readyState === 4 && xhr.status >=200 && xhr.status <300){
+                        JSON.parse(data.target.response)
+                }
+            }
+
+            ajax
+            0 未初始化 open()
+            1 send()
+            2 成功了发送信息,但是没有响应
+            3 响应了,没解析
+            4 解析完成
+
+            http
+            2 成功
+            3 重定向
+            4 用户端的错误
+            5 服务的错误
+
+            跨域拦截CORS
+                - 浏览器拦截 : 同源策略
+                - 前端和后端的地址如果不一样则触发
+                - 协议 : http   https
+                - 域名 : 10.11.12.13    10.11.12.14
+                - 端口 : 80                 443
+                后端 : 设置允许访问的头
+                CORS库,自动配置头X
+
+        */
+    </script>
+
+    <script src="./node_modules/axios/dist/axios.js"></script>
+    <script>
+        //下载任何的第三方模块，同名包当中找到dist
+        // axios
+        // .get("http://127.0.0.1/index?name=18&age=18")
+        // .then(response=>{
+        //     console.log(response.data);
+        // })
+
+        // axios
+        // .post("http://127.0.0.1/index","name=18&age=18")
+        // .then(response=>{
+        //     console.log(response.data);
+        // })
+
+    </script>
+
+    <script>
+        //axios的预先配置
+        // axios.defaults.baseURL = "http://127.0.0.1/";
+        // axios.defaults.headers.post["content-type"] = "application/x-www-form-urlencoded";
+
+        // axios({
+        //     method : "get",
+        //     url : "/index",
+        //     params : {name:18}
+        // }).then(response=>{
+        //     console.log(response.data);
+        // })
+
+
+        axios({
+            method : "get",
+            url : "/index",
+        }).then(response=>{
+            console.log(response.data);
+        })
+        
+    </script>
+</body>
+</html>

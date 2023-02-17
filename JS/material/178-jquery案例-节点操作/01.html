@@ -1,0 +1,39 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery.js"></script>
+</head>
+<body>
+    <!-- <button>aaa</button> -->
+    <ul id="list">
+
+    </ul>
+    <script>
+        var arr = ["111","2222","333"]
+
+        for(var i=0;i<arr.length;i++){
+            $(`<li>${arr[i]}
+                <button>del</button>    
+            </li>`).appendTo($("#list"))
+        }
+
+        // $("#list button").click(function(){
+        //     // console.log()
+        //     $(this).parent().remove()
+        // })
+
+        //事件委托
+
+        $("#list").on("click","button",function(){
+            $(this).parent().remove()
+        })
+    </script>
+</body>
+</html>

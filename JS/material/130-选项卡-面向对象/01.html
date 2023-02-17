@@ -1,0 +1,35 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function CreateObj(name){
+            this.name = name
+        }
+
+        CreateObj.prototype.getName = function(){
+            console.log("11111",this.name)
+        }
+
+        var obj1 = new CreateObj("kerwin")
+        
+        obj1.getName()
+
+
+        // CreateObj.prototype.getName = function(){
+        //     console.log(2222222)
+        // }        
+
+        var obj2 = new CreateObj("tiechui")
+        obj2.getName()
+    </script>
+</body>
+</html>

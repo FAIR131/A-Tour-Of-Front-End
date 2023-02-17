@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>{{msg}}</p>
+        <!-- <input type="text" :value="msg" @input="updateVal">
+         -->
+        <!-- 通过v-model实现表单元素的双向数据绑定 -->
+        <input type="text" v-model="msg">
+
+
+        <textarea name=""  cols="30" rows="10" v-model="sentences"></textarea>
+
+        <select name=""  v-model="fruit">
+            <option value="apple">苹果</option>
+            <option value="orange">橘子</option>
+            <option value="banana">香蕉</option>
+        </select>
+
+        <input type="checkbox" name=""  v-model="result" />
+
+        <hr />
+
+        <input type="checkbox" name=""  value="sing" v-model="hobbies">唱
+        <input type="checkbox" name=""  value="dance" v-model="hobbies">跳
+        <input type="checkbox" name=""  value="rap" v-model="hobbies">RAP
+        <input type="checkbox" name=""  value="basketball" v-model="hobbies">篮球
+        <hr />
+        <input type="radio"  value="male" v-model="gender">男
+        <input type="radio"  value="female"  v-model="gender">女
+        <hr />
+        <!-- v-model修饰符 -->
+        <!-- <input type="text" v-model.lazy="word" @input="getVal"> -->
+        <!-- <input type="text" v-model.number="word" @input="getVal"> -->
+        <input type="text" v-model.trim="word" @input="getVal">
+        <hr/>
+        <button @click="getVal">获取最新的值</button>
+    </div>
+    <script>
+        Vue.config.productionTip = false;
+        new Vue({
+            el: "#app",
+            data: {
+                msg: "呵呵",
+                sentences: "",
+                fruit: "",
+                result: true,
+                hobbies: [],
+                gender:"",
+                word:""
+            },
+            methods: {
+                getVal: function () {
+                    console.log("|"+this.word+"|");
+                },
+                // updateVal:function(e){
+                //     // console.log(e.target.value);
+                //     this.msg=e.target.value
+                // }
+            }
+        })
+    </script>
+</body>
+
+</html>

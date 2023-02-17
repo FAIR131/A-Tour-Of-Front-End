@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            obj不能直接使用值取比对
+        */
+
+        // var obj = {A:1,B:2,C:3,D:1,E:2,A:4,F:1};
+
+        // //找出obj中 值 大于等于 2 的key 有哪些,封装成函数
+
+        // (function(){
+        //     for(var k in obj){
+        //         //k = A B C D
+        //         // console.log(k,obj[k]);
+        //         if(obj[k] >= 2){
+        //             console.log(k);
+        //         }
+        //     }
+        // })()
+    </script>
+
+    <script>
+        var obj = {B:2,C:3,D:1,E:2,A:4,F:1};
+        /*
+            通过一个函数,整理形状
+            [[B,2],[C,3],[D,1],[A,4],[F,1]];
+        */
+        /*
+            1.创建一个空数组arr
+            2.先循环obj
+            3.在一个空数组当中 arr.push([key,val])
+        */
+
+        var res = (function(){
+            var arr = [];
+            for(var k in obj){
+                arr.push([k,obj[k]]);
+            }
+            return arr;
+        })()
+
+        console.log(res);
+
+    </script>
+</body>
+</html>

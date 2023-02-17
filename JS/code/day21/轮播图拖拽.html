@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    ul, li {
+        list-style: none;
+    }
+
+    .box {
+        position: relative;
+        margin: 30px auto;
+        width: 400px;
+        height: 400px;
+        overflow: hidden;
+    }
+
+
+    ul {
+        position: absolute;
+        left: 0;
+        width: 1200px;
+        height: 400px;
+    }
+
+    li, img {
+        width: 400px;
+        height: 400px;
+    }
+
+   li {
+      float: left;
+    }
+
+
+</style>
+<body>
+<div class="box">
+    <ul>
+        <!--    <li><img src="img/3.webp" alt="3"></li>-->
+        <li><img src="img/1.webp" alt="1"></li>
+        <li><img src="img/2.webp" alt="2"></li>
+        <li><img src="img/3.webp" alt="3"></li>
+
+    </ul>
+
+</div>
+
+
+<script>
+    let ul = document.querySelector('ul');
+
+    ul.onmousedown = function (event) {
+        //距离盒子的位置
+        let eleX = ul.offsetLeft;
+        // console.log(eleX);
+
+        //计算box中鼠标坐标
+        let div_left = ul.parentElement.offsetLeft;
+        // console.log(div_left)
+
+        //获取鼠标的坐标
+        let startX = event.clientX - div_left;
+        // console.log(startX);
+
+        let ul_width = this.clientWidth;
+        // console.log(ul_width)
+
+        let childs = [...this.children];
+
+        //给每个li添加index属性
+        childs.forEach(function (li,ind){
+            li.index=ind;
+        })
+
+        //图片的宽度
+        let img_width = ul_width/childs.length;
+
+        //div左边的边界
+        let div_left_edge = div_left - div_left;
+
+
+        //鼠标移动
+        document.onmousemove =  (e)=> {
+            // console.log(1)
+            //鼠标会停下来
+            let endX = e.clientX - div_left;
+
+            //鼠标的X轴和Y轴移动长度
+            let disX = endX - startX;
+
+            let left = eleX + disX;
+
+            //ul的left发生变动
+            this.style.left = `${left}px`;
+
+            if (e.target.nodeName ==='IMG'){
+                let li =e.target.parentElement;
+
+            //    li右边的距离
+
+                let li_right = ul_width - (childs.length-li.index) * img_width+img_width;
+
+              // console.log(li_right)
+              //    console.log(left)
+              //   console.log(li_right - Math.abs(left))
+                // console.log(div_left)
+
+                if(li_right - Math.abs(left)<=100){
+                    // this.style.left = - ((li.index +1)*img_width)+'px'
+                    left=0;
+                }
+            }
+
+            ul.style.left = left + "px";
+
+
+        }
+
+
+        document.onmouseup = function () {
+            //鼠标松开以后,盒子不能移动,move解绑
+            document.onmousemove = document.onmouseup = null;
+
+
+        }
+
+        return false
+    }
+
+
+</script>
+</body>
+</html>

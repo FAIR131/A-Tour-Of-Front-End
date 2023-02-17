@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            计算机中的对象
+                : 把现实的事物以数据化的形式存储再计算当中,对于计算机而言，称之为对象
+            
+            所有的数据类型都是"对象","对象(Object)也是一种类型"
+
+            obj类型适合用来存储具体的数据
+
+            {
+                key(键) : value(值)
+            }
+        */
+
+        var zs = {
+            name : "张三",
+            nickname : "小张",
+            age : 18,
+            desc : "法外狂徒",
+            sex : "男",
+            run : function(addr){
+                return "跑路到" + addr
+            },
+            action : function(){
+                return "烟雾弹"
+            }
+        }
+
+        var lq = {
+            name : "李青",
+            nickname : "瞎子",
+            age : 18,
+            desc : "会飞的男人",
+            "1sex" : "男",
+            run : function(addr){
+                return "跑路到" + addr
+            },
+            action : function(){
+                return "一库"
+            }
+        }
+
+        console.log(lq["name"],lq.name);
+        //lq的属性
+        lq.age = 28;
+
+        console.log(lq.age,lq["1sex"]);
+
+        //检测obj类型
+        // console.log(typeof lq); //不准确
+        // console.log(lq instanceof Object);//不准确的
+        // console.log([] instanceof Object)
+
+        //可以使用
+        // console.log(lq.constructor === Object);
+        // console.log([].constructor === Object);
+
+        console.log(Object.prototype.toString.call(lq));
+        
+        /*
+            varclass = [
+                {},
+                {}
+            ]
+        
+        
+        */
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            借用继承+实例继承
+            借用继承+原型继承 最多
+        */
+
+        function Dog(name){
+            this.name = name;
+        }
+
+        Dog.prototype.a = function(){
+            return "a"
+        }
+
+        function Hasch(name){
+            //继承属性
+            Dog.call(this,name);
+        }
+
+        //继承 原型方法
+        Hasch.prototype = Object.create(Dog.prototype);
+        //由于继承的时候,会丢失constructor属性,所以会导致创建者不正确
+        //可以补充constructor
+        Hasch.prototype.constructor = Hasch;
+
+        var d1 = new Dog("老狗");
+
+        var h1 = new Hasch("二哈");
+
+        console.log(d1);
+        // console.log(h1.constructor);
+        //猿人类 -> 人类 = 张三
+        console.log(h1);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        var a = true
+        var b = true
+        console.log(a && b)
+
+        var category = "家电" //选择的当前商品的类别
+        var price = 300 //总金额
+
+        console.log(category==="家电" && price>200 )
+
+
+
+        var day = 1
+
+        console.log(day===6 || day===7)
+
+        var c = false
+        console.log(!c)
+
+
+        var length = 10
+
+        console.log(length===0)
+        console.log(!length)
+
+        // console.log(!"1111")
+
+
+        /*
+            特殊：
+              1.  !!a  ==>转换成布尔值
+              2.  && || 短路 用发
+        */
+
+        var  x = "1111"
+        console.log(!!x)
+
+        var y = null
+        console.log(y && y.toString())
+
+        console.log(11111)
+
+
+
+        var z = "赵钱孙李"
+
+        document.write(z || "这个家伙很赖，什么也没有留下")
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

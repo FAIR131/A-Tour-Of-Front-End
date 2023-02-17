@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            作业1
+
+            把data的数据放置到<table>标签当中
+        */
+
+        // var data = [
+        //     {a:1,b:2,c:3,d:4,e:5,f:6},
+        //     {a:1,b:2,c:3,d:4,e:5,f:6},
+        //     {a:1,b:2,c:3,d:4,e:5,f:6},
+        //     {a:1,b:2,c:3,d:4,e:5,f:6},
+        //     {a:1,b:2,c:3,d:4,e:5,f:6},
+        //     {a:1,b:2,c:3,d:4,e:5,f:6},
+        // ]
+
+        /*
+            1.循环数组
+            2.循环对象
+            3.拼接td
+        */
+
+        // function demo(){
+        //     var str = "<table border='1'>";
+        //     //不能使用循环创建tr-th
+        //     //如果是空数组,data[0] = undefined
+        //     //判断数组是否为空
+        //     if(data.length === 0){
+        //         return 
+        //     }
+        //     //不是空数组,则获取第一个元素
+        //     str += "<tr>";
+        //     for(var key in data[0]){
+        //         str += "<th>";
+        //         str += key;
+        //         str += "</th>";
+        //     }
+        //     str += "</tr>";
+
+        //     data.forEach(function(item){//循环数组
+        //         str += "<tr>";
+        //             //循环Object
+        //             for(var k in item){
+        //                 str += "<td>";
+        //                 str += item[k];
+        //                 str += "</td>";
+        //             }
+        //         str += "</tr>";
+
+        //     });
+        //     str += "</table>";
+
+        //     document.write(str);
+        // }
+            
+        // demo();
+    </script>
+
+    <script>
+        /*
+            作业二
+            封装一个函数,该函数当中有两个参数
+            那个参数数组比较长,那么该数组作为key,短的作为val
+            拼接成Object类型
+            func(arg1,arg2){
+            }
+        */
+        var arr1 = ["A","B","C","D"];  //key
+        var arr2 = [1,2,3];   //val
+
+        /*
+            1.函数定义
+            2.判断数组的长度
+        */
+
+        // function foo(arg1,arg2){
+        //     //统计输出结果
+        //     var keys,vals;
+
+        //     var res = {};
+
+        //     if(arg1.length >= arg2.length){//数组的长度对比
+        //         keys = arg1;
+        //         vals = arg2;
+        //     }else{
+        //         keys = arg2;
+        //         vals = arg1;
+        //     }
+
+        //     //循环keys
+        //     for(var i=0;i<keys.length;i++){
+        //         res[keys[i]] = vals[i];
+        //     }
+
+        //     return res
+        
+        // }
+
+        // console.log(foo(arr1,arr2));
+    </script>
+
+    <script>
+        /*  
+            根据 key=b的 排序
+
+        */
+
+        var data = [
+            {a:1,b:20,c:3,d:4,e:5,f:6},
+            {a:2,b:21,c:3,d:4,e:5,f:6},
+            {a:3,b:12,c:3,d:4,e:5,f:6},
+            {a:4,b:1,c:3,d:4,e:5,f:6},
+            {a:5,b:0,c:3,d:4,e:5,f:6},
+            {a:6,b:3,c:3,d:4,e:5,f:6}
+        ]
+
+        /*
+             [20,21,12,1,0,3]
+        */
+    //    for(var i=0;i<data.length;i++){
+    //         for(var j=0;j<data.length-1-i;j++){
+    //             if(data[j].b > data[j+1].b ){//20 > 21
+    //                 //兑换位置
+    //                 var tmp = data[j];
+    //                 data[j] = data[j+1];
+    //                 data[j+1] = tmp;
+    //             }
+    //         }
+    //    }
+
+    //    console.log(data);
+
+    function qs(obj,start,end){
+        var base = obj[start]; //现在的基准数是一个Object类型
+        var i = start; 
+        var j = end;   
+        while(i<j){
+            //obj变量是一个数组嵌套对象
+            //obj[j] > base = {a:1,b:20,c:3,d:4,e:5,f:6} > {a:2,b:21,c:3,d:4,e:5,f:6}
+            //obj[j].b >  base.b = 20 > 21
+            while(obj[j].b > base.b && i<j){
+                j--
+            }
+            //把Object类型整体换位置
+            obj[i] = obj[j];
+            while(obj[i].b <= base.b && i<j){
+                i++
+            }
+            obj[j] = obj[i];
+        }
+        if(i > j){
+            return 
+        }
+        obj[i] = base;
+        qs(obj,start,i-1); 
+        qs(obj,i+1,end);  
+    }
+
+    qs(data,0,data.length-1);
+
+    console.log(data);
+    </script>
+</body>
+</html>

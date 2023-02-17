@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            异步解决方案
+            解决回调地狱
+        */
+
+        let p = new Promise((resolve,reject)=>{
+            /*
+                resolve : 成功的回调
+                reject throw : 失败的回调
+            */
+            //    resolve('ok');
+        })
+
+        /*
+            state : 
+                pending 等待
+                    - fulfilled 成功
+                    - rejected  失败
+        */
+
+        // console.log(p);
+
+        /*
+            then返回的是一个promise对象
+                返回的promise对象的状态根据谁改变
+                - 没有return
+                    - fulfilled 结果为undefined
+                - return的不是promise对象 
+                    - fulfilled 结果为返回的内容
+                - return的是promise对象
+                    - 看执行的是resolve还是reject
+        */      
+        p.then(value=>{
+            //处理成功的返回值
+        }).catch(reason=>{
+            //处理失败的返回值
+        }).finally(()=>{
+            console.log(1);
+        })
+
+        /*
+            Promise.all([p1,p2,p3]);//value:是一个数组
+            Promise.race([]);
+            Prmise.resolve();
+            Promise.reject(); 
+        
+        */
+
+
+    </script>
+</body>
+</html>

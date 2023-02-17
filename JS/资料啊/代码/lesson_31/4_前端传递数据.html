@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        action : API路径
+        method : 请求的方式 get post
+        enctype : 数据传递的方式(请求报文的方式)
+            - get text/plain(普通文本)(不能上传文件)
+            - post application/x-www-form-urlencoded(数据包传递)(不能上传文件)
+            - post multipart/form-data(数据包传递)(上传文件)
+
+        get  : 获取指令
+            - http://httpbin.org/get?account=123456&token=123456&f=this%E6%8C%87%E5%90%91.pptx
+            - 1.把所有参数拼接在url之后(相对来说不太安全)
+            - 2.url地址栏容量有限,一般的浏览器2kb-4kb,chrome 可以 达到8kb
+                url长度最大65535个(不能上传文件)
+            - 3.获取网页的时候使用,浏览器当中可以缓存当前的网页
+                (首页需要被缓存) : 浏览器会优先访问本地的缓存文件(快),如果本地没有则访问互联网(慢)
+            - 4.enctype = "text/plain"
+
+        post : 提交指令
+            - http://httpbin.org/post
+            - 1.参数不会放在url当中(相对于get比较安全)
+            - 2.把数据放在载荷(数据包,请求报文当中)
+            - 3.载荷的容量是无限的(可以上传文件)
+            - 4.post不会产生缓存
+            - 5.enctype = "application/x-www-form-urlencoded";  不能上传文件
+                enctype="multipart/form-data";    能上传文件
+
+        delete
+            - post的衍生类型,代表的是发出一个删除指令
+            - form表单不能使用
+
+        patch 
+            - post的衍生类型,代表的是发出一个修改一个数据指令
+            - form表单不能使用
+
+        put 
+           - post的衍生类型,代表的是发出一个修改多个数据指令
+           - form表单不能使用
+
+        - 这里所有的方式都是协议式
+
+     -->
+    <form action="http://httpbin.org/post" method="post" enctype="multipart/form-data">
+        <input type="text" name="account"><br>
+        <input type="password" name="token"><br>
+        <input type="file" name="f"><br>
+        <button>登录</button>
+    </form>
+    <script>
+        /*
+            httpbin.org 后端测试网站
+                -http Methods
+                    - get 
+                        - 点击try it out
+                        - execute
+                        - http://httpbin.org/get
+                    - post
+                    - put
+                    - patch
+                    - delete
+        */
+       
+        
+    </script>
+</body>
+</html>

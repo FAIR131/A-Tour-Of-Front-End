@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            回调函数
+        */
+
+        //匿名函数 || 具名函数
+        var a = function (callback){//回调
+            return callback(); //123
+        }
+
+        //把一个函数当作参数,传递给另一个函数,另一个函数当中调用传进来的函数
+        var res = a(function(){
+            return 123
+        });
+
+        // console.log(res);
+    </script>
+
+    <script>
+        var arr = [1,2,3,4,5,6];
+       
+        //让数组当中的每个数字*10
+        function forEach(array,func){
+            for(var i=0;i<array.length;i++){
+                //func(1,0) = 10
+                array[i] = func(array[i],i); //第44行把结果返回给39行
+            }
+        }
+
+        //回调函数一般不写返回值
+        forEach(arr,function(item,index){//39行把结果返回给res
+            return item * 10;
+        })
+
+        console.log(arr);
+
+    </script>
+</body>
+</html>

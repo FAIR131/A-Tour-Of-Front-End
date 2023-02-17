@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <style>
+        /*解决页面渲染时的闪动问题*/
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    {{username}}
+    <p v-pre>
+        <!--  v-pre指令跳过语法解析-->
+        safhks{{username}}
+    </p>
+    <span v-once>
+<!-- 只解析一次-->
+        {{num}}
+    </span>
+    <!--    都可以隐藏元素，show通过display:none,if删除元素-->
+    <p v-show="true">今天天气好</p>
+    <p v-if="false">非常好</p>
+
+    <p v-if="score>=90">优秀</p>
+    <p v-if="score<90&&score>=80">良好</p>
+    <p v-if="score<80&&score>=70">中等</p>
+    <p v-if="score<70&&score>=60">及格</p>
+    <p v-if="score<60">不及格</p>
+
+    <!-- 动态绑定属性的值  -->
+    <a v-bind:href="url">百度</a>
+    <!-- 简写形式-->
+    <a :href="url">百度</a>
+
+    <ul>
+        <!--v-for用来循环数据相中的数组或对象,写在需要重复渲染的标签上-->
+        <!--写v-for必须写上：key属性-->
+        <li v-for="(item,index) in fruits" :key="item">{{item}}-{{index}}</li>
+    </ul>
+
+    <button v-on:click="say">点我</button>
+    <!--简写形式-->
+    <!--    <button @click="say">点我</button>-->
+
+    <!--vue事件显式的传递事件对象-->
+    <button @click="say(123,$event)">点我点我</button>
+
+    <div @click="gf" style="width: 200px;height: 200px;background: red;display: flex;align-items: center;justify-content: center">
+        <div @click.stop="father" style="width: 100px;height: 100px;background: green;display: flex;align-items: center;justify-content: center">
+            <div @click="son" style="width: 50px;height: 50px;background: blue;">
+                <a href="https://baidu.com" @click.prevent="jump">走</a>
+            </div>
+        </div>
+    </div>
+
+<!-- .self触发元素本身事件才可以执行事件函数-->
+    <ul @click.self="who" style="background: lightblue; width:200px;height:200px">
+        <li>'哈哈'</li>
+        <li>'呵呵'</li>
+    </ul>
+
+</div>
+
+<script>
+    Vue.config.productionTip = false
+    let abc = new Vue({
+        el: '#app',
+        data: {
+            username: '张三',
+            num: 100,
+            score: 50,
+            url: 'https://baidu.com',
+            fruits: [
+                '苹果',
+                '橘子',
+                '香蕉'
+            ]
+        },
+        methods: {
+            say: function (p, e) {
+                console.log(p)
+                console.log(e)
+
+            },
+            son:function (){
+                console.log('son')
+            } ,
+            father:function (){
+                console.log('father')
+            } , 
+            gf:function (){
+                console.log('grandfather')
+            },
+            jump:function (e){
+                // e.preventDefault()
+                alert('揍你')
+            },
+            who:function (e){
+                console.log(e)
+            }
+        }
+    })
+
+    setTimeout(() => {
+        abc.num = 200
+    }, 1000)
+</script>
+</body>
+</html>

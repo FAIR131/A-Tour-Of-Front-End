@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //JSON是实例对象
+        console.log(JSON);
+
+        //JSON的作用是把对象转变为JSON字符串
+        //对象是存储在堆当中的,当变成字符串以后转换到栈当中
+
+        let a = '{"a":1,"b":2,"c":3}';
+        let b = {a:1,b:2,c:3};
+
+        //a 在栈   b在栈
+        console.log(a === JSON.stringify(b));
+        console.log(a);
+        console.log(JSON.stringify(b));
+
+        //堆 === 堆
+        console.log(JSON.parse(a) === b);
+        
+    </script>
+</body>
+</html>

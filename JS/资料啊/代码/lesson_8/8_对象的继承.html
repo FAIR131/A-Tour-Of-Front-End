@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //父类
+        function Dog(name,age,sex,color,action){//狗有哪些基本特征
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+            this.color = color;
+            this.action = action;//行为
+        }
+
+        Dog.prototype.eat = function(food){
+            return this.name + "吃了" + food;
+        }
+
+        Dog.prototype.run = function(speed){
+            return this.name + "以每小时" + speed + "疯跑";
+        }
+
+
+        //子类
+        //土狗
+        //ZHTYQ和Dog建立关系
+        function ZHTYQ(name,age,sex,color,action,hobby){
+            //1.继承属性
+
+            //当前的this = ZHTYQ
+            //Dog把哪些属性给this = ZHTYQ
+            Dog.call(this,name,age,sex,color,action);
+            this.hobby = hobby;
+        }
+
+        //2.继承方法 : 形式有问题
+        //ZHTYQ.prototype = Dog.prototype 引用传编址
+        //引用传编址 : 如果修改ZHTYQ.prototype相当于修改了Dog.prototype
+        // ZHTYQ.prototype = Dog.prototype;
+
+        //Object.create() 深复制
+        //ZHTYQ.prototype 深复制 Dog.prototype
+        //ZHTYQ.prototype 和 Dog.prototype 不是引用关系
+        ZHTYQ.prototype = Object.create(Dog.prototype);
+
+        ZHTYQ.prototype.a = function(){
+            return "a"
+        }
+
+        var d = new Dog("猪笑天","不详","雄性","黑","岛狗");
+
+        var tg = new ZHTYQ("哮天",200,"雄性","黑","天狗","吃月亮");
+
+        // console.log(tg);
+        // console.log(tg.eat("鸡腿"));
+
+        console.log(d.a());
+
+        /*
+            子类从父类当中继承了属性和方法,保留了一部分的父类代码(自己看着办)
+        
+            可以达到子类当中代码调节,不影响父类，功能和父类也有差距
+        */
+
+
+
+    </script>
+</body>
+</html>

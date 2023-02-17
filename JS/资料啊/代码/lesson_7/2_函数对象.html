@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            定义方法 
+                - 必须要有属性
+                - 必须要有方法
+
+            function Person(name,age,sex){
+                //自己的这个.名称 = 传递进来的名称
+                this.name = name;
+                this.age = age;
+                this.sex = sex;
+                //不要加上return
+            }
+        */
+        
+        //这是一个模型,当前这个模型是用来定义"人"的
+        function Person(name,age,sex){
+                //自己的这个.名称 = 传递进来的名称
+                this.name = name;
+                this.age = age;
+                this.sex = sex;
+                //不要加上return
+        }
+
+        //伪对象类型
+        var zs = new Person("张三",29,"男");
+        console.log(zs);
+        console.log(zs.constructor);
+    </script>
+
+    <script>
+        var ls = new Object();//{}
+        ls.name = "李四";
+        console.log(ls);
+        console.log(ls.constructor);
+    </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+/*
+    变量
+*/
+#box {
+  width: 1000px;
+  height: 1000px;
+  background-color: red;
+}
+#box div {
+  width: 500px;
+  height: 500px;
+  background-color: green;
+}

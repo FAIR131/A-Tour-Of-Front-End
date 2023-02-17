@@ -1,0 +1,41 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Promise 构造函数
+
+        var q = new Promise(function(resolve,reject){
+            //异步
+            setTimeout(()=>{
+                //成功兑现承诺
+                // resolve(["1111","222","3333"])
+
+                //失败拒绝承诺
+                reject("errrror")
+            },2000)
+        })
+        //pending 执行中
+        //fulfilled
+        //reject
+
+        //q是promise对象
+
+        q.then(function(res){
+            //兑现承诺，这个函数被执行
+            console.log("success",res)
+        }).catch(function(err){
+            //拒绝承诺，这个函数就会被执行
+            console.log("fail",err)
+        })
+    </script>
+</body>
+</html>

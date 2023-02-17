@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul>
+        <li>
+            <button class="sub">-</button>
+            <button class="num">1</button>
+            <button class="add">+</button>
+        </li>
+        <li>
+            <button class="sub">-</button>
+            <button class="num">1</button>
+            <button class="add">+</button>
+        </li>
+        <li>
+            <button class="sub">-</button>
+            <button class="num">1</button>
+            <button class="add">+</button>
+        </li>
+        <li>
+            <button class="sub">-</button>
+            <button class="num">1</button>
+            <button class="add">+</button>
+        </li>
+    </ul>
+
+    <script>
+        //使用兄弟节点,控制+ -对数字的影响
+        /*
+            1.没思路
+            2.不记得使用哪些工具
+            3.有错误找不到
+        */
+
+        let nums = document.querySelectorAll(".num");
+
+        nums.forEach(item=>{
+
+            item.previousElementSibling.onclick = ()=>{
+                item.innerText = Number(item.innerText) - 1
+            }
+
+            item.nextElementSibling.onclick = ()=>{
+                item.innerText = Number(item.innerText) + 1
+            }
+        })
+
+    </script>
+</body>
+</html>

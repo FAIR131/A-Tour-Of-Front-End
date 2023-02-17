@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang='en'>
+ 
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Document</title>
+  <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    img{
+      float: left;
+      width: 200px;
+      height: 150px;
+    }
+ 
+  </style>
+</head>
+ 
+<body>
+  <img src="../day12/1.webp" alt="">
+  <img src="../day12/2.webp" alt="">
+  <img src="../day12/3.webp" alt="">
+ 
+  <script>
+    var img = document.querySelectorAll("img");
+    var index =0;
+    img.forEach(function(item,ind){
+      item.onmouseover = function(){
+        img[index].style.width='200px';
+        img[index].style.height='150px';
+
+        this.style.width='400px';
+        this.style.height='300px';
+        index=ind;
+
+      }
+    })
+ 
+  </script>
+</body>
+ 
+</html>

@@ -1,0 +1,39 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background:yellow;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="username">
+
+    <div id="box"></div>
+    <script>
+        username.onkeyup = function(evt){
+            console.log(evt.keyCode)
+            if(evt.keyCode===13){
+                console.log("创建节点")
+            } 
+        }
+
+        box.onclick = function(evt){
+            evt = evt || window.event
+            console.log(evt)
+        }
+        //兼容 ie 678 window.event
+    </script>
+</body>
+</html>

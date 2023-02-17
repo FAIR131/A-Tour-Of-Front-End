@@ -1,0 +1,68 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [44, 3, 2, 1, 5, 8, 111]
+
+        // var minIndex = 0
+
+        // for (var i = 1; i < arr.length; i++) {
+        //     if (arr[i] < arr[minIndex]) {
+        //         minIndex = i
+        //     }
+        // }
+        // console.log(minIndex)
+
+        // var temp = arr[0]
+        // arr[0] = arr[minIndex]
+        // arr[minIndex] = temp
+
+        // console.log(arr)
+
+        // var minIndex = 1
+
+        // for (var i = 2; i < arr.length; i++) {
+        //     if (arr[i] < arr[minIndex]) {
+        //         minIndex = i
+        //     }
+        // }
+        // // console.log(minIndex)
+
+        // var temp = arr[1]
+        // arr[1] = arr[minIndex]
+        // arr[minIndex] = temp
+
+
+
+
+        for (var m = 0; m < arr.length - 1; m++) {
+            var minIndex = m
+            for (var i = m + 1; i < arr.length; i++) {
+                if (arr[i] < arr[minIndex]) {
+                    minIndex = i
+                }
+            }
+            // console.log(minIndex)
+
+            if (minIndex !== m) {
+                var temp = arr[m]
+                arr[m] = arr[minIndex]
+                arr[minIndex] = temp
+            }
+        }
+        console.log(arr)
+    </script>
+</body>
+
+</html>

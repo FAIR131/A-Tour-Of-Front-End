@@ -1,0 +1,6 @@
+export const INCREMENT="INCREMENT"
+export const DECREMENT="DECREMENT"
+export const CHANGE_NAME="CHANGE_NAME"
+export const CHANGE_AGE="CHANGE_AGE"
+export const ADD_FILM="ADD_FILM"
+export const DEL_FILM="DEL_FILM"

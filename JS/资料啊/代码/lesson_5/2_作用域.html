@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            作用域 : JS的语法
+                - 全局作用域(公共场所)
+                    - script标签当中书写
+                - 局部作用域(你家)
+                    - 函数是局部作用域
+
+        */
+        // var a = 3;
+        // var b = 4;
+
+        // function demo(){
+        //     var a = 1;
+        //     var b = 2;
+        //     console.log("局部作用域",a,b)
+        // }
+        // /*
+        //     首先js的v8引擎(编译器),优先从全局中查找a变量,如果发现a没有被声明,则报错
+        // */
+        // console.log("全局作用域",a,b); 
+        // demo();
+
+    </script>
+    <script>
+
+        // var a = 1;
+        // var b = 2;
+       
+        // function demo(){
+        //     /*
+        //         就近原则 : JS会在当前的作用域当中优先查找,如果找不到,则向上一层作用域查找
+        //         如果依然查不到,则报错
+        //     */
+        //     var a = 3;
+
+        //     /*
+        //         声明提升 : 赋值的过程不会被提升
+        //     */
+        //     console.log(a,b,c); //3,2
+        // }
+        // demo();
+
+        // var c = 5;
+    </script>
+
+    <script>
+        /*
+            函数提升的优先级要高于变量的声明提升；
+
+            在内存当中:
+
+            function demo(){
+                console.log(a,b); //
+            }
+
+            var a;
+            var b;
+
+            demo()
+
+            a = 1;
+            b = 2;
+
+        */
+
+        // demo(); //先调用函数
+
+        // function demo(){
+        //     console.log(a,b); //
+        // }
+
+        // var a = 1, b = 2;
+
+    </script>
+
+    <script>
+        /*
+            如果需要函数当中拿到全局变量的值
+            需要把赋值的过程写在函数调用之前
+        */
+        a = 1,b = 2;
+
+        demo();
+
+        var a,b;
+
+        
+
+        function demo(){
+            console.log(a,b); //1,2
+        }
+
+
+        /*
+            全局作用域定义的变量和函数可以在函数当中进行使用
+
+            函数当中定义了变量和函数,可以在全局中进行使用吗? 不可以
+
+            函数调用可以在函数之前写吗?可以
+
+            全局变量赋值要写在函数调用之前
+        */
+    </script>
+</body>
+</html>

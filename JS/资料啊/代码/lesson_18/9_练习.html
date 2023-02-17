@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            margin: auto;
+        }
+        img{
+            width: 300px;
+            height: 182px;
+        }
+    </style>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <td><img src="../lesson_15/imgs/1.webp" alt=""></td>
+            <td><img src="../lesson_15/imgs/1.webp" alt=""></td>
+            <td><img src="../lesson_15/imgs/1.webp" alt=""></td>
+        </tr>
+        <tr>
+            <td><img src="../lesson_15/imgs/1.webp" alt=""></td>
+            <td><img src="../lesson_15/imgs/1.webp" alt=""></td>
+            <td><img src="../lesson_15/imgs/1.webp" alt=""></td>
+        </tr>
+    </table>
+    <script>
+        /* 
+            照片墙
+            当鼠标移动到选中的照片时,其它的图片透明的修改一下
+            当前选中的图片显示简介   
+        */
+
+        let tab = document.querySelector("table");
+        //1.获取所有img
+        let imgs = document.querySelectorAll("img");
+
+        tab.addEventListener("mouseover",function(event){
+            if(event.target.nodeName === "IMG"){
+                //排他
+                //2.循环
+                imgs.forEach(function(img){
+                    img.style.opacity = 0.7;
+                })
+
+                event.target.style.opacity = 1;
+            }
+        })
+
+        tab.addEventListener("mouseout",function(){
+            if(event.target.nodeName !== "IMG"){
+                imgs.forEach(function(img){
+                    img.style.opacity = 1;
+                })
+            }
+        })
+
+
+        //enter-leave不要使用 : 不支持冒泡
+        //支持的事件流捕获
+        // tab.onmouseenter = function(){
+        //     console.log(1)
+        // }
+
+        // tab.onmouseleave = function(){
+        //     console.log(0)
+        // }
+    </script>
+</body>
+</html>

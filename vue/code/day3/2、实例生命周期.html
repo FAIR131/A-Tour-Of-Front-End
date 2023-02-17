@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+<div id="app">
+    <p>{{msg}}</p>
+    <p>{{num}}</p>
+    <p>{{say()}}</p>
+   <button @click="changeNum">改值</button>
+</div>
+
+<script>
+    Vue.config.productionTip = false
+  let app =  new Vue({
+        el: '#app',
+        data: {
+            msg: '吵死了',
+            num:0,
+            timerId :0
+        },
+        methods: {
+            say: function () {
+                console.log('hi')
+            },
+            changeNum:function (){
+                this.num++;
+            }
+        },
+        beforeCreate: function () {
+            //  这是第一个被执行的生命周期函数，此时实例的数据、方法等还没有创建，执行一次
+            /*  console.log(this.msg)
+              console.log(this.say)*/
+            console.log('beforeCreat函数被执行了')
+        },
+        created: function () {
+            //  这是第二个被执行的生命周期函数，此时实例的数据、方法等还没有创建，执行一次
+            /*       console.log(this.msg)
+                        console.log(this.say)*/
+            console.log('created函数被执行了')
+        },
+        beforeMount: function () {
+            //  这是第三个被执行的生命周期函数，此时真实的元素还没有被挂载到页面上，执行一次
+            /* console.log(this.msg)
+                     console.log(this.say)*/
+            console.log('beforeMount函数被执行了')
+        },
+        mounted: function () {
+            //  这是第四个被执行的生命周期函数，此时真实的元素已经被挂载到页面上，执行一次
+            /* console.log(this.msg)
+                      console.log(this.say)*/
+            //一般在此处发送网络请求，创建定时任务，做一些其他的预处理工作
+            console.log('mounted函数被执行了')
+
+            this.timerId=setInterval(()=>{
+                console.log(new Date());
+            },1000)
+        },
+        beforeUpdate: function () {
+            // beforeUpdate会在数据项发生值改变时触发执行，此时数据已经更新，页面还没有重新渲染
+            console.log(document.querySelector('#app').innerHTML)
+            // console.log(this.num)
+            console.log('beforeUpdate函数被执行了')
+        },
+        updated: function () {
+            //  updated会在页面更新之后执行，此时页面和数据都是最新的
+            console.log(document.querySelector('#app').innerHTML)
+            console.log('beforeUpdate函数被执行了')
+        },
+        beforeDestroy: function () {
+            clearInterval(this.timerId)
+            // 此处执行实例销毁前的预处理,比如停止定时器,释放闭包等等,执行一次
+
+            console.log('beforeDestroy函数被执行了')
+        },
+        destroyed: function () {
+            // 此时实例已经被销毁,执行一次
+            console.log('destroyed函数被执行了')
+        },
+    })//.$mount("#app")
+
+    setTimeout(()=>{app.$destroy()},1000)
+
+
+
+</script>
+</body>
+</html>

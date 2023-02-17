@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+
+    </div>
+
+    <script>
+        //给div添加节点
+        // document.write("<ul></ul>");
+
+        console.time()
+        let div = document.querySelector("div");
+
+        //直接写入字符串的
+        /*
+            innerHTML 
+                先拆解结构,然后再createElement()
+                然后再appendChild
+        */  
+        div.innerHTML = `
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+        `;
+        console.timeEnd()
+    </script>
+
+    <script>
+
+        console.time()
+        let div_ = document.querySelector("div");
+        //创建节点dom对象
+        let ul = document.createElement("ul");
+
+        for(let i=0;i<5;i++){
+            //创建li-dom是空的
+            let li = document.createElement("li");
+            li.innerText = i
+            //把li-dom对象追加到ul-dom对象当中
+
+            //追加子节点
+            ul.appendChild(li);
+        }
+        //把被填充的ul-dom对象 放到 div-dom对象中
+        div_.append(ul);
+        console.timeEnd()
+    </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        th,td{
+            width: 100px;
+            height: 50px;
+        }
+        input {
+            width: 100px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>A</th>
+            <th>B</th>
+            <th>C</th>
+            <th>D</th>
+            <th>E</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        
+    </table>
+
+    <button>点击</button>
+    <script>
+        //创建一个表格
+        //表格的下方有一组按钮,每点击一次按钮,表格添加一行
+
+        /*
+            1.获取两组dom对象table一个是btn
+            2.给btn绑定单击事件
+            3.创建tr对象,创建td对象
+            4.把tr对象追加到table
+        */
+
+        let btn = document.querySelector("button");
+        let tab = document.querySelector("table");
+        let ths = document.querySelectorAll("th");
+
+        btn.onclick = function(){
+            let tr = document.createElement("tr");
+
+            for(let i=0;i<ths.length;i++){
+                tr.append(document.createElement("td"));
+            }
+            tab.append(tr);
+        }
+
+    </script>
+
+    <script>
+        //鼠标点击td,把td当中内容替换为输入框,输入框的value=td刚才的内容
+        //鼠标移出td,value的值还原成原来的位置
+        let tds = tab.querySelectorAll("td");
+
+        tds.forEach((td)=>{
+            td.onclick = function(){
+                //1.获取td的innerHTML
+                //2.创建input对象
+                //3.把value填充
+                //4.替换td的子元素
+                if(this.children.length === 0){
+                    let val = this.innerHTML;
+                    let inp = document.createElement("input");
+                    inp.value = val;
+                    this.innerHTML = "";
+                    this.append(inp);
+
+                    inp.onmouseout = ()=>{
+                        //1.获取value
+                        //2.删除input
+                        //3.把value写入到innerText中
+                        let val = this.children[0].value;
+                        this.removeChild(this.children[0]);
+                        this.innerHTML = val;
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

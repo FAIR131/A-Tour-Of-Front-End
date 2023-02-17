@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="./imgs/1.jpeg" style="width:500px" />
+    <script>
+        /*
+            开关思想 : 切换状态
+
+            //当鼠标悬浮的时候,展示鲲鲲的真面目
+            //当鼠标离开的时候,恢复原样
+        */
+
+        var img = document.querySelector("img");
+
+        //鼠标事件
+        //悬浮
+        img.onmouseover = function(){
+            this.src = "./imgs/2.webp";
+        }
+        img.onmouseout = function(){
+            this.src = "./imgs/1.jpeg";
+        }
+        
+
+
+        
+    </script>
+</body>
+</html>

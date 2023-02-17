@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /*
+            淘宝 : 库存不足
+
+            订阅 : 有货了会通知
+
+            去实体店买书 , 有没有《莫欺少年穷》
+            没有 -> 回去
+            又来问 -> 没有 -> 回去
+
+            
+            去实体店买书 , 有没有《JavaScript从入门到入土》
+            留下联系方式
+            书店的员工给你消息了,再过去
+
+        
+        */
+
+        //观察者模式 和 发布订阅非常相似
+        //Vue2时候会出现,vue2使用数据劫持,data当中后期添加的数据不能劫持
+        //如果使用了发布订阅,从新数据绑定
+        class Observe{
+            constructor(name){
+                this.name = name;
+
+                //记录
+                this.messages = {}//Object key:val
+            }
+
+            //方法
+            //《JavaScript从入门到入土》
+            add(type,fn){
+
+                //当前的key在不在message当中
+                //[人的名称]
+                //《JavaScript从入门到入土》 ：徐技师,张三,王宝弱
+                if(!this.messages[type]) this.messages[type] = [];
+
+                //indexOf查找什么东西在不在数组当中
+                //fn联系的方式
+                this.messages[type].indexOf(fn) === -1 && this.messages[type].push(fn);
+            }
+
+            //用户取消订阅
+
+
+            //商家取消某一本书
+        }
+
+        let book1= "《深度研究辣椒油开背》";
+        let book2= "《扛100斤大米踩背法》"
+        
+        let o1 = new Observe("徐技师");
+        let o2 = new Observe("王技师");
+        let o3 = new Observe("吴技师");
+        let o4 = new Observe("马技师");
+
+        //订阅
+        o1.add(book1,function(){
+            console.log("call" + o1.name)
+        });
+        o2.add(book1,function(){
+            console.log("call" + o2.name)
+        })
+        o3.add(book2,function(){
+            console.log("call" + o3.name)
+        })
+        o4.add(book2,function(){
+            console.log("call" + o4.name)
+        })
+
+        o4.add(book2,function(){
+            console.log("call" + o4.name)
+        })
+
+
+        o1.messages[book1]?.forEach(item=>{
+            item();
+        })
+
+        o1.messages[book2]?.forEach(item=>{
+            item();
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+          订单状态码
+          1 未付款
+          2 已付款
+          3.已发货
+          4.已完成
+        */ 
+        var  code = 3
+        
+        switch (code) {
+            case 1 :
+                document.write("未付款")
+                break;
+            case 2 :
+                document.write("已付款")
+                break;
+            case 3 :
+                document.write("已发货")
+                break;
+            case 4 :
+                document.write("已完成")
+                break;
+            default :
+                document.write("出错了")
+        }
+
+        /*
+          注意：
+           1. ===
+           2. 不要比较运算符
+           3. break；必须写
+        */
+    </script>
+</body>
+</html>

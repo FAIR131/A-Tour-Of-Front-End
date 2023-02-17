@@ -1,0 +1,49 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="btn" >抽奖</button>
+    <script>
+        // btn.onclick = function(){
+        //     console.log("谢谢惠顾")
+
+        //     // console.log(this)
+        //     this.disabled = "disabled"
+        // }
+
+        //事件解绑-dom0  dom节点.onclick = null
+
+        // btn.onclick = function(){
+        //     console.log("谢谢惠顾")
+
+        //     this.onclick = null
+        // }
+
+        //事件解绑dom2
+        // function handler(){
+        //     console.log("谢谢惠顾")
+
+        //     this.removeEventListener("click",handler)
+        // }
+        // btn.addEventListener("click",handler)
+
+        //btn.removeEventListener("click",handler)
+
+        function handler(){
+            console.log("谢谢惠顾")
+
+            btn.detachEvent("onclick",handler)
+        }
+        btn.attachEvent("onclick",handler)
+    </script>
+</body>
+</html>

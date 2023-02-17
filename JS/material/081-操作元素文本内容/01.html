@@ -1,0 +1,50 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        hello world 
+        <div>kerwin</div>
+    </div>
+
+    <input type="text" id="username" value="hello">
+
+    <select name="" id="select">
+        <option value="1">11111</option>
+        <option value="2" selected>2222</option>
+        <option value="3">3333</option>
+    </select>
+
+    <script>
+        // innerHTML
+        // innerText
+        // value
+
+        console.log(box.innerHTML)
+        // box.innerHTML = "<h1>11111111</h1>"
+
+        console.log(box.innerText) // 获取只有文本
+
+        box.innerText = "<h1>1111111</h1>" //不解析 html
+
+
+
+        console.log(box.value)
+
+        username.value = "2222222"
+
+
+        console.log(select.value)
+        select.value = "3"
+
+    </script>
+</body>
+</html>

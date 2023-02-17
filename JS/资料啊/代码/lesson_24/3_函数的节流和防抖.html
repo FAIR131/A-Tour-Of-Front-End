@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" value="0">
+    <button>开始</button>
+
+    <script>
+        /*
+            函数抖动
+                - 短时间内反复触发延迟动画,定时器会叠加,叠加以后会一起触发
+            函数节流
+                - 短时间内,同时只能触发一次事件
+                - 第一次触发过了,第二次不能触发
+                - 想要触发第二次,必须等第一次运行完成以后
+
+            函数防抖:
+                - 清楚上衣一次的函数运行,一直只执行最后一次
+        */
+
+        //秒表
+        let [inp,btn] = document.querySelectorAll("input,button");
+
+        //抖动的函数
+        // btn.addEventListener("click",function(){
+        //     setInterval(function(){
+        //         let v = Number(inp.value);
+        //         v++
+        //         inp.value = v;
+        //     },1000)
+        // })
+        
+
+        //节流函数
+        let obj = null;
+        btn.addEventListener("click",function(){
+            if(!obj){//null : false
+                obj = setInterval(function(){
+                    let v = Number(inp.value);
+                    v++
+                    inp.value = v;
+                },1000)
+            }
+        })
+
+    </script>
+
+    <script>
+        /*
+            防抖 : 始终运行最后一次点击函数
+        */
+
+        //防抖函数
+        // let obj = null;
+        // btn.addEventListener("click",function(){
+        //     clearInterval(obj); //清楚上一次的函数运行
+        //     obj = setInterval(function(){
+        //         let v = Number(inp.value);
+        //         v++
+        //         inp.value = v;
+        //     },1000)
+        // })
+    </script>
+</body>
+</html>

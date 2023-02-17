@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            border: 1px solid black;
+            width: 200px;
+        }
+        li {
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- <b>欢迎xxx领导视察xxxx墓的地</b>
+
+    <script>
+        let b = document.body.children[0];
+        
+
+        setInterval(function(){
+            let str = b.innerHTML;
+            let first = str.substr(0,1);
+            let other = str.substr(1);
+            let res = other + first;
+            b.innerHTML = res;
+        },100);
+
+    </script> -->
+
+    <ul>
+        <li>1.wefjkdsnjkfvns</li>
+        <li>2.fsdafsadfgsda</li>
+        <li>3.fdsagfdsaafgsda</li>
+        <li>4.wefjkdsnjkfvns</li>
+        <li>5.fsdafsadfgsda</li>
+        <li>6.fdsagfdsaafgsda</li>
+    </ul>
+    
+    <script>
+        let ul = document.querySelector("ul");
+
+        window.onload = function(){
+            setInterval(function(){
+                let t = ul.children[0];
+
+                ul.removeChild(t);
+
+                ul.appendChild(t);
+            },500)
+        }
+    </script>
+</body>
+</html>

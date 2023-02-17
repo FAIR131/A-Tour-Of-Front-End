@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <li>古力娜扎</li>
+    <li>迪丽热巴</li>
+    <li>玛尔扎哈</li>
+    <li>真皮沙发</li>
+
+    <script>
+        //鼠标悬浮再那个li标签上,谁的字体颜色变成红色
+        //鼠标离开以后,恢复原来的颜色
+        /*
+            1.获取li-dom对象
+            2.循环绑定悬浮事件
+            3.修改li的颜色
+        */
+
+        var lis = document.querySelectorAll("li");
+
+        for(var i=0;i<lis.length;i++){
+
+            lis[i].onmouseover = function(){
+                /*
+                    先把所有li的颜色先变成黑色
+                */
+
+                for(var j=0;j<lis.length;j++){
+                    lis[j].style.color = "black"
+                }
+
+                //然后把当前li对象修改成红色
+                this.style.color = "red";
+                
+            }
+        }
+    </script>
+</body>
+</html>

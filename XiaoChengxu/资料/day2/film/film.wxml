@@ -1,0 +1,17 @@
+<view class="top-menu">
+  <view class="{{activeMenu===1?'active':''}}" bindtap="pickFilm" data-type="{{1}}"><text>正在热映</text></view>
+  <view class="{{activeMenu===2?'active':''}}" bindtap="pickFilm" data-type="{{2}}"><text>即将上映</text></view>
+</view>
+<view wx:for="{{films}}" wx:for-item="myItem" wx:key="id" class="film-list">
+  <image src="{{myItem.poster}}" class="poster" mode="widthFix"></image>
+  <view class="desc">
+    <text>{{myItem.name}}</text>
+    <view>
+      <text>主演:</text>
+      <block wx:for="{{myItem.actors}}" wx:key="index">
+        <text> {{item.name}} </text>
+      </block>
+    </view>
+  </view>
+  <button size="mini">收藏</button>
+</view>

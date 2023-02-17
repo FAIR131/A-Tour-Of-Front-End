@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            练习1:
+            编写一段程序,用户输入一个整数，程序自动判断是奇数偶数.
+            如果用户输入的不合法,则给出提示
+        */
+
+        //1.输入进来的一定是String类型
+        //2.转换数据类型 NaN  Infinity  123
+        //3.使用取余数进行判断
+
+        var input = prompt("请输入一个整数:");
+
+        if(!input.length){//true
+            alert("请输入");
+        }else if(input.includes(" ")){
+            alert("请输入");
+        }
+
+        input = Number(input);
+
+        if(isNaN(input)){
+            alert("请正常输入，否则打死你!!!");
+        }else if(input === Infinity){
+            alert("请正常输入，否则打死你!!!");
+        }else{
+            //当前是数字部分
+            //有可能会出现浮点数
+            input = parseInt(input);
+            if(input % 2){//4 % 2 = 0
+                console.log(input + "是奇数");
+            }else{
+                console.log(input + "是偶数");
+            }
+        }
+
+        //能不能不嵌套?
+
+        
+
+
+
+
+    </script>
+</body>
+</html>

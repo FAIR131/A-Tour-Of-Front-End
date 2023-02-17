@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Document</title>
+  <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <script>
+    //  在Array的prototype当中添加max方法, 比较数组当中的最大值
+
+
+    Array.prototype.max_ = function (arr) {
+      console.log(arr);
+      var max = -Infinity;
+      for (var i = 0; i < arr.length; i++) {
+        if (arr[i] > max) {
+          max = arr[i];
+        }
+      }
+      return max;
+    }
+
+    var array = [4, 2, 9, 6, 8, 1];
+
+    var res = array.max_(array)
+
+    console.log(res);
+
+  </script>
+</body>
+
+</html>

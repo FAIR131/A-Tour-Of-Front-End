@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 2.for循环问题
+        // 1000以内的整数,有多少个质数,有多少个合数
+        // 素数(质数) : 只能倍自身和1整除  1 2 3 5 7
+        // 起始值 = 2
+        
+        var a = 0;
+        var b = 0;
+        //先运行外层循环，外层循环一次
+        for(var i = 3;i<1000;i++){
+            //2~999
+            
+            //除1意义不大
+            //循环少了几次，代表计算机的工作量变少了
+            //可以减少计算机的运算效率
+            //j<i  5<9/2= parseInt(4.5) = 4+1
+            
+            //判断i奇偶
+            var res = 0;
+            if(i%2){
+                //奇数 
+                res = parseInt(i/2) + 1 //5
+            }else{//10
+                //偶数
+                res = (i / 2) + 1  //6
+            }
+
+            //添加一个标记,看标记最终是什么状态
+
+            //status变量隐性关键字 会改变原有的数据的类型
+
+            var status = 1;   //默认是素数
+            //再运行内层循环，内层循环多次
+            for(var j=2;j<res;j++){
+                if(i % j === 0){//如果能整数
+                    status = 0;   //修改状态为合数
+                }
+            }
+            
+            if(Number(status)){//1
+                // console.log(i+"是素数");
+                a++
+            }else{
+                // console.log(i+"是合数");
+                b++
+            }
+
+        }
+
+        console.log("素数的数量为:"+(a+1));
+        console.log("合数的数量为:"+b);
+
+
+    </script>
+</body>
+</html>

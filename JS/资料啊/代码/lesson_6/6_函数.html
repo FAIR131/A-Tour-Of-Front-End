@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            函数 : 
+                - 函数可以去除代码冗余(多余,重复书写逻辑'相同'的代码)
+                - 用函数将代码打包
+        */
+
+        //具名函数
+        // function fo(a,b,c){
+        //     /*
+        //         a = 1
+        //         b = 2
+        //         c = undefined  //定义了形参,但是没有传值,则使用默认值
+        //     */
+        //     //写逻辑代码
+        //     return a + b   //return执行以后,后续代码不再执行
+        //     //return可以不写,不写返回undefined
+        // }
+
+        // //调用函数
+        // console.log(fo(1,2));
+
+
+
+    </script>
+    <script>
+        //匿名函数 : 当前这种写法,匿名函数有名称,函数名称=变量名称
+        var foo = function (a,b){
+            return a+b
+        }
+
+        var res = foo(1,1); //函数调用返回的是结果
+
+        console.log(res);
+        // console.log(foo(1,1));
+
+    </script>
+
+    <script>
+        //匿名函数
+        //自运行函数 : IIFE
+        //result ： 结果
+        var result = (function (a,b){
+            return a+b
+        })(1,2);
+
+        console.log(typeof result);
+    </script>
+</body>
+</html>

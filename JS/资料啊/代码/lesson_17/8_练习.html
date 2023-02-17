@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        th,td{
+            width: 100px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>A</th>
+            <th>B</th>
+            <th>C</th>
+            <th>D</th>
+            <th>E</th>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <button>点击</button>
+    <script>
+        //创建一个表格
+        //表格的下方有一组按钮,每点击一次按钮,表格添加一行
+
+        /*
+            1.获取两组dom对象table一个是btn
+            2.给btn绑定单击事件
+            3.创建tr对象,创建td对象
+            4.把tr对象追加到table
+        */
+
+        let btn = document.querySelector("button");
+        let tab = document.querySelector("table");
+        let ths = document.querySelectorAll("th");
+
+        btn.onclick = function(){
+            let tr = document.createElement("tr");
+
+            for(let i=0;i<ths.length;i++){
+                tr.append(document.createElement("td"));
+            }
+
+            tab.append(tr);
+        }
+
+    </script>
+</body>
+</html>

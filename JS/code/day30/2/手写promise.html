@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="Mypromise.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+
+
+<script>
+const p = new Mypromise((resolve,reject)=>{
+    // resolve('111');
+    // reject('222');
+
+    setTimeout(()=>{
+        // resolve('111');
+        reject('222');
+
+    },1000)
+})
+
+p.then(res=>{
+    console.log('success1',res);
+    // return 'aaa' + res
+
+    return new Mypromise((resolve,reject)=>{
+        // resolve('aaa'+res)
+        setTimeout(()=>{
+            resolve ('999'+res)
+        },1000)
+    })
+},err=>{
+    console.log('error1',err);
+    return new Mypromise((resolve,reject)=>{
+        reject('bbb'+err)
+    })
+}).then(res=>{
+    console.log('success2',res);
+},err=>{
+    console.log('error2',err);
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <script type="module">
+        import { encode, decode } from 'https://cdn.jsdelivr.net/npm/js-base64@3.7.2/base64.mjs';
+        let url = "http://127.0.0.1/getmv?url=" + encode("https://m.douban.com/rexxar/api/v2/movie/recommend?refresh=0&start=20&count=20&selected_categories=%7B%7D&playable=true&tags=");
+        let xhr = new XMLHttpRequest()
+        xhr.open("GET",url);
+        xhr.send();
+        xhr.onreadystatechange = function(response){
+            if(xhr.readyState===4&&xhr.status>=200&&xhr.status<300){
+                console.log(JSON.parse(response.target.response));
+            }
+        }
+
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>凤凰</li>
+        <li>时风</li>
+        <li>五菱</li>
+        <li>特斯拉</li>
+        <li>陕汽</li>
+        <li>特斯拉</li>
+    </ul>
+
+    <script>
+        //1.找到ul-dom
+        //2.找到innerText ：特斯拉
+        //3.使用ul删除li
+
+        let ul = document.body.children[0];
+
+        // let li = [...ul.children].find(function(item){
+        //     return item.innerText === "特斯拉"
+        // });
+
+        // ul.removeChild(li);
+
+        [...ul.children].forEach((item)=>{
+            if(item.innerText === "特斯拉"){
+                ul.removeChild(item);
+            }
+        });
+    </script>
+</body>
+</html>

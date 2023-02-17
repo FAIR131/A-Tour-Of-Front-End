@@ -1,0 +1,122 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery.js"></script>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1111
+            <button>del</button>
+        </li>
+        <li>222
+            <button>del</button>
+        </li>
+        <li>3333
+            <button>del</button>
+        </li>
+        <li>4444
+            <button>del</button>
+        </li>
+    </ul>
+
+    <div>
+
+    </div>
+    <script>
+        // on
+        // $("ul").on("click",function(){
+        //     console.log("ul click")
+        // })
+        // $("ul li").on("click",function(){
+        //     console.log("li click")
+        // })
+
+        // on - 事件委托
+        // $("ul").on("click","button",function(){
+        //     // console.log("ul click")
+        //     // console.log(this.parentNode.remove())
+        // })
+
+
+        // on -传参数(必须对象)
+
+        // $("ul").on("click",{
+        //     name:"kerwin"
+        // },function(e){
+        //     console.log(e)
+        //     // console.log(this.parentNode.remove())
+        // })
+
+        // on -事件委托+参数（随意）
+
+        // $("ul").on("click","button","hello kerwin",function(e){
+        //     console.log(e)
+        //     // console.log(this.parentNode.remove())
+        // })
+
+
+        // one 一次性事件  on 每次点击都触发
+
+
+        // $("ul").one("click","button",function(){
+        //     console.log("ul")
+        // })
+
+
+        // 常用的方法函数click，mouseover() ,mouseout() ,blur() change(),
+        //input()......
+        
+        // $("ul li").click({name:'kerwin'},function(e){
+        //     console.log("click",e.data)
+        // }).mouseover({name:'kerwin'},function(e){
+        //     console.log("mouserover",e.data)
+        // })
+
+
+        //off() 解绑所有的事件 
+        // off("click")  解绑click事件
+        // $("div").mousedown(function(){
+        //     console.log("down")
+
+        //     // document.onmousemove = function(){
+        //     //     console.log("move")
+        //     // }
+
+        //         //普通节点===》jquery对象
+        //     $(document).mousemove(function(){
+        //         console.log("move")
+        //     })
+        // }).mouseup(function(){
+        //     $(document).off("mousemove")
+        // })
+
+            // off("click","要解绑的处理函数")
+            function A(){
+                console.log("AAA")
+            }
+
+            function B(){
+                console.log("BBB")
+            }
+
+            $("ul li").on("click",A).on("click",B)
+
+
+
+    </script>
+</body>
+</html>

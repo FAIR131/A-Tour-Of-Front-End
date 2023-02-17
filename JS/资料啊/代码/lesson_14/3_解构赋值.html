@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //冒泡排序
+        let arr = [1,0,3,1,5,2];
+
+        for(let i=0;i<arr.length;i++){
+            for(let j=0;j<arr.length-i;j++){
+                if(arr[j]>arr[j-1]){
+                    // let tmp = arr[j];
+                    // arr[j] = arr[j-1];
+                    // arr[j-1] = tmp;
+
+                    //解除原来结构,重新赋值
+                    [arr[j],arr[j-1]] = [arr[j-1],arr[j]];
+                }
+                
+            }
+        }
+
+        console.log(arr);
+    </script>
+
+    <script>
+        /*
+            按照顺序解出来值的
+        */
+        let [a,b,c,d,e] = [1,2,3,4,5,6,7,8,9,0];
+        console.log(a,e);
+    </script>
+    <script>
+
+        /*
+            使用相同key接出来值
+            name=1
+            age=4
+        */
+        let {sex,age,name} = {name:1,sex:3,age:4};
+        //data = {name:1,sex:3,age:4}  data.name
+        console.log(name,age)
+    </script>
+</body>
+</html>

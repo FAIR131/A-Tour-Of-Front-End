@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 封装一个ES5的类,并且实现继承？封装一个ES6的类,并且实现继承? -->
+    <script>
+        function Dog(name,age){
+            this.name = name;
+            this.age = age;
+        }
+
+        Dog.prototype.eat=function(food){
+            return this.name+'吃了'+food
+        }
+
+       function Ha (name,hobby){
+            Dog.call(this,name)
+            this.hobby = hobby;
+        };
+
+       Ha.prototype=Object.create(Dog.prototype);
+
+        var h1 = new Ha('小黄','拆');
+        console.log(h1.eat('大鸡腿'));
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <script>
+        //jsonp不是json,是一种古老的跨域解决方案,现在没人用
+        //跨域问题的机制时数据可以发送到后端
+        /*
+            script.src是浏览器自动触发的
+            后端返回的是函数的调用
+            需要前端和后端配合
+            只能使用get方式请求
+        */
+        let script = document.createElement("script");
+
+        script.src = "http://127.0.0.1:80/testAJAX?callback=abc";
+
+        function abc(data) {
+            console.log(data);
+        };
+
+        //3.将script添加到body中
+        document.body.appendChild(script);
+    </script>
+
+    <!-- <script src="http://127.0.0.1:80/testAJAX?callback=abc"></script> -->
+    <!-- abc({name:,age:})  -->
+
+
+    <!-- 
+        jsonp
+        cors 设置头
+        proxy 前端代理,后端代理
+     -->
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 50px;
+            border: 1px solid black;
+            font-size: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>0</div>
+    <button>开始</button>
+    <button>暂停</button>
+    <button>重置</button>
+
+    <script>
+
+        let [div,start,end,reset] = document.querySelectorAll("div,button");
+
+        //this-->window
+        //绑定点击
+        let sen = 0;
+        let tom = null; //window.tom var tom;
+        start.onclick = ()=>{//每点击一次,函数被调用一次
+            if(tom !== null){
+                return 
+            }
+            //获取初始值
+            //用定时器
+            tom = setInterval(function(){
+                div.innerText = sen;
+                //变量每次发生变化,都要更新dom
+                sen++
+            },1000);
+        }
+
+        end.onclick = function(){
+            //清除定时器
+            clearInterval(tom);//传入定时器的名称
+            tom = null;
+        }
+
+        
+        /*
+            重置
+                - 1.div恢复成0
+                - 2.sen恢复成0
+        */
+    </script>
+</body>
+</html>

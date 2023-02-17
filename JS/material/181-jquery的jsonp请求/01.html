@@ -1,0 +1,34 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery.js"></script>
+   
+</head>
+<body>
+  <script>
+    //https://www.runoob.com/try/ajax/jsonp.php?jsoncallback=kerwin
+      $.ajax({
+        url:"https://www.runoob.com/try/ajax/jsonp.php",
+        dataType:"jsonp",//返回内容是jsonp
+        jsonp:"jsoncallback",
+        // jsonpCallback:"aaa"
+        
+      }).then(res=>{
+        console.log(res)
+      })
+
+
+      // function aaa(res){
+      //   console.log(res)
+      // }
+      
+  </script>
+</body>
+</html>

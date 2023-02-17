@@ -1,0 +1,34 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // split
+
+        // json字符串==》对象
+        // {"key":110,"key":"123"}
+
+        var str = '{"name":"kerwin","age":100}'
+
+        console.log(str)
+
+        var obj = JSON.parse(str)
+        console.log(obj)
+
+
+        //前=》后
+        var obj1 = {name:"tiechui"}
+
+        var str1 = JSON.stringify(obj1)
+        console.log(obj1,str1)
+    </script>
+</body>
+</html>

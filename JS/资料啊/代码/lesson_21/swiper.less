@@ -1,0 +1,29 @@
+//变量
+@img_width : 800px;
+@img_height : 500px;
+@img_num : 5;
+
+* {margin: 0;padding: 0; list-style: none;}
+#box {
+    margin : auto;
+    width : @img_width;
+    height: @img_height;
+    position: relative; 
+    // overflow: hidden;
+    .list {
+        width : @img_num * @img_width;
+        height: @img_height;
+        border: 1px solid red;
+        position: absolute;
+        li {
+            float: left;
+            width: @img_width;
+            height: @img_height;
+            img {
+                width : @img_width;
+                height : @img_height;   
+            }
+        }
+    }
+}
+

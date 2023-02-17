@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /*
+            设计模式
+                - 实现一套功能,给出简洁有效的解决方案
+
+            单例模式(类设计模式)
+                - 一个类 在当前页面只能有一个实例
+        
+        */
+
+        // class Dialog{
+        //     constructor(){
+
+        //     }
+        // }
+
+        // //证明不是单例模式
+        // //每实例化一次,内存当中会开辟新的空间,用新的堆空间保存实例对象
+        // //不同的实例对象堆空间 编址不同的
+        // let d1 = new Dialog();
+        // let d2 = new Dialog(); 
+
+        // console.log(d1===d2); //false
+    </script>
+
+
+    <script>
+        //ES5单例
+        //不安全的单例
+        // let instance = null;
+        // function Dialog(warning){
+        //     if(!instance){//null-->false --->true
+        //         //没有实例
+        //         if(this instanceof Dialog){
+        //             this.warning = warning
+        //             instance = this;
+        //         }else{
+        //             return new Dialog(warning);
+        //         }
+        //     }else{
+        //         //instance已经实例过的情况
+        //         instance.warning = warning;
+        //         return instance
+        //     }
+            
+        // }
+       
+
+        // var d1 = new Dialog("123");
+        
+        // var d2 = new Dialog("123");
+
+        // console.log(d1===d2);//true
+    </script>
+
+    <script>
+
+        function Dialog(warning){
+            //没有实例
+            if(this instanceof Dialog){
+                this.warning = warning
+             
+            }else{
+                return new Dialog(warning);
+            }
+        }
+
+        //常量的值不能改
+        const instance = [];
+
+        function newDialog(warning){
+           
+            if(instance.length === 0){
+                
+                //数组为空
+                obj = new Dialog(warning);
+                instance[0] = obj;
+                return obj
+            }else{
+                console.log(22222);
+                //数组长度不为0
+                if(!instance[0] instanceof Dialog){//1 instanceof Dialog -》false->true
+                    //有可能对象已经生成过了,位置不明确
+                    
+                }else{//install当中第一个位置是
+                    instance.forEach((item)=>{
+                        if(item instanceof Dialog){//1 = false  obj instanceof Dialog = true
+                            obj = item;
+                        }
+                    })
+                    return obj
+                }
+            }
+        }
+
+        //第一次实例
+        var d1 = newDialog("321");
+        
+        // console.log(instance);
+        // console.log(d1);
+
+        //破坏
+        instance.unshift(1); //左边插入一个值
+
+        console.log(instance);
+
+        var d2 = newDialog("33"); //
+
+
+        console.log(d1 === d2);
+    </script>
+</body>
+</html>

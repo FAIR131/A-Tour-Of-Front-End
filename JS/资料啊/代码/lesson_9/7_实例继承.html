@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            实例继承:
+                - 不推荐使用
+                - 但是目前公司自定义的组件当中用的比较多,是比较古老的继承语法
+        */
+        
+        function Dog(name,age){
+            this.name = name;
+            this.age = age;
+
+            this.abc = function(){
+                return 123
+            }
+        }
+
+        function Wolf(name,age){
+            this.name = name;
+            this.age = age;
+        }
+
+        //方法
+        Dog.prototype.eat = function(food){
+            return this.name +"吃了"+ food
+        }
+
+        Wolf.prototype.eat_ = function(arg){
+            return this.name +"拆了" + arg
+        }
+
+        //Teddy继承Dog
+        function Teddy(name,age){
+            this.name = name;
+            this.age = age;
+        }
+
+        Teddy.prototype = new Dog();  //引用对象 引用对象.__proto__
+        /*
+            teddy先找自己的函数对象,找teddy的原型对象,Dog的函数对象,Dog的原型对象,Object的原型对象,null
+        */
+        
+        //Hasch继承Dog
+        function Hasch(name,age){
+            this.name = name;
+            this.age = age;
+        }
+
+        Hasch.prototype = Object.create(Dog.prototype); //原型对象
+        /*
+            hasch先找自己的函数对象,找hasch的原型对象,Dog的原型对象,Object的原型对象,null
+        */
+
+        //Teddy引用对象
+        var t1 = new Teddy("可爱",12);
+        var t2 = new Teddy("小可爱",2);
+
+        //Hasch引用对象
+        var h1 = new Hasch("二狗子",17);
+        var h2 = new Hasch("二哈",7);
+
+        
+        console.log(t1.abc()); //
+        console.log(h1.abc());
+    </script>
+</body>
+</html>

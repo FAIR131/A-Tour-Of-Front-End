@@ -1,0 +1,58 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.() 整体
+        // var reg2= /(abc){2}/
+
+        // console.log(reg2.test("abc"))
+        // console.log(reg2.test("decc"))
+        // console.log(reg2.test("332abcabc4343"))
+        // console.log(reg2.test("abcabc"))
+
+        // 2. | 或 ，左右
+        // var reg = /a|b/
+        // var reg2 = /(abc|def)/
+        // var reg3 = /(abc)|def|xyz/
+
+        // // console.log(reg.test("123"))
+        // // console.log(reg.test("1a3"))
+        // // console.log(reg.test("12b"))
+        // // console.log(reg.test("1ab"))
+        // console.log(reg3.test("abc"))
+        // console.log(reg3.test("def"))
+        // console.log(reg3.test("xy"))
+
+
+        //3 [] 代表1个
+
+        var reg = /[a-w]{3,5}/
+
+        // console.log(reg.test("xabc"))
+
+        console.log(reg.test("abcd"))
+        console.log(reg.test("abxyz"))
+        console.log(reg.test("111abxy222"))
+
+        // [a-zA-Z0-9_]  \w
+
+        // [0-9] \d
+
+        //4 [^abc]\
+
+        var reg2 = /[^abc]/
+
+        console.log(reg2.test("a"))
+        console.log(reg2.test("abz"))
+    </script>
+</body>
+</html>

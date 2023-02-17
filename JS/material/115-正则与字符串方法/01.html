@@ -1,0 +1,42 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 正则.test(字符串)
+        // 正则.exec(字符串)
+
+
+        //字符串.replace  search match
+
+
+        
+        // var newstr = str.replace("a","*")
+        // var newstr = str.replace(/a/g,"*")
+        // console.log(newstr)
+
+
+        //search
+
+        // console.log(str.search("a"))
+        // console.log(str.search(/a/))
+        // console.log(str.search(/ax/))
+
+
+        //match 捕获内容
+        var datestr = "time is from 2029-01-01 12:20:20 to 2029-11-01 12:20:20"
+
+        // console.log(str.match("ad"))
+
+        console.log(datestr.match(/(\d{4})-(\d{1,2})-(\d{1,2})/g))
+    </script>
+</body>
+</html>

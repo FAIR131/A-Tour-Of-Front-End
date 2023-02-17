@@ -1,0 +1,45 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.懒惰， 解决 使用全局标识符g
+
+        //2.贪婪
+
+        // var reg = /\d{1,4}/
+
+        // console.log(reg.exec("aa123456bb"))
+
+        //3.非贪婪
+
+        var reg = /\d{1,4}?/
+
+        console.log(reg.exec("aa123456bb"))
+
+
+        /*
+            *?
+            +?
+            ??
+            {n,}?
+            {n,m}?
+        */
+
+
+        var str = `<p class="active"><span>kerwin</span></p>`
+
+        var myreg = /<p.*?>/
+
+        console.log(myreg.exec(str))
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Document</title>
+  <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <script>
+
+    // 2使用函数封装一个乘法表，输入两个参数，第一个参数是行数，第二个参数是列数，比如99，99可以输出99*99乘法表
+    function multiplication(row, col) {
+      for (var i = 1; i <= row; i++) {
+        for (var j = 1; j <= i && j<=col; j++) {
+          document.write(j + '*' + i + '=' + i * j);
+          document.write('&nbsp;&nbsp;&nbsp;')
+        } 
+        document.write('</br>');
+      }    
+    }
+
+    multiplication(99, 98)
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*Function 
+            函数 是一个复杂数据类型
+        */
+         
+        // 1.定义函数
+          // （1）声明式
+          function test1() {
+              var test1_a = "可乐"
+              console.log("我是test1套餐",test1_a)
+          }
+          function test2() {
+              console.log("我是test2套餐")
+          }
+        //   （2）赋值式
+    
+          var test3 = function(){
+              console.log("我是test3套餐")
+          }
+        // 2.调用函数
+        //   test1()
+        //   test1()
+        //   test1()
+        //   test2()
+        //   test3()
+
+
+          // 区别：（1）声明式 先调用再定义
+           // （2）先定义再调用
+
+           test1()
+
+           console.log(test1_a)
+    </script>
+</body>
+</html>

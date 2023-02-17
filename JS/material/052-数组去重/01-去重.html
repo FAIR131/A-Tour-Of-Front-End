@@ -1,0 +1,56 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1 -方法
+
+        var arr = [1,2,3,4,3,5,6,2,1]
+
+        // var arr2 = []
+        
+        // for(var i=0;i<arr.length;i++){
+        //     if( arr2.indexOf(arr[i])=== -1){
+        //         arr2.push(arr[i])
+        //     }
+        // }
+        // console.log(arr,arr2)
+
+
+        //2-方法 -利用对象
+
+        // var obj = {}
+
+        // for(var i=0;i<arr.length;i++){
+        //     obj[arr[i]] = "随便"
+        // }
+
+        // console.log(obj)
+        // var arr2 =[]
+        // for(var i in obj){
+        //     arr2.push(i-0)
+        // }
+        // console.log(arr2)
+
+        //3- new Set
+
+        var set1= new Set(arr)
+
+        console.log(set1)
+
+        var arr1 = Array.from(set1)
+
+        console.log(arr1)
+
+        // splice 改变
+    </script>
+</body>
+</html>

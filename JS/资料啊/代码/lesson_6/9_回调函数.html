@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            回调函数 : 把一个函数当中参数，传递给另一个函数
+            另一个函数当中调用传递进来函数
+        */
+
+        // function human(callback){//人
+        //     return callback();
+        // }
+
+        // function food(){
+        //     return "明天见"
+        // }
+
+        // console.log(human(food));
+
+    </script>
+
+    <script>
+
+        function dog(callback){//人
+            return callback();
+        }
+
+        console.log(dog(function(){
+            return "粑粑"
+        }))
+
+    </script>
+</body>
+</html>

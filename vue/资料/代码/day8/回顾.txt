@@ -1,0 +1,21 @@
+一、路由守卫
+    1、全局守卫:beforeEach,beforeResolve,afterEach
+    2、局部守卫:beforeEnter
+    3、组件内守卫:beforeRouteEnter,beforeRouteUpdate,beforeRouteLeave
+
+二、路由元数据
+    1、在路由规则上添加一个meta对象
+    2、实现路由鉴权
+
+三、路由组件懒加载
+    1、将路由规则中的component属性值改写为函数形式(性能优化)
+    2、打包时的命令和配置
+
+四、状态管理(vuex)
+    1、状态管理就是将一些多页面共享的数据单独管理起来,统一对外提供访问或修改的途径
+    2、使用方法:下载引入挂载,创建vuex实例,将vuex实例配置到vue实例中
+    3、在实例中有$store对象:$store中的state可以获取状态数据,commit方法可以触发mutations函数,dispatch方法可以触发actions函数
+    4、mutations可以直接修改state里面的数据,不能执行异步操作
+    5、actions可以执行异步操作,但不能直接修改state数据
+    6、getters可以像计算属性一样返回state数据
+    7、modules子模块,用于多人开发时数据和方法隔离。要开启命名空间(namespaced:true)

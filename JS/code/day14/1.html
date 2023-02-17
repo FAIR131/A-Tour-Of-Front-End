@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang='en'>
+ 
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Document</title>
+  <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'>
+  <style>
+ 
+  </style>
+</head>
+ 
+<body>
+ 
+  <script>
+
+  var age = 100;
+
+  var obj = {
+    age: 20,
+    say: () => {
+      alert(this.age)
+    }
+  }
+
+  obj.say();//箭头函数this指向的是被声明的作用域里面，而对象没有作用域的，所以箭头函数虽然在对象中被定义，但是this指向的是全局作用域
+  </script>
+</body>
+ 
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li id="li1">1</li>
+        <li class="style1">2</li>
+        <li class="style1">3</li>
+        <li name="l1">4</li>
+        <li name="l1">5</li>
+    </ul>
+    <script>
+        //get系列
+        //根据id找出,id是唯一的,所以一次找一个
+        var li = document.getElementById("li1");
+        console.log(li);
+        //classname不是唯一的,所以一次找一组
+        //HTMLCollection:html集合 是伪数组,可以循环
+        var cls = document.getElementsByClassName("style1");
+        console.log(cls);
+        //name不唯一 Nodelist:节点列表 是伪数组
+        var name = document.getElementsByName("l1");
+        console.log(name);
+        //targetname不唯一
+        //HTMLCollection(5)
+        var lis = document.getElementsByTagName("li");
+        console.log(lis);
+
+        //当前的这些查找已经很老了,效率不高,"问题多"
+    </script>
+</body>
+</html>

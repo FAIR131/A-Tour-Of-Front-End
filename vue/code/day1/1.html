@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+<div id="app">
+    <!-- 插值表达式此时与v-text是等效的 -->
+<!--
+    <span>{{msg1}}</span>
+    <span v-text="msg1"></span>
+-->
+
+    <!-- 插值表达式此时与v-text是不等效的 -->
+    <span>{{msg2}}</span>
+    <span v-text="msg2"></span>
+</div>
+
+<script>
+    Vue.config.productionTip = false;//关提示
+    new Vue({
+        el: '#app',
+        data: {
+            msg1: '今晚da老虎',
+            msg2:'<a href="www.baidu.com/">百度一下</a>'
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            重载
+                父类当中有一个func方法叫做c,有3个参数
+
+                子类当中有一个function方法叫做c,有5个参数
+
+                子类继承了父类的同名方法,但是参数不一致,则允许两种方法同时存在,根据参数的数量
+
+                Javascript当中只有重写,没有重载
+        */
+
+        function A(a,b){
+            this.a = a ;
+            this.b = b;
+            this.c = function(a,b,c){
+                return 1
+            }
+        }
+
+        //A.c  私有属性  私有方法
+        A.c = function(a,b,c){
+                return 1
+        }
+
+        function B(a,b){
+            A.call(this,a,b);
+            this.c = function(a,b,c,d,e){
+                //通过if实现伪重载
+                if(arguments.length === 3){
+                    //A函数对象把c方法借给
+                    return A.c();
+                }else{
+                    return "a";
+                }
+            }
+        }
+
+        var b1 = new B();
+
+        console.log(b1.c(1,2,3,4,5));
+
+
+    </script>
+</body>
+</html>

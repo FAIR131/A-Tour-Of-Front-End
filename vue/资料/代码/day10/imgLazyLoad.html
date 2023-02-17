@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script>
+        onscroll = function () {
+            // 文档滚动距离
+            let scrollTop = document.documentElement.scrollTop;
+            // 浏览器可视区域高度
+            let innerHeight = window.innerHeight;
+
+            let imgs = document.querySelectorAll("img");
+
+            imgs.forEach(item => {
+                if ((scrollTop + innerHeight + 200) > item.offsetTop) {
+                    item.setAttribute("src", item.getAttribute("img-url"))
+                }
+            })
+
+        }
+    </script>
+</head>
+
+<body>
+    <div style="height: 1000px;"></div>
+    <img width="300"
+        img-url="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.win4000.com%2Fpic%2Fd%2F33%2F16bc854312.jpg&refer=http%3A%2F%2Fpic1.win4000.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1669529246&t=76d42c8454727237b989067f5ec2b6df"
+        alt="">
+    <div style="height: 1000px;"></div>
+    <img width="300"
+        img-url="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.win4000.com%2Fm00%2F79%2Fde%2F6d3a9622b8acacd0614c9993a34df3a1.jpg&refer=http%3A%2F%2Fpic1.win4000.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1669530348&t=67ad8b5859578a294bf72a301d0bbde4"
+        alt="">
+</body>
+
+</html>

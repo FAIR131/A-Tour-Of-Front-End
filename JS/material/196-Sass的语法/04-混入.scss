@@ -1,0 +1,24 @@
+@mixin kerwin_transition($a:all,$b:1s) {
+    transition: $a $b;
+    -webkit-transition: $a $b;
+    -moz-transition: $a $b;
+}
+
+.box {
+    //width....
+
+    @include kerwin_transition
+}
+
+.box1 {
+    //width....
+
+    @include kerwin_transition(width,2s)
+}
+
+.box2 {
+    //width....
+
+    @include kerwin_transition(height)
+}
+

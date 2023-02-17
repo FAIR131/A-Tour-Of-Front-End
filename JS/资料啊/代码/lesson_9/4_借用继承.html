@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            借用继承
+                - 只能继承 函数对象当中的属性和方法
+                - 不能继承原型当中的属性和方法;
+                - 可以多继承
+                - 内存的开销会比较大
+                
+        */
+        function Dog(name,age){
+            this.name = name;
+            this.age = age;
+
+            this.eat = function(food){
+                 return this.name +"吃了"+ food
+            }
+        }
+        function Wolf(name,age){
+            this.name = name;
+            this.age = age;
+
+            this.eat_ = function(food){
+                 return this.name +"咬了"+ food
+            }
+        }
+
+        //方法
+        // Dog.prototype.eat = function(food){
+        //     return this.name +"吃了"+ food
+        // }
+
+        Dog.prototype.Demolition = function(arg){
+            return this.name +"拆了" + arg
+        }
+
+        //Teddy继承Dog
+        function Teddy(name,age){
+            //this->Teddy的 引用对象
+            Dog.call(this,name,age);
+            Wolf.call(this,name,age);
+        }
+
+        //Hasch继承Dog
+        function Hasch(name,age){
+            Dog.call(this,name,age);
+        }
+
+        //Teddy引用对象
+        var t1 = new Teddy("可爱",12);
+        var t2 = new Teddy("小可爱",2);
+
+        //Hasch引用对象
+        var h1 = new Hasch("二狗子",17);
+        var h2 = new Hasch("二哈",7);
+
+        //
+        console.log(t1.eat("水泥"));
+        console.log(t1.eat_("水泥"));
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            函数对象 : ES6->类对象
+            引用对象 : ES6->实例对象
+        */
+
+        function Person(idcard,name,sex){
+            this.idcard = idcard;
+            this.name = name;
+            this.sex = sex;
+        }
+
+        var p1 = new Person("0001","张三","男");
+        var p2 = new Person("0002","张四","男");
+        var p3 = new Person("0003","张⑤","男");
+        var p4 = p3; //p4 复制了 p3的编址,p3怎么改,p4也就怎么变
+
+        p3.sex = "妖";
+
+        console.log(p1.sex); //男
+        console.log(p4.sex); //
+
+        /*
+            在内存当中的关系
+
+            函数对象在内存当中有独立的空间,函数对象有一个
+
+            而不同的引用对象也具备独立的空间,每次进行引用，都会把函数对象结构复制一份，
+            并且添加上值。引用对象可以存在多个。
+        */
+    </script>
+</body>
+</html>

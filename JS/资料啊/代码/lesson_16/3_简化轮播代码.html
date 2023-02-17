@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin: 0;padding: 0;}
+
+        li {
+            list-style: none;
+        }
+
+        #box {
+            position: relative;
+            width: 800px;
+            height: 500px;
+            margin: 50px auto;
+        }
+
+        #box .list li{
+            width: 800px;
+            height: 500px;
+            display: none;
+        }
+
+        #box .list li img{
+            width: 800px;
+            height: 500px;
+        }
+
+        #box .list li:nth-child(1){
+            display: block;
+        }
+
+        .iconlist{
+            position : absolute;
+            bottom: 10px;
+            left : 50%;
+            transform: translateX(-50%);
+        }
+        .iconlist li{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: white;
+            float : left;
+            margin-right: 20px;
+
+        }
+
+        .iconlist li:nth-child(1){
+            background-color : orangered;
+        }
+
+        #box span{
+            display: block;
+            width:50px;
+            height: 100px;
+            background-color: aliceblue;
+            font-size: 50px;
+            line-height: 100px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 2s;
+            cursor: pointer;
+            
+        }
+
+        .left {
+            position:absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .right {
+            position:absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="box">
+        <ul class="list">
+            <li><img src="../lesson_15/imgs/1.webp" alt=""></li>
+            <li><img src="../lesson_15/imgs/2.webp" alt=""></li>
+            <li><img src="../lesson_15/imgs/3.webp" alt=""></li>
+            <li><img src="../lesson_15/imgs/4.webp" alt=""></li>
+            <li><img src="../lesson_15/imgs/5.webp" alt=""></li>
+        </ul>
+
+        <span class="left"> < </span>
+        <span class="right"> > </span>
+
+        <ul class="iconlist">
+            <!--自动生成,有多少张图片,那么生成多少个li-->
+        </ul>
+
+    </div>
+
+    <script> 
+        //1.获取.list > li
+
+        let lis = document.querySelectorAll(".list > li");
+        //2.获取.iconlist
+        let ul = document.querySelector(".iconlist");
+
+        //3.生成li标签,插入到ul中
+        let icon_li = "";
+        for(let i=0;i<lis.length;i++){
+            icon_li += `<li></li>`;
+        }
+        ul.innerHTML = icon_li;
+
+    </script>
+
+    <script>
+        //初始化的索引
+        let index = 0;
+
+        //找到所有的iconlist下面的li标签
+        let ioli = document.querySelectorAll(".iconlist > li");
+
+        //找到范围
+        let box = document.querySelector("#box");
+
+        //找到箭头
+        let [left,right] = document.querySelectorAll("span");
+
+        /*打包*/
+        function setDefault(obj1,obj2,index){
+            obj1[index].style.backgroundColor = "white";
+            obj2[index].style.display = "none";
+        }
+
+        function setStyle(obj1,obj2,index){
+            obj1[index].style.backgroundColor = "orangered";
+            obj2[index].style.display = "block";
+        }
+
+
+        //自动轮播
+        //体验不好
+        //当鼠标悬浮的时候,定时器清楚
+        //当鼠标离开的时候,定时器重新开始
+        let si;
+
+        function auto(){
+            si = setInterval(function(){
+                setDefault(ioli,lis,index);
+
+                index = index >= lis.length-1  ? 0 : index + 1;
+
+                setStyle(ioli,lis,index);
+            },2000)
+        }
+
+        auto();
+
+
+        /*打包结束*/
+
+        box.onmouseover = function(){
+            //显示箭头
+            left.style.opacity = 1;
+            right.style.opacity = 1;
+
+            clearInterval(si);
+        }
+        box.onmouseout = function(){
+            //隐藏箭头
+            left.style.opacity = 0;
+            right.style.opacity = 0;
+
+            auto();
+
+        }
+
+        //var : 是全局声明
+        //先循环完成的,还是选触发事件的
+        for(let i=0;i<ioli.length;i++){
+            ioli[i].onmouseover = function(){
+                //选中了谁,谁的颜色就要发生变化
+                //过滤之前的
+                setDefault(ioli,lis,index);
+
+                //显示现在的
+                setStyle(ioli,lis,i);
+
+                //更新索引
+                index = i;
+            }
+        }
+
+        left.onclick = function(){
+            //过滤之前的样式
+            setDefault(ioli,lis,index);
+        
+            index = index <= 0 ? lis.length-1 : index - 1;
+            
+            //显示现在的
+            setStyle(ioli,lis,index);
+        }
+
+
+        right.onclick = function(){
+            //过滤之前的样式
+            setDefault(ioli,lis,index);
+        
+            index = index >= lis.length-1  ? 0 : index + 1;
+            
+            //显示现在的
+            setStyle(ioli,lis,index);
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            position: relative;
+            overflow: hidden;
+            width: 700px;
+            height: 500px;
+            margin: 0 auto;
+            border: 1px solid#000;
+        }
+        ul {
+            width: 3500px;
+            height: 500px;
+            transform: translatex(0px);
+        }
+        .ultrans {
+            transition: transform .5s ease-in-out;
+        }
+        .box ul li {
+            list-style: none;
+            float: left;
+            width: 700px;
+            height: 500px;
+        }
+        li img {
+            width: 700px;
+            height: 500px;
+        }
+        .warp_btn {
+            position: absolute;
+            left: 320px;
+            bottom: 0;
+            width: 700px;
+            cursor: pointer;
+        }
+        .smallbtn {
+            width: 12px;
+            height: 12px;
+            display: inline-block;
+            border: 1px solid#fff;
+            border-radius: 50%;
+        }
+        .check {
+            background-color: #3153ff;
+        }
+    </style>
+
+</head>
+<body>
+<div class="box">
+    <ul id="banner" class="ultrans">
+        <li><img src="./img/1.webp" alt=""> </li>
+        <li><img src="./img/2.webp" alt=""> </li>
+        <li><img src="./img/3.webp" alt=""> </li>
+        <li><img src="./img/4.webp" alt=""> </li>
+        <li><img src="./img/5.webp" alt=""> </li>
+    </ul>
+    <div class="warp_btn">
+        <div class="smallbtn check"></div>
+        <div class="smallbtn"></div>
+        <div class="smallbtn"></div>
+        <div class="smallbtn"></div>
+        <div class="smallbtn"></div>
+    </div>
+</div>
+
+
+<script>
+    /*
+        * 基本轮播的配置
+        * */
+    var time = null;//接收计时器
+    var speed = 2000;//计时器的延迟时间
+    var ulBanner = document.querySelector("#banner");
+    var box = document.querySelector(".box");
+    var smallbutton = document.querySelectorAll(".smallbtn");
+    var nowimage = 0;//记录当前图片显示的索引
+    var startX = null;//记录起始点坐标
+    var saveTranform = 0;//记录之前的移动距离
+    var savebtn = 0;//记录变色按钮的索引
+
+    //克隆第一个li  添加到ul
+    ulBanner.appendChild(ulBanner.children[0].cloneNode(true));
+    ulBanner.style.width = 700 * ulBanner.children.length + "px";
+
+    function ImageAnimate() {
+        //检测是否有过渡类
+        if (!ulBanner.classList.contains("ultrans")) {
+            ulBanner.classList.add("ultrans");
+        }
+        nowimage++;
+        checkColor();
+        ulBanner.style.transform = "translatex(" + (-nowimage * 700) + "px)";
+        animateload();
+    }
+    /*
+     * 动画完成之后的方法
+     * */
+   function animateload() {
+        //做一个 ul动画完成时间
+        setTimeout(function () {
+            //判断nowimage
+            if (nowimage >= ulBanner.children.length - 1) {
+                nowimage = 0;
+                //去掉元素的过渡类
+                ulBanner.classList.remove("ultrans");
+                ulBanner.style.transform = "translatex(0px)";
+            }
+            saveTranform = -nowimage * 700;
+        }, 500);
+    }
+
+
+    /*
+       * 对应点变色的方法
+       * */
+
+    function checkColor() {
+        smallbutton[savebtn].classList.remove("check");
+        //图片变化之后  切换下面点
+        savebtn = nowimage >= ulBanner.children.length - 1 ? 0 : nowimage;
+        smallbutton[savebtn].classList.add("check");
+    }
+
+    /*
+     * 循环计时器
+     * */
+    addInterval();
+    function addInterval() {
+        time = setInterval(function () {
+            ImageAnimate();
+        }, speed);
+    }
+
+
+        /*
+         * box 事件
+         *
+         * */
+        box.onmouseenter = function () {
+            clearInterval(time);
+        }
+        box.onmouseleave = function () {
+            addInterval();
+        }
+        box.onmousedown = function (e) {
+            startX = e.pageX || e.clientX;
+            ulBanner.classList.remove("ultrans");
+            e.preventDefault();
+            //按下之后添加鼠标移动事件
+            window.addEventListener("mousemove", moveData);
+        }
+
+           document.onmouseup = function () {
+               window.removeEventListener("mousemove", moveData);
+               ulBanner.classList.add("ultrans");
+               //检测当前的移动距离
+               if (cx > 0) {
+                   if (Math.abs(cx) >= 350) {
+                       nowimage--;
+                   }
+               }
+               else if (cx < 0) {
+                   if (Math.abs(cx) >= 350) {
+                       nowimage++;
+                   }
+               }
+               ulBanner.style.transform = "translatex(" + (-nowimage * 700) + "px)";
+               checkColor();
+               animateload();
+           }
+
+    /*
+     * 移动事件监听的方法
+     * */
+    var cx = 0;
+    function moveData(e) {
+        var x = e.pageX || e.clientX; //相对当前元素的坐标
+        cx = x - startX;
+        if (cx > 0) {
+            //检测当前图左边有没有图
+            if (nowimage <= 0) {
+                nowimage = ulBanner.children.length - 1;
+                ulBanner.style.transform = "translatex(-3500px)";
+                saveTranform = -3500;
+            }
+        }
+        ulBanner.style.transform = "translatex(" + (saveTranform + cx) + "px)";
+
+    }
+
+    /*
+     * 小点添加事件  操作
+     *
+     * */
+    for (var i = 0; i < smallbutton.length; i++) {
+        smallbutton[i].index = i;
+        smallbutton[i].onmouseenter = function () {
+            smallbutton[savebtn].classList.remove("check");
+            this.classList.add("check");
+            savebtn = this.index;
+            nowimage = this.index;
+            ulBanner.style.transform = "translatex(" + (-nowimage * 700) + "px)";
+            saveTranform = -nowimage * 700;
+        }
+    }
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function A(name){
+            this.name = name;
+        }
+        A.prototype.a = function(){
+            return "a"
+        }
+
+        function B(age){
+            this.age = age;
+        }
+        B.prototype.b = function(){
+            return "b"
+        }
+        
+        function C(name,age){
+            A.call(this,name);
+            B.call(this,age);
+        }
+        //C:{fn1:{a},fn2:{b}}
+        C.prototype.fn1 = Object.create(A.prototype);
+        C.prototype.fn2 = Object.create(B.prototype);
+        
+        var c1 = new C("张三",18);
+        
+        console.log(c1.fn1.a());
+        console.log(c1.fn2.b());
+
+    </script>
+</body>
+</html>

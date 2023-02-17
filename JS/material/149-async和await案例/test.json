@@ -1,0 +1,32 @@
+{
+  "list": [
+    {
+      "text": "3333",
+      "id": 5
+    },
+    {
+      "text": "111",
+      "id": 6
+    }
+  ],
+  "looplist": [
+    {
+      "id": 1,
+      "title": "looplist-11111"
+    },
+    {
+      "id": 2,
+      "title": "looplist-222222"
+    }
+  ],
+  "datalist": [
+    {
+      "id": 1,
+      "title": "datalist-11111"
+    },
+    {
+      "id": 2,
+      "title": "datalist-222222"
+    }
+  ]
+}

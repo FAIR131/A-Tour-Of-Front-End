@@ -1,0 +1,75 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //length 可读可写
+        
+        var arr1 = [1,2,3,4,8]
+
+        console.log(arr1.length)
+
+        arr1.length = 3
+
+        console.log(arr1)
+
+        //清空数组。
+
+        arr1.length = 0
+        console.log(arr1)
+
+
+        // 索引 0,1,2,3
+
+        var arr2 = ["kerwin","xiaoming","tiechui"]
+
+        console.log(arr2[0],arr2[1],arr2[3])
+
+
+        arr2[0] = "kevin"
+
+        console.log(arr2)
+
+        arr2[3] = "gangdaner"
+        console.log(arr2)
+
+
+        arr2[5] = "aaaaaaa"
+        console.log(arr2)
+
+        // 遍历
+        var arr3 = [3,4,5,6,7,8]
+        for(var i=0; i<arr3.length; i++){
+            console.log(arr3[i])
+        }
+
+        // var arr4 = arr3 
+        // console.log(arr3,arr4)
+
+        // arr4[0] = "aaaa"
+
+        // console.log(arr3,arr4)
+
+        var arr4 = []
+
+        for(var i=0; i<arr3.length; i++){
+            // console.log(arr3[i])
+            arr4[i] = arr3[i]
+        }
+
+        console.log(arr4)
+
+        arr4[0] = "aaaaa"
+
+        console.log(arr3,arr4)
+</script>
+</body>
+</html>

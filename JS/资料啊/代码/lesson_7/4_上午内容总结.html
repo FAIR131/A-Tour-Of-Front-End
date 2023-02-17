@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            对象 : 是一种数据类型
+                : 也是一种描述数据的概念
+
+            数据结构(数据关系) : 
+                - 数组结构
+                    - 它是一个序(有顺序)列(列表)
+                    - 索引是有序的
+
+                - 对象结构(键值对)(散列结构)(哈希结构)
+                    - 无序的结构
+                    - 由key 和 value 组成
+            
+            js常用数据类型:
+                基本数据类型
+                    - String
+                    - Number
+                    - Boolean
+                    - null
+                    - undefined
+                复合数据类型
+                    - Object
+                    - Array
+        */
+
+        var obj1 = {};
+
+        var obj2 = new Object();
+
+        //函数对象(构造函数,工厂函数)
+        //Obj类 : 类型
+        function Obj(name,age){
+            //属性
+            this.name = name;
+            this.age = age;
+            //方法
+            this.action = function(arg){
+                return this.name + ":" + arg;
+            }
+        }
+
+        //引用对象
+        var o1 = new Obj("张三",10);
+
+        console.log(o1.name);
+        console.log(o1["age"]);
+        //str.indexOf();
+        console.log(o1.action("随便吃点啥"));
+
+        //再次创建一个引用对象
+        var o2 = new Obj("李四",18); 
+        console.log(o2.action("随便吃点啥"));
+
+        // console.log(typeof o2); //object
+
+        //construtor : 创建者
+        /*
+            new的时候创建引用对象
+
+            new的是一个函数对象
+
+            引用对象来源于函数对象
+
+            所以引用对象的创建者是被new的函数对象
+        */
+        console.log(o2.construtor === Obj);
+        console.log(Object.prototype.toString.call(o2)); //伪对象是使用对象生成出来
+    </script>
+</body>
+</html>

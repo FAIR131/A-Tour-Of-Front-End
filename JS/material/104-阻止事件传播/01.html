@@ -1,0 +1,46 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <button>aaa</button> -->
+    <ul id="list">
+
+    </ul>
+    <script>
+        var arr = ["111","2222","333"]
+
+        for(var i=0;i<arr.length;i++){
+            var oli = document.createElement("li")
+            oli.innerHTML = arr[i]
+
+            var obutton = document.createElement("button")
+            obutton.innerHTML = "delete"
+            obutton.onclick = handler
+            oli.appendChild(obutton)
+            
+            oli.onclick = function(){
+                location.href = "http://www.baidu.com"
+            }
+            list.appendChild(oli)
+        }
+
+        function handler(evt){
+             //阻止事件传播
+            evt.stopPropagation()
+
+            //ie
+            // evt.cancelBubble = true
+            // console.log(this.parentNode)
+            this.parentNode.parentNode.removeChild(this.parentNode)
+        }
+    </script>
+</body>
+</html>

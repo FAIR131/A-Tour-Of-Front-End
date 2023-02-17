@@ -1,0 +1,22 @@
+1、在gitee.com中新建仓库
+2、在本地代码中执行
+    先初始化全局账户配置
+        git config --global user.name 'aobortin' 
+        git config --global user.email 'aobortin@163.com'
+
+    1)、git init 
+    2)、git add .
+    3)、git commit -m '提交日志'
+    4)、git remote add origin '远程仓库地址'
+    5)、git push -u origin master
+
+3、项目成员添加到项目中
+    1)、成员找一个环境优美的文件夹,使用git clone 下载项目代码
+    2)、安装依赖后,启动项目
+    3)、增加、修改、删除文件后,可以继续走 add commit push等操作上传到远程仓库
+    4)、更新远程仓库代码用git pull
+
+4、当提交时发生文件冲突时
+    1)、先git pull,更新代码
+    2)、在找到冲突的文件,冲突的位置,与冲突的小组成员协商如何解决冲突
+    3)、解决冲突后,再次add commit push等一系列操作提交代码

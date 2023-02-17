@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var 打印调试 = console.log;
+        // 打印调试("abc");
+
+
+        //猿人
+        function Apeman(sex){
+            this.sex = sex;
+        }
+
+        Apeman.prototype.eat = function(){
+            return "吃生肉"
+        }
+
+        //野人类
+        function Savage(sex,feature){
+            this.feature = feature;
+            Apeman.call(this,sex);
+        }
+        Savage.prototype = Object.create(Apeman.prototype);
+
+        //人类
+        function Human(name,age,sex){
+            this.name = name;
+            this.age = age;
+            //继承属性
+            Apeman.call(this,sex);
+        }
+        //方法继承
+        Human.prototype = Object.create(Apeman.prototype);
+
+        Human.prototype.eat = function(){
+            return "吃熟的食物"
+        }
+        var h1 = new Human("张三",28,"男");
+        console.log(h1.eat());  //吃熟的食物
+        //h1.eat 先去对象模型当中查找,找不到,去Human原型对象中查找,找到了
+
+        //野人类 != 人类
+        /*
+                    猿人
+                    /  \
+                野人类  人类  
+
+                多态 : 多种形态
+                一个父类 可以 多个子类继承,而且每个子类的功能不完全相同
+
+                    内燃机
+                    /    \
+                汽油      柴油
+        */
+
+        /*
+            面向对象的三大特性
+                - 1.封装 : 打包代码
+                - 2.继承 : 减少相似功能的代码书写
+                - 3.多态 : 自然形成
+
+        */
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app"> </div>
+    <script>
+        //数据劫持
+        // let obj = {name:"jack",age:18};
+        // let objs = {};
+        // Object.defineProperty(objs,"name",{
+        //     get(){
+        //         //objs.name没有当前属性
+        //         //但是.name以后get函数触发
+        //         //去obj当中寻找name
+        //         return obj.name
+        //     },
+        //     set(v){
+        //         obj.name = v;
+        //     }
+        // })
+        // objs.name
+
+        
+    </script>
+
+    <script>
+        let obj = {name:"jack",age:18};
+
+        let app = document.querySelector("#app");
+        
+        //本质不变,一次只能劫持一个
+        
+        for(let k in obj){//name age
+            Object.defineProperties(obj,{
+                //_name _age
+                //备份
+                [Symbol.for(k)]:{
+                    value : obj[k],
+                    writable : true,
+                    enumerable : false
+                },
+                //name
+                [k]:{
+                    get(){
+                        console.log(1);
+                        //从劫持当中获取的
+                        return this[Symbol.for(k)];
+                    },
+                    set(v){
+                        //修改劫持的属性
+                        this[Symbol.for(k)] = v;
+                        app.innerHTML = `姓名${obj.name},年龄${obj.age},性别${obj.sex}`;
+                    }
+                }
+
+            });
+        }
+
+        app.innerHTML = `姓名${obj.name},年龄${obj.age},性别${obj.sex}`;
+        //obj.name ----> get -> obj[Symbol.for("name")] - > obj[k];
+        //劫持以后的状态
+        console.log(obj.name);
+
+        obj.name = "tom";
+
+        console.log(obj);
+
+
+        //Vue2当中的封装底层方法
+        //Vue2-->单向绑定   双向绑定
+        
+        
+        // obj.sex = "male"; //被劫持了吗
+        
+
+        // console.log(obj);
+
+        
+    </script>
+</body>
+</html>

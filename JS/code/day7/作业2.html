@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Document</title>
+  <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <script>
+    /*
+                作业二
+                封装一个函数,该函数当中有两个参数
+    
+                那个参数数组比较长,那么该数组作为key,短的作为val
+    
+                拼接成Object类型
+    
+                func(arg1,arg2){
+    
+                }
+                    
+            */
+
+    var arr1 = ["A", "B", "C", "D"];
+    var arr2 = [1, 2, 3];
+
+    function concat(arg1, arg2) {
+      var key,val;
+      if (arg1.length >= arg2.length) {
+        key = arg1;
+        val = arg2;
+      } else {
+        key = arg2;
+        val = arg1;
+      }
+
+      var obj={};
+      for(var i=0;i<key.length;i++) {
+        obj[key[i]]=val[i];
+      }
+
+      return obj
+
+    }
+
+    console.log(concat(arr1,arr2));
+
+
+  </script>
+</body>
+
+</html>

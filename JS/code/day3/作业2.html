@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var count_z = 0;
+    var count_h = 0;
+    for (var i = 2; i < 1000; i++) {
+      var flag = true;
+      for (var j = 2; j <= i** .5; j++) {
+        if (i % j == 0) {
+          flag = false;
+          break;
+        }
+      }
+      if (flag) {
+        console.log(i+'是素数');
+        count_z++;
+      }else{
+        count_h++;
+      }
+    }
+    console.log('质数'+count_z);
+    console.log('合数'+count_h);
+
+  </script>
+</body>
+
+</html>

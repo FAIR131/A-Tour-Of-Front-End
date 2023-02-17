@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var year = prompt('请输入一个年份：');
+    var status_1 = false;
+    var status_2 = false;
+
+    //判断输入的内容长度是否为0
+    //判断" "在不在输入的字符串当中
+    //length : 返回长度的数值类型数据
+    if (!year.length) {//0
+      alert("输入的长度为0");
+    } else if (year.includes(" ")) {//" " in year 打死不要用
+      //includes:包含
+      //year变量当中是否包含了" "
+      alert("输入不合法");
+    } else {
+      status_1 = true;
+    }
+
+
+
+    if (status_1 = true) {
+      year = Number(year);
+      if (isNaN(year)) {
+        alert('请合法输入')
+      } else if (year === Infinity) {
+        alert('请合法输入')
+      } else {
+        status_2 = true;
+      }
+    }
+    if (status_2) {
+      year = parseInt(year);
+
+      if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+        alert('这是闰年!');
+      } else {
+        alert('这不是闰年!');
+      }
+    }
+
+  </script>
+</body>
+
+</html>

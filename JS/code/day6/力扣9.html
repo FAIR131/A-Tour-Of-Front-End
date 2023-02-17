@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Document</title>
+  <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <script>
+    var isPalindrome = function (x) {
+      if (x < 0) {
+        return false
+      }
+      var y = x + "";
+      var arr = y.split('');
+      console.log(arr);
+      var arr1 = [];
+      for (var i = arr.length - 1; i >= 0; i--) {
+        arr1.push(arr[i]);
+      }
+      console.log(arr1);
+      var flag = true;
+      for (var i = 0; i < arr.length; i++) {
+        if (arr[i]!= arr1[i]) {
+          flag=false;
+        }
+      }
+
+      if(flag) {
+        return true;
+      }else {
+        return false;
+      }
+    }
+    console.log(isPalindrome(1000021));
+
+  </script>
+</body>
+
+</html>

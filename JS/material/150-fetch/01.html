@@ -1,0 +1,200 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="myget">get</button>
+    <button id="mypost">post1</button>
+    <button id="myput">put</button>
+    <button id="mypatch">patch</button>
+    <button id="mydelete">delete</button>
+    <script>
+        myget.onclick = function () {
+            // ajax({
+            //     url:"http://localhost:3000/users",
+            //     data:{
+            //         username:"kerwin",
+            //         password:"789"
+            //     },
+            //     success:function(res){
+            //         console.log("sucess",res)
+            //     },
+            //     error:function(err){
+            //         console.log("error",err)
+            //     }
+            // })
+            var username = "kerwin"
+            fetch(`http://localhost:3000/users111?username=${username}`)
+            .then((res)=>{
+                console.log(res)
+                if(res.ok){
+                    return res.json()
+                }else{
+                    //Promise.resolve()
+                    
+                    //拒绝
+                    return Promise.reject({
+                        a:1,
+                        status: res.status,
+                        statusText: res.statusText
+                    })
+                }
+            }) // res.json() res.text()
+            .then(res=>{
+                console.log("success",res)
+            }).catch(err=>{
+                console.log("error",err)
+            })
+
+        }
+
+        mypost.onclick = function () {
+            // ajax({
+            //     url:"http://localhost:3000/users",
+            //     data:{
+            //         username:"xiaoming",
+            //         password:"456"
+            //     },
+            //     method:"POST",
+            //     headers:{
+            //         "content-type":"application/x-www-form-urlencoded"
+            //     },
+            //     success:function(res){
+            //         console.log("sucess",res)
+            //     },
+            //     error:function(err){
+            //         console.log("error",err)
+            //     }
+            // })
+
+            // fetch("http://localhost:3000/users",{
+            //     method:"POST",
+            //     headers:{
+            //         "content-type":"application/x-www-form-urlencoded"
+            //     },
+            //     body:"username=tiechui&password=123"
+            // })
+            // .then(res=>res.json())
+            // .then(res=>{
+            //     console.log(res)
+            // })
+
+            fetch("http://localhost:3000/users",{
+                method:"POST",
+                headers:{
+                    "content-type":"application/json"
+                },
+                body:JSON.stringify({
+                    username:"shanzhen",
+                    password:"234"
+                })
+            })
+            .then(res=>res.json())
+            .then(res=>{
+                console.log(res)
+            })
+        }
+
+        myput.onclick = function () {
+            // ajax({
+            //     url:"http://localhost:3000/users/1",
+            //     data:{
+            //         username:"ximenteacher1111",
+                    
+            //     },
+            //     method:"PUT",
+            //     headers:{
+            //         "content-type":"application/json"
+            //     },
+            //     success:function(res){
+            //         console.log("sucess",res)
+            //     },
+            //     error:function(err){
+            //         console.log("error",err)
+            //     }
+            // })
+
+            fetch("http://localhost:3000/users/2",{
+                method:"PUT",
+                headers:{
+                    "content-type":"application/json"
+                },
+                body:JSON.stringify({
+                    username:"shanzhen",
+                    // password:"234"
+                })
+            })
+            .then(res=>res.json())
+            .then(res=>{
+                console.log(res)
+            })
+        }
+
+        mypatch.onclick = function () {
+            // ajax({
+            //     url:"http://localhost:3000/users/1",
+            //     data:{
+            //         username:"ximenteacher1111",
+                    
+            //     },
+            //     method:"PATCH",
+            //     headers:{
+            //         "content-type":"application/json"
+            //     },
+            //     success:function(res){
+            //         console.log("sucess",res)
+            //     },
+            //     error:function(err){
+            //         console.log("error",err)
+            //     }
+            // })
+
+            fetch("http://localhost:3000/users/3",{
+                method:"PATCH",
+                headers:{
+                    "content-type":"application/json"
+                },
+                body:JSON.stringify({
+                    username:"shanzhen",
+                    // password:"234"
+                })
+            })
+            .then(res=>res.json())
+            .then(res=>{
+                console.log(res)
+            })
+        }
+
+        mydelete.onclick = function () {
+            // ajax({
+            //     url:"http://localhost:3000/users/1",
+                
+            //     method:"delete",
+            //     success:function(res){
+            //         console.log("sucess",res)
+            //     },
+            //     error:function(err){
+            //         console.log("error",err)
+            //     }
+            // })
+            fetch("http://localhost:3000/users/2",{
+                method:"delete"
+            })
+            .then(res=>res.json())
+            .then(res=>{
+                console.log(res)
+            })
+        }
+    </script>
+</body>
+
+</html>

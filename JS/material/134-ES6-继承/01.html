@@ -1,0 +1,43 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //父类
+        class Person {
+            constructor(name,age){
+                this.name = name
+                this.age = age
+            }
+            say(){
+                console.log(this.name,"hello")
+            }
+        }
+        //子类
+        //extends 原型继承
+        class Student extends Person{
+            constructor(name,age,grade){
+                super(name,age) // Person.call(this,name,age)
+                this.grade = grade
+            }
+
+            say(){
+                super.say() //语法糖
+                console.log(this.name,"你好")
+            }
+        }
+
+        var obj = new Student("kerwin",100,100)
+        console.log(obj)
+        obj.say()
+    </script>
+</body>
+</html>

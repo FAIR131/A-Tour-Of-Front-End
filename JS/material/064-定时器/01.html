@@ -1,0 +1,54 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="btn1" >清除定时器-延时</button>
+    <button id="btn2">清除定时器-间隔</button>
+    <script>
+        //倒计时
+        //window.alert()
+
+        var time1= setTimeout(function(){
+            console.log("kerwin")
+        },2000) //注册定时器
+
+
+        //setInterval
+
+        var time2= setInterval(function(){
+            console.log(new Date())
+        },1000) //注册间隔定时器
+
+
+        console.log(time1,time2)
+
+        // clearTimeout(time1)
+        // clearInterval(time2)
+
+        console.log(btn1,btn2) //直接通过id，拿到按钮对象
+
+        btn1.onclick = function(){
+            console.log("btn1 click")
+
+            clearTimeout(time1)
+        }
+
+        btn2.onclick = function(){
+            console.log("btn2 click")
+            clearInterval(time2)
+        }
+
+
+        // 异步执行问题
+    </script>
+</body>
+</html>

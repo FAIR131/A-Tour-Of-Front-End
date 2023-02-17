@@ -1,0 +1,17 @@
+.container{
+    background: #3d588d;
+    height: 100%;
+    .adm-image{
+        padding: 60px;
+    }
+    .adm-form{
+        background: white;
+        margin: 0 4px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .adm-form .protocol{
+        text-decoration: none;
+        color: blue;
+    }
+}

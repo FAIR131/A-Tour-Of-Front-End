@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <li>古力娜扎</li>
+    <li>迪丽热巴</li>
+    <li>玛尔扎哈</li>
+    <li>真皮沙发</li>
+    
+    <script>
+        //点击任意的li标签,改变所有标签的内容
+        /*
+            1.先获取所有的li-dom对象
+            2.给每个li绑定点击事件
+            3.替换li的值
+        */
+
+        var lis = document.querySelectorAll("li");
+        //[]
+        lis.forEach(function(item){
+            //item->li
+            item.onclick = function(){
+                /*
+                    item是循环当中的li对象
+                    item去修改值,只能修改一个
+                */
+               lis.forEach(function(li){
+                    li.innerText = "abcd";
+               })
+            }
+        });
+
+        
+    </script>
+</body>
+</html>

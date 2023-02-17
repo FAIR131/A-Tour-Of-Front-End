@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script> 
+        //增加数据
+        var obj = {};
+
+        obj.name = "A";
+        obj["sex"] = "B";
+
+
+        //查询
+        console.log(obj.name);
+        console.log(obj["sex"]);
+
+        //修改
+        //把名称修改
+        obj.name = "ABC";
+        console.log(obj["name"]);
+
+        //删除
+        delete obj.sex
+        console.log(obj);
+
+    </script>
+</body>
+</html>

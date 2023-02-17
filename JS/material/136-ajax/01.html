@@ -1,0 +1,66 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //ajax ===async javascript and xml(闭合标签)
+
+        //JSON.parse() 
+
+        //1. 创建XHR new XMLHttpRequest()
+
+
+        var xhr = new XMLHttpRequest()
+        console.log(xhr)
+
+        //2。配置 open(请求方式，请求地址，是否异步)
+        //localhost本机域名 127.0.0.1 本机ip
+        // baidu.com 域名     221...... ip
+        xhr.open("GET","http://localhost:5500/136-ajax/1.json")
+
+
+        //3. send 
+
+        xhr.send()
+
+
+        //4. 接受数据，注册一个事件
+        //btn.onclick = function(){} 
+        // xhr.onreadystatechange = function(){
+        //     // console.log(xhr.readyState)
+        //     // console.log(xhr.readyState,xhr.responseText)
+        //     if(xhr.readyState===4 && xhr.status=== 200){
+        //         console.log("数据解析完成",xhr.responseText)
+
+        //         document.write(xhr.responseText)
+        //     }else if(xhr.readyState===4 && xhr.status=== 404){
+        //         console.error("没有找到这个页面")
+        //         // location.href = "404.html"
+        //     }
+
+        //     //200 ok
+        //     //404 未找到页面。
+        // }
+
+
+        xhr.onload = function(){
+            // console.log(xhr.responseText)
+            if(xhr.status===200){
+                // document.write(xhr.responseText)
+                console.log(JSON.parse(xhr.responseText))
+            }else if(xhr.status===404){
+                console.error("没有找到这个页面")
+                // location.href = "404.html"
+            }
+        }
+    </script>
+</body>
+</html>

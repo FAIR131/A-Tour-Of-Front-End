@@ -1,0 +1,30 @@
+div {
+    width: 100px;
+    height: 100px;
+
+    p {
+        width: 50px;
+        height: 50px;
+
+        span{
+            color:red;
+        }
+    }
+}
+ul {
+    > li{
+        background:yellow;
+        &:hover{
+            background-color: red;
+        }
+
+        &.active{
+            background:blue;
+        }
+    }
+
+    // > li:hover{
+    //     background:red;
+    // }
+}
+

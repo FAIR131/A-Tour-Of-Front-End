@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    </style>
+</head>
+<body>
+
+<!--3、根据公式（身高-108）*2 = 体重，可以有10斤左右的浮动。来观察测试者体重是否标准(身高：cm)-->
+<script>
+
+    let height = Number(prompt('请输入身高'));
+    let weight = Number(prompt('请输入体重'));
+
+    let norm = (height - 108)*2
+    if(Math.abs(norm - weight)<10){
+        console.log('您的体重标准')
+    }else{
+        console.log('您的体重不标准')
+    }
+</script>
+</body>
+</html>

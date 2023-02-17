@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 1400px;
+            margin: auto;
+        }
+        ul{
+            position: absolute;
+            top : 585px;
+            right: 65px;
+        }
+        ul>li{
+            border: 1px solid black;
+            line-height: 50px;
+            text-align: center;
+            list-style: none;
+            width: 50px;
+            height: 50px;
+            background-color: aqua;
+            cursor: pointer;
+        }
+
+        div:nth-child(1){
+            width: 1400px;
+            height: 100px;
+            background-color: gray;
+            opacity: 0.6;
+        }
+
+        div:nth-child(2){
+            width: 1400px;
+            height: 500px;
+            background-color: red;
+        }
+        div:nth-child(3){
+            width: 1400px;
+            height: 500px;
+            background-color: blue;
+        }
+        div:nth-child(4){
+            width: 1400px;
+            height: 500px;
+            background-color: purple;
+        }
+        div:nth-child(5){
+            width: 1400px;
+            height: 500px;
+            background-color: pink;
+        }
+        
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <ul>
+        <li index="2">B</li>
+        <li index="3">C</li>
+        <li index="4">D</li>
+        <li index="5">E</li>
+        <li index="1">回到顶部</li>
+    </ul>
+
+    <script>
+        //滚轮事件
+        /*
+            1.找到第一个div和第二个div
+            2.添加滚轮事件
+            3.比对滚动高度
+            4.变动position
+        
+        */
+        let ul = document.querySelector("ul");
+        let div1 = document.querySelector("div");
+        let div2 = div1.nextElementSibling; //下一个元素兄弟
+
+        let div2Top = div2.offsetTop + div2.offsetHeight;
+
+        window.onscroll = function(){
+            //滚动的距离(距离顶部)
+            let s = document.documentElement.scrollTop;
+            if(s >= div2Top){
+                div1.style.position = "fixed";
+
+                ul.style.position = "fixed";
+            }else{
+                div1.style.position = "static";
+
+                ul.style.position = "absolute";
+            }
+            
+        }
+
+        ul.onclick = function(e){
+            if(e.target.nodeName === "LI"){
+                //获取li当中的index
+                let ind = e.target.getAttribute("index");
+                let d = document.querySelector(`div:nth-child(${ind})`);
+                // console.log(document.defaultView.getComputedStyle(d).backgroundColor);
+                //获取当前div距离顶部的像素值
+                //把距离交给
+                document.documentElement.scrollTop = d.offsetTop;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+      }
+
+      ul,
+      li {
+        list-style: none;
+      }
+
+      .box {
+        position: relative;
+        margin: 30px auto;
+        width: 500px;
+        height: 500px;
+      }
+
+      .img_list {
+        width: 500px;
+        height: 500px;
+      }
+
+      .img_list li {
+        display: none;
+      }
+      .img_list li:first-child {
+        display: block;
+      }
+
+      img {
+        width: 500px;
+        height: 500px;
+      }
+
+      span {
+        display: none;
+        width: 50px;
+        height: 100px;
+        background-color: rgba(255, 255, 255, 0.5);
+        font-size: 50px;
+        color: #fff;
+        line-height: 100px;
+      }
+
+      .left {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .right {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+      }
+
+      .cir_list {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .cir_list li {
+        float: left;
+        width: 20px;
+        height: 20px;
+        background-color: #fff;
+        margin-right: 10px;
+        border-radius: 50%;
+      }
+
+      .cir_list li:first-child {
+        background-color: orangered;
+      }
+      </style>
+</head>
+<body>
+    
+    <script src="./封装.js">
+
+    </script>
+
+    <script>
+          let src_arr = [
+                "./img/1.webp",
+                "./img/2.webp",
+                "./img/3.webp",
+                "./img/4.webp",
+                "./img/5.webp"
+             
+        ];
+    
+        let newObj = new Swiper(document.body , src_arr);
+    </script>
+</body>
+</html>

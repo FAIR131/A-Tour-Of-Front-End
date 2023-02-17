@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+<div id="app">
+
+    <p>{{msg}}</p>
+    <p>{{words}}</p>
+   <p> {{say()}}</p>
+    <p>{{num}}</p>
+
+</div>
+
+
+<script>
+    let obj = {
+        data: {
+            words:'今天有点冷'
+        },
+        methods:{
+            say:function (){
+                console.log('hi')
+            }
+        }
+    }
+
+/*    let obj2={
+        data:{
+            num:100
+        }
+    }  */
+
+    //全局混入
+    let obj2={
+        data: function (){
+            return {
+                num:100
+            }
+        }
+    }
+
+    Vue.mixin(obj2)
+    new Vue({
+        el: '#app',
+        data: {
+            msg:'吵死了'
+        },
+        methods:{},
+        // mixins:[obj,obj2]
+        mixins:[obj]
+    })
+</script>
+</body>
+</html>

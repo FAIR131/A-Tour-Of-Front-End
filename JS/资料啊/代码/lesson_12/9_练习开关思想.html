@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="" style="width:500px" />
+    <script>
+        var imgSrc = ["1.jpeg","2.webp","3.webp","4.webp"];
+
+        var img = document.querySelector("img");
+
+        var index = 0;
+
+        //当网页加载完成以后,默认显示第一张
+        //把src写到哪里去
+        window.onload = function(){
+            img.src = "./imgs/"+imgSrc[index];
+        }
+
+
+        //点击图片,切换图片
+        //2 3 4 1 
+        //当前的索引是多少了
+        img.onclick = function(){
+            if(index>2){//0 1 2 
+                index = -1;
+            }
+            img.src = "./imgs/"+imgSrc[++index];//1 2 3
+        }
+    </script>
+</body>
+</html>

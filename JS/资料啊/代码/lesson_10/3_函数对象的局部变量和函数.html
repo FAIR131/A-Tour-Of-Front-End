@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(name,age){
+            //
+            this.name = name;
+            this.age = age;
+            //函数当中的变量,只能在函数内部运行
+            var _name = "张三";
+            var _age  = 28;
+
+
+            this.func = function(){
+                return _name
+            }
+            //函数当中函数 内部封装
+            /*
+                为什么使用局部函数了?
+                    实现内部封装
+                        - 如果某一个功能重复使用(打包成函数)
+                        - 但是这个函数不想给调用者再外部使用
+                        - 也不想被其它的函数对象使用
+            */
+            function foo(){
+                return 321
+            }
+        }
+
+        var p1 = new Person("王五",100);
+
+        console.log(p1.name);  // 王五
+        console.log(p1.func()); // undefined
+
+
+    </script>
+</body>
+</html>

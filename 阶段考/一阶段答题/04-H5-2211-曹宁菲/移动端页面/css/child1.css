@@ -1,0 +1,252 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  font-size: 26.67vw;
+}
+
+/* 头部 */
+.head {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0.15rem 0.15rem;
+  width: 100%;
+  height: 0.6rem;
+  font-weight: bold;
+}
+
+.head .iconfont {
+  font-size: 0.2rem !important;
+  color: #f83244;
+}
+
+.head .head-nav {
+  display: flex;
+  justify-content: space-around;
+  width: 55%;
+  height: 0.4rem;
+  line-height: 0.3rem;
+  /* background-color: pink; */
+}
+
+.head .head-nav .actived {
+  color: #f83244;
+  border-bottom: 1px solid #f83244;
+
+}
+
+
+/* 内容大盒子 */
+
+.box {
+  position: fixed;
+  top: 0.6rem;
+  bottom: 0.5rem;
+  left: 0;
+  right: 0;
+  overflow: auto;
+  background-color: #f1f4f6;
+}
+
+.banner{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 .15rem;
+  width: 100%;
+  height: 1.8rem;
+  background-color: #fff;
+}
+
+.banner .left{
+  width: 68%;
+  height: 1.8rem;
+}
+
+.banner .right{
+  width: 30%;
+  height: 1.8rem;
+}
+
+.banner .right{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.banner .left img,
+.banner .right img{
+  width: 100%;
+  height: 100%;
+}
+
+/* 看帖子 */
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 0.05rem;
+  height: 0.4rem;
+  line-height: 0.4rem;
+  background-color: #fff;
+}
+
+.title .left {
+  font-size: 0.18rem;
+  font-weight: 500;
+}
+
+.title .right {
+  font-size: 0.12rem;
+  font-weight: bold;
+  color: #ccc;
+}
+
+.title .color {
+  position: absolute;
+  top: 0.1rem;
+  left: -0.15rem;
+  width: 0.04rem;
+  height: 0.2rem;
+  background-color: red;
+}
+
+/* 帖子 */
+
+.look {
+  overflow: hidden;
+  padding: 0 0.15rem;
+  width: 100%;
+  height: 2.6rem;
+  background-color: #fff;
+}
+
+
+.look .nav {
+  width: 100%;
+  height: 2.5rem;
+  border-bottom: 1px solid #ccc;
+  /* background-color: pink; */
+}
+
+.look .nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  height: 2rem;
+}
+
+.look .nav .list {
+  width: 25%;
+  height: 1rem;
+  /* background-color: skyblue; */
+  text-align: center;
+  font-size: 0.12rem;
+}
+
+.look .nav .list .pic {
+  margin: .1rem;
+  width: 0.65rem;
+  height: 0.45rem;
+}
+
+.look .nav .list .pic img{
+  width: 100%;
+  height: 100%;
+
+}
+
+.look .nav .list a p{
+  font-weight: bold;
+}
+
+.look .nav .list .money{
+  color: red;
+}
+
+
+/* 热帖 */
+.hot{
+  padding: 0 0.15rem;
+  width: 100%;
+  height: 2rem;
+  background-color: #fff;
+}
+
+.hot .top{
+  display: flex;
+  height: 0.3rem;
+  line-height: 0.3rem;
+  color: #666;
+}
+
+.hot .top .pic{
+  width: 0.2rem;
+  height: 0.2rem;
+}
+
+.hot .top .pic img{
+  width: 100%;
+  height: 100%;
+}
+
+.hot .bottom{
+  display: flex;
+  font-weight: bold;
+  font-size: .16rem;
+}
+
+.hot .bottom .left{
+  margin-right: 0.1rem;
+  width: 0.2rem;
+  height: 0.2rem;
+  font-size: .14rem;
+  font-weight: normal;
+  text-align: center;
+  line-height: .2rem;
+  color: #fff;
+  background-color: #ffcff3;
+}
+
+
+/* 底部 */
+.footer {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.5rem;
+  /* background-color: skyblue; */
+}
+
+.footer > div {
+  width: 20%;
+  height: 0.7rem;
+  /* background-color: palegreen; */
+  text-align: center;
+  color: gray;
+  font-size: 0.12rem;
+  font-weight: 500;
+}
+
+.footer > div a {
+  display: inline-block;
+  width: 100%;
+  height: 0.7rem;
+  color: gray;
+  /* background-color: pink; */
+}
+
+.footer > div .iconfont {
+  font-size: 0.2rem !important;
+}
+
+.footer .actived a {
+  color: #e94544;
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <style>
+        ul, li {
+            overflow: hidden;
+            list-style: none;
+            padding: 10px;
+        }
+
+        li img {
+            float: left;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="box">
+    <button @click="handelFetch">fetch</button>
+    <ul>
+        <li v-for="item in datalist" :data="item.filmId">
+            <img :src="item.poster">
+            {{ item.name }}
+        </li>
+    </ul>
+</div>
+<script type="text/javascript">
+
+    new Vue({
+        el: '#box',
+        data: {
+            datalist: []
+        },
+        methods: {
+            handelFetch() {
+                /* fetch("http://localhost:8080/code/day10/fetch/json/test.json")
+                     .then(res => {
+                         // console.log(res)
+                         //状态码，响应头，拿不到真正数据
+                         return res.json()
+                     }).then(res => {
+                     console.log(res)
+                 }).catch(err => {
+                     console.log(err)
+                 })*/
+
+
+                /*             // post-1
+                             fetch("*",{
+                                 method:'post',
+                                 headers:{
+                                     "Content-Type":"application/x-www-form-urlencoded"
+                                 },
+                                 body:"name=abc&age=100"
+                             }).then(res=>res.json()).then(res=>{console.log(res)})
+                         */
+
+                /*              // post-2
+                              fetch("*", {
+                                  method: 'post',
+                                  headers: {
+                                      "Content-Type": "application/json"
+                                  },
+                                  body: JSON.stringify({
+                                      name: 'abc',
+                                      age: 100
+                                  })
+                              }).then(res => res.json()).then(res => {
+                                  console.log(res)
+                              })*/
+
+
+                fetch("./json/maizuo.json")
+                    .then(res => {
+                        // console.log(res)
+                        //状态码，响应头，拿不到真正数据
+                        return res.json()
+                    }).then(res => {
+                    console.log(res.data.films)
+                    this.datalist = res.data.films
+                }).catch(err => {
+                    console.log(err)
+                })
+
+            }
+        }
+    })
+</script>
+</body>
+</html>

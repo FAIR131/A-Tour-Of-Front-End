@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+        var prototype = {constructor:Object}
+
+        //Hasch.prototype = Dog.prototype;
+        //引用(公用)
+
+        //Object.create 创建一个新的空对象,然后把被复制的原型对象当中的属性和方法递归拷贝过来
+        //Object.assign 把原有的对象合并起来,还使用原来的空间
+        var __proto__ = Object.create(prototype);
+
+        __proto__.a = 1;
+        __proto__.b = 2;
+
+
+        console.log(__proto__);
+
+
+    </script>
+</body>
+</html>

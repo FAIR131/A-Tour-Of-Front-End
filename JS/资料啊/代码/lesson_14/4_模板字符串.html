@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            ES5 : ""  ''
+        */
+    //    var a = "张三";
+    //    var b = a + "是男枪";
+
+    //    let a = "李四";
+    //    //${可以解析js语法}
+    //    let b = `${a}是男枪`;
+    //    console.log(b);
+    </script>
+
+    <script>
+        //打印表格
+        let table = `<table border="1px">`;
+        for(let i=1;i<10;i++){
+            table += `<tr>`;
+            for(let j=1;j<i;j++){
+                table += `<td>${j}x${i}=${i*j}</td>`;
+            }
+            table += `</tr>`;
+        }
+        table += `</table>`;
+
+        document.write(table);
+    </script>
+</body>
+</html>

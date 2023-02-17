@@ -1,0 +1,80 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*闭包：
+         函数内部返回一个函数，被外界所引用。
+         这个内部函数就不会被销毁回收。
+         内部函数所用到的外部函数的变量也不会被销毁。
+        
+        */
+
+        function outer(){
+            var name = "kerwin"
+            var age = 100
+            return function(){
+                return name+"11111111111111"
+            }
+        }
+
+        var func = outer()
+
+        console.log(func())
+
+        func()
+
+        func()
+
+        /*
+          优点：让临时变量永驻内存
+          缺点：内存泄漏 func = null
+        
+        */
+
+
+        // fetch("http://www.a.com/aaa")
+        // fetch("http://www.a.com/bbb")
+        // fetch("http://www.b.com/aaa")
+        // fetch("http://www.b.com/bbb")
+        // fetch("http://www.c.com/aaa")
+        // fetch("http://www.c.com/bbb")
+
+
+
+        function FetchContainer(url){
+            
+            return function(path){
+                return fetch(url+path)
+            }
+        }
+
+        var fetcha = FetchContainer("http://www.a.com")
+
+        fetcha("/aaa").then(res=>res.json()).then(res=>console.log(res))
+        fetcha("/bbb").then(res=>res.json()).then(res=>console.log(res))
+        fetcha("/ccc").then(res=>res.json()).then(res=>console.log(res))
+        fetcha("/ddd").then(res=>res.json()).then(res=>console.log(res))
+
+
+        fetcha = null
+
+        var fetchb = FetchContainer("http://www.b.com")
+
+        fetchb("/aaa").then(res=>res.json()).then(res=>console.log(res))
+        fetchb("/bbb").then(res=>res.json()).then(res=>console.log(res))
+        fetchb("/ccc").then(res=>res.json()).then(res=>console.log(res))
+        fetchb("/ddd").then(res=>res.json()).then(res=>console.log(res))
+        fetchb = null
+        //闭包应用：函数柯里化
+    </script>
+</body>
+</html>

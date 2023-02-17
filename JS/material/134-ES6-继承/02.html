@@ -1,0 +1,82 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box1">
+        <h1></h1>
+        <ul></ul>
+    </div>
+
+    <div class="box2">
+        <h1></h1>
+        <img src="" style="width: 100px;">
+        <ul></ul>
+    </div>
+    <script>
+        var data1 = {
+            title: "体育",
+            list: ["体育-1", "体育-2", "体育-3"]
+        }
+
+        var data2 = {
+            title: "综艺",
+            url: "https://pic.maizuo.com/usr/movie/5011ee407fb407d47e333a3935ec33d1.jpg?x-oss-process=image/quality,Q_70",
+            list: ["综艺-1", "综艺-2", "综艺3"]
+        }
+        class CreateList {
+            constructor(select, data = {}) {
+                this.ele = document.querySelector(select)
+                this.title = data.title,
+                    this.list = data.list
+
+                this.render()
+            }
+
+            
+
+            render() {
+                //渲染页面
+                var h1 = this.ele.querySelector("h1")
+                var ul = this.ele.querySelector("ul")
+
+                // console.log(h1,ul)
+
+                h1.innerHTML = this.title
+                ul.innerHTML = this.list.map(item => `<li>${item}</li>`).join("")
+            }
+        }
+
+
+        var obj1 = new CreateList(".box1", data1)
+        
+
+        class CreateImgList extends CreateList {
+            constructor(select, data = {}) {
+                super(select, data)
+                this.imgUrl = data.url
+                this.render()
+            }
+
+            render() {
+                super.render()
+                var img = this.ele.querySelector("img")
+                img.src = this.imgUrl
+            }
+        }
+        var obj2 = new CreateImgList(".box2", data2)
+       
+        // console.log(obj2)
+    </script>
+</body>
+
+</html>

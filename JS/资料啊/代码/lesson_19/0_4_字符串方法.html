@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //字符串方法
+
+
+
+        let str = `当地时间9月13日,
+        华尔街一片“愁云惨淡”:美国8月通胀率高于预期达8.3%,
+        三大股指也全线暴跌。面对如此情境,
+        此前曾“重新定义”经济衰退的美国财长耶伦当天也不得不承认`;
+
+        //获取指定索引的值
+        console.log(str[0])
+        
+        //检测包含关系
+        console.log(str.includes("美国"));
+
+        //以什么开头
+        console.log(str.startsWith("当地时间"));
+
+        //以什么结尾
+        console.log(str.endsWith("不承认"));
+
+        //检测指定字符的索引
+        console.log(str.indexOf("美国"));//lastIndexOf()
+
+        //包装类 : 
+        console.log(str)
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [];
+
+        var arr1 = new Array(); //生成一个空数组
+
+        //写入元素
+        arr[arr.length] = 1;
+        arr.push(2);
+        arr.unshift(0);
+        arr.splice(1,0,"a");//在索引为1的位置裁剪0个,并且补充"a"
+
+        //查询 : 索引
+        arr[0]
+        arr.indexOf("a"); //根据什么值查找元素的索引
+
+        for(var i=0;i<arr.length;i++){
+            if(arr[i] === "a"){
+                // console.log(i);
+            }
+        }
+
+        //修改
+
+        for(var i=0;i<arr.length;i++){
+            if(arr[i] === "a"){
+                arr[i] = "b"
+            }
+        }
+
+        //删除
+        arr.pop();  //删除右边的
+        arr.shift(); //删除左边
+        arr.splice(2,3); //删除任意
+    </script>
+
+    <script>
+        //不规则数组
+        var arr = [
+            [1,2,3,4,5],
+            1,
+            2,
+            [2,3]
+        ]
+
+        //把所有的元素全部打印
+        //先循环外层数组
+        //判断内存子元素,如果是数组,则继续循环
+
+        for(var i in arr){
+            if(arr[i] instanceof Array){
+                for(var j in arr[i]){
+                    console.log("->",arr[i][j])
+                }
+            }else{
+                console.log(arr[i]);
+            }
+        }
+    </script>
+</body>
+</html>

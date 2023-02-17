@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            同步 : 一步一步运行
+            
+            办理业务,柜台排队,前面有100个人
+        */
+        // console.log("11111111");
+
+        // var a = 1;
+
+        // //造成阻塞
+        // while(a<199999999){
+        //     a++
+        // }
+
+        // console.log(a);
+       
+    </script>
+
+    <script>
+       
+
+        // var a = 2;
+
+        // //造成阻塞
+        // /*
+        //     setTimeout  : 延时器,延迟出发一次
+        //     setInterval : 定时器,每间隔多长时间运行一次
+        // */
+
+        // setTimeout(function(){
+        //     console.log(1);
+        // },1000); //1000ms = 1s
+
+
+        // console.log(a);//2 1
+
+        
+    </script>
+
+    <script>
+
+        // var a = 0;
+
+        // //异步函数在同步之后运行
+        // setInterval(()=>{
+        //     a = 1;
+        // },1000)
+
+        // console.log(a);//0
+
+
+    </script>
+
+    <script>
+        var a;
+
+        //异步函数在同步之后运行
+        setTimeout(()=>{
+            a = 1;
+        })
+        
+        console.log(a); //undefined
+
+    </script>
+</body>
+</html>

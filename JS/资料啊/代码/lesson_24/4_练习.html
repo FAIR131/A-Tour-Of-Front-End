@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        div{
+            position: relative;
+        }
+        span{
+            position: relative;
+            display: block;
+            width: 80px;
+            height: 30px;
+            border: 1px solid black;
+            z-index : 100;
+            background-color: chartreuse;
+        }
+
+        ul{
+            position: absolute;
+            top : -160px;
+            margin: 0px;
+            padding: 0px;
+            z-index: 1;
+            background-color: pink;
+        }
+        li{
+            list-style: none;
+            width: 80px;
+            height: 30px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <span>菜单</span>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+    </div>
+
+    <script>
+
+        let span = document.querySelector("span");
+        let ul = document.querySelector("ul");
+
+        span.onmouseover = function(){
+            //获取ul的高度
+            let h = ul.offsetHeight;
+            //几秒之内全部移动出来
+            let s = 2000;
+            //等份
+            let n = 200;
+          
+            let sign = setInterval(function(){
+                if(ul.offsetTop >= 30){
+                    clearInterval(sign);
+                }
+                
+                ul.style.top = ul.offsetTop + h/n + "px";
+                
+            },s/n);//200
+        }
+
+        span.onmouseout = function(){
+            //获取ul的高度
+            let h = ul.offsetHeight;
+            //几秒之内全部移动出来
+            let s = 2000;
+            //等份
+            let n = 200;
+          
+            let sign = setInterval(function(){
+                if(ul.offsetTop <= -160){
+                    clearInterval(sign);
+                }
+                
+                ul.style.top = ul.offsetTop - h/n + "px";
+                
+            },s/n);//200
+        }
+
+    </script>
+</body>
+</html>

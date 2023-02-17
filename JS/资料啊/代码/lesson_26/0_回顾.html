@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //闭包
+        // function a(){
+        //     //Object.keys(); //函数的调用 -API - 接口
+        //     return function (){//函数内部套用函数,把内部函数作为返回
+
+        //     }
+        // }
+
+
+        // function b(a){//是一个闭包,要求每个函数只接受几个一个参数   
+        //     return function(b){
+        //         return a**b
+        //     }
+        // }
+
+        // let res = b(10);//function
+        // res(2); 
+
+        // function demo(){
+        //     let a = 1;
+        //     return {//Object
+        //         geta : function(){return a},//
+        //         seta : function(v){ a = v}
+        //     }
+        // }
+
+        // let d = demo();//d = Object
+        // console.log(d.geta()); // 1
+
+        // class A{
+        //     #ins = 2;
+
+        //     //geter
+        //     get getIns(){
+        //         return this.#ins
+        //     }
+
+        //     set setIns(v){
+        //         this.#ins = v;
+        //     }
+        // }
+
+        // let newa = new A();
+        // // console.log(A.#ins);
+
+        // console.log(newa.getIns);
+    </script>
+
+    <script>
+        //Vue数据驱动视图,不操控dom
+        
+        //数据劫持
+        /*
+            set : 一旦被修改,则从新运行函数
+            get
+
+            Vue2当中使用双向绑定模式
+        */
+
+
+        //数据代理
+        /*
+            使用的那一刻,才开始寻找的
+            可以实时的添加内容
+
+
+            Vue3框架使用
+        */
+        
+    </script>
+
+    <script>
+        
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "film-list":"/components/filmList"
+  },
+  "enablePullDownRefresh": true
+}

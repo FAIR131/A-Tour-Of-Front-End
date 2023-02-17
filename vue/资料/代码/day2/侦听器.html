@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>{{num}}</p>
+        <p>{{plusNum}}</p>
+        <button @click="num++">自增</button>
+        <hr/>
+        {{user.username}}
+        <button @click="user.username='lisi'">改名</button>
+    </div>
+
+    <script>
+        Vue.config.productionTip = false;
+
+        let app=new Vue({
+            el: "#app",
+            data: {
+                num:100,
+                user:{
+                    username:"zhangsan",
+                    age:20
+                }
+            },
+            methods: {
+                
+            },
+            computed:{
+                plusNum:function(){
+                    return this.num*10
+                },
+                newUser:function(){
+                    // 深拷贝
+                    return JSON.parse(JSON.stringify(this.user))
+                }
+            },
+            watch:{
+                // 侦听器可以侦听实例上的属性,当属性的值改变时,侦听器会被触发
+                num:function(newVal,oldVal){
+                    console.log("侦听num",newVal,oldVal);
+                },
+                plusNum:function(newVal,oldVal){
+                    console.log("侦听plusNum",newVal,oldVal);
+                },
+                // user:function(newVal,oldVal){
+                //     console.log("侦听username",newVal,oldVal);
+                // }
+                newUser:function(newVal,oldVal){//深度侦听
+                    console.log("侦听newUser",newVal,oldVal);
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

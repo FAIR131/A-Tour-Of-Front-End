@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Dog(name){
+            this.name = name;
+        }
+
+        //引用对象
+        var d1 = new Dog("ab");
+        //[[prototype]] = __proto__
+        console.log(d1);
+
+        //d1.constructor 谁创建了d1,函数对象Dog创建了引用对象d1
+        console.log(d1.constructor);
+        //d1.__proto__.constructor 谁创建了 该原型对象 ,函数Dog创建了 当前的原型对象
+        console.log(d1.__proto__.constructor);
+
+    </script>
+
+    <script>
+        function Cat(name){
+            this.name = name
+        }
+        var c1 = new Cat("Hello");
+        //谁创建了c1
+        console.log(c1.constructor);
+
+        //c1的原型都西昂是谁创建的
+        console.log(c1.__proto__.constructor);
+
+        console.log(d1.__proto__ == c1.__proto__);
+
+        /*
+            不同函数对象的原型对象的指向是不一样的
+
+            不同的函数对象都有属于自己的原型对象
+        */
+    </script>
+</body>
+</html>

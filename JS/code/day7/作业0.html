@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Document</title>
+  <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <script>
+    /* 有一对幼兔，假设一对兔子的成熟期是一个月，即一个月可长成成兔，那么，
+      如果每对成兔每个月都生一对小兔，一对新生的小兔从第二个月起就开始生兔子。
+      试问从一对兔子开始繁殖，以后的10个月，每个月会有多少对兔子？ */
+    /*     1  2  3    4_express脚手架   5   6   7 8 9 10
+      幼   1  1  2    4_express脚手架   8
+      成   0  1  2    4_express脚手架   8
+       */
+    function num(month) {
+      if (month <= 1) {
+        return 1;
+      }
+      return 2 * num(month - 1);
+    }
+    console.log(num(10));
+
+
+
+
+  </script>
+
+  <script>
+    /*  function sum(month) {
+         if (month <3) {
+         return 1;
+         }
+ 
+ 
+        return sum(month - 1)+sum(month - 1);
+       }
+ 
+       console.log(sum(10)); */
+
+
+  </script>
+
+</body>
+
+</html>

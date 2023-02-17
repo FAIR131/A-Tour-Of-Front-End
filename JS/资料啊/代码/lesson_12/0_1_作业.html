@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //首字母大写
+        var str1 = "hElLo";
+        var str2 = "hElLo ,kItty";
+        /*
+            英文有特征:单词和单词之间有分割
+
+            1.获取首字母
+            2.首字母大写
+            3.其它位置小写
+            4.拼接
+        */
+       
+        String.prototype.title = function(){
+            var f = this[0];
+            var o = this.substr(1);
+            f = f.toLocaleUpperCase();
+            o = o.toLocaleLowerCase();
+            return f+o
+        }
+         /*
+            英文有特征:单词和单词之间有分割
+            0.分割词语
+            1.获取首字母
+            2.首字母大写
+            3.其它位置小写
+            4.拼接
+        */
+       
+        String.prototype.titleAll = function(){
+            var sign = [",",".","!"];
+            var _this = this;  //_this  that  self
+            sign.forEach(function(item){
+                //String 是不可变的类型,发生改变了,会返回新的字符
+                _this = _this.replaceAll(item," "); //同一格式
+            })
+
+           
+            var strArr = _this.split(" ");  //this--->string
+            //hElLo  kItty -->[hElLo,"",kItty]
+
+            //检测字符串是否是空字符
+            // console.log(strArr);
+            var res = ""
+            strArr.forEach(function(item){
+                if(item.length !== 0){
+                    var f = item[0];
+                    var o = item.substr(1);
+                    f = f.toLocaleUpperCase();
+                    o = o.toLocaleLowerCase();
+                    res += f+o+" ";
+                }
+            })
+            return res
+        }
+
+        console.log(str2.titleAll());
+
+
+
+    </script>
+</body>
+</html>

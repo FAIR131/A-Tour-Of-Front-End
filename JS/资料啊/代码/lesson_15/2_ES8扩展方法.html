@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //ES8 2017
+        //promise 异步解决方案
+        //async/await
+
+        //对象扩展
+        let obj = {
+            name : "李青",
+            r : "一库"
+        }
+
+        //获取键
+        console.log(Object.keys(obj));
+        //获取值
+        console.log(Object.values(obj));
+
+        //Object.create()深复制
+        //Object.assign()浅
+
+        //二维数组
+        console.log(Object.entries(obj));
+
+        //对象描述
+        // console.log(Object.getOwnPropertyDescriptor(obj));
+
+        //{prototype:{}}
+        let obj1 = Object.create(null,{
+            name : {
+                value : "天狗下凡",
+                writable : true,
+                enumerable : true,
+                configurable : true
+            }
+        })
+        // console.log(obj1);
+        
+
+        // Object.defineProperties
+        // console.log(Object.getOwnPropertyDescriptor(obj1));
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    var myNumber = {
+        value: 1,
+        add: function(i){
+            console.log(this)
+            var helper = function(i){
+                console.log(this);
+                this.value += i;
+            }
+            helper(i);
+        }
+    }
+    myNumber.add(1);
+/*
+    var myNumber={
+        value:1,
+        add:function(i){
+
+            var that=this;//定义变量that用于保存上层函数的this对象
+            var helper=function(i){
+                console.log(that);
+                that.value+=i;
+            }
+            helper(i);
+        }
+    }
+    myNumber.add(1);*/
+
+
+</script>
+
+</body>
+</html>

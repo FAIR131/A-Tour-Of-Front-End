@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <style>
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        .box3 {
+            font-size: 50px;
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <!--class对象写法-->
+    <!--<div :class="{box1:flag}"></div>-->
+    <div :class="witchBox"></div>
+    <button @click="changeStyle">切换样式</button>
+    <!--class数组写法-->
+    <div :class="['box1','box3']">hh</div>
+    <!--style对象写法-->
+    <div :style="{width:'100px',height:'100px',backgroundColor:'pink'}">aaa</div>
+    <!--style数组写法-->
+    <div :style="[{color:'white',fontSize:'30px'},{background:'skyblue',width:'100px'}]">fff</div>
+</div>
+
+<script>
+    let app = new Vue({
+        el: '#app',
+        data: {
+            flag: true,
+            witchBox: 'box1'
+        },
+        methods: {
+            /*changeStyle: function () {
+                this.flag = !this.flag
+            }*/
+            changeStyle: function () {
+                if (this.witchBox === 'box1') {
+                    this.witchBox = 'box2'
+                } else {
+                    this.witchBox = 'box1'
+                }
+            }
+        }
+
+    })
+</script>
+</body>
+</html>

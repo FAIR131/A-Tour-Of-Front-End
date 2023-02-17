@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./public/css/index.css">
+</head>
+<body>
+    <!-- html当中只有html -->
+    <div id="box">
+        <div id="top">
+            <a href="#/">这是logo</a>
+        </div>
+        <div id="bottom">
+            <div id="menu">
+                <a href="#/first">first</a>
+                <a href="#/second">second</a>
+                <a href="#/third">third</a>
+                <a href="#/last">last</a>
+            </div>
+
+            <div id="content">
+               
+            </div>
+        </div>
+    </div>
+
+    <!-- 
+        //项目结构
+        - index.html         当前项目的页面
+        - index.js           js的主程序,负责整合其它的js文件
+        - router.js          前端路由,声明和查找路径
+
+        - public                
+            - imgs           图片
+            - css            样式
+            - js             存放 组件(轮播图/弹窗/放大镜)
+
+        - components         html模板
+            - 下面所有的html都是js文件来书写的
+     -->
+
+     <script src="./index.js" type="module"></script>
+
+
+     <!-- 
+            index.html
+                -> index.js
+                    -> router.js
+                        -> first.js
+      -->
+</body>
+</html>

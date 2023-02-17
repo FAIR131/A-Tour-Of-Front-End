@@ -1,0 +1,105 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .newsitem{
+
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+
+    <ul>
+        <li class="newsitem">111</li>
+        <li class="newsitem">111</li>
+        <li class="newsitem">111</li>
+        <li class="newsitem">111</li>
+        <li class="newsitem">111</li>
+        <li class="newsitem">111</li>
+        <li class="newsitem">111</li>
+    </ul>
+
+    <ul>
+        <li class="aditem">111</li>
+        <li class="aditem">111</li>
+        <li class="aditem">111</li>
+        <li class="aditem">111</li>
+        <li class="aditem">111</li>
+        <li class="aditem">111</li>
+        <li class="aditem">111</li>
+    </ul>
+
+    <div name="div1">1111</div>
+    <div name="div2">2222</div>
+
+    <input name="username" type="text"/>
+    <input name="password" type="password"/>
+    <script>
+        // console.log(box)
+        // box.innerHTML = "11111"
+    
+        /*
+          html,head,body 非常规
+
+          常规=>id,class,tag,,,,,
+        */
+
+        // console.log(document.documentElement) // rem
+        // console.log(document.head) // 获取head
+        // console.log(document.body) //获取body
+        
+        // getElementById
+        // console.log()
+        // var obox = document.getElementById("box")
+        // obox.innerHTML = "22222"
+
+
+        //getElementsByClassName
+        // var items = document.getElementsByClassName("newsitem")
+        // console.log(items) //伪数组
+
+        // // items[0].innerHTML = "news-111111"
+
+        // for(var i=0;i<items.length;i++){
+        //     items[i].innerHTML = "news-"+i
+        // }
+
+        // // Set => Array.from
+
+        // var newitems = Array.from(items)
+        // console.log(newitems.filter)
+
+
+        //getElementsByTagName
+        // var items = document.getElementsByTagName("li")
+        // console.log(items)
+
+
+        // getElementsByName
+        // var item = document.getElementsByName("username")
+        // console.log(item[0])
+        // item[0].value = "kerwin"
+
+
+        //querySelector 返回一个对象， 
+
+        var item = document.querySelector(".newsitem")
+
+        console.log(item)
+
+
+        //querySelectorAll
+        var items = document.querySelectorAll("ul li.newsitem")
+
+        console.log(items)
+    </script>
+</body>
+</html>

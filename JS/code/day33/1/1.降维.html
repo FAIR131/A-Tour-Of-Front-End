@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+
+<script>
+    function flatten(arr, num){
+        let res = [];
+        function flat(arr, num) {
+            if (!arr instanceof Array) return
+            for (let i = 0; i < arr.length; i++) {
+                if (num !== 0) {
+                    if (arr[i] instanceof Array) {
+                        flat(arr[i], num - 1);
+                    } else {
+                        res.push(arr[i]);
+                    }
+                } else {
+                    res.push(arr[i]);
+                }
+            }
+        }
+        flat(arr, num);
+        return res
+    }
+
+
+   let result = flatten([1, '2', [3, [4, 5]]], 1)
+    console.log(result)
+</script>
+</body>
+</html>

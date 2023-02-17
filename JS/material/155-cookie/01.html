@@ -1,0 +1,66 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="savebtn">存</button>
+    <button id="getbtn">获取</button>    
+    <button id="delbtn">删除</button>
+    <script>
+       // http协议无状态
+
+       // localStorage :用户名密码？  token 钥匙 ==> Nodejs token认证。。
+
+       // cookie 本地存储  sessionID 钥匙 ===> Nodejs cookie+session
+
+
+       //cookie 本地存储
+
+       // 存cookie
+
+       savebtn.onclick = function(){
+           //路径设置
+        //    document.cookie = "username=xiaoming;path=/155-cookie/aaa"
+            document.cookie = "age=18"
+       
+            //过期时间设置
+            var date = new Date()
+            date.setMinutes(date.getMinutes()+10)
+            document.cookie = `username=kerwin;expires=${date.toUTCString()}`
+        }
+
+        getbtn.onclick = function(){
+            console.log(getCookie("age"))
+        }
+
+        function getCookie(key){
+            var str = document.cookie
+            var arr = str.split("; ")
+            // console.log(arr)
+            var obj = {}
+            for(var i=0;i<arr.length;i++){
+                var subArr = arr[i].split("=")
+                // console.log(subArr)
+                obj[subArr[0]] = subArr[1]
+            }
+
+            // console.log(obj)
+            return obj[key]
+        }
+
+        delbtn.onclick = function(){
+            var date = new Date()
+            date.setMinutes(date.getMinutes()-1)
+            document.cookie = `username=111;expires=${date.toUTCString()}`
+            document.cookie = `age=111;expires=${date.toUTCString()}`
+        }
+    </script>
+</body>
+</html>

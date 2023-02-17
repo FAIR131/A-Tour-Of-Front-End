@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        div{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+
+<div></div>
+
+<script>
+    let div = document.querySelector('div');
+    div.addEventListener('mousedown',(e)=>{
+        //获取盒子距离
+        let exeX=div.offsetLeft;
+        let exeY=div.offsetTop;
+        //鼠标坐标
+        let startX = e.clientX
+        let startY = e.clientY
+
+       document.onmousemove=(e)=>{
+        //鼠标停下坐标
+            let endX = e.clientX
+            let endY = e.clientY
+
+        //    移动距离
+            let disX = endX-startX;
+            let disY = endY-startY;
+
+        //    记录第二次拖拽的位置
+           let left = exeX+disX;
+           let top = exeY+disY;
+
+           let right_edge =document.documentElement.clientWidth - div.offsetWidth
+           if(left >=right_edge){
+               left=right_edge
+           }else if (left<=0){
+               left=0;
+           }0
+
+           let bottom_edge =document.documentElement.clientHeight - div.offsetHeight
+           if(top >=bottom_edge){
+               top=bottom_edge
+           }else if (left<=0){
+               left=0;
+           }
+
+        //    距离给盒子
+            div.style.left = left+'px';
+            div.style.top = top+'px';
+
+        }
+
+        document.onmouseup=()=>{
+        //    鼠标松开，盒子不能移动
+            document.onmousemove=document.onmouseup=null
+        }
+    })
+
+</script>
+
+</body>
+</html>

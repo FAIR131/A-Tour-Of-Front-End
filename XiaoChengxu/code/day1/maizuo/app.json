@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/film/film",
+    "pages/cinema/cinema",
+    "pages/news/news",
+    "pages/mine/mine"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "borderStyle": "white",
+    "color": "#ccc",
+    "selectedColor": "#f60",
+    "list": [
+      {
+      "pagePath": "pages/film/film",
+      "text": "电影",
+      "iconPath": "assets/tabbar/film.png",
+      "selectedIconPath": "assets/tabbar/film_a.png"
+    },
+    {
+      "pagePath": "pages/cinema/cinema",
+      "text": "影院",
+      "iconPath": "assets/tabbar/cinema.png",
+      "selectedIconPath": "assets/tabbar/cinema_a.png"
+    },
+    {
+      "pagePath": "pages/news/news",
+      "text": "资讯",
+      "iconPath": "assets/tabbar/news.png",
+      "selectedIconPath": "assets/tabbar/news.png"
+    },
+    {
+      "pagePath": "pages/mine/mine",
+      "text": "我的",
+      "iconPath": "assets/tabbar/mine.png",
+      "selectedIconPath": "assets/tabbar/mine_a.png"
+    }
+  
+  ]
+  }
+}

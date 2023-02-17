@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- <p>{{msg.toUpperCase()}}</p> -->
+        <!-- 过滤器的用法,过滤器只能在页面中使用 -->
+        <p>{{msg|plus}}</p>
+        <p>{{phone|tuomin}}</p>
+
+        <p>{{words|hexie}}</p>
+    </div>
+
+    <script>
+        Vue.config.productionTip = false;
+
+        // 全局过滤器
+        Vue.filter("hexie",(val)=>{
+            return `${val.replace(/['妈'|'草'|'艹']/g,"*")}`
+        })
+
+        let app=new Vue({
+            el: "#app",
+            data: {
+                msg:"hello world",
+                phone:"13838385438",
+                words:"祖安大舞台,没妈你就来。草是一种植物"
+            },
+            filters:{//局部过滤器
+                plus:function(val){
+                    return val.toUpperCase();
+                },
+                tuomin:function(val){
+                    return `${val.substr(0,3)}****${val.substr(7)}`
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

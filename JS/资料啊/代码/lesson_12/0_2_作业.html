@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //数组去重
+        var arr = [1,1,2,1,6,7,2,1,7,8,9,3,2,1,0,8,8];
+
+        Array.prototype.unique = function(){
+            /*
+                1.先遍历数组
+                2.判断一下，当前的数字在不在u中,如果不在则插入
+            */
+           var u = [];
+           arr.forEach(function(item){
+                if(!u.includes(item)){
+                    u.push(item);
+                }
+           })
+           return u
+        }
+        
+        console.log(arr.unique());
+    </script>
+</body>
+</html>

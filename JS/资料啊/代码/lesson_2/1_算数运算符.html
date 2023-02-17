@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var a = "张三";
+        // var b = "法外狂徒";
+        // var c = 123;
+        // console.log(a+b);
+
+        // //字符串+数字(优先转变为字符) = 字符串
+        // console.log(a+b+c);
+
+        //浮点运算,经常出现结果不相等
+
+        //计算机在进行运算的时候，优先把数字二进制化计算,得到二进制结果，再转换成十进制(有损失)
+        // console.log(1.001+2.002);  
+        // console.log(0.1+0.8);
+
+        // console.log(0.8 - 0.1); 
+
+        // console.log(0.8 * 0.1);
+
+        // console.log(0.8 / 0.1);
+
+        // console.log(10 % 4);  //闰年 
+
+    </script>
+
+    <script>
+        
+        var a = 1;
+
+        //  左(不解析)  =  右(优先运行性)
+        a = a + 1;   //a的值发生更新
+
+        console.log(a) //2
+        
+        console.log(++a); //a = a + 1;
+
+        //++a 先加 在 console.log()
+        //先 console.log()  后 a++ 
+        console.log(a++);  //3
+
+        console.log(a);   //4
+
+        console.log(--a); // 3
+
+        console.log(a--); //3
+        
+        console.log(a);  //2
+
+
+    </script>
+</body>
+</html>

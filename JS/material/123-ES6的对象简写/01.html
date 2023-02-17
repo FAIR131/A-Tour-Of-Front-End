@@ -1,0 +1,45 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="myusername">
+    <input type="password" id="mypassword">
+    <button id="mybtn">login</button>
+    <script>
+        mybtn.onclick = function () {
+            let username = myusername.value
+            let password = mypassword.value
+
+            console.log(username,password)
+
+            var obj = {
+                username,
+                password
+            }
+
+            console.log("发给后端的结构",obj)
+        }
+
+
+        var obj = {
+            a:1,
+            getName(){
+                console.log(this.a)
+            }
+        }
+
+        obj.getName()
+    </script>
+</body>
+
+</html>

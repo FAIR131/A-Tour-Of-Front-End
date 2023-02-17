@@ -1,0 +1,45 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function test(){
+        //     var name = "kerwin"
+        //     console.log(name)
+        // }
+
+        // test()
+
+
+        /*
+          函数有返回值， 而且返回值必须是复杂类型，而且要赋值给外面的变量。
+        */
+
+        function test(){
+            var name = "kerwin"
+            console.log(name)
+            var obj = {
+                a:1,
+                b:2
+            }
+            return obj
+        }
+
+        var obj1 = test()
+
+        var obj2 = test()
+
+
+        obj1 = null
+        obj2 = null
+    </script>
+</body>
+</html>

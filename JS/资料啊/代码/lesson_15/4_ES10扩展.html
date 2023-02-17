@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //ES10 2019
+        //对象的扩展
+
+        //把二维合并成Object
+        let obj = Object.fromEntries([
+            ["name","张三"],
+            ["age",19]
+        ])
+
+        // console.log(obj);
+
+        let m = new Map();
+        m.set("name","李四");
+
+        console.log(Object.fromEntries(m));
+
+
+        //字符扩展
+        let str = " admin ";
+        console.log(str.trimStart());
+        console.log(str.trimEnd());
+
+
+        //数组扩展
+        //forEach做了个颜色 flat flatMap
+
+        //正则做了扩展,添加统配功能
+    </script>
+</body>
+</html>

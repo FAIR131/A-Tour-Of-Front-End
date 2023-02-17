@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Document</title>
+  <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <script> 
+
+    var twoSum = function (nums, target) {   
+      var arr1=[]
+      for (var i = 0; i < nums.length; i++) {
+        for (var j = i+1; j < nums.length; j++) {
+          if (nums[i] + nums[j] == target) {
+            arr1.push(i);
+            arr1.push(j);
+                  
+          }
+        }
+      }
+      return arr1
+     
+    };
+
+    var nums = [2, 7, 11, 15];
+    console.log(twoSum(nums, 9));
+  </script>
+</body>
+
+</html>

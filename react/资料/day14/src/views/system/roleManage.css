@@ -1,0 +1,4 @@
+.ant-layout-content > .ant-btn{
+    transform: translateX(-50%);
+    margin-left: 50%;
+}

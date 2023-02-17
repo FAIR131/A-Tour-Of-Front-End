@@ -1,0 +1,43 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="util.js"></script>
+    <script>
+        // tiechui 已经登录
+        ajax({
+            url: "http://localhost:3000/news",
+            data: {
+                author: "kerwin"
+            },
+            success: function (res) {
+                console.log(res[0])
+                ajax({
+                    url: "http://localhost:3000/comments",
+                    data: {
+                        newsId: res[0].id
+                    },
+                    success: function (res) {
+                        console.log(res)
+                    }
+                })
+            }
+        })
+
+        // q.js 
+
+        // Promise 解决回调地狱，嵌套金字塔
+    </script>
+</body>
+
+</html>

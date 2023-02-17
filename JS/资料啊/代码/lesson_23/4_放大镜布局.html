@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin: 0px;padding: 0px;}
+        #smallbox {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            float:left;
+        }
+        #smallbox > img{
+            position: absolute;
+            width: 300px;
+            height: 300px;
+        }
+        #smallbox > span{
+            position: absolute;
+            width:100px;
+            height: 100px;
+            float: left;
+            background-color: coral;
+            opacity: 0.3;
+        }
+        #bigbox{
+            position: relative;
+            width: 600px;
+            height: 600px;
+            float: left;
+            display: none;
+        }
+
+        #bigbox > img{
+            position: absolute;
+            width: 600px;
+            height: 600px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="smallbox">
+        <img src="./imgs/1.webp" alt="">
+        <span></span>
+    </div>
+
+    <div id="bigbox">
+        <img src="./imgs/1.webp" alt="">
+    </div>
+
+    <script>
+        //一般来说有三张图
+        
+
+    </script>
+</body>
+</html>

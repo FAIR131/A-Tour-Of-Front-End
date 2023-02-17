@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="lib/jquery.js"></script>
+    <style>
+        #box{
+            width: 300px;
+            height: 300px;
+            background-color: yellow;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="myshow">显示</button>
+    <button id="myhide">隐藏</button>
+    <button id="mytoggle">切换</button>
+    <button id="myfade">透明度指定</button>
+    <button id="myanimate">animate</button>
+    <button id="mystop">stop</button>
+    <div id="box">
+
+    </div>
+   <script>
+       //基本动画
+            //显示隐藏 (动画执行时间，动画效果，动画执行完后回调函数) 
+            //  动画效果 swing  linear
+
+            /*
+                  show() hide() toggle()
+                  slideDown() slideUp() slideToggle()
+                  fadeIn() fadeOut() fadeToggle() fadeTo()
+               */
+
+    //  $("#myshow").click(function(){
+    //      $("#box").show(1000,"linear",()=>{
+    //          console.log("显示完成")
+    //      })
+    //  })
+    //  $("#myhide").click(function(){
+    //      $("#box").hide(1000,"linear",()=>{
+    //          console.log("隐藏完成")
+    //      })
+    //  })
+    //  $("#mytoggle").click(function(){
+    //      $("#box").toggle(1000,"linear",()=>{
+    //          console.log("完成")
+    //      })
+    //  })
+
+    // $("#myshow").click(function(){
+    //      $("#box").slideDown(1000,"linear",()=>{
+    //          console.log("显示完成")
+    //      })
+    //  })
+    //  $("#myhide").click(function(){
+    //      $("#box").slideUp(1000,"linear",()=>{
+    //          console.log("隐藏完成")
+    //      })
+    //  })
+    //  $("#mytoggle").click(function(){
+    //      $("#box").slideToggle(1000,"linear",()=>{
+    //          console.log("完成")
+    //      })
+    //  })
+
+    $("#myshow").click(function(){
+         $("#box").fadeIn(1000,"linear",()=>{
+             console.log("显示完成")
+         })
+     })
+     $("#myhide").click(function(){
+         $("#box").fadeOut(1000,"linear",()=>{
+             console.log("隐藏完成")
+         })
+     })
+     $("#mytoggle").click(function(){
+         $("#box").fadeToggle(1000,"linear",()=>{
+             console.log("完成")
+         })
+     })
+     $("#myfade").click(function(){
+         $("#box").fadeTo(1000,0.2,"linear",()=>{
+             console.log("完成")
+         })
+     })
+       //综合动画
+
+       /* 
+          1. 没有过度的样式，不支持
+          2. 颜色变化不支持
+          3. transform
+       */
+
+       $("#myanimate").click(function(){
+         $("#box").animate({
+             left:"300px",
+             top:100,
+             borderRadius:"150px",
+             background:"red"
+         },
+         1000,"linear",()=>{
+             console.log("完成")
+         })
+     })
+
+
+     //stop()  运动到哪，就停在哪里
+     // stop()其他动画函数之前调用
+    //  $("#mystop").click(function(){
+    //      $("#box").stop().animate({
+    //          top:400
+    //      },
+    //      1000,"linear",()=>{
+    //          console.log("完成")
+    //      }) 
+    //  })
+
+     //finish()  运动到哪，立即到完成位置
+     // finish()其他动画函数之前调用
+     $("#mystop").click(function(){
+         $("#box").finish().animate({
+             top:400
+         },
+         1000,"linear",()=>{
+             console.log("完成")
+         }) 
+     })
+   </script>
+</body>
+</html>

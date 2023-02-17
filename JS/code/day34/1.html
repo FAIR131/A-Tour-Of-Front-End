@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+
+<script>
+    function groupBy(arr, field) {
+        if (!(arr instanceof Array)) return {}
+        let obj = {};
+
+        for (let i = 0; i < arr.length; i++) {
+            // console.log(arr[i][field])
+            if (!(arr[i][field] in obj)) {
+                obj[arr[i][field]]= [arr[i]]
+            }else{
+                obj[arr[i][field]].push(arr[i])
+            }
+        }
+
+        return obj
+    }
+    let arr = [
+        {
+            categoryId: 1,
+            name: 'a',
+        },
+        {
+            categoryId: 1,
+            name: 'b',
+        },
+        {
+            categoryId: 2,
+            name: 'c'
+        }
+    ]
+    console.log( groupBy(arr, 'categoryId'));
+
+</script>
+</body>
+</html>

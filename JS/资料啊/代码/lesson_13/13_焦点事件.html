@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" value="" placeholder="请输入手机号">
+    <span></span>
+    <script>
+        /*
+            1.找到input-dom
+            2.绑定焦点事件
+            3.输入手机号，一边输入，一边判断
+        */
+
+        var inp = document.querySelector("input");
+        var span = document.querySelector("span");
+        // inp.onfocus = function(){
+        //     inp.onkeyup = function(e){
+        //         //e.keyCode 
+               
+        //         var reg = /^1[356789]\d{9}$/;
+        //         if(reg.test(this.value)){
+        //             span.innerText = "勾";
+        //             span.style.color = "green";
+        //         }else{
+        //             span.innerText = this.value+"不合法";
+        //             span.style.color = "red";
+        //         }
+                
+                
+        //     }
+        // }
+        
+        inp.onfocus = function(){
+            span.innerText = "";
+        }
+        inp.onblur = function(){
+                var reg = /^1[356789]\d{9}$/;
+                if(reg.test(this.value)){
+                    span.innerText = "勾";
+                    span.style.color = "green";
+                }else{
+                    span.innerText = this.value+"不合法";
+                    span.style.color = "red";
+                }
+        }
+
+    </script>
+</body>
+</html>

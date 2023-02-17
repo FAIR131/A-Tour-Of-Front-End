@@ -1,0 +1,83 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery.js"></script>
+</head>
+<body>
+    <script>
+        //深浅copy 复制
+
+
+        //赋值-基本数据
+
+        // var myname = "kerwin"
+        // var myname1 = myname
+        // myname1 = "xiaoming"
+        // console.log(myname,myname1)
+
+        //赋值-复杂类型
+
+        // var myobj1 = {name:"kerwin"}
+        // var myobj2 = myobj1
+        // myobj2.name= "xiaoming"
+        // console.log(myobj1,myobj2)
+
+
+        //浅copy
+        // var myobj = {name:"kerwin"}
+        // var myobj1 = {name:"kerwin",location:{city:"dalian",province:"liaoning"}}
+        // var myobj2 = {}
+        // for(var i in myobj1){
+        //     myobj2[i] = myobj1[i]
+        // }
+        // myobj2.name ="xiaoming"
+        // console.log(myobj1,myobj2)
+
+        // var myobj3 = {...myobj1}
+        // myobj3.name = "tiechui"
+
+        // myobj3.location.city = "shenyang"
+        // console.log(myobj3)
+
+
+        //深copy-递归
+
+        var myobj1 = {name:"kerwin",location:{city:"dalian",province:"liaoning",a:{b:{c:1}}}, hobby:["xxx","yyy","zzz"],introduction:undefined}
+
+        var myobj2 = {}
+
+        function deepCopy(o2,o1){
+            for(var i in o1){
+                if(Object.prototype.toString.call(o1[i])==='[object Object]'){
+                    o2[i] = {}
+                    deepCopy(o2[i],o1[i])
+                }else if(Object.prototype.toString.call(o1[i])==='[object Array]'){
+                    o2[i] = []
+                    deepCopy(o2[i],o1[i])
+                }else{
+                    o2[i] = o1[i]
+                }
+            }
+            
+        }
+
+       deepCopy(myobj2,myobj1)
+
+
+      //深copy-json.stringify() json.parse()
+    //   var myobj1 = {name:"kerwin",location:{city:"dalian",province:"liaoning",a:{b:{c:1}}}, hobby:["xxx","yyy","zzz"],introduction:undefined}
+
+
+    //   var myobj2 = JSON.parse(JSON.stringify(myobj1))
+
+    //   console.log(myobj1,myobj2)
+    </script>
+</body>
+</html>

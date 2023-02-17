@@ -1,0 +1,50 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // var num = 100
+
+        function test1(){
+            // var num = 200
+
+            function child1(){
+                // var num = 300
+
+                num = 400
+                console.log(num)
+            }
+            
+            child1()
+            
+        }
+        // console.log("修改前，",num)
+        test1()
+        console.log("修改后，",num)
+
+
+        function test2(a,b){
+            return a+b
+        }
+
+        var res = test2(1,2)
+        console.log(res)
+
+        var result 
+        function test3(a,b){
+            result = a+b
+        }
+        test3(1,2)
+        console.log(result)
+    </script>
+</body>
+</html>

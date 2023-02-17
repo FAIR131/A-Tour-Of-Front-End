@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- {{msg}} -->
+        <p>{{now}}</p>
+        <p>{{getNow()}}</p>
+        <p>{{now}}</p>
+        <p>{{getNow()}}</p>
+        <p>{{now}}</p>
+        <p>{{getNow()}}</p>
+        <p>{{now}}</p>
+        <p>{{getNow()}}</p>
+        <p>{{now}}</p>
+        <p>{{getNow()}}</p>
+    </div>
+
+    <script>
+        Vue.config.productionTip = false;
+
+        let app=new Vue({
+            el: "#app",
+            data: {
+                msg:"哈哈",
+                // now:new Date()
+            },
+            methods: {
+                getNow:function(){
+                    console.log("函数被执行了");
+                    let date=new Date();
+                    return `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}
+                     ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+                }
+            },
+            computed:{//计算属性
+                now:function(){
+                    console.log("计算属性被执行了");
+                    let date=new Date();
+                    return `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}
+                     ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+                }
+            }
+        })
+        console.log(app);
+    </script>
+</body>
+
+</html>

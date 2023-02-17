@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            if(条件判断){//true
+                //如果第一个条件达到了，则后面都不运行
+            }else if(条件判断){//当第一个条件不满足的时候，判断第二个条件
+
+            }else if(条件判断){//当前两个不满足的时候，运行第三个
+
+            }else{//当所有的条件都不满足的时候，运行else
+                //默认值
+            }
+        */
+
+        //学生的成绩
+        /*
+            100分    给你一台宝马
+            90-99    给你一套房
+            80-89    给你一套别墅
+            60-79    给你一个国家
+            60以下   给你一个宇宙
+        */
+        var score = prompt("输入一个成绩:");
+
+        score = Number(score);
+        /*
+            统计 : 
+                把大部分人能考中的成绩放在首位
+                然后从多到少进行排列
+        
+        */
+        if(score < 60){
+            console.log("给你一个宇宙");
+        }else if(score>=60 && score <= 79){
+            console.log("给你一个国家");
+        }else if(score>=80 && score <= 89){
+            console.log("给你一套别墅");
+        }else if(score>=90 && score <= 99){
+            console.log("给你一套房");
+        }else if(score === 100){
+            console.log("给你一台宝马");
+        }else{
+            console.log("go die!!!");
+        }
+
+        
+    </script>
+    <script>
+        //开始判断
+        //多次判断，影响计算机效率
+        //第一次判断
+        // if(score === 100){
+        //     console.log("给你一台宝马");
+        // }
+        // //第二次判断
+        // if(score>=90 && score <= 99){
+        //     console.log("给你一套房");
+        // }
+
+        // if(score>=80 && score <= 89){
+        //     console.log("给你一套别墅");
+        // }
+
+        // if(score>=60 && score <= 79){
+        //     console.log("给你一个国家");
+        // }
+
+        // if(score < 60){
+        //     console.log("给你一个宇宙");
+        // }
+    </script>
+</body>
+</html>

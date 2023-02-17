@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      .box{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        transform:translateY(-200px);
+        width: 600px;
+        height: 360px;
+        border: 1px solid #ccc;
+        box-shadow: 1px 20px 20px 0px #ccc;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        opacity: 0;
+        transition: all 0.3s linear;
+
+      }
+
+      .top{
+        height: 45px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        background-color: skyblue;
+        padding:0 10px;
+        box-sizing: border-box;
+        line-height: 45px;
+      }
+
+      .content{
+        font-size: 30px;
+      }
+
+      .bottom{
+        width: 100%;
+        height: 45px;
+        border-top: 1px solid #ccc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+
+    </style>
+</head>
+<body>
+<div class="box">
+  <div class="top">
+    <p class="info"> 信息</p>
+    <span>X</span>
+  </div>
+  <div class="content">
+    确定删除当前内容吗？
+  </div>
+  <div class="bottom">
+    <button>确定</button>
+  </div>
+</div>
+
+<button class="del">删除</button>
+
+<script>
+  let del = document.querySelector('.del');
+  let box = document.querySelector('.box');
+  let span = box.querySelector('span');
+  let btn = box.querySelector('button');
+  del.addEventListener('click',function (){
+    box.style.opacity = 1;
+    box.style.transform="translateY(0px)";
+
+  })
+
+  span.addEventListener("click",click);
+  btn.addEventListener("click",click);
+
+  function click(){
+    box.style.opacity = 0;
+    box.style.transform="translateY(-200px)";
+  }
+</script>
+</body>
+</html>

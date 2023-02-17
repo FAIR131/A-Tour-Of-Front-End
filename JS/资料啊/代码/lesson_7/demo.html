@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function Dog(name,color){
+            this.name = name;
+            this.color = color;
+        }
+
+        var d1 = new Dog("螺旋丸手里剑","红绿");
+        var d2 = new Dog("螺旋丸手里剑","红绿");
+
+        //函数对象和引用对象是不同的
+        console.log(Dog === d1);
+
+        //d1属于Dog类
+        console.log(d1 instanceof Dog);//d1 是不是谁的实列(引用) Dog
+
+        //如果比较两组引用对象,对比的是内存编址
+        console.log(d1 === d2);
+
+
+    </script>
+</body>
+</html>l

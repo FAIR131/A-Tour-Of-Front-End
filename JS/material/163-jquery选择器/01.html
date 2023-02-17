@@ -1,0 +1,96 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery.js"></script>
+
+    <style>
+        .active{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <ul class="list">
+        <li class="start">1111</li>
+        <li>2222</li>
+        <li class="active">3333</li>
+        <li class="a">44444</li>
+        <li>5555</li>
+        <li class="a end">6666</li>
+        <li>
+            77777
+            <ul>
+                <li>7-111</li>
+                <li>7-222</li>
+                <li>7-333</li>
+            </ul>
+        </li>
+    </ul>
+
+    <div id="box"></div>
+    <script>
+        //1. 基本选择器
+        
+
+        // console.log($("ul li")) //返回伪数组
+
+        // console.log($("#box")) //返回伪数组
+
+
+        // console.log($("ul li:nth-child(1)"))
+
+
+        //2. 特殊选择器
+        // console.log($("ul li:first"))
+        // console.log($("ul li:last"))
+        // var index = 2
+        // console.log($(`ul li:eq(${index})`))
+
+
+        // console.log($("ul li:odd")) //奇数
+        // console.log($("ul li:even")) //偶数
+        //3. 二次筛选方法
+
+        // console.log($("ul li").first())
+        // console.log($("ul li").last())
+        // var index= 3
+        // console.log($("ul li").eq(3))
+
+        // console.log($("ul li.active").next())
+        // console.log($("ul li").first().next())
+
+        // console.log($("ul li.active").nextAll())
+        // console.log($("ul li.active").nextAll(".a"))
+
+        // console.log($("ul li.active").nextUntil())
+        // console.log($("ul li.active").nextUntil(".end"))
+
+
+        // console.log($("ul li.active").prev())
+        // console.log($("ul li.active").prevAll())
+        // console.log($("ul li.active").prevUntil())
+        // console.log($("ul li.active").prevUntil(".start"))
+
+        console.log($("ul li.active").parent())
+        console.log($("ul li.active").parents())//html
+
+
+        console.log($("ul li.active").siblings())
+
+
+        console.log($("ul.list").children())
+
+        console.log($("ul").find("li"))
+
+
+        console.log($("ul li.active").index()) //获取索引
+</script>
+</body>
+</html>

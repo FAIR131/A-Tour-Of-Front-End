@@ -1,0 +1,40 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var date = new Date()
+
+        console.log(date) //自动转为字符串
+
+
+        //new Date传参
+
+        //1个传参 毫秒数
+
+        var date1= new Date(10000)
+        console.log(date1)
+        // 1970 1 1 0:0:1
+
+
+        // 2个参数 3个参
+        var  date2 = new Date(2023,0,3,10,10,10)
+        console.log(date2)
+
+
+        //字符串
+
+        // var date3= new Date("2023-10-10 10:10:10")
+        var date3= new Date("2023/10/10 10:10:10")
+        console.log(date3)
+    </script>
+</body>
+</html>

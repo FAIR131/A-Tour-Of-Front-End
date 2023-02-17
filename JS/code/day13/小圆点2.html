@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Document</title>
+  <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'>
+  <style>
+     * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+    }
+
+
+    .list li {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: pink;
+      float: left;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <ul class="list">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <script>
+    var lis = document.querySelectorAll('li'); 
+    var index = 0;
+    lis.forEach(function (item,ind) {
+     
+      item.onmouseover = function () {
+        lis[index].style.backgroundColor = 'pink';
+        item.style.backgroundColor = 'skyblue';
+        index = ind;
+      }
+    })
+  </script>
+</body>
+
+</html>

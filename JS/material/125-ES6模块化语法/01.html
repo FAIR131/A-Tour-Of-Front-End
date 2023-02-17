@@ -1,0 +1,53 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="./module/C.js" type="module"></script> -->
+    <!-- <script src="js/A.js"></script>
+    <script src="js/B.js"></script>
+    <script src="js/C.js"></script> -->
+</head>
+
+<body>
+    <!-- <script>
+        // webpack
+        /* 模块化
+        1.私密不漏
+        2.重名不怕
+        3.依赖不乱
+        */
+
+        A1()
+        A2()
+        // _a_common()
+
+
+        test()
+    </script> -->
+
+
+    
+    <script type="module">
+        import CCCC from './module/C.js'
+        import {A1,A2,test as A_test} from './module/A.js'
+        import {B1,B2,test as B_test} from './module/B.js'
+        
+        A1()
+        A2()
+        A_test()
+        B_test()
+
+        // console.log(C)
+        CCCC()
+    </script>
+    
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+
+<script>
+ async function test (){
+   // console.log(11)
+   // return 111111
+   var res =  await new Promise((resolve,reject)=>{
+         reject ('fail')
+       // resolve('ok')
+     })
+     return res
+
+ //   const res = await 111
+ //     console.log(res)
+ }
+
+
+var res = test();
+
+ console.log(res)
+
+ res.then(res=>{
+   console.log(res)
+ }).catch(err=>{
+     console.log(err)
+ })
+</script>
+</body>
+</html>

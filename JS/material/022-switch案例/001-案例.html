@@ -1,0 +1,92 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 满200 减10  满100 减50  满50 减3 
+
+        var sum = 44
+        var youhuisum 
+
+        switch (true) {
+            case sum>=200:
+                youhuisum = sum-10
+                break;
+            case sum>=100 && sum<200:
+                youhuisum = sum-5
+                break;
+            case sum>=50 && sum<100:
+                youhuisum = sum-3
+                break;
+            default:
+                youhuisum = sum
+                break;
+        }
+
+        console.log(sum,youhuisum)
+
+
+        //根据 1 ~ 12 的数字来输出一个月有多少天, 不考虑闰年       
+        var month = 2
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                console.log("31天")
+                break;
+            case 2: 
+                console.log("28天")        
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                console.log("30天")
+                break;
+            default:
+                break;
+        }
+
+        // 成绩的案例改写 switch
+
+        var score =76
+        var flagScore = parseInt(score/10)
+        switch (flagScore) {
+           
+            case 10:
+            case 9:
+                console.log("A")
+                break;
+            case 8: 
+                console.log("B")        
+                break;
+
+            case 7: 
+                console.log("C")        
+                break;
+            case 6:
+                console.log("D")        
+                break;
+            default:
+                console.log("E")   
+                break;
+        }
+    </script>
+</body>
+</html>

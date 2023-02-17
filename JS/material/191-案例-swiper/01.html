@@ -1,0 +1,76 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="lib/swiper-bundle.min.css">
+    <script src="lib/swiper-bundle.min.js"></script>
+
+    <script src="lib/jquery.js"></script>
+
+    <style>
+        .kerwin img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="swiper kerwin">
+        <div class="swiper-wrapper">
+            <!-- <div class="swiper-slide">
+                <img src=""/>
+            </div> -->
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+    </div>
+    <script>
+        $.get("http://localhost:3000/banner").then(res => {
+            console.log(res)
+            render(res)
+            initSwiper()
+        })
+
+        function render(list) {
+            var oslides = list.map(item => `
+            <div class="swiper-slide">
+                <img src="${item.imgUrl}"/>
+            </div>
+            `)
+
+            // console.log(oslides.join(""))
+
+            $(".swiper-wrapper").html(oslides.join(""))
+        }
+
+
+        $.extend({
+            swiper: function (ele, obj) {
+                new Swiper(ele,obj)
+            }
+        })
+
+        function initSwiper() {
+            $.swiper(".kerwin", {
+                // direction: 'vertical', // 垂直切换选项
+                loop: true, // 循环模式选项
+                // 如果需要分页器
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true
+                },
+                observer: true
+            })
+        }
+    </script>
+</body>
+
+</html>

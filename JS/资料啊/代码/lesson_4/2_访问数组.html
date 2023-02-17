@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var arr = ["张三","李四","王五","燕小六","鬼脚七"];
+
+        //找到燕小六 ：索引
+        console.log(arr["3"]);  //[]带有数字转义的效果会把"3"转变为数字3
+
+        //超出索引范围
+        console.log(arr[6]); //undefined 不报错是不好
+
+
+        //一次性访问多个内容
+        
+        //获取数组的长度
+        console.log(arr.length);
+
+        //要求取出索引2到4之间的内容
+        for(var i=2;i<arr.length;i++){
+            console.log("index",i,arr[i]);
+        }
+    </script>
+</body>
+</html>

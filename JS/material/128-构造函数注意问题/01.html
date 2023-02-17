@@ -1,0 +1,61 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.首字母大写 
+        // function CreateObj(name){
+        //     this.name = name
+        // }
+        // var obj1 = new CreateObj("kerwin")
+        // console.log(obj1)
+
+
+        // 2. 构造函数不写return 
+        // function CreateObj(name){
+        //     this.name = name
+        //     // return 100
+        //     return {
+        //         a:1,
+        //         b:2
+        //     }
+        // }
+        // var obj1 = new CreateObj("kerwin")
+        // console.log(obj1)
+
+
+        //3 构造函数能当成普通函数用？
+
+        // function CreateObj(name){
+        //     console.log(this)
+        //     this.name = name
+        // }
+        // // var obj1 = new CreateObj("kerwin")
+        // // console.log(obj1)
+        // var obj1 = CreateObj("kerwin")
+        // console.log(obj1,window.name)
+
+        // this指向
+        function CreateObj(name){
+            console.log(this)
+            this.name = name
+
+            this.cook = function(){
+                console.log(this.name)
+            }
+        }
+        var obj1 = new CreateObj("kerwin") // new过程===实例化这个过程
+        // 实例对象已经生成了
+        obj1.cook()
+        // console.log(obj1)
+    </script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            width: 100px;
+          
+        }
+    </style>
+</head>
+<body>
+    
+    <script>
+        var table = "<table border='1px'>";
+        table += "<tr>";
+        table += "<th><input type='checkbox'/>全选</th>";
+        table += "<th><a id='sel' href='javascript:;'>反选</a></th>";
+        table += "<th><a id='del' href='javascript:;'>删除</a></th>";
+        table += "</tr>";
+        for(var i=0;i<20;i++){
+            table += "<tr>";
+            for(var j=0;j<5;j++){
+                if(j !== 0){
+                    table += "<td>";
+                    table += i+"-"+j;
+                    table += "</td>";
+                }else{
+                    table += "<td>";
+                    table += "<input type='checkbox'/>";
+                    table += "</td>";
+                }
+                
+            }
+            table += "</tr>";
+        }
+        table += "</table>";
+        document.write(table);
+    </script>
+
+    <script>
+        /*
+            1.找到全选
+            2.给全选绑定单击事件
+            3.找到td当中的checkbox
+            4.循环伪数组
+            5.修改checkbox属性
+        */
+
+        var thc = document.querySelector("th > input[type]");
+        var tdc = document.querySelectorAll("td > input");//NodeList
+
+        var flag = false; //记录状态
+        thc.onclick = function(){
+
+            if(flag){
+                tdc.forEach(function(checkbox){
+                //checkbox代表一个input
+                    checkbox.checked = "";
+                });
+                flag = false;
+            }else{
+                tdc.forEach(function(checkbox){
+                //checkbox代表一个input
+                    checkbox.checked = "checked";
+                });
+                flag = true;
+            }
+            
+        }
+    </script>
+    <script>
+        //删除选中行
+        /*
+            1.找到删除的a标签
+            2.循环checkbox数组
+            3.找到tr标签
+            4.循环checkbox
+            5.找到checked=true
+            6.根据索引找到对应的tr
+        */
+
+        var del = document.querySelector("#del");
+        var trs = document.querySelectorAll("tr");
+        var arr = [];
+        //把伪数组转变为真数组
+        trs.forEach(function(item){arr.push(item)});
+        //把th行删除
+        arr.shift(); //20
+
+        del.ondblclick = function(){
+            // console.log(tdc.length)  //20
+            tdc.forEach(function(input,index){
+                if(input.checked){//true
+                   arr[index].style.display = "none"; //重排
+                    // arr[index].innerHTML = "";           //重排<td>
+                }
+            })
+        }
+    </script>
+
+    <script>
+        //表格反选
+        /*
+            1.找到反选a标记
+            2.给a标记绑定一个事件
+            3.获取td当中的checkbox
+            4.循环数组
+            5.查看checked属性是不是为true
+            6.属性互换
+        */
+
+        var sel = document.querySelector("#sel");
+
+        sel.ondblclick = function(){
+            tdc.forEach(function(item){
+                //item == checkbox
+                if(item.checked){//true ---> false
+                    item.checked = false;
+                }else{
+                    item.checked = true;
+                }
+            })
+        }
+    </script>
+</body>
+</html>

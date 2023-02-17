@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            原型继承
+              - 可以实现多继承,但是不推荐
+              
+        */
+        function Dog(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        function Wolf(name,age){
+            this.name = name;
+            this.age = age;
+        }
+
+        //方法
+        Dog.prototype.eat = function(food){
+            return this.name +"吃了"+ food
+        }
+
+        Wolf.prototype.eat_ = function(arg){
+            return this.name +"拆了" + arg
+        }
+
+        /*
+            1.创建{}
+            2.循环arguments
+            3.把arguments下面的对象中的方法拷贝到{}
+        */
+        function mergeObj(){
+            var res = {};
+            for(var i=0;i<arguments.length;i++){
+                //arguments = >[{},{}]
+                for(var k in arguments[i]){ //arguments[i] -> {}
+                    res[k] = arguments[i][k]; //arguments[i][k] -> 对象的值
+                }
+            }
+            return res;
+        }
+        var merge_proto = mergeObj(Dog.prototype,Wolf.prototype);
+
+        // //Teddy继承Dog
+        function Teddy(name,age){
+            this.name = name;
+            this.age = age;
+        }
+
+        Teddy.prototype = Object.create(merge_proto);//Teddy.prototype 深度复制 48行
+        Teddy.prototype.a = 1;
+
+        //Hasch继承Dog
+        function Hasch(name,age){
+            this.name = name;
+            this.age = age;
+        }
+
+        /*
+            Object.assign(obj1,obj2)、
+
+            把obj2当中的内容深复制给了obj1
+
+            在把obj1引用给赋值的对象
+        
+        */
+        
+        //有问题
+        Hasch.prototype = Object.assign(Dog.prototype,Wolf.prototype);
+        Hasch.prototype.b = 2;
+
+        //Teddy引用对象
+        var t1 = new Teddy("可爱",12);
+        var t2 = new Teddy("小可爱",2);
+
+        //Hasch引用对象
+        var h1 = new Hasch("二狗子",17);
+        var h2 = new Hasch("二哈",7);
+
+
+        
+        // console.log(t1.eat("钢筋"));
+        // console.log(h1.eat_("吃床"));
+
+        console.log(Dog.prototype);
+        console.log(Wolf.prototype);
+        console.log(merge_proto);
+      
+
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+<!--4、弹出一个输入框 用户输入一个正整数 编程判断用户输入的这个数是否是 质数(素数) 将结果输出到控制台。
+质数(素数) 指的是只能被1和自身整除的数 例如 2 3 5 7 11 13 17 19 ...-->
+<script>
+  let a = prompt('请输入一个正整数');
+  num = Number(a);
+  let flag=true;
+  if(num===2||num===3){
+    console.log(num+'是素数');
+  }
+for(let i = 2;i<=num**0.5;i++){
+  if(num%i===0){
+    flag=false;
+    break;
+  }
+}
+  if(flag===true){
+    console.log(num+'是素数');
+  }else{
+    console.log(num+'不是素数')
+  }
+
+</script>
+</body>
+</html>

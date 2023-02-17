@@ -1,0 +1,42 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj = {
+            name: "kerwin",
+            age: 100,
+            location: "dalian",
+            a:1,
+            b:2
+            
+        }
+
+        // document.write("name:"+ obj.name)
+        // document.write("<br>")
+        // document.write("age:"+ obj.age)
+        // document.write("<br>")
+        // document.write("location:"+ obj.location)
+        // document.write("<br>")
+
+
+        for(var i in obj){
+            //获取key
+            // console.log(i)
+            //获取value
+            // console.log(obj[i])
+
+            document.write(i+":"+obj[i])
+            document.write("<br>")
+        }
+    </script>
+</body>
+</html>

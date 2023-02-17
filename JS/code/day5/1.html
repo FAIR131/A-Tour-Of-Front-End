@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='en'>
+ 
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Document</title>
+  <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'>
+  <style>
+ 
+  </style>
+</head>
+ 
+<body>
+ 
+<script>
+  function quickSort(arr) {
+      if (arr.length <= 1) return arr;
+      const num = arr[0];
+      let left = [], right = [];
+      for (let i = 1; i < arr.length; i++) {
+        if (arr[i] <= num) left.push(arr[i]);
+        else right.push(arr[i]);
+      }
+      return quickSort(left).concat([num], quickSort(right));
+    }
+
+    var arr = [3,1,6,8,3,5];
+    quickSort(arr)
+    console.log(arr);
+</script>
+</body>
+ 
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            yield  返回结果,继续向下执行
+            return 返回结果,并结束函数运行
+        */
+
+        function a(){
+
+        }
+
+        function b(){
+
+        }
+        
+        function *demo(){
+            let num = 0;
+
+            if(num % 2){//1->true
+                yield a();
+            }else{
+                yield b();
+            }
+            
+            num++
+           
+        }
+
+        //Generator {}   生成器
+        let abc = demo(); //a 
+
+        console.log(abc.next());//Object { value: 1, done: false }
+        console.log(abc.next());
+        console.log(abc.next());
+        console.log(abc.next());
+    </script>
+</body>
+</html>

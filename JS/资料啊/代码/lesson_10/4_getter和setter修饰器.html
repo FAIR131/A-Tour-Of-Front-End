@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            修饰 : 伪装
+
+            方法 伪装成 属性
+        
+        */
+
+        var obj = {
+            a : 1,
+            get myself(){//b是key
+                return this;
+            },
+            set setself(arg){//set必须要传递参数
+                this.a = arg; //set函数中不允许return
+                            //一般做赋值的
+            }
+        };
+
+        console.log(obj.a);  //1
+        console.log(obj.myself);
+
+        obj.setself = "a"; //obj.setself("a");
+
+        console.log(obj.a);
+
+
+        // function A(){
+
+        //     set a(){ //自定义的函数对象当中不能使用修饰器
+
+        //     }
+        // }
+
+    </script>
+</body>
+</html>

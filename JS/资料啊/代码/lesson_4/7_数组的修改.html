@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //修改数据
+        //先查询,在替换
+
+        //1.把4改成0
+        var arr = [1,2,3,4,5,6];
+
+
+        
+        // arr.forEach(function(item){//index用不上可以不写
+        //     //item === 4
+        //     if(item===4){
+        //         //值的替换,item是变量
+        //         item = 0;
+        //     }
+        // });
+
+        //
+        // for(var index=0;index<arr.length;index++){
+        //     if(arr[index] === 4){
+        //         arr[index] = 0;
+        //     }
+        // }
+        // console.log(arr);
+        
+    </script>
+
+    <script>
+        //replace : 替换
+        console.log("1234".replace("2","a"));
+
+        //Array当中没有replace方法
+        // console.log(arr.replace(4,0));
+
+        //把数组转换为字符串,字符串可以使用replace方法,再把字符串转换为Array
+        
+        var arr1 = arr.toString(); //1,2,3,4,5,6
+        arr1 = arr1.replace(4,0);
+        //split是字符串的方法,根据什么符号,把字符串分割成数组
+        arr1 = arr1.split(",");
+        console.log(arr1);
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script> 
+        // 3.while循环问题
+        // 一张纸,纸的厚度为0.0001cm
+        // 问对折多少次可以超过珠穆朗玛峰的高8848m
+        var z = 0.0001 * 10000; //1
+        var q = 884800 * 10000;
+
+        // console.time(); //开始度量时间
+        // var count = 0;
+        // while(z < q){
+        //     z += z
+        //     count++
+        // }
+
+        // console.log(z);
+
+        // console.timeEnd() //度量结束
+        
+        //log10(0.01) = -2
+        //log2(8848000000) = 2
+
+        console.time();
+        console.log(Math.ceil(Math.log2(q)));
+        console.timeEnd();
+
+    </script>
+</body>
+</html>

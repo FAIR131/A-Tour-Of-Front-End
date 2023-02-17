@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 把js当中的数据渲染到html当中 -->
+
+    <!-- <div id="box"></div>
+
+    <script>
+        
+        const obj = {name:"徐技师",age:24};
+
+        let div = document.querySelector("div");
+
+        div.innerHTML = `姓名${obj.name}，年龄${obj.age}`
+
+        obj.age = 42;
+
+        //再次操控dom
+        div.innerHTML = `姓名${obj.name}，年龄${obj.age}`
+
+    </script>-->
+
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <div id="root">
+        姓名{{obj.name}},年龄{{obj.age}}
+    </div>
+
+    <script>
+       
+       var app = new Vue({
+            //在那个作用域
+            el: '#root',
+            data: {
+                message: 'Hello!',
+                obj : {name:"徐技师",age:24},
+            }
+        })
+    </script> -->
+
+    <script>
+        /*
+            vue 数据驱动视图(软件架构)
+
+            why?
+                - dom操作很麻烦
+        */
+        
+        //数据劫持 : 深度复制
+        let obj = {name:"徐技师",age:24};
+
+        //define定义  Property属性(财产)
+        //Object.defineProperty(被劫持的对象,属性名称,{配置项});
+
+        /*
+            value : 代表被劫持属性的值
+            writable :是否可以重写
+            enumerable : 可不可以枚举(循环)
+            get : 获取器函数
+                不能value 和 writable一起使用，
+            set : 设置器函数
+        */
+        // console.log(obj)
+        Object.defineProperty(obj,"age",{
+            // value : 30,
+            // writable : false,
+            // enumerable : false,
+            get(){
+                return 40
+            },
+            set(v){
+                //做数据更新的
+                console.log(1);
+                console.log(`把age修改成${v}`);
+            }
+
+
+        });
+
+        obj.age = 100;
+        // obj.age = 1;
+
+        console.log(obj.age);
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

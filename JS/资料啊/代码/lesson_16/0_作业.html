@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 2.生成随机整数数组
+        //     - 1.len如果是数组len = [5,3]  生成的随机数组是5行3列
+        //     - 2. len = [5,4,3,2,3,.....] 多维数组
+        
+
+        //生成随机整数
+        Math.randint = function(low,high){
+            return Math.floor(Math.random() * (high-low) + low)
+        }
+
+        //私有方法
+        Array.randintArray = function(low,high,len){
+            var res = [];  //res是数组,引用传地址
+
+            function inner(level,res,len){
+                //level = 1 - 1=0
+                //len = [5,4,3]
+                //判断当前的层数是否>2)(len.length - 1)
+                if(level > len.length - 1){//3>2 [[[1,2,3]]]
+                    //len[len.length-1]= len[3-1] = len[2] = 3
+                    for(var i=0;i<len[len.length-1];i++){
+                        res.push(Math.randint(low,high));
+                    }
+                }else{//[[[1,2,3]],[]]
+                    for(var i=0;i<len[level-1];i++){
+                        res[i] = [];
+                        inner(level+1,res[i],len);
+                    }
+                }
+
+               return res
+            }
+            /*
+                1.low代表最小的范围
+                2.high代表最大范围
+                3.len代表维度,代表每个维度元素长度
+            */
+           //加入程序员使用的时候忘记给len传值
+           if(len===undefined){
+                return []
+           }
+
+           if(Object.prototype.toString.call(len)==="[object Number]"){
+
+           }else if(Object.prototype.toString.call(len)==="[object Array]"){
+                //len = [5,4,3]
+                //需要向res当中插入元素
+                //len的长度 ===  数组树的深度[[],[]]
+
+                //level
+                var level = 1; //循环层数
+                return inner(level,res,len);
+
+           }else{
+                return []
+           }
+
+        }
+
+        // Array.randintArray(0,10,5);
+        // Array.randintArray(0,10,[5]);
+        
+
+        /*
+            生成一个检查测数组形状的函数
+        */
+    </script>
+
+
+    <script>
+        //生成随机整数
+        Math.randint = function(low,high){
+            return Math.floor(Math.random() * (high-low) + low)
+        }
+
+        //私有方法
+        Array.randintArray = function(low,high,len){
+            var res = [];
+
+            function inner(level,res,len){
+                if(level > len.length - 1){
+                    for(var i=0;i<len[len.length-1];i++){
+                        res.push(Math.randint(low,high));
+                    }
+                }else{
+                    for(var i=0;i<len[level-1];i++){
+                        res[i] = [];
+                        inner(level+1,res[i],len);
+                    }
+                }
+               return res
+            }
+
+            var level = 1; //循环层数
+            return inner(level,res,len);
+        }
+
+
+        var res = Array.randintArray(0,10,[5,2,2,3]);
+    </script>
+
+    <script>
+         //1.递归检测数组的形状 [5,4,3]
+        /*
+            是不是一个规则的数组?
+
+            从外层循环到最内层
+
+            如果是规则的数组,则记录长度
+        */
+
+        Array.shape = function(arr,level,shape){//level : 层数
+            //1.循环
+            //判断是不是一个规则的数组
+            if(shape === undefined){
+                shape = [];
+            }
+            if(level===undefined){
+                level = 0;
+            } 
+            var sign = [];
+            for(var i=0;i<arr.length;i++){//[5,4,3]
+                //检测每个元素是不是数组元素 , 数组当中可以填写一些标记
+                //检测每个数组元素长度是不是
+                if(Object.prototype.toString.call(arr[i]) !== "[object Array]"){
+                    //如果当前元素不是一个数组
+                    sign.push(false);
+                }else{
+                    sign.push(true);
+                }
+            }
+            
+            //当前数组当中存在两组内容,代表不规则
+            //如果只有true,递归
+            //如果只有false,代表没有子数组,直接返回形状
+            var s = [...new Set(sign)];      
+            if(s.length === 2){
+                return []
+            }else if(s[0]){//true
+                // console.log(1);
+                shape[level] = sign.length;//外层长度
+           
+                for(var i=0;i<arr.length;i++){
+                    //arr[i] = [1,2,3,4]
+                    //[2,]
+                    Array.shape(arr[i],level+1,shape);
+                }
+            }else{
+                //不是数组
+                shape[level] = arr.length;
+            }
+            return shape
+        }
+
+        console.log(Array.shape(res)) //[2,4]
+    </script>
+
+    <script>
+        //生成一个私有方法,改变数组的形状
+        //Array.reshape(arr=[[1,2,3,4],[1,2,3,4]],shape=[2,2,2]) //2*2*2
+        //先计算总共有多少个叶子节点8
+        //[[[1,2],[3,4]],[[1,2],[3,4]]]
+    </script>
+   
+</body>
+</html>

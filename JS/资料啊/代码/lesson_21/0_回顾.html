@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="">
+        //17.25个人跑步,不记时,多少次
+        /*
+            A1   B1  C1   D1   E1
+ 
+            A5    ....         E5
+
+            5次
+            6次 : 每组第一名跑
+            7次 : B1  C1  A2  A3  B2
+        */
+
+        /*
+            var:
+                - 全局污染
+                - 不是块级元素
+                - 声明提升
+
+            let:
+                - 严格模式
+                - 块级
+                - 没有声明提升 : 临时死区
+
+
+                
+        */
+
+        // var a = 1;
+        // function fo(){
+        //     console.log(a);  //undefined
+
+        //     var a = 2;
+        // }
+
+        // fo();
+
+        // let a = 1;
+        // function foo(){
+        //     console.log(a);  //error
+        //     let a = 2;
+        // }
+
+        // foo();
+    </script>
+
+    <script>
+        // function A(name){
+        //     if(this instanceof A){
+        //         this.name = name;
+        //     }else{
+        //         return new A(name);
+        //     }
+        // }
+
+        // function B(name){
+        //     if(this instanceof A){
+        //         A.call(this,name);
+        //     }else{
+        //         return new B(name);
+        //     }
+        // }
+
+        // B.prototype = Object.create(A.prototype);
+        // B.prototype.constructor = B;
+
+        // let a = new B("abc");
+        // console.log(a);
+
+        // class A{
+        //     constructor(name){
+        //         this.name = name;
+        //     }
+        // }
+
+        // class B extends A{
+        //     constructor(name){
+        //        super(name);
+        //     }
+        // }
+
+
+
+    </script>
+
+    <script>
+        //js常用
+        /*
+            基本:
+                Number 
+                String
+                Boolean
+                null
+                undefined
+                Symbol
+            复合:
+                Object
+                Array
+                Map
+                Set
+        */
+
+        //标准类型
+        /*
+            Number 
+            String
+            Boolean
+            null
+            undefined
+            Object 
+                Array
+                Set
+                Map
+                Symbol
+            function
+        */
+    </script>
+
+    <script>
+        /*  
+            都是改变this指向的
+
+            call
+                - Math.abs.call(obj,args);
+            apply
+                - Math.abs.call(obj,[args]);
+                //劫持传递
+                //数组传参
+        */
+    </script>
+
+    <script>
+        /*
+            #私有,不能继承,只能再类对象当中书写,实例调用的
+            static 静态的,只能是类对象使用,可以被继承
+            static #静态私有,只能再类对象当中书写(类对象使用),不能继承
+        */
+
+        // class A{
+        //     static a = 1;
+        //     #b = 2;
+        //     static #c = 3;
+        //     constructor(){
+        //         let d = 4;
+        //     }
+        // }
+
+        // class B extends A{
+        //     constructor(){
+        //         super();
+        //     }
+
+        // }
+
+        // let b1 = new B();
+
+        // console.log(B.a);
+
+        // console.log(b1.e);
+     
+    </script>
+
+    <script>
+        /*
+            循环把事件绑定在子元素当中,改成绑定在父元素当中
+            事件冒泡
+        */
+       
+    </script>
+
+    <script>
+        /*
+            栈 :
+                - 存储的是简单结构数据
+                - 字面量
+                - Number String  Boolean
+                - 编址
+            堆 :
+                - Object
+                - function
+        */
+    </script>
+
+    <script>
+        /*
+            当前一共有16架摩托车,每架摩托可以跑100KM,现在所有的车一起行驶,如果跑的最远?
+
+            16->50km
+            8->50km
+            4->50km
+            2->50km
+            1->100km = 300km
+
+        */
+
+        let num = 16;
+        let s = 100;
+
+        let sum = 0;
+        while(num){
+            sum += 100/num;
+            num--
+        }
+
+        console.log(sum);//338.0728993228994
+    </script>
+</body>
+</html>

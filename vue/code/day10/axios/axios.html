@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <style>
+        ul, li {
+            overflow: hidden;
+            list-style: none;
+            padding: 10px;
+        }
+
+        li img {
+            float: left;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="box">
+    <button @click="handelFetch">axios</button>
+    <ul>
+        <li v-for="item in datalist" :data="item.filmId">
+            <img :src="item.poster">
+            {{ item.name }}
+        </li>
+    </ul>
+</div>
+
+<script type="text/javascript">
+
+    new Vue({
+        el: '#box',
+        data: {
+            datalist: []
+        },
+        methods: {
+            handelFetch() {
+                axios.get('./json/maizuo.json').then(res => {
+                    // console.log(res.data.data.films)
+                    this.datalist = res.data.data.films
+                })
+
+            }
+        }
+    })
+</script>
+</body>
+</html>

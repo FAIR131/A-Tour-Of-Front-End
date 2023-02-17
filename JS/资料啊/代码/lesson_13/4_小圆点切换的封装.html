@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{ margin: 0;padding: 0;list-style: none;}
+        .list1 li{
+            float : left;
+            width : 50px;
+            height: 50px;
+            margin-right: 10px;
+            border-radius: 50%;
+            background-color: blanchedalmond;
+        } 
+        .list1 .lis{
+            background-color: greenyellow;
+        }
+        .list2 li{
+            float : left;
+            width : 50px;
+            height: 50px;
+            margin-right: 10px;
+            border-radius: 50%;
+            background-color: blanchedalmond;
+        } 
+        .list2 .lis{
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+    <ul class="list1">
+        <li class="lis"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <ul class="list2">
+        <li class="lis"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <script>
+        //封装派他思想的小圆点函数或类
+        /*
+            参数
+                - 要么传递一个dom对象进去 
+                - 直接传字符串 ".list1 li"
+        */
+       
+        // function start(str){
+        //     var lis = document.querySelectorAll(str);
+        //     lis.forEach(function(item){
+        //         //移入
+        //         item.onmouseover = function(){
+        //             lis.forEach(function(li){
+        //                 li.style.backgroundColor = "blanchedalmond";
+        //             })
+        //             this.style.backgroundColor = "greenyellow";
+        //         }
+        //     });
+        // }
+
+        // console.time();
+        // start(".list1 li");
+        // start(".list2 li");
+        // console.timeEnd();
+        //能不能不使用循环实现排他思想
+        /*
+            开始的时候,第一个小圆点是绿色额
+            设置一个变量,这个变量的默认值是0索引;
+            当鼠标点击到不同的li当中,变量变成当前索引
+        */
+
+            function start(str){
+                var lis = document.querySelectorAll(".list1 li");
+                var index = 0; //是刚出的绿色小圆点的索引
+
+                lis.forEach(function(item,ind){
+                    //移入
+                    item.onmouseover = function(){
+                        //lis[0] ：上一个被选中的小圆点
+                        lis[index].style.backgroundColor = "blanchedalmond";
+                        index = ind;
+                        this.style.backgroundColor = "greenyellow";
+                    }
+                });
+            }
+            console.time();
+            start(".list1 li");
+            start(".list2 li");
+            console.timeEnd();
+
+
+    </script>
+</body>
+</html>

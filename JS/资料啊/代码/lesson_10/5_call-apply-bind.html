@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        /*
+            call的作用是改变this指向,call可以传参
+            apply的作用是改变this指向,不能传参
+            bind的作用是改变this指向,不自动调用
+        */
+
+        function demo(name){
+            return name + "-----"
+        }
+
+        var obj = {};
+
+        //使用obj调用demo功能
+        console.log(demo.call(obj,"张三")); //自动调用
+        console.log(demo.apply(obj));      //自定调用
+        console.log(demo.bind(obj)("张三"));//不自动调用的
+       
+
+
+    </script>
+    
+</body>
+</html>

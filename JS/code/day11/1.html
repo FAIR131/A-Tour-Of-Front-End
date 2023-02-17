@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Document</title>
+  <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <script>
+   function NumJS() {
+
+      //求一维数组的和
+      this.sumArray = function (param) {
+        if (!(param instanceof Array)) {
+          console.log("%c param is not the Array!", "color:red");
+          return false
+        }
+
+        var sum = 0;
+
+        for (var i = 0; i < param.length; i++) {
+          sum += param[i];
+        }
+        return sum
+      }
+
+      //求一维度数组均值
+      this.avgArray = function (param) {
+        if (!(param instanceof Array)) {
+          console.log("%c param is not the Array!", "color:red");
+          return false
+        }
+        var n = param.length;
+        var sum = this.sumArray(param);
+        return sum / n;
+      }
+
+      //求一维数组的方差variance
+      this.varArray = function (param) {
+        if (!(param instanceof Array)) {
+          console.log("%c param is not the Array!", "color:red");
+          return false
+        }
+
+        var n = param.length;
+        var mean = this.avgArray(param);
+        var diff_sum = 0;
+        for (var i = 0; i < param.length; i++) {
+          diff_sum += (param[i] - mean) ** 2
+        }
+
+        var variance = diff_sum / n;
+        return variance
+      }
+
+      //求一维数组的标准差
+      this.stdArray = function (param) {
+        if (!(param instanceof Array)) {
+          console.log("%c param is not the Array!", "color:red");
+          return false
+        }
+
+        var variance = this.varArray(param);
+        var n = param.length;
+        var std = variance ** 0.5;
+        return std
+      }
+
+      //检查归整的多维度数组形状的
+      this.shape = function (param) {
+        var _this = this;
+        //默认检查数组的长度，对象长度也可以检查
+        if (param === undefined) {
+          console.log("%c param is undefined!", "color:red");
+          return false
+        }
+        if (!(Array.isArray(param))) {
+          console.log("%c param is not the Array!", "color:red");
+          return false
+        }
+        var size = [];
+        var level = 1 //每一层数组的序号
+
+        function loop(param, size, level, cum) {
+          var flag = true; //默认每个数组的长度是一样的
+          var child_len = [];  //求每个子数组的长度
+
+          // for (var i = 0; i < param.len)
+  </script>
+ 
+</body>
+
+</html>

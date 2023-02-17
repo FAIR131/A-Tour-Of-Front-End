@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+<form action="javascript:;">
+    <input type="text" name="username">
+    <input type="password" name="password" id="">
+    <input type="submit" value="登录">
+</form>
+
+<script>
+         /*
+             1.找到 submit
+             2.给submit绑定单击事件
+             3.写ajax
+         */
+    let sub = document.querySelector('input[type=submit]');
+    sub.addEventListener('click',function (){
+        //1.先实例化ajax
+        let xhr = new XMLHttpRequest();
+        //2.指定请求的方式和请求的路径
+        xhr.open('GET','http://10.31.155.74:3000/demo')
+        console.log('---',xhr.readyState);
+        //3.发出请求
+        xhr.send();
+        //4.接受服务器响应
+        xhr.onreadystatechange = function (response){
+            if(xhr.readyState===4){
+                if(xhr.status>=200&&xhr.status<300){
+                    console.log('<<<',response.target.response);
+                }
+            }
+        }
+
+    })
+</script>
+</body>
+</html>

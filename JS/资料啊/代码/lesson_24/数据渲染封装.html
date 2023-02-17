@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <table>
+            <tr v-for="item in message">
+                <td v-for="v in item">
+                    {{v}}
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <script>
+        //从后端拿到数据,然后通过dom把数据载入标签中
+        //ajax 
+
+        let ajax = new XMLHttpRequest();//初始化
+
+        ajax.open("GET","./data.json"); //发出本地请求
+
+        ajax.send(); //发送请求
+
+        //当状态变化时候
+        ajax.onreadystatechange = function(data){
+            if(ajax.readyState === 4){//请求成功,并且解析对方的信息
+                if(ajax.status >= 200 && ajax.status <300){
+                    let d = data.target.response;
+                    let res = JSON.parse(d);
+
+                    //1.找到div
+                    //2.创建一个table-dom,把dom插入div-dom中
+                    //3.循环数据
+                    //生成tr-dom和td-dom
+
+                    var app = new Vue({
+                        el: '#box',//控制的区域
+                        data: {
+                            message: res
+                        }
+                    })
+                }
+            }
+        } 
+
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        function Person(name,age){
+            this.name = name;
+            this.age = age;
+        }
+
+        /*
+            Person 是函数对象,函数对象自身也是一个对象
+
+            既然是对象,那么可以拥有属性和方法
+
+            函数对象 的 私有属性和方法
+
+            引用对象可以有无数个 : this.name = 值也有无限种可能
+
+            函数对象有且只有一个 : Person.hobby的始终只有一个
+
+        */
+        //私有属性
+        Person.hobby = "看天";
+        //私有方法
+        Person.func = function(){
+            return this
+        }
+
+        Person.prototype.sex = "男";
+
+        var p1 = new Person("张三",18);
+        var p2 = new Person("李四",28);
+
+        console.log(p1.name);      //张三
+        console.log(p1.sex);       //男
+
+        
+
+        //先找 本身的代码  找不到 找原型对象
+        console.log(Person.hobby);     //?
+        console.log(Person.func());
+
+        
+
+    </script>
+</body>
+</html>

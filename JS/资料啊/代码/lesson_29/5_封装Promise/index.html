@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Promise.js"></script>
+</head>
+<body>
+    <script>
+        let p = new Promise((resolve,reject)=>{
+            //异步 比同步代码运行时间晚
+            //所以，当前的状态是pending
+
+            setTimeout(function(){
+                resolve("ok");
+            });
+
+
+        }).then(value=>{
+            
+            console.log(">>>",value);
+
+        },reason=>{
+
+        });
+
+
+        
+        
+
+
+
+    </script>
+</body>
+</html>

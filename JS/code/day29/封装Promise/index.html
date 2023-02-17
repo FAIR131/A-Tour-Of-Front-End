@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+        <script src="./promise.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+
+
+<script>
+    //p是promise的实例对象
+    let p = new Promise((resolve, reject) => {
+        // pending 等待
+        // resolve('success');//fulfilled 成功
+        // reject('error');//rejected  失败
+        setTimeout(function () {
+            resolve('ok')
+        })
+    })
+//p1 接收then的返回结果
+    //then返回的是promise对象
+    let p1 = p.then(value => {
+        console.log('>>>>', value)
+    }, reason => {
+        // console.log('<<<<',reason)
+
+    })
+
+    console.log(p1)
+</script>
+</body>
+</html>

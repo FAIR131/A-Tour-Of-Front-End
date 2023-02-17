@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        td,
+        th {
+            width: 200px;
+            height: 36px;
+        }
+
+        th{
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="tab">
+        <tr id="th"></tr>
+    </table>
+    <script>
+        /*
+            这是后台系统
+            读取到后台的数据,数据展示以后,显示在表格当中
+
+            //懒加载
+            数据一共有300W条 Ajax
+
+            显示也只显示100条,做成分页
+        */
+
+        /*
+            onload : 当页面加载完成时
+            DOMContentLoaded : 当dom加载完成时,比onload晚一些
+        */
+
+        let th = document.querySelector("#th");
+        let tab = document.querySelector("#tab > tbody");
+
+        window.addEventListener("DOMContentLoaded", function () {
+            let p = new Promise((resolve, reject) => {
+                try {
+                    //实例化Ajax
+                    let ajax = new XMLHttpRequest();
+                    //填写接口的位置
+                    ajax.open("GET", "./data.json");
+                    //发生请求
+                    ajax.send()
+                    //异步等待后端返回数据
+                    ajax.onreadystatechange = function (data) {
+                        if (ajax.readyState === 4) {
+                            if (ajax.status >= 200 && ajax.status < 300) {//200
+                                //response : 响应
+                                resolve(JSON.parse(data.target.response));
+                            }
+                        }
+                    }
+                } catch (e) {
+                    //reject
+                    throw e
+                }
+
+            })
+
+            p.then(value => {
+                //th插入th标签
+                //[{}]
+                //数组不为空则循环
+                if (value.length > 0) {
+                    Object.keys(value[0]).forEach(item => {
+                        let t = document.createElement("th");
+                        t.innerText = item;
+                        th.appendChild(t);
+                    })
+                }
+
+                //td部分
+                value.forEach(item => {
+                    //item-->Object
+                    let tr = document.createElement("tr");
+                    for (let k in item) {
+                        let td = document.createElement("td");
+                        td.textContent = item[k];//tom 18
+                        //td放到tr中
+                        tr.appendChild(td);
+                    }
+                    tab.appendChild(tr);
+                })                
+            })
+        })
+
+
+        //事件委派
+        tab.onclick = function(e){
+            if(e.target.nodeName === "TH" && e.target.innerText === "age"){
+                //找到除了第一行以外的所有数据
+                let tbody = document.querySelector("#tab > tbody");
+                let arr = [...tbody.children];//dom
+                let first = arr.shift();
+                
+                let work1 = new Worker("http://127.0.0.1:5500/lesson_31/2_la/work1.js");
+
+                //传输数据
+                //work当中不接受dom对象
+                //把所有的id取出来作为key,年龄作为值
+                let array = [];
+                let title = [];
+                th.querySelectorAll("th").forEach(item=>{
+                    title.push(item.innerText);
+                })
+
+                arr.forEach(item=>{//dom对象
+                    let obj = {}
+                    item.querySelectorAll("td").forEach((v,i)=>{
+                        //v值  i索引
+                        //obj[name] = tom
+                        if(!isNaN(Number(v.innerText))){
+                            obj[title[i]] = Number(v.innerText);
+                        }else{
+                            obj[title[i]] = v.innerText;
+                        }
+                        
+                    })
+                    array.push(obj);
+                })
+                
+                work1.postMessage(array);
+
+
+                work1.onmessage = function(e){
+                    //e.data是排号顺序的数据
+                    
+                    //清空原来的数据
+                    tab.innerHTML = "";
+
+                    //补充原先保留的头数据
+                    tab.appendChild(first);
+
+                    e.data.forEach(item => {
+                        //item-->Object
+                        let tr = document.createElement("tr");
+                        for (let k in item) {
+                            let td = document.createElement("td");
+                            td.textContent = item[k];//tom 18
+                            //td放到tr中
+                            tr.appendChild(td);
+                        }
+                        tab.appendChild(tr);
+                    })
+                }
+
+                
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //es6 - ``
+
+        // var myhtml = '<li>11111</li>\
+        // <li>2222</li>\
+        // <li>3333</li>'
+        var myhtml = `<li>11111</li>
+        <li>2222</li>
+        <li>3333</li>`
+
+        var myname = "kerwin"
+        var str = `my name is ${myname} ${10+20} ${10>20?'aaa':'bbb'}`
+        document.write(str)
+
+
+         var arr =["xiaoming","kerwin","tiechui"]
+        var arr2 = arr.map(function(item){
+            return `<li>${item}</li>`
+        })
+        console.log(arr2)
+
+        document.write(arr2.join(""))
+    </script>
+</body>
+</html>

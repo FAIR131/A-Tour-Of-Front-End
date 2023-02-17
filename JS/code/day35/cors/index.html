@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<script id="s"></script>
+
+<script>
+
+let script = document.createElement('script')
+script.src = 'http://localhost:80/testAJAX?callback=abc'
+
+function abc(data){
+    alert(data.name)
+}
+
+document.body.appendChild(script)
+</script>
+
+
+</body>
+</html>

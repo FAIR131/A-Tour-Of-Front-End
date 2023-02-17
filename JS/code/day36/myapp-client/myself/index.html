@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <td>头像</td>
+        <td><img src="" alt="" style="width: 100px"></td>
+    </tr>
+    <tr>
+        <td>昵称</td>
+        <td><input type="text" name="nickname"></td>
+    </tr>
+    <tr>
+        <td>账户</td>
+        <td><input type="text" name="username"></td>
+    </tr>
+    <tr>
+        <td><input type="submit" value="登录"></td>
+        <td></td>
+    </tr>
+</table>
+
+<script>
+    let img = document.querySelector('img');
+    let [nick, user] = document.querySelectorAll('input[type=text]')
+    if (localStorage?.getItem('myapp-username')) {
+        let token = localStorage.getItem('myapp-username')
+        fetch('http://127.0.0.1/getuser', {
+            method: 'POST',
+            headers: {
+                "content-type": "application/x-www-form-urlencoded"
+
+            },
+            body: `token=${token}`
+        }).then(response => {
+            return response.json(); //response是响应对象 status
+        }).then(value => {
+            if (value.code === 1) {
+                /*
+                    Object {
+                        USER_ID: 44,
+                        USER_NAME: "this_my_email@126.com",
+                        NICK_NAME: "空气",
+                        AVATAR: "http://localhost/image/getimg/userimg/default/default.jpg"
+                    }
+                */
+                img.src = value.info?.AVATAR;
+                nick.value = value.info?.NICK_NAME;
+                user.value = value.info?.USER_NAME;
+            } else {
+                alert(value.msg);
+            }
+        })
+    }
+
+</script>
+</body>
+</html>

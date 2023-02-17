@@ -1,0 +1,22 @@
+一、事件
+    1、不要绑定原生事件名称,绑定以小驼峰命名的事件
+    2、事件绑定时赋值一个函数,普通函数和箭头函数要注意this指向
+    3、事件对象,不是原生的事件对象,是react的合成事件
+    4、合成事件是将页面所有的元素的dom事件全部整合到一个事件中心,通过冒泡到document元素上时触发
+
+二、props进阶
+    1、children是一个隐藏的属性,通过此属性可以模拟默认插槽功能(也可理解为父子传值的一种方式)
+    2、给children提供了内置方法:React.Children.map,React.Children.forEach,React.Children.count
+    3、模拟具名插槽,还要借助自定义属性给子组件传值元素进行渲染
+
+三、生命周期
+    1、constructor:类组件的构造函数,必须调用super函数,执行一次
+    2、componentWillMount:组件挂载前执行,此时页面还没有更新,react新版本中已废弃,执行一次
+    3、render:渲染函数,必须返回react元素(即模板),在首次渲染和后面数据更新时都会执行
+    4、componentDidMount:组件挂载后执行,此时页面内容已经更新,一般在此函数中发送网络请求,开启定时器等初始化工作
+
+    5、shouldComponentUpdate:在状态数据更新时触发,必须返回一个布尔值,react通过返回的布尔值决定是否更新页面,接收新的props和state的值
+    6、componentWillUpdate:页面将要更新,接收新的props和state的值
+    7、componentDidUpdate:在render函数渲染后执行,此时页面已经更新,接收老的props和state的值
+
+    8、componentWillUnmount:在页面卸载前执行

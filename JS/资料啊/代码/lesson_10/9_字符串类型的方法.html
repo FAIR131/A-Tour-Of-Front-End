@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = "godie!!!";
+
+        console.log(str.indexOf("f"));   //0
+        console.log(str.lastIndexOf("f"));
+
+        console.log(str.charAt(0)) //丨
+        console.log(str[0])        //丨
+
+        console.log(str.charCodeAt(0)); //返回对应索引的unicode编码
+
+        console.log(str.concat("阿西吧"));
+        console.log(str + "阿西吧");
+
+        //String的私有方法
+        console.log(String.fromCharCode(20008));
+        //从后端传输过来的数据,有可能会被编码
+        console.log(String.fromCharCode(99999));
+
+
+        console.log("12" > "2"); //"1" > "2"
+
+        //大1  等于0  小于-1
+        console.log("3".localeCompare("2"));
+
+        //切片 : 把有序类型当中的一小个片段剪切出来
+        //从索引为1的位置，截取到3的位置
+        console.log(str.slice(1,4)); //半闭区间   不包含最后一位
+        // console.log(str);
+
+
+        //字符串截取
+        //从索引为1的位置开始，向后截取4个
+        console.log(str.substr(1,4));//
+
+        console.log(str.substring(1,4)); //slice
+
+
+        //根据符号分割,分割成数组
+        var arr = [1,2,3,4,5,6];
+        console.log(arr.join());
+        console.log("1,2,3,4,5,6".split("-"));
+
+        //大小转换
+        var b = "hElLo";
+
+        console.log(b.toLowerCase());
+        console.log(b.toUpperCase());
+        //abcdefghijklmnopqrstuvwxyz
+        //ABCD
+        //变成两组Object数据类型{a:A,b:B....}{A:a,B:b,.....}
+        //作业,封装两个方法?
+
+        //如果做到首字母大写?
+        //"hello world"  => "Hello World"
+
+        console.log(arr.toString()) //join
+
+        console.log(b.includes('lo')); //大小写区分
+        //张国庆丨
+
+        console.log(b.startsWith("h"));//是不是以什么开头
+        console.log(b.endsWith("Lo"));
+        /*
+            [
+                {name:"王先生"},
+                {name:"李先生"}
+            ]
+        
+        */
+
+
+    </script>
+</body>
+</html>

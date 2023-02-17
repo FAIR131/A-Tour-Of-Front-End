@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        /*
+            web-worker : 前端线程
+
+            进程-线程-协程
+
+            进程 : 控制几个CPU调度当前代码的,进的数量取决于CPU的数量,如果进程的数量大于CPU的数量,则排队
+                - 浏览器种一个页面,就是一个进程
+                - webJS代码 运行再一个页面(进程)的(线程当中)
+                - webJS不能调用进程(寄生在系统上的软件可以调用进程)
+                - 并行的 : 计算密集型
+                |------------------->------------------->
+                |------------------->------------------->
+
+            线程 :
+                - 并发的 IO(in-out 读写)密集型 
+                - 迅雷 
+                - HTML5 当中增加了 webworker 开启额外的线程(数据Saas)
+                下载QQ   |----->      ----->      ----->
+                下载WC   |      ----->      ----->
+
+
+            协程 : 
+                不是系统级别的
+                程序员自己可以暂停那一块代码
+        */
+
+        // 1 1 2 3 5 8 13 21 ......
+        function fibo(ind){
+            if(ind===0 || ind ===1){
+                return 1
+            }else{
+                return fibo(ind-2) + fibo(ind-1);
+            }
+        }
+
+
+        console.time();
+        console.log(fibo(50));
+        console.timeEnd();
+
+        // console.log(111);
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #box{
+            height: 100px;
+            
+        }
+    </style>
+</head>
+<body>
+
+    <div id="box" style="width: 100px;color:black;background-color: yellow;">11111</div>
+    <script>
+        // 只能行内样式方法 style --读写。
+
+        console.log(box.style.width)
+        console.log(box.style["background-color"])
+        console.log(box.style.backgroundColor) //驼峰
+
+
+        box.style.width = "200px"   
+        box.style.backgroundColor = "red"
+
+
+        // 内部样式，外部样式，行内 getComputedStyle 获取，不能赋值写样式。
+        var obox  = document.getElementById("box") 
+        // var res = getComputedStyle(obox)["background-color"]
+        var res = getComputedStyle(obox).backgroundColor
+        console.log(res)
+
+        getComputedStyle(obox).width="10px"
+
+        // getComputedStyle 标准 
+        // ie 低版本  obox.currentStyle.backgroundColor
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <style>
+        .pClass {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="root">
+
+</div>
+<script>
+    <!--    创建react元素-->
+    // let divNpde = React.createElement('div', {id: 'app'}, '今天天气好冷')
+    let divNpde = React.createElement('div', {id: 'app'}, ['今天天气好冷', React.createElement('p', {class: 'pClass'}, ['好困啊', React.createElement('span', {abc: 'def'}, '不要打瞌睡')])])
+    //将元素渲染到页面
+    ReactDOM.render(divNpde, document.getElementById('root'))
+</script>
+</body>
+</html>

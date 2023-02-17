@@ -1,0 +1,31 @@
+$isShowTab:true;
+//.......
+$isRed:false;
+
+@if ($isShowTab==true) {
+    .tabbar{
+        position: fixed;
+        left:0;
+        top:0;
+    }
+}
+
+@else {
+    .tabbar{
+        position: relative;
+    }
+}
+
+
+div{
+    width: 100px;
+    height: 100px;
+    @if ($isRed==true) {
+        background: red;
+    }
+    @else{
+        background: yellow;
+    }
+}
+
+//.......

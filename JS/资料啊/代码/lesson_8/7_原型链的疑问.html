@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Object是函数对象,JS自动生成的
+        //Object在定义的时候,已经有了原型对象了
+
+        //在Object原型当中再添加一个方法
+        Object.prototype.func = function(){
+            return true
+        }
+        // console.log(Object.prototype);
+
+
+        function Demo(){}
+
+        Demo.prototype.fo = function(){
+            return false
+        }
+
+        var d1 = new Demo();
+
+        console.log(d1);
+        console.log(d1.fo());
+
+        //生成Object的引用对象
+        //new Object()  = {}
+        var o1 = {};
+        console.log(o1.func());
+        // console.log(o1.fo());//Object的原型再向上找,找到是null
+        console.log(o1);
+
+        /*
+            为什么可以使用？应为Demo 和 Object之间存在关系
+
+            Demo的原型对象是Object类型
+            Demo的原型对象是引用对象,引用对象当中有__proto__属性
+                __proto__属性记录的Object的原型对象
+            
+            Object是所有类型的 "祖先" 类,把所有的方法和属性都 "遗传" 给其它对象
+
+
+        */
+    </script>
+</body>
+</html>

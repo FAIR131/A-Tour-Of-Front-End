@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <script>
+            
+        //get-set修饰符 : 把方法伪装成属性
+        // var obj = {
+        //     a : 0,
+
+        //     func1 : function(arg1,arg2){
+        //         return arg1+arg2
+        //     },
+
+        //     set func2(arr){
+        //         this.a = arr;
+        //     },
+
+        //     get func2(){
+        //         return this.a
+        //     }
+        // }
+
+        // console.log(obj.func1(1,2));
+
+        //
+        // obj.func2 = [3,2,3];
+
+        // console.log(obj.func2);
+    </script>
+
+    <script>
+        // function Person(name){
+        //     //this 指向实例对象
+        //     if(this instanceof Person){
+        //         this.name = name
+        //     }else{
+        //         return new Person(name);
+        //     }
+        // }
+
+        //方法写在prototype
+        
+        // Person.prototype = {
+        //     constructor : Person,
+        //     get getName(){
+        //         return this.name
+        //     },
+        //     set setName(arg){
+        //         this.name = arg;
+        //     }
+        // }
+
+        //a是实例对象
+        // var a = Person("张三");
+
+        // console.log(a.getName);
+        // a.setName = "李四";
+        // console.log(a.getName);
+    
+    </script>
+
+    <script>
+        //类对象
+        class Person{
+            #name = 123;
+            //constructor整个类当中第一个被运行的方法
+            //在new 的时候自动调用
+            constructor(name){
+                this.name = name;
+            }
+
+            //get和set一般会炒作私有属性
+            get getName(){
+                return this.#name
+            }
+
+            set setName(arg){
+                this.#name = arg;
+            }
+            
+        }
+
+        let b = new Person("王五");
+
+        // console.log(b.getName);
+
+        b.setName = "赵四";
+
+        console.log(b.getName);
+        
+    </script>
+</body>
+</html>

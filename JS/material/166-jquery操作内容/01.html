@@ -1,0 +1,51 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery.js"></script>
+</head>
+<body>
+    <div id="box">
+        <div>1111111
+
+            <p>2222222222222
+                <span>3333333333333</span>
+            </p>
+        </div>
+    </div>
+
+    <ul class="list1">
+
+    </ul>
+
+    <ul class="list2">
+
+    </ul>
+
+    <input type="text" name="" id="">
+    <input type="text" name="" id="">
+    <input type="text" name="" id="">
+    <script>
+        // html()   innerHTML
+        console.log($("#box").html())
+
+        var arr = ["aaa","bbb","ccc"]
+        var listr = arr.map(item=>`<li>${item}</li>`).join("")
+        $("ul.list1").html(listr)
+        // text()   innerText
+
+        console.log($("#box").text())
+
+        $("ul.list2").text(listr)
+        // val()    value
+
+        console.log($("input").val())
+    </script>
+</body>
+</html>

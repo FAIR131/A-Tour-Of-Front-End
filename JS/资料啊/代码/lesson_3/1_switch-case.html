@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //switch-case还是一个判断
+        /*语法
+            switch(准备要被判断变量){
+                case 值1:
+                    执行代码
+                    break; (退出switch代码块)
+                case 值2:
+                    执行代码
+                    break; (退出switch代码块)
+                default:
+                    执行代码
+            }
+        */
+
+        //判断用户的会员等级
+        //银泰 - vip1
+        
+        var level = Number(prompt("请输入会员等级:")); //bug
+        
+        switch(level){
+            //level = 1
+            case 1:
+                alert("打95折");
+                break;
+            case 2:
+                alert("打9折");
+                break;
+            case 3:
+                alert("打85折");
+                break;
+            case 4:
+                alert("打8折");
+                break;
+            case 5:
+                alert("打6折");
+                break;
+            default:
+                alert("会员异常");  
+        }
+
+
+        /*
+            if-else 和 switch-case之间的区别
+            - if-else可以使用任意的比较运算符进行判断
+            - if-else可以判断范围值
+
+            - switch-case只能比对等于关系
+            - switch-case只能比对单一值
+            - switch-case的效率比较高(不能回答)
+        */
+        
+        
+
+        
+
+
+
+
+
+    </script>
+</body>
+</html>

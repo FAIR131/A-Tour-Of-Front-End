@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin: 0px;padding: 0px;}
+        #smallbox {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            float:left;
+        }
+        #smallbox > img{
+            position: absolute;
+            width: 300px;
+            height: 300px;
+        }
+        #smallbox > span{
+            position: absolute;
+            width:100px;
+            height: 100px;
+            float: left;
+            background-color: coral;
+            opacity: 0.3;
+            display: none;
+        }
+        #bigbox{
+            position: relative;
+            width: 600px;
+            height: 600px;
+            float: left;
+            display: none;
+        }
+
+        #bigbox > img{
+            position: absolute;
+            width: 600px;
+            height: 600px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="smallbox">
+        <img src="./imgs/1.webp" alt="">
+        <span></span>
+    </div>
+
+    <div id="bigbox">
+        <img src="./imgs/1.webp" alt="">
+    </div>
+
+    <script>
+        //一般来说有三张图
+        let smallbox = document.querySelector("#smallbox");
+        let smallbox_span = document.querySelector("#smallbox > span");
+        
+        let [smallbox_left,smallbox_top] = [smallbox.offsetLeft , smallbox.offsetTop];
+        let [smallbox_width,smallbox_height] = [smallbox.offsetWidth , smallbox.offsetHeight];
+
+        //1.先给小盒子绑定移入事件
+        smallbox.addEventListener("mouseover",function(e){
+            smallbox_span.style.display="block";
+        });
+        //2.先给小盒子绑定移出事件
+        smallbox.addEventListener("mouseout",function(e){
+            smallbox_span.style.display="none";
+        });
+        //鼠标移动
+        smallbox.addEventListener("mousemove",function(e){
+            //移动的时候需要做那些事
+            //1.获取鼠标坐标
+            let [mx,my] = [e.clientX , e.clientY];
+            //2.span的宽高
+            let [sw,sh] = [smallbox_span.offsetWidth , smallbox_span.offsetHeight];
+            //3.获取span的left和top
+            let [sl,st] = [smallbox_span.offsetLeft , smallbox_span.offsetTop];
+            //鼠标定位在盒子中间
+            let left = mx - sw/2;
+            let top = my - sh/2;
+
+            //判断临界值
+            if(left >= (smallbox_left + smallbox_width)-sw){
+                left = (smallbox_left + smallbox_width)-sw;
+            }else if(left <= smallbox_left){
+                left = smallbox_left
+            }
+
+            if(top >= (smallbox_top + smallbox_height)-sh){
+                top = (smallbox_top + smallbox_height)-sh;
+            }else if(top <= smallbox_top){
+                top = smallbox_top
+            }
+
+            //移动
+            smallbox_span.style.left = left + "px";
+            smallbox_span.style.top = top + "px";
+        })
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="myget">get</button>
+    <button id="mypost">post1</button>
+    <button id="myput">put</button>
+    <button id="mypatch">patch</button>
+    <button id="mydelete">delete</button>
+    <script src="./util.js"></script>
+    <script>
+        myget.onclick = function () {
+            ajax({
+                url:"http://localhost:3000/users",
+                data:{
+                    username:"kerwin",
+                    password:"789"
+                },
+                success:function(res){
+                    console.log("sucess",res)
+                },
+                error:function(err){
+                    console.log("error",err)
+                }
+            })
+        }
+
+        mypost.onclick = function () {
+            ajax({
+                url:"http://localhost:3000/users",
+                data:{
+                    username:"xiaoming",
+                    password:"456"
+                },
+                method:"POST",
+                headers:{
+                    "content-type":"application/x-www-form-urlencoded"
+                },
+                success:function(res){
+                    console.log("sucess",res)
+                },
+                error:function(err){
+                    console.log("error",err)
+                }
+            })
+        }
+
+        myput.onclick = function () {
+            ajax({
+                url:"http://localhost:3000/users/1",
+                data:{
+                    username:"ximenteacher1111",
+                    
+                },
+                method:"PUT",
+                headers:{
+                    "content-type":"application/json"
+                },
+                success:function(res){
+                    console.log("sucess",res)
+                },
+                error:function(err){
+                    console.log("error",err)
+                }
+            })
+        }
+
+        mypatch.onclick = function () {
+            ajax({
+                url:"http://localhost:3000/users/1",
+                data:{
+                    username:"ximenteacher1111",
+                    
+                },
+                method:"PATCH",
+                headers:{
+                    "content-type":"application/json"
+                },
+                success:function(res){
+                    console.log("sucess",res)
+                },
+                error:function(err){
+                    console.log("error",err)
+                }
+            })
+        }
+
+        mydelete.onclick = function () {
+            ajax({
+                url:"http://localhost:3000/users/1",
+                
+                method:"delete",
+                success:function(res){
+                    console.log("sucess",res)
+                },
+                error:function(err){
+                    console.log("error",err)
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        /*
+            原型对象 : 
+                - 好处,节省内存
+                - 增加了查找的步骤
+
+            原型链 :
+                查找的语法
+        
+        */
+
+        Object.prototype.func = function(){
+            return "func"
+        }
+
+        class Demo{
+            constructor(name){
+                this.name = name;
+            }
+        }
+
+        //实例对象没有prototype
+        let d1 = new Demo("abc");
+
+        //先找constructor,找不到,找prototype,找Object的prototype,找不到,null
+        console.log(d1.func());
+
+        //实例对象的隐式原型 指向 类对象的显式原型
+        console.log(Demo.prototype === d1.__proto__);//true
+
+        //Demo.prototype 深度复制(继承) Object.prototype
+        console.log(Demo.prototype === Object.prototype);//false
+
+        //Demo是Function的实例对象
+        console.log(Demo.__proto__ === Function.prototype);//true
+
+        //
+        console.log(Function.prototype === Function.__proto__);//true
+
+        //Object 也是Function的实例对象
+        console.log(Function.prototype === Object.__proto__);//true
+
+        //Object.prototype是实例对象
+        console.log(Object.prototype.__proto__=== null)//true
+
+        
+    </script>
+</body>
+</html>

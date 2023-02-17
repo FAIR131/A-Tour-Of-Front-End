@@ -1,0 +1,70 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="box">
+        click-<span>11111</span>
+    </div>
+    <script>
+        //this 关键字
+
+        // this 谁调用我， this就指向谁 （es6 箭头函数）
+
+
+        // kerwin = this
+
+        //全局
+
+        // console.log(this)
+        // function test(){
+        //     console.log(this)
+        // }
+
+        // window.test()
+
+        //对象
+
+        // var obj = {
+        //     name:"kerwin",
+        //     test:function(){
+        //         console.log("11111",this.name)
+        //     }
+        // }
+
+        // // console.log(obj.test)
+
+        // obj.test()
+
+        // setTimeout
+
+        // setTimeout(function(){
+        //     console.log(11111,this)
+        // },2000)
+
+        // setInterval(function(){
+        //     console.log(11111,this)
+        // },2000)
+
+
+        // 事件绑定的this
+
+        // box.onclick = function(){
+        //     console.log(this.innerHTML)
+        // }
+
+        box.addEventListener("click",function(evt){
+            console.log(evt.target)
+            console.log("11111",this)
+        })
+    </script>
+</body>
+</html>

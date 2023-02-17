@@ -1,0 +1,52 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery.js"></script>
+    <style>
+        #box{
+            height: 100px;
+            background-color: yellow;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="box" style="width: 100px;"></div>
+
+    <ul>
+        <li>11111</li>
+        <li>11111</li>
+        <li>11111</li>
+        <li>11111</li>
+        <li>11111</li>
+        <li>11111</li>
+    </ul>
+    <script>
+        // css()
+        console.log($("#box").css("width"))
+        console.log($("#box").css("height"))
+        console.log($("#box").css("background-color"))
+
+
+        $("#box").css("width","200px")
+        $("#box").css("height",200)
+        $("#box").css("background-color","red")
+
+
+
+        $("ul li:eq(2)").css("color","red") //隐式迭代
+
+
+        $("ul li:eq(3)").css({width:200,height:300,backgroundColor:"yellow"})
+
+        // class
+    </script>
+</body>
+</html>

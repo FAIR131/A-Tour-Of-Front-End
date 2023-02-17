@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Document</title>
+  <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'>
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <img src="./1.webp" alt="" width="300px" height="300px">
+  <script>
+    var img = document.querySelector('img');
+    img.onmouseover = function () {
+      img.src = "./3.webp";
+    }
+    img.onmouseout = function () {
+      img.src = "./1.webp";
+
+    }
+  </script>
+</body>
+
+</html>

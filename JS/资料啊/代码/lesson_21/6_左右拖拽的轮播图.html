@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="swiper.less" type="text/less">
+</head>
+<body>
+
+    <div id="box">
+        <ul class="list">
+            <li><img src="../lesson_15/imgs/1.webp" alt=""></li>
+            <li><img src="../lesson_15/imgs/2.webp" alt=""></li>
+            <li><img src="../lesson_15/imgs/3.webp" alt=""></li>
+            <li><img src="../lesson_15/imgs/4.webp" alt=""></li>
+            <li><img src="../lesson_15/imgs/5.webp" alt=""></li>
+        </ul>
+
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
+    
+    <script> 
+        //只有X方向
+        let ul = document.querySelector("#box > .list");
+
+        //左右拖拽
+        ul.onmousedown = function(event){
+            //左顶点的x坐标
+            let eleX = this.offsetLeft;
+
+            //计算box当中的鼠标坐标
+            let div_left = ul.parentElement.offsetLeft;
+
+            //鼠标移动之前的坐标
+            let startX = event.clientX - div_left;
+
+            //ul的宽度4000px
+            let ul_width = this.clientWidth;
+
+            //获取ul下面有几个li
+            let childs = [...this.children];//[li,li,li,li,li]
+
+            //给每个li添加了index属性
+            childs.forEach(function(li,ind){
+                li.index = ind;
+            })
+            //childs.length  = 5         
+
+            //图片的宽度
+            let img_width = ul_width / childs.length;
+
+            //div左边的边界
+            let div_left_edge = div_left - div_left;
+
+            //鼠标移动
+            document.onmousemove = (e)=>{
+                //鼠标以后后的新坐标
+                let endX = e.clientX - div_left;
+
+                //移动后的坐标减去开始的坐标 = 移动距离
+                let disX = endX - startX;
+
+                let left = eleX + disX;
+
+                //ul的left发生变动
+                this.style.left = `${left}px`;
+
+                if(e.target.nodeName === "IMG"){
+                    //找到li
+                    let li = e.target.parentElement;
+
+                    //li右边的距离
+                    let li_right = ul_width - (childs.length - li.index) * img_width + img_width;
+
+                    // console.log(li_right - Math.abs(left));
+
+                    //移动的是ul
+                    // console.log((li_right - Math.abs(left)) <= 100);
+                    if(li_right - Math.abs(left) <= 100){
+                       
+                        // console.log((li.index + 1) * img_width)
+                        
+                        this.style.left = - ((li.index + 1) * img_width) + "px";
+                    }
+
+                    //加上个索引 1 -> 0
+                    //ul 4000px
+                    //img 800px
+                    //4000px - (5 - 0) * 800px = 0px
+                    //4000px - (5 - 1) * 800px = 800px
+                    //4000px - (5 - 2) * 800px = 1600px
+                    //4000px - (5 - 3) * 800px = 2400px
+                    //4000px - (5 - 4) * 800px = 3200px
+
+                
+                }
+
+            }
+
+            document.onmouseup = function(){
+                document.onmousemove = document.onmouseup = null;
+            }
+
+            return false
+        }
+        
+       
+    </script>
+</body>
+</html>

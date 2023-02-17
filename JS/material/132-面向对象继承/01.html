@@ -1,0 +1,76 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(name,age){
+            this.name = name
+            this.age = age
+        }
+
+        // Person()
+
+        Person.prototype.say = function(){
+            console.log(this.name ,"hello")
+        }
+
+
+        function Student(name,age,grade){
+            // Person.call(this,name,age)
+            Person.apply(this,[name,age])
+            this.grade = grade
+        }
+        // Student.prototype = Person.prototype
+
+        Student.prototype = new Person()
+        //基础增加方法
+        Student.prototype.printGrade = function(){
+            console.log(this.name,this.grade)
+        }
+
+        //覆盖
+        // Student.prototype.say = function(){
+        //     console.log(this.name,this.grade)
+            
+        //     console.log(this.name ,"您好")
+        // }
+
+        //增强原来方法
+
+        Student.prototype.say2 = function(){
+            this.say()
+            
+            console.log(this.name ,"您好")
+        }
+
+        var obj = new Student("kerwin",100,100)
+
+        console.log(obj)
+
+        obj.say2()
+
+        obj.printGrade()
+
+        // var obj2 = {
+        //     grade:100
+        // }
+
+        // Person.call(obj2,"kerwin",100)
+
+        // console.log(obj2)
+
+        //构造函数继承 --继承属性
+        //原型继承 ===继承原型上方法
+
+        //组合继承 ==构造函数继承 + 原型继承
+    </script>
+</body>
+</html>

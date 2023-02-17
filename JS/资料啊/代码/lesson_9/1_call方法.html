@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //call 
+        a = null;
+
+        Object.prototype.toString.call(a);
+
+        //Dog.call(this,name,age);
+
+        /*
+            call函数在js当中的作用是改变this指向
+            call函数是借用关系
+        */
+
+        // console.log(a);
+
+
+        // var obj1 = {
+        //     func : function(){
+        //         return true
+        //     }
+        // };
+
+        // var obj2 = {
+        //     foo : function(){
+        //         return false
+        //     }
+        // }
+
+        //调用foo方法
+        //obj2能不能调用func方法了
+
+        //obj1把func方法借给obj2
+        //借用是临时的
+        // console.log(obj1.func.call(obj2));
+
+        
+    </script>
+
+    <script>
+        var obj1 = {
+            func : function(arg){
+                return arg
+            }
+        };
+
+        var obj2 = {
+            foo : function(){
+                return false
+            }
+        }
+
+        //obj2.func("值");
+
+        //call除了第一个位置，后面的位置全是传参数的
+        console.log(obj1.func.call(obj2,"面条"));
+
+    </script>
+</body>
+</html>

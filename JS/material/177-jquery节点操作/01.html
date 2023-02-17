@@ -1,0 +1,39 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery.js"></script>
+</head>
+<body>
+    <div id="box">
+        <div>111111111</div>
+    </div>
+   <script>
+       // 创建，插入，删除，替换，克隆
+
+       //创建+插入append appendTo
+
+    //    var odiv = $("<div>hello first kerwin create div</div>")
+    //    var odiv = $("<div>").html("<b>first div</b>").addClass("kerwin").css("background","red")
+
+    //    $("#box").append(odiv)
+
+    // $("<div>").html("<b>first div</b>").addClass("kerwin").css("background","red").appendTo($("#box"))
+
+        // prepend prependTo
+
+        // var odiv = $("<div>hello first kerwin create div</div>")
+    //    var odiv = $("<div>").html("<b>first div</b>").addClass("kerwin").css("background","red")
+    //     $("#box").prepend(odiv)
+
+
+    $("<div>").html("<b>first div</b>").addClass("kerwin").css("background","red").prependTo($("#box"))
+    </script>
+</body>
+</html>

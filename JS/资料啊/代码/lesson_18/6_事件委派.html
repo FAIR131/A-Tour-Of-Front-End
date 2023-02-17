@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.time()
+        let ul = document.createElement("ul");
+
+        for(let i=0;i<50000;i++){
+            let li = document.createElement("li");
+            li.innerText = i;
+            ul.append(li);
+        }
+
+        document.body.append(ul);
+    
+        //事件委派(委托)
+        //冒泡事件流
+
+        let ul_ = document.querySelector("ul");
+
+        ul_.addEventListener("click",function(event){
+            //event事件对象
+            // console.log(event.target.nodeName);//target 标签
+            //nodeName的名称全是大写的
+
+            //点到空隙,会得到其它不想要的标签
+            if(event.target.nodeName === "LI"){
+                event.target.style.fontSize = "50px";
+            }
+        })
+
+        console.timeEnd()
+
+    </script>
+</body>
+</html>

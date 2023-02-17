@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    </style>
+</head>
+<body>
+
+<!--4、使用 prompt函数 接收一个年月日，计算这一天是这一年的第几天
+例如输入:2022 6 23
+输出: '2022年6月23日是2022年的第174天'-->
+<script>
+   let year = Number( prompt('请输入年份'));
+   let month = Number( prompt('请输入月份'));
+   let day = Number( prompt('请输入日期'));
+   let flag = false;
+   if(year %4===0&& year%100!==0 || year %400 ===0){
+       flag = true
+   }
+
+   switch (month){
+       case 1 : days =day;
+       break;
+       case 2 : days =31+ day;
+       break;
+       case 3 : days =31+28+day;
+       break;
+       case 4 : days =31*2+28+ day;
+       break;
+       case 5 : days =31*2+28+30+ day;
+       break;
+       case 6 : days =31*3+28+30+day;
+       break;
+       case 7 : days =31*3+28+30*2+day;
+       break;
+       case 8 : days =31*4+28+30*2+ day;
+       break;
+       case 9 : days =31*5+28+30*2+ day;
+       break;
+       case 10 : days =31*5+28+30*3+ day;
+       break;
+       case 11 : days =31*6+28+30*3+ day;
+       break;
+       case 12 : days =31*5+28+30*4+ day;
+       break;
+       default: break;
+   }
+
+   if(flag ===true && month>=2){
+       days +=1
+   }
+
+   console.log(year+'年'+month+'月'+day+'日是'+year+'年的第'+days+'天');
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var age = 100;
+        // var input = prompt("请输入一串数字:");
+
+        //输入框当中接受得到的是一个String类型
+
+        //eval-API的作用是去除双引号,对象还原
+   
+        // console.log(typeof input,input);
+        //eval不太安全
+        // console.log(eval(input));
+    </script>
+
+
+    <script>
+        var input = prompt("请输入一串数字:");
+
+        //把input转变为数字
+        //1e+39 : 科学计数法  1*10^39
+        console.log(isNaN(Number(input)) ? "请输入数字,否则往死里打" : Number(input));
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //web Worker
+        //路径必须是服务器加载的
+        //开启额外的线程 : 运算的时候不会影响当前主线程
+        //2.js会被运行在子线程中
+        let work = new Worker("http://localhost:63342/%E4%BB%A3%E7%A0%81/lesson_31/1_web-worker/2.js");
+        // let work = new Worker("./2.js");
+
+        //2_index.html ------> 2.js
+        work.postMessage(42);
+
+        
+        work.onmessage = function(e){
+            console.log(">>>>",e.data);
+        }
+
+
+        console.log("===>",1111);
+
+
+    </script>
+</body>
+</html>

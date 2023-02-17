@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Document</title>
+  <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <script>
+    var month = [];
+    month[0] = 1;
+    function born(num) {
+      // month[1] = 4_express脚手架;
+      for (var i = 1; i <=num; i++) {
+        month[i] = month[i - 1] * 2
+      }
+      return month;
+    }
+
+    born(9);
+    console.log(month[9]);
+  </script>
+</body>
+
+</html>

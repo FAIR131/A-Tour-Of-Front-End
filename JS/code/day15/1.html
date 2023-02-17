@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>我是列表项1</li>
+        <li>我是列表项2</li>
+        <li>我是列表项3</li>
+        <li>我是列表项4</li>
+        <li>我是列表项5</li>
+        <li>我是列表项6</li>
+        <li>我是列表项7</li>
+        <li>我是列表项8</li>
+    </ul>
+    <script>   
+var ulNode = document.querySelector('ul');
+				ulNode.onmouseover = function(e){
+					//找到真正发生事件的儿子     目标元素
+					//目标元素是藏在事件对象当中的
+					//事件对象当中target属性就是发生事件的目标元素
+					// （代表的是最内部的一个）
+					console.log(e);
+					if(e.target.nodeName === 'LI'){//不加if有可能拿到的就是爹
+						//这个判断事件委派一般都会有，为了确保目标元素是我们找到的那个元素
+						e.target.style.backgroundColor = 'hotpink';
+					}
+				};		
+				ulNode.onmouseout = function(e){
+					if(e.target.nodeName === 'LI'){
+						e.target.style.backgroundColor = 'white';
+					}
+				};
+      </script>
+</body>
+</html>

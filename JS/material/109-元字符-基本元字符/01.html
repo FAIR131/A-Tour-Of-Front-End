@@ -1,0 +1,89 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1 \d 一位数字（0-9）
+
+        // var reg = /\d\d/
+
+        // console.log(reg.test("abc"))
+        // console.log(reg.test("123"))
+        // console.log(reg.test("1"))
+
+
+        // 2 \D 一位非数字
+
+        // var reg = /\Dk\D/
+
+        // console.log(reg.test("123a"))
+        // console.log(reg.test("123"))
+        // console.log(reg.test("1"))
+        // console.log(reg.test("aba"))
+
+
+        // 3. \s 1位空白 （空格 缩进 换行）
+
+        // var reg = /\s/
+
+        // console.log(reg.test("12    3a"))
+        // console.log("12\n3")
+        // console.log(reg.test("12\n3"))
+        // console.log(reg.test("1"))
+        // console.log(reg.test("a ba")) 
+
+        // 4. \S 1位 非空白
+        // var reg = /\S/
+
+        // console.log(reg.test("12    3a"))
+        
+        // console.log(reg.test("       "))
+        // console.log(reg.test("\n\n\n"))
+        // console.log(reg.test("      "))  
+
+
+        //5 \w 字母 数字 下划线
+
+        // var reg = /\w\w/
+        // console.log(reg.test("&*"))
+        // console.log(reg.test("12abc"))
+        // console.log(reg.test("a"))
+        // console.log(reg.test("1"))
+        // console.log(reg.test("_"))
+
+        //6. \W 非字幕数字下划线
+
+        // var reg = /\W\W/
+        // console.log(reg.test("&*"))
+        // console.log(reg.test("12abc"))
+        // console.log(reg.test("a"))
+        // console.log(reg.test("1"))
+        // console.log(reg.test("_"))
+
+        //7  . 任意内容 （换行不算）
+
+        // var reg = /./
+
+        // console.log(reg.test("%^*#$"))
+        // console.log(reg.test("ba\ncd"))
+        // console.log(reg.test("123"))
+        // console.log(reg.test("\n\n\n\n\n"))
+
+
+        //8 . \转义字符
+        var reg = /\d\.\d/   // 1.2 2.3 
+
+        console.log(reg.test("1.2"))
+        console.log(reg.test("1a2"))
+        // console.log(reg.test("1a2"))
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            递归函数 : 自己调用自己
+                - 有很多的代码是完全相同的
+                - 相同逻辑的代码没有必要反复去书写
+        */
+
+        //阶乘  : 10以内的阶层 9*8*7*6*5*4*3*2*1;
+
+        //斐波那契数列 : 1 1 2 3 5 8 13 21 34 .....
+        //前两个数值相加的结果等于第三个
+
+        // var arr = [1,1,2,3,5,8,13,21,34,55];//10   20位
+
+        // (function(num){
+        //     var start_index = arr.length - 2;
+        //     for(var i=start_index;i<20;i++){
+        //         arr.push(arr[i]+arr[i+1]);
+        //     }
+        // })(20)
+
+        // console.log(arr[19]);
+
+        // var res = (function(num){
+        //     var res = 1;
+        //     for(var i=1;i<num;i++){
+        //         res *= i;
+        //     }
+        //     return res;
+        // })(10)
+
+        // console.log(res);
+
+    </script>
+
+    <script>
+        //递归 : 从上而下的,然后从下向上回溯
+        // function jiecheng(num){
+        //     //不可以不写,不写的化，无限递归(死递归)
+        //     if(num <= 1){ //阶层起码从2开始
+        //         return 1
+        //     }
+        //     //10 * jiecheng(9)
+        //     //9 * jiecheng(8)
+        //     //.....
+        //     //5 * jiecheng(4)=24
+        //     //4 * jiecheng(3)=6
+        //     //3 * jiecheng(2)=2 
+        //     //2 * jiecheng(1)=1
+        //     //1
+        //     return num * jiecheng(num -1);
+        // }
+        // console.log(jiecheng(10));
+
+
+        //先推理出数据,然后把数据层层累加(回溯)
+        //不罗列数组
+        function fibo(num){//斐波那妾
+            if(num < 2){
+                return 1
+            }
+            //4 fibo(3)=3 + fibo(2)=2
+            //3 fibo(2)=2 + fibo(1)=1
+            //2 fibo(1)  +  fibo(0); 2
+            return fibo(num-1) + fibo(num-2);
+        }
+
+        console.log(fibo(9));
+    </script>
+</body>
+</html>

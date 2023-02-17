@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="del">删除</button>
+
+    <script src="dialog.js"></script>
+    <script>
+        
+        let del = document.querySelector("#del");
+
+
+        del.addEventListener("click",function(){
+            diglog.dialog.style.opacity = 1;
+            diglog.dialog.style.transform="translateY(0px)";
+        })
+    </script>
+</body>
+</html>

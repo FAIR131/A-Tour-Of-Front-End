@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button>是兄弟就来砍我,我是渣渣辉</button>
+    <script>
+        /*
+            dom标准
+
+            dom0 ： 一个对象只能绑定一个同名事件
+            dom1 ：
+            dom2 : 一个对象可以绑定多个同名事件,顺序执行
+            dom3 : 允许自定义dom
+        */
+
+        let btn = document.querySelector("button");
+
+
+        //dom0
+        // btn.onclick = function(){
+        //     console.log("你的时间很值钱,我在天书世界等你");
+        // }
+
+        // btn.onclick = function(){
+        //     console.log("我们的电脑在任何方面都是一流的,除了价格。 阿尔法电脑公司 ");
+        // }
+
+        /*
+            dom2 : 
+            一种功能封装在一个函数当中
+            
+            有可能点击一次触发好几个效果,如果使用dom0,只能把多个效果代码写在一个函数当中和
+            如果使用dom2,可以规避当前问题
+        
+        */
+        //事件监听 : 
+
+        // btn.addEventListener("click",function(){
+        //     console.log("人办一切事情都难免有这种情形，有比较地会办和比较地不会办之分罢了。");
+        // });
+
+        // btn.addEventListener("click",function(){
+        //     console.log("长征是宣言书，长征是宣传对，长征是播种机。");
+        // });
+
+       
+
+    </script>
+
+
+    <script>
+        //只能触发一次的事件
+        //dom0
+        // btn.onclick = function(){
+        //     console.log("团结要真正的团结，尔虞我诈是不行的。");
+        //     this.onclick = null;
+        // }
+
+        //dom2
+        btn.addEventListener("click",fo);
+        btn.addEventListener("click",foo);
+        
+        function foo(){
+            console.log("我们应该是老老实实地办事，在世界上要办成几件事，没有老实的态度是根本不行的。----《整顿党的作风》");
+        }
+
+        function fo(){
+            console.log("团结要真正的团结，尔虞我诈是不行的。");
+            this.removeEventListener("click",fo);
+        }
+    </script>
+</body>
+</html>

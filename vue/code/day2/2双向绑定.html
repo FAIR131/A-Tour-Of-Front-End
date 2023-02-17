@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+<div id="app">
+    <!-- 通过v-model实现表单元素的双向数据绑定 -->
+    <input type="text" v-model="msg">
+    <textarea name="" id="" cols="30" rows="10" v-model="sentences"></textarea>
+
+    <select name="" v-model="fruit">
+        <option value="apple">苹果</option>
+        <option value="orange">橘子</option>
+        <option value="banana">香蕉</option>
+    </select>
+
+    <input type="checkbox" name="" v-model="result"/>
+    <hr>
+    <input type="checkbox" name="" value="sing" v-model="hobbies">唱
+    <input type="checkbox" name="" value="dance" v-model="hobbies">跳
+    <input type="checkbox" name="" value="rap" v-model="hobbies">RAP
+    <input type="checkbox" name="" value="basketball" v-model="hobbies">篮球
+    <hr/>
+
+    <input type="radio"  value="male" v-model="gender">男
+    <input type="radio"  value="female"  v-model="gender">女
+    <hr/>
+
+<!--v-model修饰符 -->
+     <input type="text" v-model.lazy="word" @input="getVal">
+     <input type="text" v-model.number="word" @input="getVal">
+    <input type="text" v-model.trim="word" @input="getVal">
+
+    <button @click="getVal">获取值</button>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            msg: '哈哈',
+            sentences: "",
+            fruit: "",
+            result: true,
+            hobbies: [],
+            gender:"",
+            word:""
+        },
+        methods: {
+            getVal: function () {
+                console.log(this.gender)
+                console.log("|"+this.word+"|");
+            },
+
+        }
+    })
+</script>
+</body>
+</html>

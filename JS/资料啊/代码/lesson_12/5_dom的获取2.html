@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li id="li1" data-sign="abc">1</li>
+        <li class="style1">2</li>
+        <li class="style1">3</li>
+        <li name="l1">4</li>
+        <li name="l1" data-sign="abc">5</li>
+    </ul>
+    <div data-sign="abc"></div>
+    <script>
+        //单体
+        /*
+            li : 写标签名称
+            .cls : 找class
+            #id  : 找id
+            li[data-sign=abc] : 找属性
+        */
+        var d1 = document.querySelector("li[data-sign=abc]");
+        var d2 = document.querySelector("#li1");
+        console.log(d1,d2);
+        //群组
+        /*
+            document.querySelectorAll("#li1",.style1);
+        
+        */
+        //nodelist[] 伪数组
+        var g1 = document.querySelectorAll("#li1,.style1,*[data-sign=abc]");
+        console.log(g1);
+
+    </script>
+</body>
+</html>

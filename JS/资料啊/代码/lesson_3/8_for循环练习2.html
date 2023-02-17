@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            求1000以内7的倍数和,统计数量
+        */
+
+        //递推 : 0123456   7 14 21 28
+        var sum = 0;
+
+        //count 计数
+        var count = 0;
+        for(var n=7;n<1000;n+=7){
+            sum += n;
+            count++;
+        }
+
+        console.log(sum,count);
+
+    </script>
+</body>
+</html>

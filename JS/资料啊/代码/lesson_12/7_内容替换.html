@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--<a>欢迎来到王者峡谷</a>-->
+
+    <div id="d1">
+
+        欢迎来到王者峡谷
+
+    </div>
+
+    <div id="box1">
+        <div>
+            <div>
+                <span>123456789</span>
+            </div>
+        </div>
+        <div>
+            <div>
+                <span>123456789</span>
+            </div>
+        </div>
+        <div>
+            <div>
+                <span>123456789</span>
+            </div>
+        </div>
+    </div>
+
+    <header>  
+        <a href="javascript:;">
+            今天晚上吃臭豆腐！！！
+        </a>
+    </header>
+
+
+    <script>
+        //span
+        var g1 = document.querySelectorAll("#box1 span");
+        //NodeList[span,span,span]
+        setTimeout(function(){
+            g1.forEach(function(span,index){
+                span.innerText = index+1;
+            })
+        },2000)
+
+
+        var d1 = document.querySelector("#d1");
+        // console.log(d1.innerText)
+        
+        d1.innerText = "<a href='javascript:void(0);'>" + d1.innerText + "</a>";
+        // d1.innerHTML = "<a href='javascript:void(0);'>" + d1.innerText + "</a>";
+        
+        
+        /*
+        innerText : 
+            赋值的时候 : 不解析标签(把标签当成文本)
+
+            <a href='javascript:void(0);'>欢迎来到王者峡谷</a>;
+                            |
+                            V
+            &lt;a href='javascript:void(0);'&gt;欢迎来到王者峡谷&lt;/a&gt
+
+            取值的时候 : 过滤标签部分
+
+        innerHTML : 解析标签的,把标签内容原样输出
+            
+        */
+
+        // document.write("&lt;a href='javascript:void(0);'&gt;欢迎来到王者峡谷&lt;/a&gt")
+
+
+        var h1 = document.querySelector("header");
+
+        console.log(h1.innerHTML);
+        console.log(h1.innerText);
+    </script>
+</body>
+</html>

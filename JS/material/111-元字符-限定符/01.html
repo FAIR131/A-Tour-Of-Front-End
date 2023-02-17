@@ -1,0 +1,76 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. * 0~多次
+
+        // var reg= /\d*/
+
+        // console.log(reg.test("abc"))
+        // console.log(reg.test("abc1"))
+        // console.log(reg.test("abc12"))
+
+        //2. + 1~多次
+
+        // var reg= /\d+/
+
+        // console.log(reg.test("abc"))
+        // console.log(reg.test("abc1"))
+        // console.log(reg.exec("abc124vb"))
+
+        // //3. ? 0~1
+
+        // var reg=/\d?/
+
+        // console.log(reg.test("abc"))
+        // console.log(reg.test("ab1"))
+
+
+         //4. {n} 指定次数
+
+        //  var reg=/\d{3}/
+        //  var reg=/a{3}/
+
+        // console.log(reg.test("aaa"))
+        // console.log(reg.test("ab12"))
+        // console.log(reg.test("ab123"))
+
+         //4. {n,} >=n
+
+        //  var reg=/\d{3,}/
+        // //  var reg=/a{3}/
+
+        // console.log(reg.test("aaa"))
+        // console.log(reg.test("ab12"))
+        // console.log(reg.test("ab123"))
+        // console.log(reg.exec("ab12345"))
+
+        //5. {n,m}
+        var reg=/\d{3,5}/
+        //  var reg=/a{3}/
+
+        console.log(reg.test("aaa"))
+        console.log(reg.test("ab12"))
+        console.log(reg.test("ab123"))
+        console.log(reg.exec("ab123456"))
+
+
+        var reg2= /^abc{2}$/
+
+        console.log(reg2.test("abc"))
+        console.log(reg2.test("decc"))
+        console.log(reg2.test("332abcc4343"))
+        console.log(reg2.test("abcc"))
+
+    </script>
+</body>
+</html>

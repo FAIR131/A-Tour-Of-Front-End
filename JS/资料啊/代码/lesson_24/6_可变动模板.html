@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" value="">
+    <div id="box"></div>
+    
+    <script>
+        let box = document.querySelector("#box");
+        let inp = document.querySelector("input");
+
+        //obj不是劫持对象
+        const obj = {name:"徐技师",age:24};
+
+        //是劫持对象
+        const result = {};
+
+        //劫持name
+        Object.defineProperty(result,"name",{
+            get(){
+                return obj.name;
+            },
+            set(val){//设置  修改
+                //set用的是递归
+                //this.name 不能自己改自己,理由是会导致死递归
+                obj.name = val
+                box.innerHTML = `姓名${result.name}，年龄${result.age}`;
+            }
+        })
+
+        //劫持age
+        Object.defineProperty(result,"age",{
+            get(){
+                return obj.age;
+            },
+            set(val){//设置  修改
+                obj.age = val;
+                box.innerHTML = `姓名${result.name}，年龄${result.age}`;
+            }
+        })
+
+
+        //初次渲染
+        box.innerHTML = `姓名${obj.name}，年龄${obj.age}`;
+        inp.value = result.name;
+
+        //绑定事件  输入事件
+        inp.oninput = function(){
+            //获取input当中的值
+            result.name = this.value;
+        }
+        console.log(result);
+        console.log(obj);
+    </script>
+</body>
+</html>

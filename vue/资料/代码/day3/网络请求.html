@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script>
+        // fetch("https://m.maizuo.com/gateway?cityId=440300&pageNum=1&pageSize=10&type=1&k=2488531",{
+        //     headers:{
+        //         'X-host':'mall.film-ticket.film.list'
+        //     }
+        // }).then(res=>res.json()).then(res=>{
+        //     console.log(res);
+        // })
+
+        axios.defaults.headers["X-host"] = "mall.film-ticket.film.list"
+        axios.get("https://m.maizuo.com/gateway", {
+            params: {
+                cityId: "440300",
+                pageNum: 1,
+                pageSize: 10,
+                type: 1,
+                k: "2488531"
+            }
+        }).then(res => {
+            console.log(res);
+        })
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

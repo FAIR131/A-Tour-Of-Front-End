@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function A(name){
+            this.name = name;
+        }
+        A.prototype.a = function(_this){
+            console.log("--->",_this.name);
+            return _this  
+        }
+
+        function B(age){
+            this.age = age;
+        }
+        B.prototype.b = function(_this){
+            console.log("===>",_this.age);
+            return _this
+        }
+        
+        function C(name,age){
+            A.call(this,name);  //call的作用是临时改变this的指向
+            B.call(this,age);
+        }
+
+        //C.prototype = Object.create(A.prototype);
+        C.prototype.fn1 = Object.create(A.prototype);
+        C.prototype.fn2 = Object.create(B.prototype);
+        
+        var c1 = new C("张三",18);
+        console.log(C.prototype.fn1);
+        
+        console.log(c1.fn1.a(c1));  //fn1
+        console.log(c1.fn2.b(c1));   //c1
+
+    </script>
+
+    <script>
+        // function A(name){
+        //     this.name = name;
+        // }
+
+        // A.prototype.a = function(){
+        //     console.log("--->",this.name);
+        //     return this 
+        // }
+
+        // function C(name,age){
+        //     A.call(this,name);
+        //     this.age = age;
+        // }
+
+        // C.prototype = Object.create(A.prototype);
+       
+        // var c1 = new C("张三",18);//c1=张三
+        // var c2 = new C("李四",28);
+        // var c3 = new C("李四",28);
+
+        // console.log(";;;;>>>>",c1.a());
+        // console.log(";;;;>>>>",c2.a());
+        // console.log(";;;;>>>>",c3.a());
+
+        // /*
+        //     this : 
+        //         - 默认的this代表的是window对象
+        //         - 在对象调用 和 有局部作用域的时候，this指向调用者
+        // */
+        // var obj = {a:this,b:function(){
+        //     return this
+        // }};  
+
+        // console.log(obj.b());
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" name="" id="mysearch">
+    <ul id="list"></ul>
+    <script>
+        //https://www.baidu.com/sugrec?pre=1&p=3&ie=utf-8&json=1&prod=pc&from=pc_web&sugsid=36542,36464,36673,36454,31660,36692,36166,36695,36697,36570,36074,36655,36345,26350,36469,36314&wd=a&req=2&csor=1&cb=jQuery110208771006365075591_1656294200526&_=1656294200527
+
+        mysearch.oninput = function(evt){
+            console.log(evt.target.value)
+            if(!evt.target.value){
+                list.innerHTML = ""
+                return 
+            }
+
+            var oscript = document.createElement("script")
+            oscript.src = `https://www.baidu.com/sugrec?pre=1&p=3&ie=utf-8&json=1&prod=pc&from=pc_web&sugsid=36542,36464,36673,36454,31660,36692,36166,36695,36697,36570,36074,36655,36345,26350,36469,36314&wd=${evt.target.value}&req=2&csor=1&cb=test&_=1656294200527`
+            document.body.appendChild(oscript)
+
+            oscript.onload = function(){
+                oscript.remove()
+            }
+        }
+
+        function test(obj){
+            console.log(obj.g)
+
+            list.innerHTML = obj.g.map(item=>
+            `<li>${item.q}</li>`
+            ).join("")
+        }
+
+        /*
+          1. cors 
+          2. 反向代理
+        */
+    </script>
+</body>
+</html>

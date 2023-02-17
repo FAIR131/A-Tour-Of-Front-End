@@ -1,0 +1,30 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery.js"></script>
+</head>
+<body>
+    <script>
+        var myobj1 = {name:"kerwin",location:{city:"dalian",province:"liaoning",a:{b:{c:1}}}, hobby:["xxx","yyy","zzz"],introduction:undefined}
+
+        var myobj2 = {}
+
+        //浅复制
+        // $.extend(myobj2,myobj1,{m:1,n:2})
+
+        // console.log(myobj2)
+
+        //深复制
+        $.extend(true,myobj2,myobj1,{m:1,n:undefined})
+
+        console.log(myobj2)
+    </script>
+</body>
+</html>

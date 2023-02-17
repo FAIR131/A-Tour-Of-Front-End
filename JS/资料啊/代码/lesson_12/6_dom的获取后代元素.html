@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <ul>
+            <li id="li1" data-sign="abc">1</li>
+            <li class="style1">2</li>
+            <li class="style1">3</li>
+            <li name="l1">4</li>
+            <li name="l1" data-sign="abc">5</li>
+        </ul>
+
+        <!---->
+        <div >
+            <div data-sign="abc">C</div>
+        </div>
+
+    </div>
+
+    <div data-sign="bcd">B</div>
+
+    <script>
+        //找到内层的div
+        // var d1 = document.querySelectorAll("div > div > div");
+        // console.log(d1[0]);
+
+        var d2 = document.querySelectorAll("div[data-sign]");
+        console.log(d2);
+
+        d2.forEach(function(item){
+            console.log(item);
+        })
+        
+    </script>
+</body>
+</html>

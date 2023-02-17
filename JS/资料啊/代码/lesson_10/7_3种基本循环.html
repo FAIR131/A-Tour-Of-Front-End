@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        Object.prototype.a = "a";
+        Object.prototype.b = "b";
+        Object.prototype.c = "c";
+
+        var arr = [11,12,13,4,5,6];
+
+        // (function(){//IIFE ->IIAFE
+        //     for(var i=0;i<arr.length;i++){
+        //         console.log(arr[i]);//1 2 3 4
+        //     }
+        // })()
+
+        // (function(){
+        //     for(var i in arr){
+        //         //检测长度，不检测原型对象当中的属性和方法
+        //         console.log(arr[i]);//1 2 3 4 a b c
+        //     }
+        // })()
+
+        
+        // (function(){    
+        //     for(var i in arr){
+        //         //数值引用对象下面的方法
+        //         //hasOwnProperty写在Object.prototype种
+        //         //作用 : 检查对象当中是否有 内容 存在在原型种,如果在则过滤
+        //         if(arr.hasOwnProperty(arr[i]) ){//
+        //             console.log(arr[i]);
+        //         }
+        //     }
+        //     //如果发生丢失
+        //     console.log(arr[arr.length-1]);
+        // })()
+
+        (function(){ //of循环的是数值的值
+            for(var v of arr){
+                console.log(v);
+            }
+
+        })()
+
+    </script>
+</body>
+</html>

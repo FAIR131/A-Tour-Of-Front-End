@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //打印99乘法表
+        for(var i=1;i<10;i++){
+            for(var j=1;j<i+1;j++){//i=2   j=2
+                document.write("<span>" + j +"x"+ i + "=" + i*j+"</span>");
+            }
+            document.write("<br />");
+        }
+    </script>
+
+    <script>
+
+        //使用函数生成任意乘法表
+        function createTable(row){//row行 col列
+            var str = "<table border='1'>";
+            for(var i=1;i<row;i++){
+                str += "<tr>";
+                for(var j=1;j<i+1;j++){//i=2   j=2
+                    str += "<td>";
+                    str += j + "x" + i + "=" + (i*j);
+                    str += "</td>";
+                }
+                str += "</tr>";
+            }
+            str += "</table>"; 
+            return str
+        }
+
+        document.write(createTable(99));
+    </script>
+
+    <script>
+        //生成一个函数,replaceAll
+        /*
+            - 数组
+            - 要被替换的数值
+            - 替换值
+        */
+
+        function replaceAll(arr,r,v){
+            //1.先判断当中传入的数据是不是array类型
+            if(!(arr instanceof Array)){
+                //不是数组
+                return 
+            }
+
+            //2.是数组则替换
+            for(var i=0;i<arr.length;i++){
+                if(arr[i] === r){
+                    arr[i] = v;
+                }
+            }
+        }
+
+        // Array.prototype.replaceAll = function (r,v){
+        //     //1.先判断当中传入的数据是不是array类型
+        //     if(!(this instanceof Array)){
+        //         //不是数组
+        //         return 
+        //     }
+
+        //     //2.是数组则替换
+        //     for(var i=0;i<this.length;i++){
+        //         if(this[i] === r){
+        //             this[i] = v;
+        //         }
+        //     }
+        // }
+
+
+        // var a = ["1",2,"a","b","a"];
+
+        // a.replaceAll("a",0);
+
+        // console.log(a);
+
+
+    </script>
+
+    <script>    
+        /*
+            均值 : 求和/数量
+        */
+        // var arr = [
+        //     [1,2,3,4],
+        //     1,
+        //     [1,2,[3,4]],
+        //     [[5]]
+        // ]
+
+
+        var sum = 0;
+        var count = 0;
+
+        for(var i=0;i<arr.length;i++){
+            if(arr[i] instanceof Array){
+                for(var j=0;j<arr[i].length;j++){
+                    if(arr[i][j] instanceof Array){
+                        for(var k=0;k<arr[i][j].length;k++){
+                            sum += arr[i][j][k];
+                            count++
+                        }
+                    }else{
+                        sum += arr[i][j];
+                        count++
+                    }
+                }
+            }else{
+                sum += arr[i];
+                count++
+            }
+        }
+        console.log(sum/count);        
+    </script>
+
+    <script>
+        /*求第二大的数值*/
+
+        var arr = [9,7,10,11,0,3,6,1,4];//[10,10,9,8,7,6]
+
+        //26 * 1E+8
+        //1E+8 + 1E+8
+
+        function loop(obj,th){
+            for(var i=0;i<obj.length;i++){
+                if(th < obj[i]){
+                    th = obj[i];
+                }
+            }
+            return th //11
+        }
+
+        function t(obj){
+            var th = -Infinity;
+            //找老大
+            th = loop(obj,th);//11
+            
+            //干掉老大
+            for(var i=0;i<obj.length;i++){
+                if(th === obj[i]){
+                    th = obj[i] = -Infinity;
+                }
+            }
+
+            //找新的老大
+            return loop(obj,th);//10
+        }
+
+        console.log(t(arr));
+    </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //ES6
+        /*
+            let : 
+                - 1.不能重复声明
+                - 2.块级作用域限制
+            const : 
+                - 1.不能只声明不赋值
+                - 2.值一旦确定,不能修改
+            解构赋值 : 
+                let [a,b] = [1,2,3];
+                [a,b] = [b,a];//a=2 b=1
+
+                let {name,age} = {name:1,sex:3,age:2};//name=1  age=2
+                [name,age] = [age,name];
+            
+            模板字符串 :
+                - ''
+                - ""
+                - `${var}`
+
+            简化对象写法 :
+                (name,age,est)=>{
+                    //{name:1,age:2,eat:8}
+                    return {name,age,eat}
+                }
+
+            箭头函数 :
+                - let func = args => args**2;
+                - 不能作为函数对象
+                - this指向上一层作用域的this指向
+            参数 : 
+                function demo(a="name" ,b=null){
+                    //a = 1 b = 2
+                    return [a,b]
+                }
+                demo(1,2);
+
+                function max(...args){
+                    [1,2,3,4,5,6]
+                }
+
+                Math.max(1,2,3,4,5,6);
+
+                Array.prototype.splice(start,num,...args){
+                    start = 1;
+                    num = 2;
+                    args = ["a","b","c","d","e"];
+                    //argments[1,2,"a","b","c","d","e"]
+                    //argments.callee();
+                }
+
+                [1,2,3,4,5,6].splice(1,2,"a","b","c","d","e")
+
+            扩展符号 : 
+                let arr1 = [1,2,3,4,5];
+                let arr2 = [5,4,3,2,1];
+
+                [...arr1 , ...arr2] = [1,2,3,4,5,5,4,3,2,1]
+                ...arr1 =[ 1,2,3,4,5  ,  5,4,3,2,1 ]
+
+                func(...arr1) func(1,2,3,4,5)
+
+                let obj1 = {name:1,age:2}
+                let obj2 = {name:2,sex:3}
+
+                {...obj1 , ...obj2} //{name:2,age:2,sex:3}
+
+                let set1 = new Set([1,2,3,4,5,1,2,3,4,5])
+                console.log([...set1]); //{1,2,3,4,5}
+
+        
+        */
+        let set1 = new Set([1,2,3,4,5,1,2,3,4,5])
+        console.log(set1.size); //{1,2,3,4,5}
+
+        // for(let i=0;i<set1.size;i++){
+        //     console.log(set1[i]);
+        // }
+
+
+       
+        
+    </script>
+</body>
+</html>

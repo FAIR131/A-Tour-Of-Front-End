@@ -1,0 +1,48 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            padding:10px;
+            border:5px solid red;
+            background-color: yellow;
+            box-sizing: border-box;
+            /* display: none; */
+
+            margin:100px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="box">
+
+    </div>
+    <script>
+        // console.log(getComputedStyle(box).width)
+
+        // console.log(box.style.width)
+        //offset* (border+padding+content)
+        console.log(box.offsetWidth,box.offsetHeight)
+
+        //注意
+        /*
+          1. 单位 数字
+          2. box-sizing (border+padding+content)
+          3. display:none 拿不到
+        */
+        //client* (padding+content)
+        console.log(box.clientWidth,box.clientHeight)
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+1.Promise
+2.ajax
+    - http协议
+        - session
+        - cookie
+    - get-post
+    - 请求头
+    - 跨域
+    - sessionStoreage 和 localstoreage
+    - axios
+3.函数的节流和防抖
+4.数据劫持和数据代理
+5.SPA单页路由
+6.沙箱模式 单例 策略  发布订阅 柯里化
+7.原型对象-原型链-面向对象
+8.闭包-回调-递归
+9.web worker
+10.深浅拷贝 - 基本数据类型  和 引用数据类型
+
+
+- vue
+    - 写
+- react
+    - 组件庞大，原理麻烦

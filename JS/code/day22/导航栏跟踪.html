@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul, li {
+            list-style: none;
+        }
+
+
+        div {
+            width: 1200px;
+            height: 500px;
+        }
+
+        div:nth-child(1) {
+            height: 100px;
+            background-color: pink;
+        }
+
+        div:nth-child(2) {
+            height: 300px;
+            background-color: skyblue;
+        }
+
+        div:nth-child(3) {
+            background-color: palegoldenrod;
+        }
+
+        div:nth-child(4) {
+            background-color: palegreen;
+        }
+
+        div:nth-child(5) {
+
+            background-color: peru;
+        }
+
+        ul {
+            position: absolute;
+            right: 10px;
+            top: 400px;
+            width: 52px;
+            height: 260px;
+            background-color: steelblue;
+        }
+
+        li {
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+</div>
+
+
+<ul>
+    <li index="2">蓝</li>
+    <li index="3">黄</li>
+    <li index="4">绿</li>
+    <li index="5">橙</li>
+    <li index="1">回到顶部</li>
+</ul>
+
+
+<script>
+    let box = document.querySelector('.box')
+
+    let div1 = box.querySelector('div');
+    let div2 = div1.nextElementSibling;
+    let ul = document.querySelector('ul');
+    let lis = document.querySelectorAll('li');
+    let dis1 = div2.offsetTop + div2.clientHeight;
+    // let dis2 = div2.offsetTop ;
+    // console.log(dis2)
+
+    // console.log(dis1)
+    let div_new = document.createElement('div');
+    box.append(div_new);
+    div_new.style.backgroundColor = 'pink';
+    window.onscroll = function () {
+        let s = document.documentElement.scrollTop;
+        // console.log(s)
+        if (s >= dis1) {
+            // div1.style.position='fixed';
+            ul.style.position = 'fixed';
+            div_new.style.position = 'fixed';
+            div_new.style.top = '0';
+            div_new.style.height = '100px';
+        } else {
+            div1.style.position = 'static';
+            ul.style.position = 'absolute';
+            div_new.style.height = '0px';
+        }
+    }
+
+    ul.onclick=function (e){
+     if(e.target.nodeName==='LI'){
+       let ind = e.target.getAttribute('index');
+       let goal = document.querySelector(`div:nth-child(${ind})`);
+
+       document.documentElement.scrollTop=goal.offsetTop;
+     }
+    }
+
+</script>
+
+</body>
+</html>

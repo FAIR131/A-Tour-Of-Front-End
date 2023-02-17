@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      ul,
+      li {
+        list-style: none;
+      }
+
+      .box {
+        position: relative;
+        margin: 50px auto;
+        width: 400px;
+        height: 400px;
+      }
+      .box .imgList li {
+        display: none;
+        width: 400px;
+        height: 400px;
+      }
+      .box .imgList img {
+        width: 400px;
+        height: 400px;
+      }
+
+      .box .imgList .first {
+        display: block;
+      }
+
+      .box .ciList {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .box .ciList li {
+        float: left;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        border-radius: 50%;
+        background-color: white;
+      }
+
+      .box .ciList li:first-child {
+        background-color: orangered;
+      }
+
+      span {
+        display: none;
+        width: 50px;
+        height: 80px;
+        background-color: rgba(255, 255, 255, 0.5);
+        font-size: 50px;
+        color: #fff;
+      }
+
+      .left {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+      }
+      .right {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <ul class="imgList">
+        <li class="first"><img src="./img/1.webp" alt="" /></li>
+        <li><img src="./img/2.webp" alt="" /></li>
+        <li><img src="./img/3.webp" alt="" /></li>
+        <li><img src="./img/4.webp" alt="" /></li>
+      </ul>
+
+      <ul class="ciList"></ul>
+
+      <span class="left"><</span>
+      <span class="right">></span>
+    </div>
+
+    <script>
+      let img_lis = document.querySelectorAll(".imgList li");
+      let div = document.querySelector("div");
+      let ci_list = document.querySelector(".ciList");
+      let [left, right] = document.querySelectorAll("span");
+
+      let str = ``;
+      img_lis.forEach(function () {
+        str += "<li></li>";
+      });
+      ci_list.innerHTML = str;
+      let ci_lis = document.querySelectorAll(".ciList li");
+
+      let index = 0;
+      //   console.log(ci_lis);
+
+      // 打包
+      function setDefault(obj1, obj2, index) {
+        obj1[index].style.backgroundColor = "white";
+        obj2[index].style.display = "none";
+      }
+      function setStyle(obj1, obj2, index) {
+        obj1[index].style.backgroundColor = "orangered";
+        obj2[index].style.display = "block";
+      }
+
+      // 打包结束
+
+      //   自动播放
+      let si;
+      function auto() {
+        si = setInterval(function () {
+          setDefault(ci_lis, img_lis, index);
+          index = index >= ci_lis.length - 1 ? 0 : index + 1;
+          setStyle(ci_lis, img_lis, index);
+        }, 2000);
+      }
+
+      auto();
+
+      //   左右键
+
+      div.onmouseover = function () {
+        left.style.display = "block";
+        right.style.display = "block";
+        clearInterval(si);
+      };
+
+      div.onmouseout = function () {
+        left.style.display = "none";
+        right.style.display = "none";
+
+        auto();
+      };
+
+      right.onclick = function () {
+        setDefault(ci_lis, img_lis, index);
+
+        index = index >= ci_lis.length - 1 ? 0 : index + 1;
+        setStyle(ci_lis, img_lis, index);
+      };
+
+      left.onclick = function () {
+        setDefault(ci_lis, img_lis, index);
+
+        index = index <= 0 ? ci_lis.length - 1 : index - 1;
+        setStyle(ci_lis, img_lis, index);
+      };
+
+      ci_lis.forEach(function (item, ind) {
+        item.onmouseover = function () {
+          // console.log(ind);
+          setDefault(ci_lis, img_lis, index);
+
+          setStyle(ci_lis, img_lis, ind);
+
+          index = ind;
+        };
+      });
+    </script>
+  </body>
+</html>

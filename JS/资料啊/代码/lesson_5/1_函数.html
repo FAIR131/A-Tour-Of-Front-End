@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            函数(微模型)
+            f(x) = kx + b
+            数据当中的方程要求求解未知数,函数要求通过一种公式解出结果
+
+            function 函数的名称(形式参数1，形式参数2,.....){//形参
+                执行逻辑
+                return 返回结果
+            }
+
+            //调用函数
+            函数名称(实体参数1,实体参数2,...) //实体参数的数量等于形式参数的数量
+
+
+            优点 : 可以减少重复代码的冗余(多余)
+
+            面试过程编程  : 需要什么代码写什么带，反复写
+            面向函数式编程 : 先打包,然后调用
+            
+
+            理论上一个函数只做一件事
+        */
+
+        function fx(a,b){
+            //var a=2,b=8;
+            var c = a**b;
+            // console.log(c);
+            return c
+        }
+
+        /*
+            如果函数当中没有return,则默认返回undefined
+        */
+        //打印调用的结果
+        // console.log(fx(2,8)); //fx(2,8) = c
+
+
+    </script>
+        
+
+    <script>
+        //假设公式特别复杂
+        //自动生成表格的模型
+
+        //create创建
+        function createTbale(row,column){
+            //row 行
+            //column 列
+            var str = "<table border='1'>";
+                //先循环行
+                for(var i=0;i<row;i++){
+                    str += "<tr>";
+                        for(var j=0;j<column;j++){
+                            str += "<td>"+i+"-"+j+"</td>";
+                        }
+                    str += "</tr>";
+                }
+            str += "</table>";
+
+            //返回结果
+            return str;
+        }
+
+        // //调用生成表格
+        // document.write(createTbale(10,5));
+
+        function action(title,row,column){//
+            //title : 标题
+            var str = "<h1>"+title+"</h1>";
+            //调用其他函数
+            str += createTbale(row,column);
+
+            str += "<br />";
+
+            document.write(str);
+        }
+
+        action("第1个表格",5,10);
+        action("第2个表格",5,10);
+    </script>
+</body>
+</html>

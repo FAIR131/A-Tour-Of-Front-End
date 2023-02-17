@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {list-style: none;}
+        div img{
+            width: 800px;
+            height: 500px;
+            display: none;
+        }
+        div img:nth-child(1){
+            display: inline;
+        }
+        div {
+            position: relative;
+            margin:auto;
+            width: 800px;
+            height: 500px;
+        }
+
+        ul {
+            position : absolute;
+            bottom: 10px;
+            left : 50%;
+            transform: translateX(-50%);
+        }
+        ul li{
+            float: left;
+            margin-right: 20px;
+            width: 25px;
+            height: 25px;
+            background-color: white;
+            border-radius: 50%;
+        }
+        ul li:nth-child(1){
+            background-color: orangered;
+        }
+        
+    </style>
+</head>
+<body>
+    <div>
+        <img src="./imgs/1.webp" alt="">
+        <img src="./imgs/2.webp" alt="">
+        <img src="./imgs/3.webp" alt="">
+        <img src="./imgs/4.webp" alt="">
+        <img src="./imgs/5.webp" alt="">
+
+        <ul>
+            <!-- 自动生成li标记 -->
+        </ul>
+    </div>
+
+
+
+    <script>
+        //自动轮播
+        /*
+            img-src
+        */
+
+        //imgs NodeList---->伪数组
+        let imgs = document.querySelectorAll("img");
+        //获取图片的数量
+        let len = imgs.length; //5
+
+        //自动生成li标记
+        //1.获取ul标记
+        let ul = document.querySelector("div > ul");
+        //2.循环len的次数
+        let listr = ``;
+        for(let i=0;i<len;i++){
+            listr += `<li></li>`
+        }
+        ul.innerHTML = listr;
+
+         //找到所有的li
+         let lis = document.querySelectorAll("li");
+
+        
+        //设定序号
+        let index = 2;
+        setInterval(function(){
+
+            //图片的名称从1开始
+            //小圆点的索引从0开始
+            //index 2 3 4 5 6
+            //      0 1 2 3 4
+            lis[index-2].style.backgroundColor = "white";
+
+            //判断index index=6
+            if(index>len){
+                index = 1;
+            }
+
+            imgs[0].src = `./imgs/${index}.webp`;//2.webp
+
+            lis[index-1].style.backgroundColor = "orangered";
+
+            index++
+        },1500);
+
+        //鼠标移入 移除
+        //1.索引不对齐
+        //2.时间不对齐
+    </script>
+</body>
+</html>

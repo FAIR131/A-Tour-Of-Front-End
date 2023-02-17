@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <ul>
+            <li>
+                <a href=""></a>
+            </li>
+            <li>
+                <b>1</b>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href=""></a>
+            </li>
+            <li>
+                <b>2</b>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        // let ul = document.querySelector("ul");
+
+        // //兄弟节点
+        // console.log(ul.previousSibling);
+        // //元素兄弟
+        // console.log(ul.previousElementSibling)
+
+        // //兄弟节点
+        // console.log(ul.nextSibling);
+        // //元素兄弟
+        // console.log(ul.nextElementSibling);
+
+    </script>
+
+    <script>
+        let a = document.querySelector("a");
+
+        //找堂兄弟b
+        // console.log(a.parentElement.nextElementSibling.children);
+
+        //出五福的a
+        console.log(a.parentElement.parentElement.nextElementSibling.children[0].children);
+    </script>
+</body>
+</html>

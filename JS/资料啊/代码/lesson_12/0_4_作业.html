@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 2.生成随机整数数组
+        //     - 1.len如果是数组len = [5,3]  生成的随机数组是5行3列
+        //     - 2. len = [5,4,3,2,3,.....] 多维数组
+        
+
+        //生成随机整数
+        Math.randint = function(low,high){
+            return Math.floor(Math.random() * (high-low) + low)
+        }
+
+        //私有方法
+        Array.randintArray = function(low,high,len){
+            var res = [];  //res是数组,引用传地址
+
+            function inner(level,res,len){
+                //level = 1 - 1=0
+                //len = [5,4,3]
+                //判断当前的层数是否>2)(len.length - 1)
+                if(level > len.length - 1){//3>2 [[[1,2,3]]]
+                    //len[len.length-1]= len[3-1] = len[2] = 3
+                    for(var i=0;i<len[len.length-1];i++){
+                        res.push(Math.randint(low,high));
+                    }
+                }else{//[[[1,2,3]],[]]
+                    for(var i=0;i<len[level-1];i++){
+                        res[i] = [];
+                        inner(level+1,res[i],len);
+                    }
+                }
+
+               return res
+            }
+            /*
+                1.low代表最小的范围
+                2.high代表最大范围
+                3.len代表维度,代表每个维度元素长度
+            */
+           //加入程序员使用的时候忘记给len传值
+           if(len===undefined){
+                return []
+           }
+
+           if(Object.prototype.toString.call(len)==="[object Number]"){
+
+           }else if(Object.prototype.toString.call(len)==="[object Array]"){
+                //len = [5,4,3]
+                //需要向res当中插入元素
+                //len的长度 ===  数组树的深度[[],[]]
+
+                //level
+                var level = 1; //循环层数
+                return inner(level,res,len);
+
+           }else{
+                return []
+           }
+
+        }
+
+        // Array.randintArray(0,10,5);
+        // Array.randintArray(0,10,[5]);
+        console.log(Array.randintArray(0,10,[5,4,3]));
+
+        /*
+            生成一个检查测数组形状的函数
+        */
+    </script>
+
+
+    <script>
+        //生成随机整数
+        Math.randint = function(low,high){
+            return Math.floor(Math.random() * (high-low) + low)
+        }
+
+        //私有方法
+        Array.randintArray = function(low,high,len){
+            var res = [];
+
+            function inner(level,res,len){
+                if(level > len.length - 1){
+                    for(var i=0;i<len[len.length-1];i++){
+                        res.push(Math.randint(low,high));
+                    }
+                }else{
+                    for(var i=0;i<len[level-1];i++){
+                        res[i] = [];
+                        inner(level+1,res[i],len);
+                    }
+                }
+               return res
+            }
+
+            var level = 1; //循环层数
+            return inner(level,res,len);
+        }
+    </script>
+</body>
+</html>

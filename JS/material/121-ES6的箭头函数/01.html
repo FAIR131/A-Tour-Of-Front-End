@@ -1,0 +1,102 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="mytext">
+    <script>
+        // var test1 = function(){
+        //     console.log("11111")
+        // }
+
+
+        // var test2 = () => {
+        //     console.log(2222)
+        // }
+
+        // test1()
+        // test2()
+
+        /*
+         1. (只有一个形参的时候)可以省略
+         2. {} 可以省略 只有一句代码 或 只有返回值的时候，省略return
+
+         3. 没有arguments
+
+         4. 箭头函数没有this, 
+            箭头函数this是父级作用域的，
+        */
+
+
+        // var test = (a,b) => {
+        //     console.log(111,a,b)
+        // }
+
+        // test("kerwin",100)
+
+        // var test = a => 100*a
+
+        // console.log(test(10))
+
+
+        // var list = ["aaa","bbb","ccc"]
+
+        // var newlist = list.map(item=>`<li>${item}</li>`)
+
+        // console.log(newlist.join(""))
+
+
+        // var test = ()=>console.log("111111")
+
+        // test()
+
+        // var test = () => ({
+        //         name:"kerwin"
+        // })
+
+        // console.log(test())
+
+
+        // var test = () => {
+        //     // console.log(a,b,c)
+
+        //     console.log(arguments[0],arguments[1],arguments[2])
+
+        //     // console.log(Array.from(arguments))
+        // }
+        // test(1,2,3)
+
+        // mytext.oninput = function(){
+        //     var that = this
+        //     setTimeout(function(){
+        //         console.log(that.value)
+        //     },1000)
+        // }
+
+        mytext.oninput = function(){
+            // var that = this
+            setTimeout(()=>{
+                console.log(this.value)
+            },1000)
+        }
+
+        //函数的默认参数
+        // function test(a=1,b=2){
+        //     return a+b
+        // }
+
+        var test = (a=1,b=2)=>{
+            return a+b
+        }
+        console.log(test(10,20))
+        console.log(test())
+    </script>
+</body>
+</html>

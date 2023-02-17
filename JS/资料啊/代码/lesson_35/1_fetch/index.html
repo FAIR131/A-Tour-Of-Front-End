@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            fetch 也是promise封装的,但是fetch时安装再浏览器当中的,所以不需要下载
+        */
+    //    fetch("http://127.0.0.1/index?name=tom&age=18",{
+    //         method : "get",
+    //    }).then(response=>{
+    //         //json返回的时一个promise对象,json代表解析
+    //         return response.json();
+    //    }).then(value=>{
+    //         console.log(value);
+    //    })
+
+
+       fetch("http://127.0.0.1/index",{
+            method : "post",
+            body : "name=tom&age=18",
+            headers : {"content-type":"application/x-www-form-urlencoded"}
+       }).then(response=>{
+            //json返回的时一个promise对象,json代表解析
+            return response.json();
+       }).then(value=>{
+            console.log(value);
+       })
+    </script>
+</body>
+</html>

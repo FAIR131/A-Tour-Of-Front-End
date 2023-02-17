@@ -1,0 +1,138 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery.js"></script>
+</head>
+<body>
+    <button id="myget">get</button>
+    <button id="mypost">post</button>
+    <button id="myput">put</button>
+    <button id="mypatch">patch</button>
+    <button id="mydelete">delete</button>
+   <script>
+       $("#myget").click(function(){
+        //    $.ajax({
+        //        url:"http://localhost:3000/users",
+        //     //    async:true
+        //        data:{
+        //         username:"xiaoming"
+        //        },
+        //     //    method:"get",
+        //     //   headers:{
+
+        //     //   }
+        //     //   dataType:"string",
+        //    }).then(res=>{
+        //        console.log(res)
+        //     //    return Pormise对象
+        //    }).catch(err=>{
+        //        console.log(err)
+        //    })
+
+
+        $.get("http://localhost:3000/users",{
+            username:"xiaoming"
+        }).then(res=>{
+            console.log(res)
+        })
+       })
+
+       $("#mypost").click(async function(){
+        //    var res = await $.ajax({
+        //        url:"http://localhost:3000/users",
+        //     //    async:true
+        //        data:{
+        //         username:"kerwin",
+        //         password:"123"
+        //        },
+        //        method:"POST",
+        //     //   headers:{
+        //         //"content-type":"application/www-x-formurlencode"
+        //     //   }
+        //     //   dataType:"string",
+        //    })
+
+           var res = await $.post("http://localhost:3000/users",{
+            username:"tiechui",
+            password:"456"
+           }) 
+           console.log(res)
+       })
+
+       $("#myput").click(function(){
+           $.ajax({
+               url:"http://localhost:3000/users/6",
+            //    async:true
+               data:{
+                username:"kerwin6666",
+                password:"123"
+               },
+               method:"put",
+            //   headers:{
+                //"content-type":"application/www-x-formurlencode"
+            //   }
+            //   dataType:"string",
+               success:function(res){
+                console.log(res)
+               },
+               error:function(err){
+                console.log("1111",err)
+               },
+            //    timeout:1000
+           })
+       })
+
+       $("#mypatch").click(function(){
+           $.ajax({
+               url:"http://localhost:3000/users/6",
+            //    async:true
+               data:{
+                username:"kerwin77777",
+               },
+               method:"patch",
+            //   headers:{
+                //"content-type":"application/www-x-formurlencode"
+            //   }
+            //   dataType:"string",
+               success:function(res){
+                console.log(res)
+               },
+               error:function(err){
+                console.log("1111",err)
+               },
+            //    timeout:1000
+           })
+       })
+
+       $("#mydelete").click(function(){
+           $.ajax({
+               url:"http://localhost:3000/users/6",
+            //    async:true
+               
+               method:"delete",
+            //   headers:{
+                //"content-type":"application/www-x-formurlencode"
+            //   }
+            //   dataType:"string",
+               success:function(res){
+                console.log(res)
+               },
+               error:function(err){
+                console.log("1111",err)
+               },
+            //    timeout:1000
+           })
+       })
+
+
+       // get ,post ===> $.get() $.post()
+   </script>
+</body>
+</html>

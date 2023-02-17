@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<!--
+3、百钱百鸡
+你有100块钱 需要购买100只鸡 其中 公鸡5元1只 母鸡3元1只 小鸡1元3只
+在钱花完的情况下 必须买到100只鸡 请问能购买 多少只 公鸡 母鸡 小鸡-->
+<script>
+    let gj=0;
+    let mj=0;
+    let xj=0;
+for(gj=0;gj<=20;gj++){
+    for (mj=0;mj<=33;mj++){
+        for (xj=0;xj<=100;xj++){
+            if(gj+mj+xj===100&&5*gj+3*mj+xj/3===100){
+                console.log('公鸡'+gj+'只','母鸡'+mj+'只','小鸡'+xj+'只');
+            }
+        }
+    }
+}
+</script>
+</body>
+</html>

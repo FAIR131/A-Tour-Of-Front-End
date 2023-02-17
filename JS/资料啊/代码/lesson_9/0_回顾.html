@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            面向对象 :
+                - 封装
+                - 继承 
+                - 多态 
+        */
+
+        /*
+            原型链 : 语法
+            d1.func() 先找 引用对象,如果找不到,找自己的原型对象，找不到,继续查找Object的原型对象,还找不到,找到了null,报错
+        */
+        Object.prototype.func = function(){
+            return "from OBJ"
+        }
+        
+        function Dog(name,age){
+            /*
+                1.命名 使用大驼峰
+                2.属性的赋值前要加this
+                3.不加return
+                4.调用的时候加new
+            */
+            this.name = name;
+            this.age = age;
+            //为什么不把方法写在函数对象当中?
+            //函数对象每调用一次,都会在内存当中赋值一份,如果代码越多,则多每调用一次，内存的消耗会越来越大
+            //所以把方法写在原型对象当中
+            //每一个函数对象都有且只有一个原型对象,每次都用函数对象,原型对象不会被复制到引用对象中,引用对下个的原型指向函数对象的原型对象
+            
+            //d1.eat(),如果eat方法在函数对象当中没有定义过,则向原型对象当中进行查找
+        }
+
+        Dog.prototype.a = function(){};
+        Dog.prototype.b = function(){}
+        Dog.prototype.c = function(){}
+
+        //继承有什么特性,可以把父类的属性和方法"复制（伪复制）"过来
+        function Hasch(name,age){
+            //继承属性
+            Dog.call(this,name,age);
+        }
+
+        //继承方法
+        Hasch.prototype = Object.create(Dog.prototype);//Object.create对原型有用
+
+        var h1 = new Hasch("abc",12);
+
+        console.log(h1); //Hasch{}
+
+        console.log(h1.a());
+
+
+        /*
+            不建议 : 
+            // 显式原型 : prototype
+            // 隐式原型 ：__proto__
+        
+        */
+        
+
+        
+    </script>
+</body>
+</html>

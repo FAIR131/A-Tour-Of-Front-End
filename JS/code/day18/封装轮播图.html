@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      ul,
+      li {
+        list-style: none;
+      }
+
+      .box {
+        position: relative;
+        margin: 30px auto;
+        width: 500px;
+        height: 500px;
+      }
+
+      .img_list {
+        width: 500px;
+        height: 500px;
+      }
+
+      .img_list li {
+        display: none;
+      }
+      .img_list li:first-child {
+        display: block;
+      }
+
+      img {
+        width: 500px;
+        height: 500px;
+      }
+
+      span {
+        display: none;
+        width: 50px;
+        height: 100px;
+        background-color: rgba(255, 255, 255, 0.5);
+        font-size: 50px;
+        color: #fff;
+        line-height: 100px;
+      }
+
+      .left {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .right {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+      }
+
+      .cir_list {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .cir_list li {
+        float: left;
+        width: 20px;
+        height: 20px;
+        background-color: #fff;
+        margin-right: 10px;
+        border-radius: 50%;
+      }
+
+      .cir_list li:first-child {
+        background-color: orangered;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <ul class="img_list">
+        <li>
+          <img src="./img/1.webp" alt="" />
+        </li>
+        <li>
+          <img src="./img/2.webp" alt="" />
+        </li>
+        <li>
+          <img src="./img/3.webp" alt="" />
+        </li>
+        <li>
+          <img src="./img/4.webp" alt="" />
+        </li>
+        <li>
+          <img src="./img/5.webp" alt="" />
+        </li>
+      </ul>
+
+      <ul class="cir_list"></ul>
+      <span class="left"><</span>
+      <span class="right">></span>
+    </div>
+
+    <script>
+      let box = document.querySelector(".box");
+      let img_ul = document.querySelector(".img_list");
+      let cir_ul = document.querySelector(".cir_list");
+      let img_lis = document.querySelectorAll(".img_list li");
+
+      let [left, right] = document.querySelectorAll("span");
+      let index = 0;
+      let si;
+
+      function creatCircle() {
+        img_lis.forEach(() => {
+          let cir_li = document.createElement("li");
+          cir_ul.append(cir_li);
+        });
+      }
+
+      creatCircle();
+      let cir_lis = document.querySelectorAll(".cir_list li");
+
+      function setDefault(obj1, obj2, index) {
+        obj1[index].style.backgroundColor = "white";
+        obj2[index].style.display = "none";
+      }
+
+      function setStyle(obj1, obj2, index) {
+        obj1[index].style.backgroundColor = "orangered";
+        obj2[index].style.display = "block";
+      }
+
+      function auto() {
+        si = setInterval(function () {
+          setDefault(cir_lis, img_lis, index);
+          index = index >= cir_lis.length - 1 ? 0 : index + 1;
+          setStyle(cir_lis, img_lis, index);
+        }, 1000);
+      }
+
+      auto();
+
+      function mousein() {
+        box.onmouseover = function () {
+          left.style.display = "block";
+          right.style.display = "block";
+          clearInterval(si);
+        };
+      }
+      function mouseout() {
+        box.onmouseout = function () {
+          left.style.display = "none";
+          right.style.display = "none";
+          auto();
+        };
+      }
+      mousein();
+      mouseout();
+
+      function rightClick() {
+        right.addEventListener("click", function () {
+          setDefault(cir_lis, img_lis, index);
+          index = index >= cir_lis.length - 1 ? 0 : index + 1;
+          setStyle(cir_lis, img_lis, index);
+        });
+      }
+      function leftClick() {
+        left.addEventListener("click", function () {
+          setDefault(cir_lis, img_lis, index);
+          index = index <= 0 ? cir_lis.length - 1 : index - 1;
+          setStyle(cir_lis, img_lis, index);
+        });
+      }
+
+      rightClick();
+      leftClick();
+
+      function touchCir() {
+        cir_lis.forEach(function (item, ind) {
+          item.onmouseover = function () {
+            setDefault(cir_lis, img_lis, index);
+            setStyle(cir_lis, img_lis, ind);
+            index = ind
+          };
+        });
+      }
+
+      touchCir();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            js : 
+                - 全局作用域(公共的区域)
+                - 局部作用域(私有的区域)
+            作用域语法:
+                - 
+        */
+
+
+        // function a(){
+        //     var aa = 1;
+        //     //优先在局部当中进行查找变量或函数,如果找不到,则到全局当中进行查找,找不到报错
+        //     console.log(aa+bb);
+        // }
+
+        // function b(){
+        //     //window代表是浏览器,这也是一种全局
+        //     window.bb = 2;
+        // }
+        
+        // b(); //
+        // a();
+        //优先在全局当中进行查找变量或函数,如果找不到,报错
+        // console.log(aa+bb);
+
+    </script>
+
+
+    <script>
+
+        var aa = 1;
+
+        function a(){
+            var aa = 2;
+
+            function b(){
+                var bb = 3;
+
+                function d(){
+                    var cc = 4;
+                }
+
+                function c(){
+                    
+                    console.log(aa+bb+cc); //cc找不到
+                }
+            }
+        }
+    
+    </script>
+
+    <script>
+        function a(){
+
+        }
+
+        function b(){
+
+        }
+        //原始函数
+
+        a.aa = 1;
+        b.bb = 2;
+
+        console.log(a.aa + b.bb);
+
+    </script>
+</body>
+</html>

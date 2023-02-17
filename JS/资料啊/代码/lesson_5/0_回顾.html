@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [1,2,3,4,5,6,"a","b","a",null,"a"];
+        /*
+            索引 = 下标 = 枚举键
+            数据结构 : 每个位置可以存储一个元素,下一个元素和上一个元素之间,下标相邻
+                - 直接相邻
+                - 间接相邻
+        */
+
+        // console.log(arr[6]);  //通过索引的查找
+
+        // for(var i=0;i<arr.length;i++){
+        //     if(arr[i] === "a"){
+        //         console.log(i);
+        //         //arr[i] = "aa";
+        //     }
+        // }
+
+
+        // console.log(arr.indexOf("a"));  //通过给定的值，查找索引
+        // console.log(arr.lastIndexOf("a"));
+
+        //pop()   : 删除最后的
+        //shift() : 删除最前面的
+        //splice() : 可以作为删除
+        // console.log(arr.splice(6,3));
+        // arr.splice(6,3,)
+        // console.log(arr);
+
+
+        //1. 如何把数据插入在任意位置？
+        //把数据"demo"插入到到索引为3的位置上
+        // arr.splice(3,0,"demo");
+
+        // console.log(arr);
+
+        //2.如何把任意位置的数值进行删除了？
+
+
+        
+        // for(var i in arr){
+        //     //
+        // }
+
+        arr.forEach(function(item,index){
+            // console.log(item);
+        })
+
+    </script>
+
+    <script>
+
+        //多维度数组
+        /*
+            三维数组,不规则的
+            1.要求二位子数组当中选出每组当中最大的数字
+            2.如果当前的数组长度小于3,则不参加挑选
+            3.如果二维子数组当中,某一个元素是数组，则把数组替换成数组当中的最大值
+
+            得到整个数组当中最大的数字
+            1.先计量每个子数组的长度,把子数组的长度保存在变量(数组)当中
+            2.如果子数组的长度小于三,则删除
+        */
+
+        var arr = [
+            [9,5,1,0,10,2],
+            [3,7,2,9],
+            [1,2,5,9,11,[6,9,7]],
+            [5,[1,2,3]],
+            [],
+            [7,8,11,0,3]
+        ]
+
+        var child_len = [];
+
+        for(var i=0;i<arr.length;i++){
+            //子数组的长度
+            if(arr[i].length >= 3){
+                child_len.push(arr[i].length);
+            }else{
+                child_len.push(0);
+            }
+            
+            
+        }
+     
+        //检测子元素当中的元素是不是数组,如果是,则挑选最大值
+        //循环外层数组
+        //得到子数组,再循环子数组,判断数组的元素是不是数组类型
+        //如果是数组类型,则再循环,找到最大数字,替换父数组
+
+        //[6, 4, 6, 0, 0, 5]
+        for(var i=0;i<arr.length;i++){
+            //如果子数组的长度为0，则不参加循环
+            if(child_len[i] !== 0){
+                for(var j=0;j<arr[i].length;j++){
+                    //判断元素是不是一个数组
+                    if(Object.prototype.toString.call(arr[i][j])==="[object Array]"){
+                        //循环第三层数组
+                        var max = 0;
+                        for(var k=0;k<arr[i][j].length;k++){
+                            if(max < arr[i][j][k]){
+                                max = arr[i][j][k];
+                            }
+                        }
+                        //最大值找到,要求使用最大值把父元素替换了
+                        arr[i][j] = max;
+                    }
+                }
+            }
+        }
+        
+        //在每个子数组当中挑选最大的数字
+        var max_arr = [];
+
+        for(var i=0;i<arr.length;i++){
+            //把长度小于3的数字过滤
+            if(child_len[i]){
+                var max = 0;
+                for(var j=0;j<arr[i].length;j++){
+                    if(max < arr[i][j]){
+                        max = arr[i][j];
+                    }
+                }
+                //max值只有一个
+                max_arr.push(max);
+            }else{
+                max_arr.push(0);
+            }
+           
+        }
+
+        //找出整个数组当中最大的值
+        var fmax = 0;
+        for(var i=0;i<max_arr.length;i++){
+            if(fmax < max_arr[i]){
+                fmax = max_arr[i];
+            }
+        }
+
+        console.log(fmax);
+
+       
+    </script>
+</body>
+</html>

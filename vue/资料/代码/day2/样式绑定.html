@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <style>
+        .box1{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background: blue;
+        }
+        .box3{
+            font-size: 50px;
+            color:yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+
+        <!-- class的对象写法 -->
+        <!-- <div :class="{box1:flag}"></div> -->
+        <!-- <div :class="witchBox"></div> -->
+        <!-- <div :class="{box1:true,box3:true}">哈哈</div> -->
+        <!-- class的数组写法 -->
+        <!-- <div :class="['box1','box3']">哈哈</div>
+        <button @click="changeClass">切换样式</button> -->
+
+        <!-- style的对象写法 -->
+        <!-- <div :style="{width:'100px',height:'100px',background:color,fontSize:'30px'}">呵呵</div> -->
+        <!-- style的数组写法 -->
+        <div :style="[{color:'white',fontSize:'100px'},{background:'black',height:'200px'}]">呵呵</div>
+    </div>
+    <script>
+        Vue.config.productionTip = false;
+        new Vue({
+            el:"#app",
+            data:{
+                flag:true,
+                witchBox:"box1",
+                color:'purple'
+            },
+            methods:{
+                // changeClass:function(){
+                //     this.flag=!this.flag;
+                // }
+                changeClass:function(){
+                    if(this.witchBox==='box1'){
+                        this.witchBox="box2";
+                    }else{
+                        this.witchBox="box1";
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //生成ul对象
+        //在生成1万个li标记
+        //每个li标记都绑定点击事件
+
+        console.time()
+
+        let ul = document.createElement("ul");
+        // let ul = document.querySelector("ul");
+
+        for(let i=0;i<50000;i++){
+            let li = document.createElement("li");
+            li.innerText = i;
+            ul.append(li);
+        }
+
+        document.body.append(ul);
+    
+        //绑定单击事件
+        let lis = document.querySelectorAll("li");
+
+        lis.forEach(function(li){//绑定50000次
+            
+            li.addEventListener("click",function(){
+                //点击一次,字体方大
+                li.style.fontSize = "50px";
+            })
+        })
+
+
+        console.timeEnd()
+    </script>
+</body>
+</html>

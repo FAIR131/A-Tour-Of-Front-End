@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            闭包
+                :在一个函数当中再声明一个函数
+                :外层函数把内层函数作为返回值
+        
+        */
+    //    function outer(){//外面的
+
+    //         function inner(){//里面的
+    //             return 123
+    //         }
+
+    //         return inner();
+    //    }
+
+    //    console.log(outer());
+
+
+    </script>
+
+    <script>
+
+        /*
+            柯里化 : 如果需要让一个函数接受一个值，
+            则需要在内部设定多个子函数，让每个子函数也处理一部分功能
+        */
+        // function outer(a){
+        //     return function (b){//匿名函数
+        //         return a+b;
+        //     }
+        // }
+        /*
+        outer(1)  = (function (b){//匿名函数
+                return a+b;
+            })(2)
+        
+        */
+        // console.log(outer(1)(2)) //3
+
+       
+    </script>
+
+    <script>
+        /*
+            声明一个函数,函数当中处理不同的功能
+            a : 付款
+            b : 折扣
+            c : 成功提示信息
+            d : 失败提醒提升
+        */
+
+        function A(a){
+            
+            if(a===undefined){
+                //执行失败的
+                return D
+            }
+            //付款和折扣合并
+            function B(b){
+                
+            }
+
+            function C(c){
+                //c : name
+                return c+"付款成功"
+            }
+
+            function D(d){
+                //c : name
+                return d+"付款失败"
+            }
+        }
+
+    </script>
+</body>
+</html>

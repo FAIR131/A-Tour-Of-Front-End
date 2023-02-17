@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script> 
+        //单继承的重写
+        //对象继承的时候,属性或方法的名称相同,后者覆盖前者,过程叫做重写
+        function A(name){
+            this.name = name
+        }
+
+        A.prototype.func = function(){
+            return "A"
+        }
+
+        function C(name){
+            A.call(this,name);
+            this.name = "张三";
+            /*
+                内存
+                function C(name){
+                    A.call(this,name);----->this.name = name;
+                    this.name = "张三"； //后出现this.name覆盖前面相同 属性
+                }
+            */
+            
+        }
+
+        C.prototype = Object.create(A.prototype);
+        C.prototype.func = function(){
+            return "C"
+        }
+
+        var c1 = new C("李四");
+
+        // console.log(c1);        //张三
+        // console.log(c1.func()); //C
+    </script>
+
+    <script>
+        
+        function 甲(name){
+            this.name = name;
+        }
+
+        function 乙(name,age){
+            this.name = name;
+            this.age = age;
+        }
+
+        function 甲乙(name,age,sex){
+            甲.call(this,name);
+            乙.call(this,name,age);//name和age都是继承域乙
+            this.sex = sex;
+        }
+
+        var 小乙 = new 甲乙("小艺",10,"女");
+
+        console.log(效益);
+    </script>
+</body>
+</html>

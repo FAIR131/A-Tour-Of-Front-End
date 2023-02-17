@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        //策略模式
+        //作用:减少判断 , 把所有的可能罗列出来
+        /*
+            商场购物 : 买了一个商品,1000元整
+                折扣  8折  7折
+                满减  300-20  600-50
+            
+            const type = "80%" // 300-20
+            if(type === "80%"){
+                price * 0.8
+            }else if(type==="600-50"){
+                price - 50
+            }else if(type==="300-20"){
+                price - 20
+            }
+        */
+
+        //返回最终的计算价格
+        const calcPrice = (function(){//IIFE
+            //保留一个数据结构
+            const calcList = {
+                "80%" : price => price * 0.8,
+                "70%" : price => price * 0.7,
+            }
+
+            //闭包
+            function calc(price,type){
+                //type是key
+                //type="60%"  ----> undefined
+                //如果没有找到任何的折扣,则返回原价
+                if(!calcList[type]) return price 
+
+                //如果可以找到折扣
+                return calcList[type](price);
+            }
+
+            //折扣的形式能增加
+            //返回的是函数的对象
+            //一切都是对象 ，把函数当作对象,函数当中可以添加方法
+            calc.add = function(type,func){
+                calcList[type] = func;
+            }
+
+            //活动过期以后,某一些折扣,应当被删除
+            calc.remove = function(type){
+                delete calcList[type];
+            }
+            
+            //查看折扣的方式
+            calc.showList = function(){
+                return calcList
+            }
+
+            return calc
+        })()
+
+        //返回结果是什么
+        // console.log(calcPrice); //返回结果 calc()
+        //但是calcList 又和 calc是一个作用域
+
+        /*
+        calcPrice = calc = (price,type){
+                //type是key
+                //type="60%"  ----> undefined
+                //如果没有找到任何的折扣,则返回原价
+                if(!calcList[type]) return price 
+
+                //如果可以找到折扣
+                return calcList[type](price);
+            }
+
+        calc(1000,"80%");
+        */
+
+        let methods = calcPrice;
+
+        methods.add("300-20",price => price - 20);
+
+        methods.add("600-50",price => price - 50);
+
+        //调用
+        console.log(methods(999,"600-50"));
+
+
+    </script>
+</body>
+</html>

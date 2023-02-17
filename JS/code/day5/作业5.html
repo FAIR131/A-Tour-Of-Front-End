@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Document</title>
+  <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <script>
+    // 5.声音函数，该函数可以求解数组中第二大的数值
+    
+
+  var arr = [24,3,7,6,4,5,9,1,21,10];
+  /* 
+  for (var i = 0; i < arr.length - 1; i++) {
+    for (j = 0; j < arr.length - 1 - i; j++) {
+      if (arr[j] > arr[j + 1]) {
+        var temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  } */
+
+      // var arr = [5, 9, 1, 5, 3, 10, 23, 11, 2, 8];
+        function qs(arr, begin, end) {
+          if (begin < end) {
+            var i = begin;
+            var j = end;
+            var base = arr[i];
+            while (i < j) {
+              while (arr[j] >= base && i < j) {
+                j--;
+              }
+
+              if (i < j) {
+                arr[i] = arr[j];
+                i++;
+              }
+
+              while (arr[i] <= base && i < j) {
+                i++
+              }
+
+              if (i < j) {
+                arr[j] = arr[i];
+                j--;
+              }
+
+              arr[i] = base;
+            }
+            qs(arr, begin, j - 1);
+            qs(arr, i + 1, end);
+          }
+
+        }
+    
+    console.log(arr);
+    qs(arr,0,9)
+    console.log(arr);
+
+    var secMax = 0
+    var len = arr.length;
+    var max = arr[len - 1];
+    for (var i = len - 1; i >= 0; i--) {
+      // console.log(arr[i]);
+      if (arr[i] !== max) {
+        secMax = arr[i];
+        break;
+      }
+    }
+
+    console.log('第二大的数是：' + secMax);
+  </script>
+</body>
+
+</html>

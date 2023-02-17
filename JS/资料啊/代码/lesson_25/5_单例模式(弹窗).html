@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dialog {
+            width: 600px;
+            height: 360px;
+            border-top: 1px solid #ccc;
+            border-left: 1px solid #ccc;
+            box-shadow: 1px 20px 20px 0px #ccc;
+            background-color: #fff;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            opacity: 0;
+            transform: translateY(-200px);
+            transition: all 0.3s linear;
+        }
+
+        #top {
+            height: 45px;
+            background-color: skyblue;
+            display: flex;
+           
+            box-sizing: border-box;
+            justify-content: space-between;
+            padding: 0 20px;
+            align-items: center;
+            border-bottom: 1px solid #ccc;
+        }
+
+        #content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+        }
+
+        #bottom{
+            height: 45px;
+            display: flex;
+            
+            justify-content: center;
+            align-items: center;
+            border-top: 1px solid #ccc;
+            /* position: absolute;
+            bottom: 0px; */
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div id="dialog">
+        <div id="top">
+            <p id="desc">信息</p>
+            <span>&times;</span>
+        </div>
+        <div id="content">
+            确定删除当前的内容吗?
+        </div>
+        <div id="bottom">
+            <button id="btn">
+                确定
+            </button>
+        </div>
+    </div>
+
+    <button id="del">删除</button>
+
+    <script>
+        /*
+            弹窗需要使用单例
+            new class();//内存就要多消耗一个空间
+            //弹窗消失是css样式让它笑了,内存中还存在
+            加入点击了十几次弹窗,内存当中也保留了十几个弹窗的实例对象
+
+            单例模式弹窗
+            new class();//内存只消耗一个空间
+            下次点击，修改上一个对象当中的内容样式就可以了
+        */
+
+        let del = document.querySelector("#del");
+
+        let dialog = document.querySelector("#dialog");
+
+        let span = dialog.querySelector("#top > span");
+        let btn = dialog.querySelector("#btn");
+
+        del.addEventListener("click",function(){
+            dialog.style.opacity = 1;
+            dialog.style.transform="translateY(0px)";
+        })
+        
+        span.addEventListener("click",click);
+        btn.addEventListener("click",click);
+
+        function click(){
+            dialog.style.opacity = 0;
+            dialog.style.transform="translateY(-200px)";
+        }
+
+
+    </script>
+</body>
+
+</html>

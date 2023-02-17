@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width : 500px;
+            height: 200px;
+            border: 1px solid black;
+        }
+
+        ul{
+            width : 500px;
+            height: 200px;
+            border: 1px solid black;
+            padding: 0px;
+        }
+
+        li {
+            cursor: pointer;
+            list-style: none;
+            display: inline;
+            background-color: rgba(155,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+
+    </div>
+
+    <ul>
+        <li>iphone 15 pro max</li>
+        <li>macbook m1 max</li>
+        <li>MLB</li>
+        <li>鞋子</li>
+        <li>1605</li>
+        <li>汽车</li>
+        <li>鼠标</li>
+        <li>袜子</li>
+    </ul>
+
+    <script>
+        /*
+            事件委派 还是 事件循环绑定
+
+            1.找ul
+            2.判断li标签
+            3.li下压以后触发移动
+                - position
+            
+        */
+
+        let ul = document.querySelector("ul");
+
+        ul.onmousedown = function(event){
+            
+            let target = event.target;
+
+            if(target.nodeName === "LI"){
+                //变成块
+                target.style.display = "block";
+                //添加position
+                target.style.position = "absolute";
+
+                //获取宽高
+                let [w,h] = [target.offsetWidth/2 , target.offsetHeight/2]
+
+                document.onmousemove = function(e){
+                    //计算鼠标的移动坐标
+                    let [X,Y] = [e.clientX , e.clientY];
+
+                    //改变target的坐标
+                    target.style.left = X - w +"px";
+                    target.style.top = Y - h +"px";
+
+                }
+
+            }
+
+            return false
+        }
+
+    </script>
+</body>
+</html>

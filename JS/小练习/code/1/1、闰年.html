@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    </style>
+</head>
+<body>
+<!--1、使用prompt()函数,接收一个年份,判断输入的年份是否是闰年,将结果输出到控制台。-->
+<script>
+  let year =  prompt('请输入一个年份');
+    if(year %4===0&& year%100!==0 || year %400 ===0){
+        console.log('这是一个闰年');
+    }else{
+        console.log('这不是一个闰年');
+    }
+
+</script>
+</body>
+</html>

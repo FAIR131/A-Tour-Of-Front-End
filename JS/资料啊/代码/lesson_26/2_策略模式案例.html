@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: gainsboro;
+        }
+
+        #box {
+            width: 1000px;
+            height: 781px;
+            background-color: white;
+            margin: auto;
+        }
+
+        ul {
+            display: flex;
+
+        }
+
+        li {
+            list-style: none;
+            width: 120px;
+            height: 120px;
+            font-size: 50px;
+            background-color: orange;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        #box > #inp {
+            width: 800px;
+            height: 100px;
+           font-size: 60px;
+        }
+
+        #box > #btn {
+            cursor: pointer;
+            width: 300px;
+            height: 180px;
+            background-color: skyblue;
+        }
+
+        div > div {
+            font-size: 200px;
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+<!-- 输入价格的框 -->
+<div id="box">
+    <input id="inp" type="text" value="0">
+
+    <ul>
+        <li>80%</li>
+        <li>70%</li>
+        <li>60%</li>
+    </ul>
+
+    <button id="btn">计算最终价格</button>
+
+    <div>0.00</div>
+
+    <input id="rate" type="text" value="" placeholder="增加折扣方案">
+    <input id="methods" type="text" value="" placeholder="输入公式">
+
+    <button id="add">添加方案</button>
+
+</div>
+
+
+<script>
+    //找到ul标签
+    let ul = document.querySelector("#box > ul");
+    let button = document.querySelector("#box > button");
+    let input = document.querySelector("#box > input");
+    let div = document.querySelector("#box > div");
+
+    //添加方案
+    let rate = document.querySelector("#rate");
+    let methods = document.querySelector("#methods");
+    let add = document.querySelector("#add");
+
+    //不打折
+    let zrate = "100%";
+
+    ul.addEventListener("click", function (e) {
+        //事件委派
+        if (e.target.nodeName === "LI") {
+            //排它
+            [...ul.children].forEach(item => item.style.backgroundColor = "orange")
+            //点击的li改变颜色
+            e.target.style.backgroundColor = "pink";
+
+            //修改折扣率
+            //textContent 和 innerText基本功能一致,获取文本的
+            //textContent多了一个功能,隐藏元素的文本可以拿到
+            zrate = e.target.textContent;
+
+        }
+    })
+
+    button.addEventListener("click", function () {
+        //获取到input.value
+        let val = isNaN(Number(input.value)) ? 0 : Number(input.value);
+        //获取到折扣
+
+        //开始计算
+        let c = new CalcPrice(val, zrate);
+        //把最终的结果交给div
+        div.innerText = c.result;
+    })
+
+
+    add.addEventListener("click", function () {
+        //制定规则
+
+        if (!rate.value) return
+
+        //正则表达式
+        let reg = /\d+-\d+/;
+        let r = reg.exec(rate.value)
+
+        if (r) {
+
+            let mod = `price => price - ${methods.value}`;
+            CalcPrice.addMethod(r[0], eval(mod));
+        } else {
+            //50% ----> Number(50)/100 --> 0.5
+            let mod = `price => price * 0.5`;
+        }
+
+
+    })
+
+
+    class CalcPrice {
+        //静态私有
+        static #calcList = {
+            "80%": price => price * 0.8,
+            "70%": price => price * 0.7,
+            "60%": price => price * 0.6,
+        }
+
+        constructor(price, type) {
+            /*
+                :@params price <number> 输入的价格
+                :@params type  <string> 折扣
+
+                :return res <function>
+            */
+
+            this.price = price;
+            this.type = type;
+
+            this.result = this.calc();
+
+        }
+
+        calc() {
+            if (!CalcPrice.#calcList[this.type]) return this.price
+
+            //如果可以找到折扣
+            return CalcPrice.#calcList[this.type](this.price);
+        }
+
+        //静态方法
+        static addMethod(key, func) {
+            CalcPrice.#calcList[key] = func;
+
+            //创建一个li
+            let li = document.createElement("li");
+            li.innerText = key;
+            ul.appendChild(li);
+        }
+    }
+
+
+</script>
+</body>
+</html>

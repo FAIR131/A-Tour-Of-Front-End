@@ -1,0 +1,14 @@
+一、组合式api的意义
+    1、将相关业务逻辑的代码封装到同一处
+
+二、toRefs
+    1、将reative函数声明的复杂数据类型转成多个ref类型
+
+三、单文件组件(setup语法糖)
+    1、在<script>标签上增加setup属性,将整个标签置于setup环境下
+    2、数据或函数不需要return,在页面上直接使用,子组件也不需要注册,直接使用
+    3、父子传值:defineProps获取父组件传递的自定义属性,defineEmits触发父组件自定义的事件
+    4、provide和inject从vue包中直接解构出来使用
+    5、路由从vue-router包中可以解构出useRouter和useRoute方法,可获取路由对象和当前页面路由
+    6、状态管理从vuex包中可以解构出useStore方法,执行后可得到store实例
+

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <td>账户</td>
+        <td><input type="text" name="username"></td>
+    </tr>
+    <tr>
+        <td>密码</td>
+        <td><input type="text" name="password"></td>
+    </tr>
+    <tr>
+        <td><input type="text" name="valicode"></td>
+        <td><img src="http://127.0.0.1/users/captcha" onclick="this.src='http://127.0.0.1/users/captcha?'+Date.now()"
+                 alt="123"></td>
+    </tr>
+    <tr>
+        <td><input type="submit" value="登录"></td>
+        <td></td>
+    </tr>
+</table>
+
+<script src="https://cdn.bootcss.com/js-sha256/0.9.0/sha256.min.js"></script>
+
+<script>
+
+    window.addEventListener('DOMContentLoaded', function () {
+        let cookie = document.cookie;
+        console.log(cookie)
+        if (!cookie.includes('web2211=')) {
+            return
+        }
+        //处理cookie
+        let cookie_arr = cookie.split(';');
+        let session_key;
+        cookie_arr.forEach((item) => {
+            if (item.includes('web2211=')) {
+                session_key = item
+            }
+        })
+
+        if(!session_key){
+            return;
+        }
+
+      let ind1 =  session_key.indexOf('.');
+        session_key=  session_key.slice(0,ind1)
+         session_key = session_key.slice(session_key.length-32) ;
+
+    let [user,pwd,vali,sub] = document.querySelectorAll('input');
+        console.log('session_key');
+        sub.addEventListener('click',function (){
+            fetch('http://127.0.0.1/users/signin',{
+                method:'POST',
+                headers:{
+                    "content-type":"application/x-www-form-urlencoded"
+
+                },
+                body:`username = ${user.value}&password=${sha256(pwd.value)}&valicode=${vali.value}&sesskey=${session_key}`
+            }).then(response=>{
+                return response.json(); //response是响应对象 status
+            }).then(value=>{
+                //token : 令牌 jwt : jsonwebtoken
+                //sessionStoreage  页面
+                //localStroeage    浏览器
+                if(value.code===1){
+                    localStorage.setItem("myapp-username",value.token);
+                    //跳转首页
+                    location.href = "./index.html";
+                }else{
+                    alert(value.msg);
+                }
+            })
+        })
+    })
+</script>
+</body>
+</html>

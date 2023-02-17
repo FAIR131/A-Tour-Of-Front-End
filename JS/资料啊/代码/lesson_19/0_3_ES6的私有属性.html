@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        // class Person{
+        //     //静态属性 :定义好函数对象就有了
+        //     //立马执行的
+        //     //类对象调用的
+        //     static a = 1;
+
+        //     //私有属性
+        //     //不可以被继承的
+        //     //不可以被类对象调用
+        //     //被实例对象调用的,但是只能在类对象当中使用
+        //     //私有属性的值想要做修改,或者从外部打印,需要借助get - set
+        //     #b = 2;
+
+        //     //静态私有 : static被类对象  #被实例调用
+        //     static #c = 3;
+
+        //     //new的时候
+        //     constructor(name){
+        //         //普通的属性
+        //         this.name = name;
+        //         console.log("-->",Person.#c);
+        //     }
+
+        //     get getVar(){
+        //         return this.#b
+        //     }
+
+        //     set setVar(arg){
+        //         this.#b = arg;
+        //     }
+
+
+        // }
+
+        // let p1 = new Person("张三");
+
+        // console.log(Person.a);
+        // // console.log(Person.#b);
+
+        // console.log(p1.name);
+
+        // console.log(p1.getVar);
+
+        // p1.setVar = "红浪漫";
+
+        // console.log(p1.getVar);
+
+        // console.log(Person.c);
+
+
+    </script>
+
+    <script>
+        //设计模式 : 单例模式 -->当前的实例对象只能存在一个(节省内存)
+
+        // function Person(name){
+        //     if(this instanceof Person){
+        //         this.name = name;
+        //     }else{
+        //         return new Person(name);
+        //     }
+        // }
+
+        // var n1 = new Person("张三");
+        // var n2 = new Person("张三");
+
+        // console.log(n1===n2); //不等于 why:
+
+
+
+        
+        //函数对象只有一个
+        // function Person(name){
+        //     if(!Person.instance){//Person.instance=null=false  !false = true
+        //         if(this instanceof Person){
+        //             this.name = name;
+
+        //             Person.instance = this;
+        //         }else{
+        //             return new Person(name);
+        //         }
+        //     }else{
+        //         return Person.instance;
+        //     }
+            
+        // }
+
+        // //函数对象属性
+        // Person.instance = null;
+
+        // //实例之前打印
+        // console.log(Person.instance);
+        
+        // var p1 = new Person("鬼脚七");
+
+        // // Person.instance = null;
+
+        // var p2 = new Person("鬼脚七");
+
+        // console.log(p1===p2);
+
+
+        
+    </script>
+
+
+    <script>
+        //用ES6生成一个相对安全的单例模式
+        class Person{
+            //静态私有
+            static #instance = null;
+            constructor(name){
+                if(!Person.#instance){
+                    this.name = name;
+                    Person.#instance = this;
+                }else{
+                    Person.#instance.name = name;
+                    return Person.#instance
+                }
+            }
+        }
+
+        let p1 = new Person("张三");
+        let p2 = new Person("李四");
+        console.log(p1 === p2);
+        console.log(p1);
+    </script>
+</body>
+</html>

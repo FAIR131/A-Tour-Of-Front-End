@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        /*  
+            let p = new Promise((resolve : 回调函数 , reject : 回调函数)=>{
+                resolve(value) : 执行成功的回调
+
+                reject(reason)  :  执行失败的回调
+                throw     :  执行失败的回调
+
+                //异步代码
+                setTimeout(()=>{
+                    resolve(value)
+                })
+            })
+            
+            //p 是 promise的实例对象
+
+            //then的返回值还是promise的实例对象
+            //then返回的promise对象的状态由resolve或reject确定
+
+            let p1 = p.then(value=>{
+                // return 123
+
+                // p1 state = "fulfilled";
+                     value = undefined
+
+                return new Promise((resolve,reject)=>{
+                    reject("err");
+                })
+
+            },reason=>{
+
+            });
+
+            
+                p1 state = "fulfilled";
+                   value = 123
+
+                p1 state = "fulfilled";
+                   value = undefined
+
+                p1 state = "rejected";
+                   value = "err"
+            
+        */
+
+            
+        
+
+
+        let p = new Promise((resolve,reject)=>{
+            resolve("ok")
+        })
+
+        // console.log(p);
+
+        let p1 = p.then(value=>{
+            return new Promise((resolve,reject)=>{
+                throw new Error("123")
+            })
+        },reason=>{
+
+        })
+
+        console.log(p1); //123
+    </script>
+</body>
+</html>

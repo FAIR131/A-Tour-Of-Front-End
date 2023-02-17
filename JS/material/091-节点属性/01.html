@@ -1,0 +1,28 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">hello world<!-- kerwin  --><div>11111</div></div>
+    <script>
+        var obox = document.querySelector(".box")
+        console.log(obox.childNodes)
+
+        for(var i =0;i<obox.childNodes.length;i++){
+            console.log(obox.childNodes[i].nodeValue)
+            // if(obox.childNodes[i].nodeType===1){
+            //     console.log(obox.childNodes[i])
+            // }
+        }
+
+        console.log("属性",obox.attributes[0].nodeValue)
+    </script>
+</body>
+</html>

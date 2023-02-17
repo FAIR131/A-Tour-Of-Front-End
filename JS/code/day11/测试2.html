@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <style></style>
+  </head>
+
+  <body>
+    <script>
+      //  给Object类型设置一个forEach属性, 可以对对象循环
+      Object.prototype.xunhuan = function (obj) {
+        let arr =[]
+        for (let k in obj) {
+          console.log(k, obj[k]);
+          arr.push([k,obj[k]])
+          
+        }
+        return arr
+      };
+
+    //  function Obj(name,age,sex) {
+    //     this.name= name,
+    //     this.age= age,
+    //     this. sex= sex
+    //   }
+
+    //   let obj = new Obj('zs',18,'男');
+
+    let obj_ = {
+      name: 'zs',
+      age:12
+    }
+
+    xunhuan(obj_); 
+    </script>
+  </body>
+</html>

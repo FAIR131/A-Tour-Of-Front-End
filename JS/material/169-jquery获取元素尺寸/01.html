@@ -1,0 +1,47 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery.js"></script>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            border:1px solid red;
+            margin-left:100px;
+            /* display: none; */
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+
+    </div>
+    <script>
+        //offsetWidth offsetHeight
+        //clientWidth clientHeight
+
+        //内容宽高
+        console.log($("div").width(),$("div").height())
+        //内容宽高+padding
+        console.log($("div").innerWidth(),$("div").innerHeight())
+
+        ////内容宽高+padding+border
+
+        console.log($("div").outerWidth(),$("div").outerHeight())
+
+
+        ////内容宽高+padding+border+margin
+
+        console.log($("div").outerWidth(true),$("div").outerHeight(true))
+    </script>
+</body>
+</html>

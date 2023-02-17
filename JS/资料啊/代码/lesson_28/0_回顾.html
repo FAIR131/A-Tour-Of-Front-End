@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function outer(){
+
+            let a = 0;
+
+            function inner(){
+                a += 1;
+                console.log("---->",a);
+            }
+
+            return inner
+            
+        }
+  
+        //outer()()  没有变量保存任何的函数作用域,所以调用完成则销毁
+        //outer()     var a = 0
+        // outer()();  // 1
+        // outer()();  // 1
+        // outer()();  // 1
+        // outer()();  // 1
+
+        const func1 = outer(); //函数调用完成以后,会产生作用域 a = 0
+
+        func1(); //产生了一个新的局部作用域   1
+        func1(); // 2
+        func1(); // 3
+        func1(); // 4
+
+
+        const func2 = outer(); //函数调用完成以后,会产生作用域 a = 0
+
+        func2(); //产生了一个新的局部作用域   1
+        func2(); // 2
+        func2(); // 3
+        func2(); // 4
+
+        console.log(func2 === func1);
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        /*
+            共同点 : 
+                无状态的
+                请求头是一致的
+            http :
+                url - query(参数)  不加密
+            http + ssl :
+                url - query(参数)  加密
+                ca证书
+                    - 脚本
+                    - 转译(加密)
+                    - rsa(非对称)
+        */
+
+        /*
+            微信 搜索 前端面试宝典   - 刷八股文的
+        */
+    </script>
+
+    <script>
+        /*
+            软件基础架构
+                - 工程化
+                    - 框架
+                - 资源  事件
+                    - 代码工程
+                    - 每次写项目都会出现大量重复的代码
+                    - 框架
+                        - 数据驱动视图
+                            - dom没有碰过
+                        - vue :双向数据流
+                        - react : 单向数据流
+                
+                模式 : 运营的方式
+                    - 叮咚买菜 - 打工人
+                    - 代码
+                        - 函数柯里化模式
+                        - 函数沙箱模式
+                        - 代理模式
+        */
+
+
+        let obj = {
+            a:1,
+            b:2,
+        }
+
+        let res = {}
+        Object.defineProperty(res,"a",{
+            get(){
+                console.log("触发了")
+                return obj.a
+            },
+            set(val){
+                obj.a = val;
+            }
+        })
+
+        console.log(res.a);
+
+        res.a = 123;
+
+        console.log(obj);
+
+        
+    </script>
+
+    
+</body>
+</html>

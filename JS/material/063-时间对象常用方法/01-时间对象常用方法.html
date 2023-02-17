@@ -1,0 +1,69 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        var date = new Date()
+        //getFullYear()
+
+        console.log(date.getFullYear())
+        //getMonth() 0-11===>1-12
+        console.log(date.getMonth())
+
+        //getDate()
+        console.log(date.getDate())
+
+        //getDay() 周日0 周一-周六 1-6
+        console.log(date.getDay())
+
+
+        //getHours
+        console.log(date.getHours())
+        console.log(date.getMinutes())
+        console.log(date.getSeconds())
+        console.log(date.getMilliseconds())
+
+        //getTime() 时间戳
+
+        console.log(date.getTime())
+
+        // console.log(new Date(1653280060490))
+
+
+        // 设置
+
+        console.log(date)
+
+        date.setFullYear(2025)
+        console.log(date)
+
+        date.setMonth(5)
+        console.log(date)
+
+        date.setDate(25)
+        console.log(date)
+
+        date.setHours(13)
+        console.log(date)
+
+        date.setMinutes(50)
+        console.log(date)
+
+        date.setSeconds(59)
+        console.log(date)
+
+
+        date.setTime(1653280060490)
+        console.log(date)
+    </script>
+</body>
+</html>

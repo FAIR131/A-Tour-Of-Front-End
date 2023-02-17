@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Document</title>
+  <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+
+    td {
+      width: 80px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <script>
+    var str = '';
+    function creatTable() {
+      str += '<table border="1px">';
+      str += '<tr>';
+      str += '<th>'
+      str += '<input type="checkbox" placeholder="全选"> ';
+      str += '</th>';
+      str += '</tr>';
+      for (var i = 0; i < 20; i++) {
+        str += '<tr>';
+
+        for (var j = 0; j < 10; j++) {
+          str += '<td>';
+          if (j == 0) {
+            str += '<input type="checkbox"> ';
+          } else {
+            str += i + '-' + j;
+          }
+          str += '</td>';
+        }
+        str += '</tr>';
+      }
+      str += '</table>';
+      return str;
+    }
+
+    document.write(creatTable())
+  </script>
+
+  <script>
+    var trs = document.querySelectorAll('tr');
+    trs.forEach(function (item, index) {
+      if (index % 2) {
+        item.style.backgroundColor = 'pink';
+      }
+
+      item.onmouseover = function () {
+        trs.forEach(function (item, index) {
+          if (index % 2) {
+            item.style.backgroundColor = 'pink';
+          } else {
+            item.style.backgroundColor = 'white';
+
+          }
+        })
+        this.style.backgroundColor = 'skyblue';
+      }
+    })
+  </script>
+</body>
+
+</html>

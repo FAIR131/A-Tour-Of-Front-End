@@ -1,0 +1,80 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box1">
+        <h1></h1>
+        <ul></ul>
+    </div>
+
+    <div class="box2">
+        <h1></h1>
+        <ul></ul>
+    </div>
+    <script>
+        var data1 = {
+            title: "体育",
+            list: ["体育-1", "体育-2", "体育-3"]
+        }
+
+        var data2 = {
+            title: "综艺",
+            list: ["综艺-1", "综艺-2", "综艺3"]
+        }
+
+
+        function CreateList(select, data) {
+            this.ele = document.querySelector(select)
+            this.title = data.title,
+                this.list = data.list
+
+            // this.render = 
+        }
+
+        //原型
+        CreateList.prototype.render = function () {
+            //渲染页面
+            var h1 = this.ele.querySelector("h1")
+            var ul = this.ele.querySelector("ul")
+
+            // console.log(h1,ul)
+
+            h1.innerHTML = this.title
+            ul.innerHTML = this.list.map(item => `<li>${item}</li>`).join("")
+        }
+
+        var obj1 = new CreateList(".box1", data1)
+        // var obj2 = new CreateList(data2.title,data2.list)
+
+        console.log(obj1.__proto__ === CreateList.prototype)
+        // console.log()
+        obj1.render()
+        // obj1.kerwin()
+        // console.log(obj2)
+
+        var obj2 = new CreateList(".box2", data2)
+        obj2.render()
+
+
+
+        // 对象.__proto__ === 构造函数.prototype
+
+
+        // 扩展：obj1.toString() // 原型链概念
+
+
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //ES5 私有不能继承
+        //ES6 目前的私有可以继承
+
+        class A{
+            //静态
+            // static a = "null";
+            //静态私有属性
+            //#真正的私有
+            // static #b = "123456";
+
+            constructor (name){   
+                this.name = name;
+                //伪思想 学习Python
+                // this._tmp = A.b;
+            }
+
+            action(){
+            }
+        }
+
+        A.c = "abc";
+
+        A.prototype.func = function(){
+            return "func"
+        }
+
+        class B extends A{
+            //ES6当中一个类至少要写上constructor
+            constructor(name){
+                //super(name)
+                /*
+                    A.call(this,name)
+                    return this
+                */
+                // console.log(super()===this);
+                super(name);
+            }
+        }
+
+        let b = new B("张三");
+        console.log(A.c);
+        console.log(B.c);
+       console.log(b.func());
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+    // var fun_1 = function () {
+    //     var name = "limo";
+    //     return function () {
+    //         return name;
+    //     }
+    // }
+    //fu_1():limo
+
+    var fun_1 = function () {
+        var name = "limo";
+        return name;
+    }
+    //Uncaught TypeError: fu_1 is not a function
+
+    var fu_1 = fun_1();
+    console.log("fu_1():" + fu_1());
+
+
+
+
+</script>
+
+</body>
+</html>

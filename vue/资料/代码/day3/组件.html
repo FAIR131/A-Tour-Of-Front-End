@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            color: white;
+            background: black;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="app">
+        <p>{{msg}}</p>
+        <!-- 组件可重复使用 -->
+        <my-comp></my-comp>
+        <my-comp></my-comp>
+        <comp2></comp2>
+        <global-comp></global-comp>
+        <global-comp></global-comp>
+    </div>
+
+    <script>
+        Vue.config.productionTip = false;
+
+        // 全局组件注册
+        Vue.component("globalComp",{
+            template:"<div>我是全局组件</div>",
+            data:function(){
+                return {}
+            },
+            methods:{
+
+            }
+        })
+
+        // 创建组件
+        // 组件中也可以声明data,data必须是函数,必须返回一个对象,也可以声明方法,与外界隔离
+        // 组件中必备的属性是template
+        // 组件的模板只能有唯一的根元素
+        // 组件的本质是一个对象,要先创建,再注册,最后使用
+        let comp1={
+            template:"<div class='box'><div>123 {{words}} </div> <button @click='say'>点击</button></div>",
+            data:function(){
+                return {
+                    words:"呵呵"
+                }
+            },
+            methods:{
+                say:function(){
+                    console.log("哈哈");
+                }
+            }
+        }
+
+        let comp2={
+            template:`<div>我是组件2</div>`
+        }
+
+
+        new Vue({
+            el:"#app",
+            data:{
+                msg:"哈哈"
+            },
+            components:{//局部组件注册
+                // comp
+                myComp:comp1,
+                comp2
+            }
+        })
+    </script>
+</body>
+</html>

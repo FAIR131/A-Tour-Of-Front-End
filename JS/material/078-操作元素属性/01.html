@@ -1,0 +1,77 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box" kerwin="hello">hello </div>
+    <input type="text" value="hello" id="username">
+
+    <input type="checkbox" checked id="rember" />
+
+    <img src="" alt="" id="photo">
+
+    <ul>
+        <li>1111</li>
+        <li>2222</li>
+        <li>3333</li>
+    </ul>
+
+    <div id="box2" data-kerwin="hello" data-tiechui="hello2"></div>
+    <script>
+        /*
+          元素自带（原生）属性
+          自定义属性
+        */
+        //操作原生属性
+        box.innerHTML = "22222"
+
+        username.type = "password"
+
+        // console.log()
+        rember.checked = false
+
+        photo.src =
+            "https://static.maizuo.com/pc/v5/usr/movie/46015aa8e08a661e7c559b6e7407ce08.jpg?x-oss-process=image/quality,Q_70"
+
+        //自定义属性 setAttribute getAttibute removeAttibute
+
+        // box.tiechui = "222222"
+
+        box.setAttribute("tiechui", "222222")
+        console.log(box.getAttribute("tiechui"))
+
+        box.removeAttribute("tiechui")
+        box.removeAttribute("kerwin")
+
+
+
+
+        //h5 ===> 约定 data-******  .dataset
+
+        console.log(box2.dataset)
+
+        box2.dataset.xiaoming = "hello3"
+
+        delete box2.dataset.xiaoming
+        delete box2.dataset.kerwin
+        delete box2.dataset.tiechui
+
+
+        var oitems = document.getElementsByTagName("li")
+
+        for (var i = 0; i < oitems.length; i++) {
+            oitems[i].dataset.index = i
+        }
+    </script>
+</body>
+
+</html>

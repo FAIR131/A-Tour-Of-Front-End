@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+
+        div{
+            width: 200px;
+            
+        }
+
+        ul{
+            border: 1px solid black;
+        }
+        li {
+            display: none;
+            list-style: none;
+          
+        }
+    </style>
+</head>
+<body>
+
+    <div id="box">
+        <ul>菜单1
+            <li>酸菜鱼</li>
+            <li>炸鸡</li>
+            <li>外卖</li>
+            <li>臭鳜鱼</li>
+            <li>臭豆腐</li>
+        </ul>
+       
+        <ul>菜单2
+            <li>酸菜鱼</li>
+            <li>炸鸡</li>
+            <li>外卖</li>
+            <li>臭鳜鱼</li>
+            <li>臭豆腐</li>
+        </ul>
+    </div>
+
+    <script>
+        //2.下拉菜单
+       let uls = document.querySelectorAll("ul");
+
+       uls.forEach((ul)=>{
+            ul.onmouseover = function(){
+                [...ul.children].forEach((li)=>{
+                    li.style.display = "block";
+                })
+            }
+
+            ul.onmouseout = function(){
+                [...ul.children].forEach((li)=>{
+                    li.style.display = "none";
+                })
+            }
+       })
+
+
+      
+
+
+        
+    </script>
+</body>
+</html>

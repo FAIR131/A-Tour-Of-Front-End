@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="Promise.js"></script>
+</head>
+<body>
+    
+    <script>
+        let p = new Promise((resolve,reject)=>{
+            resolve("success");
+        })
+
+        // console.log(p);
+
+        //then当中只写value
+        //catch当中只能写reason
+        //then可以写好多个,但是catch只有一个
+        let p1 = p.then(value=>{
+            return new Promise((resolve,reject)=>{
+                reject("success1")
+            })
+        }).then(value=>{
+            return new Promise((resolve,reject)=>{
+                reject("error")
+            })
+        }).then(value=>{
+
+        }).catch(reason=>{
+            console.log(">>>",reason)
+        }).finally(()=>{
+            //同步的
+            //不论如果都会被执行到
+            //一般不用
+            console.log(123);
+        })//最终要执行什么
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+一、vue
+    1、vue是一个构建用户界面的渐进式javascript框架
+    2、引入vue.js文件,new一个vue实例,配置el选项和data数据项
+
+二、模板语法
+    1、使用双花括号表达式(mustache)获取数据项中的值
+    2、在模板语法中可以取值,拼接字符串,执行函数,数学运算,三目运算,只能写表达式,不可以写逻辑代码
+
+三、指令
+    1、vue特定的一种标签属性
+    2、v-text,v-html,v-pre,v-once,v-for,v-show,v-if,v-else-if,v-else,v-bind,v-on

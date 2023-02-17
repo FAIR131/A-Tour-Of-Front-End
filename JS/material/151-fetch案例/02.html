@@ -1,0 +1,34 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="" id="mytext">
+    <button id="myadd">add</button>
+    <ul class="list">
+    </ul>
+    <script type="module">
+       async function test(){
+           var author = "tiechui"
+            var res = await fetch(`http://localhost:3000/news?author=${author}`).then(res=>res.json())
+           console.log(res)
+
+           var res1 = await fetch(`http://localhost:3000/comments?newsId=${res[0].id}`).then(res=>res.json())
+
+           console.log(res1)
+       }
+
+       test()
+    </script>
+</body>
+
+</html>

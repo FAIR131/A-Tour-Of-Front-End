@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [1,2,3,4,5,6];
+        var arr1 = ["a","b",1,2,3];
+
+        //自动循环的函数
+        // function each(array){
+        //     //var arr;局部的变量
+        //     for(var i=0;i<array.length;i++){
+        //         console.log(i,array[i]);
+        //     }
+        // }
+
+        // each(arr);
+        // each(arr1);
+
+
+        //完整的自定义循环
+        function forEach(array,func){
+            /*
+                array : 要被循环的数组
+                func  : 传递一个函数
+            */
+
+            /*
+                array = arr = [1,2,3,4,5,6]
+
+                func = function(item){
+                    console.log(item+10);
+                }
+
+                function func(){}
+            */
+            for(var i=0;i<array.length;i++){
+                //调用外部传入的函数
+                //函数调用传递了两个实参
+
+                //i=0  val=1
+                func(array[i],i);
+            }
+        }
+
+        //没有名称的函数叫做匿名函数
+        forEach(arr,function(item){
+            return item
+        })
+
+        
+
+    </script>
+
+    <script>
+
+        // function abc(){
+        //     console.log(1);   //1
+
+        //     return 2 ; //return以后，函数停止,后续代码全部不执行
+        //     console.log(3);   //不会被打印
+        // }
+
+        // console.log(abc());  //2
+    </script>
+</body>
+</html>

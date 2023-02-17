@@ -1,0 +1,60 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var str = "abcd"
+        // var strcp = str
+
+        // console.log(str===strcp)
+
+        // strcp = "bcd"
+        // console.log(str,strcp)
+
+        // var obj = {
+        //     name:"kerwin",
+        //     age:100
+        // }
+
+        // var obj2 = obj
+
+        // // console.log(obj===obj2)
+
+        // obj2.name = "tiechui" 
+        // console.log(obj, obj2)
+
+
+        // var obj1 = {name:"kerwin"}
+        // var obj2 = {name:"kerwin"}
+
+        // console.log(obj1==obj2)
+
+
+        var obj = {
+            name:"kerwin",
+            age:100,
+            location:"dalian"
+        }
+
+
+        var obj2  = {}
+
+        for(var i in obj) {
+            //i  obj[i]
+
+            obj2[i] = obj[i]
+        }
+        obj2.name = "tiechui"
+
+        console.log(obj,obj2)
+    </script>
+</body>
+</html>

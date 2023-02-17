@@ -1,0 +1,42 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="util.js"></script>
+    <script>
+        pajax({
+            url: "http://localhost:3000/news",
+            data: {
+                author: "tiechui"
+            }
+        }).then(res => {
+            // console.log(res[0])
+            return pajax({
+                url: "http://localhost:3000/comments111",
+                data: {
+                    newsId: res[0].id
+                }
+            })
+        }).then(res=>{
+            console.log("success",res)
+
+            // return pajax
+        }).catch(err=>{
+            console.log("error",err)
+        })
+
+        // console.log(1111)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //_Class :函数对象->类对象
+        function _Class(a,b){
+            //属性
+            this.arg1 = a;
+            this.arg2 = b;
+
+            //方法
+            this.sum = function(){
+                return this.arg1 + this.arg2
+            }
+            this.avg = function(){
+                return (this.arg1 + this.arg2)/2
+            }
+            
+        }
+
+        //a1 : 引用对象->实例对象
+        var a1 = new _Class(1,2);
+        var a2 = new _Class(2,3);
+        var a3 = new _Class(1,2);
+        var a4 = new _Class(2,3);
+
+        /*
+            内存 :
+                按照面向对象的写法来说
+                实例化的次数越多,内存的开销就越大
+        */
+    </script>
+</body>
+</html>

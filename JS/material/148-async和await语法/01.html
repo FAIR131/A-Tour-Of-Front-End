@@ -1,0 +1,76 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script type="module">
+        import {pajax} from './util.js'
+    //    console.log(11111)
+    //    async function test(){
+
+    //     //await 同步代码/promise对象
+    //      var res =  await pajax({
+    //           url:"http://localhost:3000/news",
+    //           data:{
+    //               author:"tiechui"
+    //           }
+    //       })
+    //     //   console.log(res)
+    //     var res1 = await  pajax({
+    //             url: "http://localhost:3000/comments",
+    //             data: {
+    //                 newsId: res[0].id
+    //             }
+    //         })
+    //     console.log(res1)
+    //     return res1
+    //    }
+
+    //    test().then(res=>{
+    //        console.log("返回结果",res)
+    //    }).catch(err=>{
+    //        console.log("err",err)
+    //    })
+    //    console.log(33333)
+
+    async function test(){
+
+            try{
+                //await 同步代码/promise对象
+                    var res =  await pajax({
+                        url:"http://localhost:3000/news",
+                        data:{
+                            author:"tiechui"
+                        }
+                    })
+                    //   console.log(res)
+                    var res1 = await pajax({
+                            url: "http://localhost:3000/comments",
+                            data: {
+                                newsId: res[0].id
+                            }
+                        })
+
+                        console.log("success",res1)
+            }catch(err){
+                console.log("err",err)
+            }
+            
+            
+            console.log(1111)
+    }
+    test()
+   </script>
+</body>
+
+</html>

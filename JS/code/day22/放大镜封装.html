@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./放大镜.less" type="text/less">
+</head>
+<body>
+<img src="img/1.webp">
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
+
+<script src="./放大镜.js"></script>
+
+<script>
+    let arr = [
+        './img/1.webp',
+        './img/2.webp',
+        './img/3.webp',
+        './img/4.webp',
+        './img/5.webp'
+    ];
+
+    let s1 = new Bigger(document.body,arr);
+</script>
+
+</body>
+</html>

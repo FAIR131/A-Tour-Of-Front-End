@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+    <ul>
+        <li>李义锋</li>
+        <li>蔡徐坤</li>
+        <li>大碗</li>
+        <li>李云低</li>
+        <li>小钢</li>
+    </ul>
+
+    <script>
+        //节点替换
+        let ul = document.querySelector("ul");
+
+        // for(let i=0;i < ul.children.length ;i++){
+        //     if(ul.children[i].innerText === "蔡徐坤"){
+        //         console.log(ul.children[i])
+        //     }
+        // }
+
+        //findindex
+        let old_li = [...ul.children].find(function(item){
+            //返回结果为true的内容
+            return item.innerText === "蔡徐坤"
+        });
+
+        //完成替换 : ul-dom对象把 新的dom对象 替换到 老的li-dom位置
+
+        let new_li = document.createElement("li");
+        new_li.innerText = "🐖";
+
+        ul.replaceChild(new_li,old_li);
+
+        
+
+    </script>
+</body>
+</html>

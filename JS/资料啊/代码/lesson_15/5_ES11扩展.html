@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Bigint  2^64
+        //Number
+        let abc = 521n;
+
+        // console.log(typeof abc);
+        // console.log(abc - BigInt(100));
+
+        //globalThis始终指向window
+        // console.log(globalThis);
+
+        let obj = {
+            name : function(){
+                console.log(this);
+                console.log(globalThis);
+            }
+        }
+
+        // console.log(obj.name());
+
+
+    </script>
+
+    <script>
+        class A{
+            #ins = null
+            constructor(){
+                // this.#abc = 123; //绝对不能写的
+            }
+        }
+
+        class B extends A{
+            constructor(){
+                super();
+            }
+        }
+        
+        let b1 = new B();
+        console.log(A.ins);
+        console.log(B.ins);
+
+        console.log(b1.abc);
+
+        //添加了模块
+    </script>
+</body>
+</html>

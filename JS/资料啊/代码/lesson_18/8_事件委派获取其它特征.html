@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div *{
+            display: block;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <a>1</a>
+        <b id="id_1" data-sign="111">2</b>
+        <i id="_id_">3</i>
+        <u id="id_2" data-sign="2">4</u>
+    </div>
+
+    <script>
+        //刚才获取的是标签的名称
+        //1.给body添加事件
+        //2.带有的id_前缀的触发事件
+        // document.body.addEventListener("click",(e)=>{
+        //     if(e.target.id.substr(0,3) === "id_"){
+
+        //     }
+        // }) 
+    </script>
+
+    <script>
+        document.body.addEventListener("click",(e)=>{
+            //自定义属性js没有办法找到它
+
+            //attributes ： 属性对象(包含所有的属性)
+            // if(e.target.attributes["data-sign"] !== undefined){
+            //     console.log(e.target.attributes["data-sign"].value);
+            // }
+
+            if(e.target.attributes["data-sign"]?.value === "2"){
+                console.log(111111);
+            }
+            
+
+        }) 
+        //可选链
+        // let obj = {
+        //     a :{
+        //         b:"demo"
+        //     }
+        // }
+        // console.log(obj?.a?.b?.c);
+
+        
+    </script>
+</body>
+</html>

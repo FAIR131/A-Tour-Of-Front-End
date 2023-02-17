@@ -1,0 +1,20 @@
+/*
+    变量
+*/
+@width : 1000px;
+@height : @width * 2;
+
+//混合 mixins 米辛斯
+.func(@arg1,@arg2,@arg3){
+    width : @arg1;
+    height: @arg2;
+    background-color: @arg3;
+}
+
+#box{
+    .func(1000px,1000px,red);
+
+    div{
+        .func(500px,500px,green);
+    }
+}

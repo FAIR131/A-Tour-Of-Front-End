@@ -1,0 +1,79 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>hello</div>1111
+    <div id="box" index="1">
+        kerwin
+        <p>111111</p>
+        <p>22222</p>
+        <!-- 我是注释 -->
+    </div>
+
+    <div>tiechui </div>
+    <script>
+        /*
+           1. \n
+        kerwin
+        \n
+          2.<p>111111</p>
+         3. \n
+            
+         4. <!-- 我是注释 -->
+         5. \n
+        */
+       // childNodes属性  vs children
+
+
+       console.log(box.childNodes) //所有节点
+       console.log(box.children) //所有元素
+
+       // firstChild firstElementChild
+
+    //    console.log(box.firstChild)
+    //    console.log(box.firstElementChild)
+
+       // lastChild lastElementChild
+
+    //    console.log(box.lastChild)
+    //    console.log(box.lastElementChild)
+
+
+        // previousSibling previousElementSibling
+
+        // console.log(box.previousSibling)
+        // console.log(box.previousElementSibling)
+
+        // box.previousElementSibling.innerHTML = "world"
+
+
+        // nextSibling nextElementSibling
+
+        // console.log(box.nextSibling)
+        // console.log(box.nextElementSibling)
+
+        // box.nextElementSibling.dataset.index=1
+
+        // parentNode vs parentElement
+
+        // console.log(box.parentNode.parentNode.parentNode)
+        // console.log(box.parentElement.parentElement.parentElement)
+
+
+        // console.log(box.getAttribute("index"))
+
+        console.log(box.attributes[1])
+
+
+        // vue  <div v-for=""> {{myhtml}}</div>
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- <script src="./1.js"></script> -->
+</head>
+<body>
+    <button id="mybtn">jsonp</button>
+    <script>
+        
+        /*
+          jsonp原理：动态创建script标签，src属性指向没有跨域限制
+            指向一个接口，接口返回的格式一定是 ****() 函数表达式。
+        */
+
+        function test(obj){
+            console.log(obj)
+        }
+
+        
+        mybtn.onclick = function(){
+            // var oscript = document.createElement("script")
+            // oscript.src="01.txt" //未来地址
+            // document.body.appendChild(oscript)
+        
+            var oscript = document.createElement("script")
+            oscript.src=`https://www.runoob.com/try/ajax/jsonp.php?jsoncallback=test` //未来地址
+            document.body.appendChild(oscript)
+
+            oscript.onload = function(){
+                //删除当前节点
+                oscript.remove()
+            }
+        }
+
+        
+    </script>
+
+   <script>
+       /*
+        注意：
+        1. 后端接口形式必须**（），需要后端配合
+        2. jsonp 缺点
+            (1) onload 删除sciprt标签
+            （2）只能get请求，不能post put delete
+       */
+   </script>
+</body>
+</html>

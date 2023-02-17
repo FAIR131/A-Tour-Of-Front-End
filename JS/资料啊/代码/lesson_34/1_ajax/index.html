@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <form action="http://127.0.0.1:3000/demo" method="get" enctype="text/plain">
+        <input type="text" name="username"><br>
+        <input type="password" name="password" id=""><br>
+        <input type="submit" value="登录">
+    </form> -->
+
+    <form action="javascript:;">
+        <input type="text" name="username"><br>
+        <input type="password" name="password" id=""><br>
+        <input type="submit" value="登录">
+    </form>
+
+    <script>
+        /*
+            1.找到 submit
+            2.给submit绑定单击事件
+            3.写ajax
+        */
+
+        let sub = document.querySelector("input[type=submit]");
+
+        sub.addEventListener("click",function(){
+            //发出ajax请求
+            //1.先实例化ajax
+            let xhr = new XMLHttpRequest();
+            //2.指定请求的方式和请求的路径
+            xhr.open("GET","http://127.0.0.1:3000/demo");
+
+            console.log(">>>>>",xhr.readyState);//
+            //3.发出请求
+            xhr.send();
+            //4.接受服务器响应
+            //on ready(准备)state(状态)change(改变)
+            /*
+                ajax的状态:
+                 - 0 未初始化,表示没有调用send
+                 - 1 载入,表示调用send,正在发送请求
+                 - 2 载入完成,请求发送成功
+                 - 3 正在交互,服务器返回了响应报文,正在解析
+                 - 4 交互完成,解析完成
+            */
+           /*
+                http的请求状态
+                    200 ok
+                    
+           */
+          /*
+            CORS policy: No 'Access-Control-Allow-Origin' 
+            CORS : 跨域问题
+                - 前端和后端不在同一个服务器(计算机当中的软件)当中
+                - 后端:http://127.0.0.1:3000/demo
+                - 前端:http://127.0.0.1:5500/lesson_34/1_ajax/index.html?#
+
+                - 前端可以把数据发送给后端
+                - 但是后端的数据返回的时候被浏览器拦截了
+                    - 浏览器当中有一个防护,同源策略
+
+                后端设置响应头
+          */
+            xhr.onreadystatechange = function(response){
+                if(xhr.readyState === 4){
+                    if(xhr.status >=200 && xhr.status < 300){
+                        console.log("---->",response.target.response);
+                        // location.href = "http://www.baidu.com"
+                    }
+                }
+            }
+        })
+
+       
+
+    </script>
+</body>
+</html>

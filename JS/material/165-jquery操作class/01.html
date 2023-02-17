@@ -1,0 +1,50 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery.js"></script>
+    <style>
+        .active{
+            background-color: yellow;
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">active</div>
+
+    <ul>
+        <li>111111111</li>
+        <li class="active">111111111</li>
+        <li>111111111</li>
+        <li>111111111</li>
+        <li>111111111</li>
+        <li>111111111</li>
+        <li>111111111</li>
+    </ul>
+    <script>
+        // $("#box").addClass("active")
+        // $("#box").removeClass("active")
+
+        // $("ul li").addClass("active")
+
+
+        // $("ul li").removeClass("active").eq(0).addClass("active")
+
+        // $("ul li").eq(0).addClass("active").siblings().removeClass("active")
+
+
+        // hasClass
+        // console.log($("ul li:eq(0)").hasClass("active"))
+        // toggleClass
+
+        $("ul li:eq(1)").toggleClass("active")
+    </script>
+</body>
+</html>

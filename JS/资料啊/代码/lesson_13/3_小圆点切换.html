@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{ margin: 0;padding: 0;list-style: none;}
+        .list li{
+            float : left;
+            width : 50px;
+            height: 50px;
+            margin-right: 10px;
+            border-radius: 50%;
+            background-color: blanchedalmond;
+        } 
+        .list .lis {
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+    <ul class="list">
+        <li class="lis"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <script>
+
+        var lis = document.querySelectorAll("li");
+
+        lis.forEach(function(item){
+            //移入
+            item.onmouseover = function(){
+                lis.forEach(function(li){
+                    li.style.backgroundColor = "blanchedalmond";
+                })
+                this.style.backgroundColor = "greenyellow";
+            }
+           
+        });
+
+    </script>
+</body>
+</html>

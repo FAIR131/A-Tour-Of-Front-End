@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 封装一个ES5的类,并且实现继承？封装一个ES6的类,并且实现继承? -->
+    <script>
+        class Dog{
+            constructor(name){
+                this.name=name;
+
+            }
+
+            eat(food){
+              return  this.name + '吃了'+ food
+            }
+        }
+
+        class Ha extends Dog{
+            constructor(name) {
+                super(name);
+            }
+        }
+
+
+        
+    </script>
+</body>
+</html>

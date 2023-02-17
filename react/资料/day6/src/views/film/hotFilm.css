@@ -1,0 +1,4 @@
+.film-list{}
+.film-list li{
+    display: flex;
+}

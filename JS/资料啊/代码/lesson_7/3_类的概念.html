@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            面向过程 : 想到什么写什么,一行行的写,有很多的重复代码
+
+            面向函数 : 把功能相似的代码,封装(打包)成一个函数
+
+            面向对象(类) : 把函数再次打包
+                - "".includes("a")
+                - [].includes("a")
+
+
+            //es5中"类"叫做 函数对象或构造函数
+            //es6中会多一个class数据类型
+
+
+            专业名词：
+                函数对象 : 函数对象没有被new的情况
+                引用对象 : new 以后的结果是引用对象
+        */ 
+
+        //自定数据类型 狗类
+        function Dog(color,age,as){
+            this.as = as;
+            this.age = age;
+            this.color = color;
+        }
+
+        var xh_ = Dog();//不加上new是普通的函数
+        console.log(xh_); //undefined
+
+        var xh = new Dog("黑白",5,"小黑");
+        console.log(xh);
+
+        var dh = new Dog("黄色",5,"大黄");
+        console.log(dh);
+
+        console.log(dh.constructor === Dog);
+    </script>
+
+    <script>
+        //{}
+
+        function Cat(color,age,as){
+            return {
+                as : as,
+                age : age,
+                color : color
+            }
+        }
+
+        var c1 = Cat("蓝",18,"蓝猫");
+        console.log(c1);
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str1 = "hello"
+
+        console.log(str1+" world")
+
+        var str2 = new String("hello")
+
+        console.log(str2+ " world")
+
+        //length 只读
+        str1.length = 0
+
+        console.log(str1)
+
+        //索引/下标 只读
+        console.log(str1[1])
+
+        str1[1] = "a"
+
+        console.log(str1)
+
+        // 遍历
+
+        for(var i=0;i<str1.length;i++){
+            console.log(i,str1[i])
+        }
+
+        var str = str1
+        str1 = "aaaa"
+        console.log(str,str1)
+    </script>
+</body>
+</html>

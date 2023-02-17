@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            原型对象的作用?
+                - JS当中定义的语法
+                - 存储对象当中方法
+            
+        */
+
+        function Person(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        //函数对象始终都存在
+        //把所有的方法都准备好,实例对象直接使用
+        Person.prototype.foo = function(){
+            return 123
+        }
+
+        console.log(Person.prototype);
+        // var p1 = new Person("A",10);
+        // console.log(p1.__proto__);
+
+        // p1.__proto__.foo = function(){
+        //     return 123;
+        // }
+
+        // console.log(p1.foo());
+
+        var p2 = new Person("B",10);
+
+        console.log(p2.foo());
+    </script>
+</body>
+</html>

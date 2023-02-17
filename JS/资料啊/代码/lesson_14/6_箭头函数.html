@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            ES5
+            function fo(){
+
+            }
+
+            var fo = function(){
+
+            }
+        */
+        
+        /*
+            (形参)=>{
+                执行代码
+                return
+            }
+
+            1.箭头函数是匿名函数
+            2.如果参数只有一个,()可以不写,代码只有一行{}和return可以不写
+
+            3.箭头函数不可以作为函数对象
+            4.箭头函数的this指向上一层作用域的this指向
+            5.argments不可以使用
+        */
+
+        // let fo = (a,b)=>{
+        //     return a+b
+        // }
+        // console.log(fo(1,2));
+
+        // let foo = a => a+1;
+        // console.log(foo(3));
+
+        // var Person = function(name){
+        //     this.name = name;
+        // }
+
+        // var p1 = new Person("a");
+        // console.log(p1);
+
+        //这不是一个构造函数
+        // let Dog = (name)=>{
+        //     this.name = name
+        // }
+
+        // let d1 = new Dog("b");
+        // console.log(d1);
+
+
+    </script>
+
+    <div>123</div>
+    <script>
+        let div = document.querySelector("div");
+
+        //绑定事件
+        div.onclick = function(){
+            console.log(this);//div-dom
+
+            function fo(){
+                console.log(this);//window
+            }
+            fo();
+        }
+
+        div.onclick = function(){
+            console.log(this); //div-dom
+        
+            let fo = ()=>{
+                console.log(this);//div-dom
+            }
+            fo();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            原型继承
+                - 使用原型对象关联的
+                - 在属性上不太节约内存
+                - 在方法上节约内存
+                - 不能实现多继承
+        */
+        function Dog(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        function Wolf(name,age){
+            this.name = name;
+            this.age = age;
+        }
+
+        //方法
+        Dog.prototype.eat = function(food){
+            return this.name +"吃了"+ food
+        }
+
+        Wolf.prototype.eat_ = function(arg){
+            return this.name +"拆了" + arg
+        }
+
+        //Teddy继承Dog
+        function Teddy(name,age){
+            this.name = name;
+            this.age = age;
+        }
+
+        //a = 1
+        Teddy.prototype = Object.create(Dog.prototype);
+        //a = 2
+        Teddy.prototype = Object.create(Wolf.prototype);
+
+        //Hasch继承Dog
+        function Hasch(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        Hasch.prototype = Object.create(Dog.prototype);
+
+        //Teddy引用对象
+        var t1 = new Teddy("可爱",12);
+        var t2 = new Teddy("小可爱",2);
+
+        //Hasch引用对象
+        var h1 = new Hasch("二狗子",17);
+        var h2 = new Hasch("二哈",7);
+
+        
+        console.log(t1.eat_("钢筋"));
+
+
+    </script>
+</body>
+</html>

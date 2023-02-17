@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    这是location
+    <script>
+        // console.log(window.location.href);
+        // window.location.href = 'https://www.baidu.com';
+
+        console.log(location.portocol) //返回页面使用的web协议。 http:或https:
+
+        console.log(location.hostname) //返回 web 主机的域名
+
+        console.log(location.port) //返回 web 主机的端口 （80 或 443）
+
+        console.log(location.pathname) //返回当前页面的路径和文件名
+
+        
+        console.log(location.search);  //参数
+       
+
+        console.log(location.hash);    //锚点
+
+        /*
+            
+                1.统一资源定位系统（uniform resource locator;URL）是因特网的万维网服务程序上用于指定信息位置的表示方法。
+                2.DNS(DNS一般指域名系统)
+                3.域名 指向 ip : baidu.com
+
+                当写入域名以后--->浏览器会把当前的域名发送给网络服务商的DNS(数据库)-->返回真实IP
+                浏览器拿到ip发送请求
+        
+            url的组成部分:(统一资源定位符)
+
+            http://www.baidu.com:80/s?wd="徐坤"&age=18#top
+
+                协议 :  
+                    - http | https(花钱的)
+                域名 : www.baidu.com
+                    - 一级域名 : baidu
+                    - 二级域名 : www 
+                    - 尾缀 : com(公司)  cn(中国)  .net(互联网公司)  .org(某种技术网站官网)
+                端口 : 
+                    计算的网络服务对象一共65536个
+                    - 默认http:80  和 https:443  一般默认不加上
+                    - 练习端口 : 3000  8888  8088  8000
+                路径 :
+                    访问不同的功能
+                    /s?wd="徐坤"&age=18
+
+                哈希 :
+                    还是一个锚点
+                    #top
+        */
+    </script>
+</body>
+</html>

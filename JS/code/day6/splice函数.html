@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Document</title>
+  <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <script>
+    function mySplice() {
+      // 先判断有没有传参
+      if (arguments.length <=1) {
+        return
+      }
+
+      if(arguments.length==2){
+        // 删除第二个参数以后的数据
+        var arr = arguments[0];
+        var index = arguments[1];
+        arr.length = index;
+      }
+
+      if(arguments.length>=3){
+        var count = arguments[2];
+         var arr = arguments[0];
+        var index = arguments[1];
+        // 删除指定数量
+        // 先判断数量是否超出了长度或者为负
+        if(count<0) return
+        // 如果删除数量超过了数组长度,直接把给定下标元素以后的全部删除
+        if(index+count>=arr.length){
+          arr.length=index
+        }else{
+          //删除的元素个数在范围内。
+          for(var i=index;i<arr.length-count;i++){
+            arr[i]=arr[i+count];
+            //数组元素往前挪count位。
+          }
+          // 删除长度
+          arr.length -= count;
+        }
+
+        // 插入功能
+        if(arguments.length>3){
+          var num = arguments.length-3;
+          //进行扩容
+          arr.length +=num;
+          // 将原来的数据往后挪num个位置
+          for(var i = arr.length-1;i>index;i--){
+            arr[i]=arr[i-num];
+          }
+
+          // 在index处添加数据
+          for(var j=0;j<num ;j++){
+            arr[j+index] = arguments[j+3];
+          }
+        }
+      }
+      return arr
+    }
+    var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    mySplice(arr, 3,0,5,6,8)
+    console.log(arr);
+  </script>
+</body>
+
+</html>

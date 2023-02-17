@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../lesson_16/Swiper.css">
+</head>
+<body>
+    <script>
+        class Swiper{
+            /*
+                1.生成html
+                2.src对应
+                3.生成自动轮播
+                4.小圆点轮播
+                5.左右点击轮播
+    
+                公用索引
+            
+            */
+            constructor(dom,arr){
+                //dom代表的意思是，把轮播图放到什么位置
+                //arr代表的是多少张图片
+                this.index = 0; //索引
+                this.initHTML(dom);
+                this.initSrc(arr);
+                this.autoCreateNode();
+                this.auto();
+            }
+    
+            initHTML(dom) {
+                let str = `<div id="box">
+                            <ul class="list"> 
+                            </ul>
+                            <span class="left"> < </span>
+                            <span class="right"> > </span>
+    
+                            <ul class="iconlist">
+                            </ul>
+                        </div>`
+                dom.innerHTML = str;
+            }
+    
+            initSrc(arr) {
+                let ul = document.querySelector("#box .list");
+                let ul_ = document.querySelector("#box .iconlist");
+    
+                //图片的长度是根据arr定义的
+                //字符拼接
+                let str = ``;
+                arr.forEach(src => {
+                    str += `<li><img src="${src}"></li>`;
+                });
+    
+                ul.innerHTML = str;
+    
+                //生成小圆点的长度根据图片数量定义的
+                let stri = ``
+                arr.forEach(src => {
+                    stri += `<li></li>`;
+                });
+                ul_.innerHTML = stri;
+            }
+
+            autoCreateNode(){
+               this.lis = document.querySelectorAll(".list > li");
+               this.ioli = document.querySelectorAll(".iconlist > li");
+               this.box = document.querySelector("#box");
+               [this.left, this.right] = document.querySelectorAll("span");
+            }
+    
+            auto(){
+                /*
+                    当前是一个定时器
+                    清楚定时器
+                */
+                this.si = setInterval(() =>{
+                    
+                    this.setDefault(this.ioli, this.lis, this.index);
+    
+                    this.index = this.index >= this.lis.length - 1 ? 0 : this.index + 1;
+    
+                    this.setStyle(this.ioli, this.lis, this.index);
+                }, 2000)
+            }
+    
+            //原型当中
+            setDefault(obj1, obj2, index) {
+                obj1[index].style.backgroundColor = "white";
+                obj2[index].style.display = "none";
+            }
+    
+            setStyle(obj1, obj2, index) {
+                obj1[index].style.backgroundColor = "orangered";
+                obj2[index].style.display = "block";
+            }
+    
+        }
+    
+        let src_arr = [
+                "../lesson_15/imgs/1.webp",
+                "../lesson_15/imgs/2.webp",
+                "../lesson_15/imgs/3.webp",
+                "../lesson_15/imgs/4.webp",
+                "../lesson_15/imgs/5.webp"
+        ];
+    
+        let newObj = new Swiper(document.body , src_arr);
+    </script>
+</body>
+</html>

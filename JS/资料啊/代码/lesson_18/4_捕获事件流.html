@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #laoda {
+            position: relative;
+            width:500px;
+            height: 500px;
+            background-color: crimson;
+        }
+
+        #laoer {
+            position: absolute;
+            left: 50%;
+            top : 50%;
+            transform: translate(-50%,-50%);
+            width:300px;
+            height: 300px;
+            background-color: greenyellow;
+        }
+
+        #laosan {
+            position: absolute;
+            left: 50%;
+            top : 50%;
+            transform: translate(-50%,-50%);
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="laoda">
+        <div id="laoer">
+            <div id="laosan">
+
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        //事件流 
+        /*
+            事件捕获流程 : 点击了最外层,内层所有的区域都会触发
+
+            冒泡事件流 : 点击了最内层,外层所有的区域都会触发
+        
+            阻止冒泡
+                必须用到事件对象
+        */
+        // let [laoda,laoer,laosan] = document.querySelectorAll("div");
+        
+        // laoda.addEventListener("click",function(){
+        //     console.log("laoda");
+        // },true)
+
+        // laoer.addEventListener("click",function(){
+        //     console.log("laoer");
+        // },true)
+
+        // laosan.addEventListener("click",function(){
+        //     console.log("laosan");
+        // },true)
+       
+    </script>
+
+
+    <script>
+        //上下文管理器
+        let obj = {a:1,b:2,c:3};
+
+        //可以Object数据类型,任意取值
+        with(obj){
+            a = 2;
+            let abc = 2;
+        }
+        
+        
+        console.log(abc)
+        console.log(obj);
+    </script>
+</body>
+</html>

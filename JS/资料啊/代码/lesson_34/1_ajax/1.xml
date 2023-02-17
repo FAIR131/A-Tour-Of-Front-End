@@ -1,0 +1,10 @@
+<root>
+    <data>
+        <name>tom</name>
+        <age>18</age>
+    </data>
+    <data>
+        <name>jack</name>
+        <age>19</age>
+    </data>
+</root>

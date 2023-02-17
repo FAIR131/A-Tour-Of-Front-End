@@ -1,0 +1,26 @@
+// from 1 to 6 1,2,3,4,5
+// @for $item from 1 to 6 {
+//     li:nth-child(#{$item}){
+//         position: absolute;
+//         left:($item - 1) * 100px;
+//         top:($item - 1) * 100px;
+//     }
+// }
+
+// @for $item from 1 through 6 {
+//     li:nth-child(#{$item}){
+//         position: absolute;
+//         left:($item - 1) * 100px;
+//         top:($item - 1) * 100px;
+//     }
+// }
+
+$colors:red,green,yellow;
+
+@each $item in $colors {
+    $index: index($colors,$item);
+    li:nth-child(#{$index}){
+        background: $item;
+    }
+}
+

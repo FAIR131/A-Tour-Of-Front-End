@@ -1,0 +1,75 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            overflow: hidden;
+        }
+
+        li img {
+            float: left;
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <!-- <li>
+            <img src="https://pic.maizuo.com/usr/movie/46015aa8e08a661e7c559b6e7407ce08.jpg?x-oss-process=image/quality,Q_70" alt="">
+            <h3>神奇动物:邓布利多之谜</h3>
+            <p>观众评分 7.8</p>
+        </li> -->
+    </ul>
+    <script>
+        var filmList = [{
+                url: "https://pic.maizuo.com/usr/movie/89689a6d36e155b697ed3e35a6c1da12.jpg?x-oss-process=image/quality,Q_70",
+                title: "长津湖之水门桥",
+                grade: 8.8
+            },
+            {
+                url: "https://pic.maizuo.com/usr/movie/6feeed3643a96934a81d4c7c0b11dad5.jpg?x-oss-process=image/quality,Q_70",
+                title: "出拳吧，妈妈",
+                grade: 7.6
+            },
+            {
+                url: "https://pic.maizuo.com/usr/movie/e26ccb7bc562573ab2032d752d55d45f.jpg?x-oss-process=image/quality,Q_70",
+                title: "小美人鱼的奇幻冒险",
+                grade: 7.7
+            }
+        ]
+
+        var filmItems = filmList.map(function (item) {
+            return `<li>
+            <img src="${item.url}" alt="">
+            <h3>${item.title}</h3>
+            <p>观众评分 ${item.grade}</p>
+        </li>`
+        })
+
+        console.log(filmItems.join(""))
+
+        var oul = document.querySelector("ul")
+
+        oul.innerHTML = filmItems.join("")
+    </script>
+</body>
+
+</html>

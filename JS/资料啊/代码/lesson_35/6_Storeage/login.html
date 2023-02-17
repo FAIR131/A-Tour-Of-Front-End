@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="javascript:;">
+        <input type="text" name="username">
+        <input type="submit" value="go">
+    </form>
+
+    <script>
+        let [user,sub] = document.querySelectorAll("input");
+
+        let p = new Promise((resolve,reject)=>{
+            sub.onclick = function(){
+                let xhr = new XMLHttpRequest();
+
+                xhr.open("POST","http://127.0.0.1/login");
+
+                xhr.timeout = 120000; //网络超时时间 
+                
+                xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+
+                xhr.send(`name=${user.value}`);
+
+                xhr.onreadystatechange = function(response){
+                    if(xhr.readyState===4 && xhr.status>=200 && xhr.status < 300){
+                        resolve(JSON.parse(response.target.response));
+                    }
+                }
+
+                xhr.onerror = function(error){
+                    reject(error);
+                }
+            }
+        })
+
+
+        p.then(value=>{
+            if(value.code === 1){
+                console.log(value.data);
+                
+                //浏览器级别的存储
+                //sessionStorage : 页面级别的存储
+                //localStorage : 浏览器级别的存储
+                localStorage.setItem("username",value.data.name);//admin
+
+                location.href = "./index.html";
+
+            }else{
+                alert(value.msg);
+            }
+        })
+        
+    </script>
+</body>
+</html>

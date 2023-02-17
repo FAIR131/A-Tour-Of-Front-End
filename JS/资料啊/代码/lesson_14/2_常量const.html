@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            const 常量 : 一旦确定不能变动
+            let   变量
+        */
+
+        let a = 1;
+        a = 2;
+        console.log(a);
+
+        const b = undefined;
+        b = "b";
+        console.log(b);
+    </script>
+
+    <script>
+        //c------>0x00001------->1,2,3,4,5
+        const c = [1,2,3,4,5];
+        c[0] = 100;
+        console.log(c);
+    </script>
+</body>
+</html>

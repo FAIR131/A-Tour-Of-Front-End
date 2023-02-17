@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="0_demo.less" type="text/less">
+</head>
+<body>
+
+    <div id="box" class="cls1 cls2" 我爱中国="1">
+
+        <div>
+
+        </div>
+
+    </div>
+    <!--
+        浏览器只能认识css,不认识less
+        预编译器 : sass(scss) less stules  转换成css
+    -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
+
+    <script>
+        
+        let box = document.querySelector("#box");
+
+        box.onmousemove = function(e){
+            //捕获鼠标的移动轨迹
+            // console.log(e.pageX);
+            // console.log(e.clientX);
+
+            //找出大盒子的left、top
+            // console.log(this.style.left);//设置的
+            // console.log(this.offsetLeft);
+
+            //获取大盒子的高度
+            console.log(this.offsetWidth);
+            // console.log(this.clientWidth);
+            // console.log(this.clientTop);
+            // console.log(this.offsetTop);
+
+           
+        }
+
+        // console.log( document.defaultView.getComputedStyle(box).left);//100px
+    </script>
+
+
+    <script>
+        //控制dom的属性
+        box.setAttribute("style","background-color:blue");
+
+        //类控制
+        console.log(box.getAttribute("class"));
+
+        console.log(box.getAttribute("我爱中国"));
+
+        console.log(box.attributes?.我爱中国?.value);
+
+    </script>
+</body>
+</html>

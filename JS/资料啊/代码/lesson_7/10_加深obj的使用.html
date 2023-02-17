@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.把object转变为array
+        var obj = {name:"张三",sex:"男",age:18};
+
+        /*
+            一个Object应当转换成两个Array
+        */
+        
+        //k in obj : "对象"的循环
+
+        var key_val = (function(){
+            var key = [];
+            var val = [];
+            for(var k in obj){//k -> key
+                key.push(k);
+                val.push(obj[k]);
+            }
+
+            return [key,val]
+        })()
+
+        //怎么转变为两个独立的一维数组
+        var keys = key_val[0];//["name,sex,age]
+        var vals = key_val[1];//
+        console.log(keys,vals);
+    </script>
+
+
+    <script>
+
+        //如何把两个独立的数组转变成对象类型
+        /*
+            1.先创建一个空的对象类型
+            2.然后循环任意一个数组
+            3.把一个数组中的内容作为key,另一个数组当中的内容作为值
+        */
+
+        var hash = (function(){
+            var obj = {};
+            for(var i=0;i<keys.length;i++){
+                //obj[keys[0]]->obj["name"] = obj.name 
+                obj[vals[i]] = keys[i];
+            }
+            return obj
+        })()
+
+        console.log(hash);
+
+
+
+    </script>
+</body>
+</html>

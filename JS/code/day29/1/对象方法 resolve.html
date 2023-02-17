@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+
+<script>
+<!--  1.转换成promise对象-->
+// var p =Promise.resolve('111');
+// console.log(p)
+//
+// new Promise(resolve => resolve('111'))
+
+//2、参数也可以是promise对象
+
+var p1 = new Promise((resolve, reject)=>{
+  setTimeout(()=>{
+    resolve('1111')
+  },1000)
+})
+
+var p2 = Promise.resolve(p1);
+console.log(p2)
+</script>
+</body>
+</html>

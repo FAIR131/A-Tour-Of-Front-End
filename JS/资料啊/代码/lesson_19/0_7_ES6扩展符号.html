@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <script>
+    //事件委派
+    
+    //ES6-class
+        //spread
+        //Symbol
+        
+    </script>
+
+    <script>
+        // let arr = [1,2,3];
+
+        // function demo(arg1,arg2,arg3){
+        //     return arg1+arg2+arg3
+        // }
+
+        // console.log(demo(arr[0],arr[1],arr[2]));
+
+        // console.log(demo(...arr));//[1,2,3]  --> 1,2,3
+
+        // let s = new Set([1,2,3,2,1]);//去重 无序
+        // let arr = [];
+        // for(let v of s){
+        //     arr.push(v);
+        // }
+        // console.log(arr);
+
+        // console.log([...s]);//{1,2,3} ---> 1,2,3 --->[1,2,3]
+    </script>
+
+
+    <script>
+        //apply
+        //call
+
+        function demo(a,b){
+            return a*b
+        }
+
+        let obj = {};
+
+        //obj.demo(1,2);
+        //demo借给了obj
+        // console.log(demo.call(obj,3,2));
+
+        // console.log(demo.apply(obj,[3,2]));
+
+        // Object.prototype.wocall = function(obj,...arg){
+        //     //函数是引用类型
+        //     //obj.func 指向 this(函数)
+        //     obj.func = this;
+
+        //     let res = obj.func(...arg);//[3,2] --> 3,2
+
+        //     delete obj.func
+
+        //     return res
+        // }
+
+        // console.log(demo.wocall(obj,3,2));
+
+        // console.log(obj)
+
+        // console.log(obj.func(1,2));
+    </script>
+
+    <script>
+        Object.prototype.myapply = function(obj,arg){
+            obj.func = this;
+
+            let res = obj.func(...arg);//[3,2] --> 3,2
+
+            delete obj.func
+
+            return res
+        }
+
+        console.log(demo.myapply(obj,[3,2]));
+
+
+    </script>
+
+</body>
+</html>

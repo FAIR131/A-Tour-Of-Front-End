@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [11,2,3,4,5,6,7,8,116,5,4,32,2,61];
+
+        //查询
+        //- 1.查询索引  2.查询元素的值
+        // console.log(arr.length);
+
+        //1.索引15在不在数组当中
+        // console.log(15 in arr);
+
+        //2.索引从5开始,向后查询5个
+        var j = 0;
+        // for(var i=5;j<5;j++){
+        //     console.log(arr[i]);
+        //     i++
+        // }
+
+        //3.索引从5开始,查询到索引为11的位置不包含11
+        // for(var i=5;i<11;i++){
+        //     console.log(arr[i]);
+        // }
+
+
+
+    </script>
+
+
+    <script>
+
+        //4.查询所有的6的索引
+        // for(var i=0;i<arr.length;i++){
+        //     //如果arr[i] === 6
+        //     if(arr[i] === 6){
+        //         console.log(i);
+        //     }
+        // }
+
+        //5.查询比9小,比3大的数字有哪些
+        // for(var i=arr.length-1 ; i>=0 ; i--){
+        //     if(arr[i]>3 && arr[i] < 9){
+        //         console.log(arr[i]);
+        //     }
+        // }
+
+        //6.如何检测数组当中有没有空值null undefined
+        for(var i=arr.length-1 ; i>=0 ; i--){
+            if(arr[i]===null || arr[i] === undefined){
+                console.log(arr[i]);
+            }
+        }
+
+        
+    </script>
+
+
+
+</body>
+</html>

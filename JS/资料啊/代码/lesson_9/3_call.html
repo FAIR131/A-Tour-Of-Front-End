@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //call函数是如何借用的
+
+        function eat(arg){
+            return arg
+        }//一个函数只占用一段内存空间
+
+        //a={eat:function(arg){return arg}}
+        //如果把eat复制过来，内存当中多了一块空间保存相同的代码
+
+        var a = {};  //空对象 比作一个人
+
+        //a要吃饭
+        // console.log(a.eat()); //怎么让a用到eat方法
+
+        //如果不想浪费空间,最好借用
+        //借用 : 用的时候临时复制过来,用完以后删除掉
+
+        //eat.call(a); eat借给a
+
+        //对象当中的函数叫做方法
+        Object.prototype.mycall = function(obj,arg){
+            //obj : 代表借东西的人
+            //obj = a = {}
+            //obj.func = a.func  = {func:}
+
+            //this = eat
+
+            //a.func = eat
+
+            obj.func = this;  
+
+            //a对象当中有没有 eat 方法,有,不过eat改名字了,改名字叫做func
+            /*  
+                this = function eat(arg){
+                    return arg
+                }
+
+                obj.func = this = function(arg){
+                    return arg
+                }
+
+                李四 想找  张三丰  借个挖掘机
+                            \    /
+                            张三(true) ---> 张三丰(false)
+            */
+
+           var res = obj.func(arg); //res保存func返回的结果
+
+           //删除func
+           delete obj.func
+
+        return res
+        }
+        
+        //谁调用了mycall,this代表的是调用者
+        console.log(eat.mycall(a,"飞机"));
+
+        console.log(a.func("汽车"));
+
+
+
+        
+
+
+
+    </script>
+</body>
+</html>

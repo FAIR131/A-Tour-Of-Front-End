@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            原型对象:
+                - 原型对象当作仓库
+                - 原型对象可以帮 函数对象 存储 方法(方法中代码量远远大于属性)
+
+        */
+
+        function House(areas,price,style){
+            /*
+                areas : 面积
+                price : 价格
+                style : 风格
+            */
+           this.areas = areas;
+           this.price = price;
+           this.style = style;
+        }
+
+        House.prototype.func1 = function(){
+            return "住的很舒服"
+        }
+        House.prototype.func2 = function(){
+            return "窗子很大"
+        }
+
+        //原型对象本身就存在
+        //是js给每个对象分配的属性prototype
+
+        var h1 = new House(200,50,"中式");
+
+        console.log(h1.func2());
+
+        /*  
+            不同的浏览器,显示的原型效果
+            IE      : __proto__
+            firefox : <prototype>
+            chrome  : [[prototype]]
+        */
+        
+        /*
+            函数对象.prototype 和 引用对象.__proto__ 指向的是同一个原型对象
+                                                    (共用的是同一个仓库)
+        */
+        
+        //函数对象
+        // console.log(House.prototype);
+        //引用对象
+        // console.log(h1.__proto__);
+        
+        /*
+            原型是JS当中一组语法
+                - 给函数对象的实例节省内存空间
+                - 引用对象再使用方法的时候,优先再当前对象中搜索,如果没有,则去原型对象中查找
+                - 牺牲计算时间(微不足道的)
+
+            h1 是 House函数对象的 引用(把所有的属性全部复制过去(prototype))
+                h1当中也就有了prototype属性,只不过写法不一样__proto__
+
+                __proto__的指向编址和prototype是一样的
+        */
+
+    </script>
+</body>
+</html>

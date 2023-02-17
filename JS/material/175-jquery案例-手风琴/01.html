@@ -1,0 +1,67 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        ul{
+            width: 640px;
+            height: 200px;
+            margin:100px;
+            border:5px solid skyblue;
+            display: flex; 
+        }
+        li{
+            width: 160px;
+            overflow: hidden;
+        }
+    </style>
+    <script src="lib/jquery.js"></script>
+</head>
+
+<body>
+
+    <ul>
+        <li>
+            <img src="images/1.jpg" alt="">
+        </li>
+        <li>
+            <img src="images/2.jpg" alt="">
+        </li>
+        <li>
+            <img src="images/3.jpg" alt="">
+        </li>
+        <li>
+            <img src="images/4.jpg" alt="">
+        </li>
+    </ul>
+
+    <script>
+        $("ul li").mouseover(function(){
+            $(this).stop().animate({
+                width:520
+            }).siblings().stop().animate({
+                width:40
+            })
+        })
+
+        $("ul").mouseleave(function(){
+            console.log("mouseleave")
+            $("ul li").stop().animate({
+                width:160
+            })
+        })
+    </script>
+</body>
+
+</html>

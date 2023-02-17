@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //一共有30行tr，10列td
+        var str = "<table border='1px'>";
+            for(var i=0;i<30;i++){
+                str += "<tr>";
+                    for(var j=0;j<10;j++){
+                        str += "<td>";
+                        str += i+"-"+j;
+                        str += "</td>";
+                    }
+                str += "</tr>";
+            }
+
+        str += "</table>";
+        //把str输出到body中
+        
+        document.write(str);
+    </script>
+</body>
+</html>

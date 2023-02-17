@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            background: gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        #container {
+            background: white;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="clearSign()">重写</button>
+    <button onclick="saveSign()">保存</button>
+    <canvas id="container" width="300" height="300">
+        你的浏览器不支持 canvas，请升级你的浏览器。
+    </canvas>
+
+
+    <script>
+        var canvas = document.getElementById("container");
+        var ctx = canvas.getContext("2d");
+        // 设置填充颜色
+        // ctx.fillStyle="#f60"
+        // 画矩形
+        // ctx.fillRect(10,10,150,50)
+
+        // 设置路径颜色
+        // ctx.strokeStyle="yellow"
+        // 画矩形路径
+        // ctx.strokeRect(10,10,150,50)
+
+        // 清除矩形
+        // ctx.clearRect(0,0,300,300)
+
+        // 开始绘画路径
+        // ctx.beginPath();
+        // ctx.moveTo(10,0)
+        // ctx.lineTo(150,150);
+        // ctx.closePath();//路径在画完之后要闭合
+
+        // ctx.strokeStyle="blue";
+        // ctx.stroke();
+
+        // ctx.lineTo(10,300)
+        // ctx.stroke()
+
+        // ctx.lineTo(10,0)
+        // ctx.stroke()
+        // ctx.closePath();
+
+        // ctx.fillStyle="red"
+        // ctx.fill()
+
+
+        // ctx.beginPath();
+        // ctx.arc(150,150,50,0,Math.PI/2,false)
+        // ctx.closePath();
+        // ctx.strokeStyle="purple"
+        // ctx.stroke()
+
+        canvas.onmousedown = function (e) {
+            // 鼠标按下去时,开启路径,移动画笔位置,准备绘画
+            ctx.beginPath();
+            ctx.moveTo(e.clientX - this.offsetLeft, e.clientY - this.offsetTop);
+
+            this.onmousemove = function (e) {
+                // 鼠标移动时,绘制路径
+                ctx.lineTo(e.clientX - this.offsetLeft, e.clientY - this.offsetTop)
+
+                ctx.stroke();
+            }
+        }
+        canvas.onmouseup =canvas.onmouseleave= function () {
+            // 鼠标松开时,清除onmousemove事件,并闭合路径
+            this.onmousemove = null;
+            ctx.closePath();
+        }
+        
+        function clearSign(){
+            ctx.clearRect(0,0,canvas.width,canvas.height)
+        }
+        function saveSign(){
+            // 获取canvas绘制的图片数据
+            let url=canvas.toDataURL("image/png");
+
+            let link=document.createElement("a");
+
+            link.href=url;
+
+            // 给下载的文件添加名称
+            link.download="我的签名";
+
+            link.click();
+
+        }
+    </script>
+</body>
+
+</html>

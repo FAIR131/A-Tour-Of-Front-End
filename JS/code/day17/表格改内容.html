@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      th,
+      td {
+        width: 100px;
+        height: 50px;
+      }
+
+      input {
+        border: none;
+        width: 90px;
+        height: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <table border="1">
+      <tr>
+        <th>A</th>
+        <th>B</th>
+        <th>C</th>
+        <th>D</th>
+        <th>E</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+      </tr>
+    </table>
+
+    <button>点击</button>
+    <script>
+      //创建一个表格
+      //表格的下方有一组按钮,每点击一次按钮,表格添加一行
+
+      let table_ = document.querySelector("table");
+      let btn = document.querySelector("button");
+      btn.onclick = () => {
+        let trNode = document.createElement("tr");
+
+        for (let i = 0; i < 5; i++) {
+          let tdNode = document.createElement("td");
+          trNode.appendChild(tdNode);
+        }
+
+        table_.appendChild(trNode);
+      };
+
+      let tds = document.querySelectorAll("td");
+      tds.forEach((item) => {
+        item.onclick = function () {
+          if (this.children.length === 0) {
+            let inp = document.createElement("input");
+            let val = item.innerText;
+            inp.value = val;
+            item.innerText = "";
+            item.appendChild(inp);
+
+            inp.onmouseout = () => {
+              //1.获取value
+              //2.删除input
+              //3.把value写入到innerText中
+              console.log(this);
+
+              let val = this.children[0].value;
+              this.removeChild(this.children[0]);
+              this.innerHTML = val;
+            };
+          }
+        };
+      });
+    </script>
+  </body>
+</html>

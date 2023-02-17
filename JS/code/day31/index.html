@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        td,
+        th {
+            width: 200px;
+            height: 36px;
+        }
+
+        th {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<table class="tab">
+    <tr class="th"></tr>
+</table>
+<script>
+    let th = document.querySelector('.th');
+    let tab = document.querySelector('.tab>tbody');
+
+    window.addEventListener('DOMContentLoaded', function () {
+        let p = new Promise((resolve, reject) => {
+            try {
+                let ajax = new XMLHttpRequest();
+                ajax.open('GET', './data.json');
+                ajax.send()
+                ajax.onreadystatechange = function (data) {
+                    if (ajax.readyState === 4) {
+                        if (ajax.status >= 200 && ajax.status < 300) {
+                            resolve(JSON.parse(data.target.response));
+                        }
+                    }
+                }
+            } catch (e) {
+                throw e
+            }
+        })
+
+        p.then(value => {
+            // console.log(value[0]);
+            if (value.length > 0) {
+                Object.keys(value[0]).forEach(item => {
+                    let t = document.createElement('th');
+                    t.innerText = item;
+                    th.append(t)
+                })
+            }
+
+
+            value.forEach(item => {
+                // console.log(item)
+                let tr = document.createElement('tr');
+                for (let k in item) {
+                    let td = document.createElement('td');
+                    // console.log(item[k])
+                    td.textContent = item[k];
+                    tr.append(td)
+                }
+
+                tab.append(tr)
+            })
+        })
+
+    })
+
+    tab.onclick = function (e) {
+        if (e.target.nodeName === 'TH' && e.target.innerText === 'age') {
+            let tbody = document.querySelector('.tab>tbody');
+            let arr = [...tbody.children];
+            let first = arr.shift();
+
+            let work1 = new Worker('http://localhost:63342/code/day31/work1.js')
+            let array = [];
+            let title = [];
+            th.querySelectorAll('th').forEach(item => {
+                title.push(item.innerText)
+            })
+
+            arr.forEach(item => {
+                let obj = {};
+                item.querySelectorAll('td').forEach((v, i) => {
+                    if (!isNaN(Number(v.innerText))) {
+                        obj[title[i]] = Number(v.innerText);
+                    } else {
+                        obj[title[i]] = v.innerText;
+                    }
+                })
+
+                array.push(obj)
+            })
+
+
+            work1.postMessage(array);
+
+            work1.onmessage = function (e) {
+                tab.innerHTML = '';
+                tab.append(first);
+                e.data.forEach(item => {
+                    let tr = document.createElement('tr');
+                    for (let k in item) {
+                        let td = document.createElement('td')
+                        td.textContent = item[k];
+
+                        tr.append(td);
+                    }
+
+                    tab.append(tr)
+                })
+            }
+        }
+    }
+</script>
+</body>
+</html>

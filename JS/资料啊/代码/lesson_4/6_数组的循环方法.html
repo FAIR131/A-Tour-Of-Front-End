@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Array的先类
+        Object.prototype.a = 1;
+        Object.prototype.b = 2;
+        Object.prototype.c = 3;
+
+        //数组的循环
+        var arr = ["A",2,3,4,5];
+
+        //推荐使用的
+        // for(var i=0;i<arr.length;i++){
+        //     console.log(arr[i]);
+        // }
+
+        //i in 有缺陷
+        // for(var i in arr){//把数组中索引循环出来
+        //     console.log(arr[i]);
+        // }
+        // console.log(arr.length);
+
+    </script>
+
+    <script>
+        //循环
+        /*
+            item : 成员
+            index : 索引
+        */
+        arr.forEach(function(item,index){
+            console.log(index,item);
+        });
+
+    </script>
+</body>
+</html>

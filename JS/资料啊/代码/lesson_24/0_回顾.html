@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin: 0px;padding: 0px;}
+        #smallbox {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            float:left;
+        }
+        #smallbox > img{
+            position: absolute;
+            width: 300px;
+            height: 300px;
+        }
+        #smallbox > span{
+            position: absolute;
+            width:100px;
+            height: 100px;
+            float: left;
+            background-color: coral;
+            opacity: 0.3;
+            display: none;
+        }
+        #bigbox{
+            position: relative;
+            width: 600px;
+            height: 600px;
+            float: left;
+            display: none;
+            overflow: hidden;
+        }
+
+        #bigbox > img{
+            position: absolute;
+            width: 1200px;
+            height: 1200px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="smallbox">
+        <img src="../base/lesson_23/imgs/1.webp" alt="">
+        <span></span>
+    </div>
+
+    <div id="bigbox">
+        <img src="../base/lesson_23/imgs/1.webp" alt="">
+    </div>
+
+    <script>
+        let smallbox = document.querySelector("#smallbox");
+        let bigbox = document.querySelector("#bigbox");
+        let smallbox_span = document.querySelector("#smallbox > span");
+        let bigbox_img = document.querySelector("#bigbox > img");
+
+        class Magnifier{
+
+            constructor(smallbox , smallbox_span , bigbox , bigbox_img){
+                this.smallbox = smallbox;
+                this.smallbox_span = smallbox_span;
+                this.bigbox = bigbox;
+                this.bigbox_img = bigbox_img;
+                [this.smallbox_left , this.smallbox_top] = [this.smallbox.offsetLeft , this.smallbox.offsetTop];
+                [this.smallbox_width , this.smallbox_height] = [this.smallbox.offsetWidth , this.smallbox.offsetHeight];
+            
+                this.bindEvent();
+            }
+
+            //绑定事件
+            bindEvent(){
+                this.smallbox.addEventListener("mouseover",this.#default);
+                this.smallbox.addEventListener("mouseout",this.#out);
+                this.smallbox.addEventListener("mousemove",this.#action);
+            }
+
+            //私有方法
+            #default = (e)=>{
+                this.smallbox_span.style.display="block";
+                this.bigbox.style.display = "block";
+
+                //小                    大
+                let wrate = this.bigbox.offsetWidth / this.bigbox_img.offsetWidth;
+                let hrate = this.bigbox.offsetHeight / this.bigbox_img.offsetHeight;
+
+                //修改span的宽高
+                this.smallbox_span.style.width = this.smallbox_width * wrate + "px";
+                this.smallbox_span.style.height = this.smallbox_height * hrate + "px";
+            }
+
+            #out = (e)=>{
+                this.smallbox_span.style.display="none";
+                this.bigbox.style.display = "none";
+            }
+
+            #action = (e)=>{
+                this.#moveMouse(e);
+                this.#moveSmall(e);
+                this.#moveBig(e);
+            }
+
+            #moveMouse = (e)=>{
+                //移动的时候需要做那些事
+                //1.获取鼠标坐标
+                let [mx,my] = [e.clientX , e.clientY];
+                //2.span的宽高
+                [this.sw , this.sh] = [this.smallbox_span.offsetWidth , this.smallbox_span.offsetHeight];
+                //3.获取span的left和top
+                let [sl,st] = [this.smallbox_span.offsetLeft , this.smallbox_span.offsetTop];
+                //鼠标定位在盒子中间
+                this.left = mx - this.sw/2;
+                this.top = my - this.sh/2;
+            }
+
+            #moveSmall = (e)=>{
+                //判断临界值
+                if(this.left >= (this.smallbox_left + this.smallbox_width)-this.sw){
+                    this.left = (this.smallbox_left + this.smallbox_width)-this.sw;
+                }else if(this.left <= this.smallbox_left){
+                    this.left = this.smallbox_left
+                }
+
+                if(this.top >= (this.smallbox_top + this.smallbox_height)-this.sh){
+                    this.top = (this.smallbox_top + this.smallbox_height)-this.sh;
+                }else if(this.top <= this.smallbox_top){
+                    this.top = this.smallbox_top
+                }
+                
+                //移动
+                this.smallbox_span.style.left = this.left + "px";
+                this.smallbox_span.style.top = this.top + "px";
+            }
+
+            #moveBig = (e)=>{
+                //大图移动
+                let movex = (this.left) / (this.smallbox_width - this.sw);
+                let movey = (this.top)  / (this.smallbox_height - this.sh);
+
+                this.bigbox_img.style.left = - this.bigbox.offsetWidth * movex + "px";
+                this.bigbox_img.style.top = - this.bigbox.offsetHeight * movey + "px";
+            }
+        }
+
+        new Magnifier(smallbox , smallbox_span , bigbox , bigbox_img);
+    </script>
+</body>
+</html>

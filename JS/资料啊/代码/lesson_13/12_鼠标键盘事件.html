@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            + onclick                           <!--单击-->
+            + ondblclick                        <双击>
+            + onmouseover/onmouseout            <!--鼠标移入移出-->
+            + onmouseenter/onmouseleave         <!--鼠标移入移出--><不用>
+
+            + onmousemove                       <!--鼠标移动-->
+
+            + onmousedown/onmouseup             <!--鼠标点击和抬起-->
+                    
+        */
+
+        // window.onmousedown = function(){
+        //     console.log(11);
+        // }
+        // window.onmouseup = function(){
+        //     console.log(22);
+        // }
+        // window.onmousemove = function(){
+        //     console.log(33);
+        // }
+    </script>
+
+    <script>
+        /*
+            event : 事件对象
+                键盘按压是哪个键
+        */
+        // console.log(event);
+        window.onkeyup = function(e){
+            //回车键码13
+            console.log(e.keyCode);
+            // if(e.keyCode === 13){
+            //     console.log("上天");
+            // }
+        }
+        
+        
+
+    </script>
+</body>
+</html>

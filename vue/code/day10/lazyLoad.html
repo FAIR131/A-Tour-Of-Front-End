@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div style="height:1000px"></div>
+<img width="300" img-url="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Finews.gtimg.com%2Fnewsapp_bt%2F0%2F14188995427%2F1000.jpg&refer=http%3A%2F%2Finews.gtimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1669530137&t=557055bd1312909fad51f15fbb469875">
+<div style="height:1000px"></div>
+<img width="300" img-url="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Finews.gtimg.com%2Fnewsapp_bt%2F0%2F14188995427%2F1000.jpg&refer=http%3A%2F%2Finews.gtimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1669530137&t=557055bd1312909fad51f15fbb469875">
+
+<script>
+    onscroll = function () {
+        // console.log(123)
+        // 文档滚动距离
+        let scrollTop = document.documentElement.scrollTop;
+        //浏览器可视区域高度
+        let innerHeight = window.innerHeight;
+        let imgs = document.querySelectorAll('img');
+        // console.log(img.offsetTop)
+   /*     if ((scrollTop + innerHeight) > img.offsetTop) {
+            img.setAttribute('src', img.getAttribute('https://gimg2.baidu.com/image_search/src=http%3A%2F%2Finews.gtimg.com%2Fnewsapp_bt%2F0%2F14188995427%2F1000.jpg&refer=http%3A%2F%2Finews.gtimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1669530137&t=557055bd1312909fad51f15fbb469875'))
+        }
+*/
+        imgs.forEach(item=>{
+            if ((scrollTop + innerHeight) > item.offsetTop) {
+                item.setAttribute('src', item.getAttribute('img-url'))
+            }
+        })
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+<view class="top-menu">
+  <view class="{{activeMenu===1?'active':''}}" bindtap="pickFilm" data-type="{{1}}"><text>正在热映</text></view>
+  <view class="{{activeMenu===2?'active':''}}" bindtap="pickFilm" data-type="{{2}}"><text>即将上映</text></view>
+</view>
+<film-list films="{{films}}"></film-list>

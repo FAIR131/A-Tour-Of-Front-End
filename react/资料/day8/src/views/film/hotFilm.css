@@ -1,0 +1,8 @@
+.film-list{}
+.film-list li{
+    display: flex;
+    align-items: center;
+}
+.film-list li p{
+    width: 200px;
+}

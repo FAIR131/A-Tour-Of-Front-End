@@ -1,0 +1,76 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery.js"></script>
+   
+</head>
+<body>
+  <script>
+        // ajaxStart()
+       $(window).ajaxStart(function(){
+         console.log("当前页面作用域 第一个ajax发送之前执行")
+
+         console.log("显示loading")
+       })
+
+       $(window).ajaxSend(function(){
+         console.log("每一个ajax发送之前执行")
+        //  console.log("显示loading")
+       })
+       //后置
+       $(window).ajaxSuccess(function(){
+         console.log("每一个ajax成功会触法一次")
+        //  console.log("隐藏loading")
+       })
+
+       $(window).ajaxError(function(){
+         console.log("每一个ajax失败会触法一次")
+        //  console.log("隐藏loading")
+       })
+
+       $(window).ajaxComplete(function(){
+         console.log("每一个ajax 成功或者失败会触法一次")
+        //  console.log("隐藏loading")
+       })
+
+       $(window).ajaxStop(function(){
+         console.log("当前页面作用域 最后一个ajax结束执行")
+         console.log("隐藏loading")
+       })
+
+
+       $.ajax({
+        url:"https://m.maizuo.com/gateway?cityId=110100&pageNum=1&pageSize=10&type=1&k=8585556",
+        headers:{
+          // 'X-Client-Info': '{"a":"3000","ch":"1002","v":"5.2.0","e":"16395416565231270166529","bc":"110100"}',
+          // 'X-Host': 'mall.film-ticket.film.list'
+        },
+        success:function(res){
+          console.log(res.data.films)
+          
+        }
+      })
+
+      $.ajax({
+        url:"https://m.maizuo.com/gateway?cityId=110100&pageNum=2&pageSize=10&type=1&k=8585556",
+        headers:{
+          // 'X-Client-Info': '{"a":"3000","ch":"1002","v":"5.2.0","e":"16395416565231270166529","bc":"110100"}',
+          // 'X-Host': 'mall.film-ticket.film.list'
+        },
+        success:function(res){
+          console.log(res.data.films)
+          
+        }
+      })
+
+      //axios
+  </script>
+</body>
+</html>

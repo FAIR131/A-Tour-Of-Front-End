@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //ES6
+        class Dialog{
+            // static instance = null;//静态属性 类对象同名静态只能有一个
+            //静态私有 : 类对象调用 只能再类对象当中使用
+            static #instance = null; //安全的单例
+            constructor(warning){
+                if(!Dialog.#instance){//null--->!false---->true
+                    this.warning = warning;
+                    Dialog.#instance = this;
+                }else{
+                    Dialog.#instance.warning = warning;
+                    return Dialog.#instance
+                }
+                
+            }
+            init(){
+                console.log(123);
+            }
+        }
+
+        let d1 = new Dialog("123");
+
+        let d2 = new Dialog("321");
+
+        console.log(d1===d2); 
+    </script>
+</body>
+</html>

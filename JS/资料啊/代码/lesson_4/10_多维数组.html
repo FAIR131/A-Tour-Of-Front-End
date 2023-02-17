@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //多维数组 : 数组套数组
+
+        //每个子数组的元素数量是一致的
+        var arr = [
+                [1,2,3],
+                [4,5,6],
+                [7,8,9]
+            ];
+        
+        //度量每个子数组的长度
+        for(var array in arr){
+            // console.log(arr[array].length);
+        }
+
+    </script>
+
+    <script>
+        //不规则
+        // var arr = [
+        //         [1,2,3],
+        //         [4,5,6,7],
+        //         [7,8,9,10,11],
+        //         []
+        //     ];
+        //1的索引0
+        //arr[0]先解析[1,2,3]
+        // console.log(arr[0][0]);
+        
+        //找出二位数组当中大于5的索引
+        // for(var i=0;i<arr.length;i++){//行索引
+        //     for(var j=0;j<arr[i].length;j++){
+        //         if(arr[i][j]>5){
+        //             console.log(i,j);
+        //         }
+        //     }
+        // }
+        
+    </script>
+
+    <script>
+        //把不规则的数组转变为规则数组
+        var arr = [
+                [1,2,3],
+                [4,5,6,7],
+                [7,8,9,10,11],
+                []
+            ];
+        /*
+            1.首先找出最长的子数组
+            2.寻找最大的数组长度
+            3.用每个数组的长度对比最长数组的长度，得到差距
+        */
+
+        var child_arr_len = []; //保存每个子数组的长度的
+
+        for(var i=0;i<arr.length;i++){
+            child_arr_len.push(arr[i].length);
+            //[3,4,5,0]
+        }
+
+        var max_len = 0; //最大子数组长度
+
+        for(var i=0;i<child_arr_len.length;i++){
+            if(max_len < child_arr_len[i]){//0<3 3<4 4<5 5<0
+                max_len = child_arr_len[i];
+            }
+        }
+
+        //使用最大值5 减去 [3,4,5,0]
+        var dis = [];//[2,1,0,5]
+
+        for(var i=0;i<child_arr_len.length;i++){
+            dis.push(max_len - child_arr_len[i]);
+        }
+
+        //填充数据
+        for(var i=0;i<arr.length;i++){
+            //2
+            for(var j=0;j<dis[i];j++){
+                //给arr[i]
+                arr[i].push(undefined);
+            }
+        }
+
+        console.log(arr);
+
+        
+    </script>
+</body>
+</html>

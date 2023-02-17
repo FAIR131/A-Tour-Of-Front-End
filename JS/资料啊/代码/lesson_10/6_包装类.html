@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /* 
+            包装  
+            类   :   函数对象
+
+            String   
+            Number
+            Boolean
+            
+            null      : 象征   空对象 null = {}
+            undefined : 象征   未定义
+        */
+        //字符串也是对象
+        //但是"12345"不是字符串对象,JS会自动再解析的时候套上 new String()
+        var str1 = "12345"; 
+        console.log(typeof str1); //string
+        console.log(Object.prototype.toString.call(str1));
+
+        var str2 = String("1,2,3,4,5");
+        console.log(typeof str2); //string
+
+        var str3 = new String("1,2,3,4,5");
+        console.log(typeof str3);
+        console.log(Object.prototype.toString.call(str3));
+
+        // console.log(typeof true);
+        // console.log(new Boolean(false));
+
+
+        /*
+            包装类 : 字符再js解析的环节当中都会被自动套上 new Object();
+
+            串  是有序类型
+                - 不能修改的类型
+                - 保存再堆当中
+        */
+        var a = "123456";
+        console.log(a.replace(2,0)); //产生新的内存空间
+        console.log(a);
+
+
+
+    </script>
+
+
+</body>
+</html>

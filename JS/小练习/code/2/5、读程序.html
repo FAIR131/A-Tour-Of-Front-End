@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+
+<script>
+    // 5、说出下面循环最后输出的值
+    let sum4 = 0;
+    for (var n = 1; n <= 3; n++) {
+        for (var m = 1; m <= n; m++) {
+            if (m === 2) {
+                break;
+            }
+            if ((n + m) % 3 === 0) {
+                continue;
+            }
+        }
+        sum4 = sum4 + n + m;
+        /*
+        n      1  1  2  2   3  3
+        m      1  2  1  2   1  2
+        sum4      3     7      12
+         */
+    }
+    console.log(sum4);
+</script>
+</body>
+</html>

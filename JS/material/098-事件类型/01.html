@@ -1,0 +1,77 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            background:yellow;
+        }
+
+        #child{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">click</button>
+    <div id="box">
+
+        <div id="child"></div>
+    </div>
+    <script>
+        //鼠标事件
+        // click 
+        // dblclick
+        btn.onclick = function(){
+            console.log("单击执行")
+        }
+        btn.ondblclick = function(){
+            console.log("双击执行")
+        }
+
+        //contextmenu 右键单击
+        document.oncontextmenu = function(){
+            console.log("右键单击.自定义右键菜单")
+        }
+
+        // mousedown mousemove mouseup
+
+        // box.onmousedown = function(){
+        //     console.log("鼠标按下")
+        // }
+        // box.onmousemove = function(){
+        //     console.log("鼠标移动")
+        // }
+        // box.onmouseup = function(){
+        //     console.log("鼠标抬起")
+        // }
+
+        //移入移出 mouseover mouseout
+
+        box.onmouseover = function(){
+            console.log("移入")
+        }
+        box.onmouseout = function(){
+            console.log("移出")
+        }
+        //移入移除 mouseenter mouseleave
+
+        // box.onmouseenter = function(){
+        //     console.log("移入")
+        // }
+        // box.onmouseleave = function(){
+        //     console.log("移出")
+        // }
+    </script>
+</body>
+</html>

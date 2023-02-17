@@ -1,0 +1,530 @@
+.box {
+  width: 1440px;
+}
+
+/* 导航 */
+.head {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 1165px;
+  /* background-color: pink; */
+}
+
+.head .head-left {
+  width: 400px;
+  height: 80px;
+}
+
+.head .head-left img {
+  width: 100%;
+  height: 100%;
+}
+
+.head .head-right {
+  width: 710px;
+  height: 80px;
+}
+
+.head .head-right > ul {
+  display: flex;
+}
+
+.head .head-right .nav {
+  width: 88px;
+  height: 80px;
+  text-align: center;
+  line-height: 80px;
+  /* background-color: skyblue; */
+}
+
+/* 版心 */
+.banner {
+  width: 100%;
+  height: 480px;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+}
+
+/* 通用标题 */
+.co-title {
+  margin: 0 auto;
+  width: 790px;
+  height: 190px;
+  line-height: 35px;
+  color: #666;
+  text-align: center;
+  /* background-color: pink; */
+}
+
+.co-title .colorful {
+  padding-top: 40px;
+  margin: 0 auto;
+  width: 260px;
+  height: 90px;
+}
+
+.co-title .colorful img {
+  width: 100%;
+  height: 100%;
+}
+
+/* business */
+.business {
+  width: 100%;
+  height: 755px;
+  background-color: #fff;
+}
+
+.business .content {
+  margin: 0 auto;
+  width: 1140px;
+  height: 480px;
+}
+
+.business .content > ul {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.business .content .list {
+  position: relative;
+  margin-top: 20px;
+  /* margin-right: 45px; */
+  width: 350px;
+  height: 220px;
+}
+
+.business .content .list .pic {
+  width: 350px;
+  height: 220px;
+}
+
+.business .content .list .pic img {
+  width: 100%;
+  height: 100%;
+}
+
+.business .content .list .text {
+  position: absolute;
+  top: 75px;
+  left: 50px;
+  width: 225px;
+  height: 75px;
+  text-align: center;
+  line-height: 75px;
+  color: #fff;
+  opacity: 0.9;
+}
+
+.business .content .list:nth-child(1) .text {
+  background-color: #1a9bd8;
+}
+.business .content .list:nth-child(2) .text {
+  background-color: #186ae0;
+}
+.business .content .list:nth-child(3) .text {
+  background-color: #f6c30a;
+}
+.business .content .list:nth-child(4) .text {
+  background-color: #99c834;
+}
+.business .content .list:nth-child(5) .text {
+  background-color: #dd0c7c;
+}
+.business .content .list:nth-child(6) .text {
+  background-color: #f22726;
+}
+
+.business .content .list .interact {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 35px;
+  width: 350px;
+  height: 0px;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  transition: all 1s;
+  background-color: transparent;
+}
+
+.business .content .list .interact .info {
+  margin-top: 80px;
+}
+
+.business .content .list .interact .more {
+  margin-top: 30px;
+}
+
+.business .content .list:nth-child(1):hover .interact {
+  height: 220px;
+  background-color: #1a9bd8;
+}
+.business .content .list:nth-child(2):hover .interact {
+  height: 220px;
+  background-color: #186ae0;
+}
+.business .content .list:nth-child(3):hover .interact {
+  height: 220px;
+  background-color: #f6c30a;
+}
+.business .content .list:nth-child(4):hover .interact {
+  height: 220px;
+  background-color: #99c834;
+}
+.business .content .list:nth-child(5):hover .interact {
+  height: 220px;
+  background-color: #dd0c7c;
+}
+.business .content .list:nth-child(6):hover .interact {
+  height: 220px;
+  background-color: #f22726;
+}
+
+/* clients */
+
+.clients {
+  width: 100%;
+  height: 760px;
+  background-color: #ebf0f1;
+}
+
+.clients .content {
+  margin: 0 auto;
+  width: 1170px;
+  height: 505px;
+}
+
+.clients .content > ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.clients .content .list,
+.clients .content .list .pic,
+.clients .content .list .replace {
+  width: 290px;
+  height: 165px;
+}
+
+.clients .content .list {
+  position: relative;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.clients .content .list:nth-child(4n) {
+  border-right: none;
+}
+.clients .content .list:nth-child(n + 9) {
+  border-bottom: none;
+}
+
+.clients .content .list .pic img,
+.clients .content .list .replace img {
+  width: 100%;
+  height: 100%;
+}
+
+.clients .content .list .replace {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.clients .content .list:hover .replace {
+  display: block;
+}
+
+/* Work */
+.work {
+  width: 100%;
+  height: 680px;
+  background-color: #fff;
+}
+
+.work .content {
+  margin: 0 auto;
+  width: 1160px;
+  height: 430px;
+}
+
+.work .content > ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.work .content .list {
+  position: relative;
+  width: 285px;
+  height: 210px;
+}
+.work .content .list .pic,
+.work .content .list .pic img {
+  width: 100%;
+  height: 100%;
+}
+
+.work .content .list .interact {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* padding: 0 35px; */
+  width: 285px;
+  height: 210px;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  transition: all 1s;
+  background-color: transparent;
+  /* background-color: #1a9bd8; */
+}
+
+.work .content .list .interact .pic1 {
+  position: absolute;
+  left: -80px;
+  /* left: 100px; */
+  top: 55px;
+  transition: all 1s;
+}
+
+.work .content .list:hover .interact .pic1 {
+  left: 100px;
+}
+
+.work .content .list:hover .interact .pic2 {
+  left: 120px;
+}
+.work .content .list .interact .pic2 {
+  position: absolute;
+  left: 330px;
+  /* left: 120px; */
+  top: 73px;
+  transition: all 1s;
+}
+
+.work .content .list .interact .more {
+  position: absolute;
+  bottom: 50px;
+  left: 120px;
+  font-size: 16px;
+  color: transparent;
+}
+
+.work .content .list:hover .interact {
+  height: 210px;
+  background-color: #1a9bd8;
+  opacity: 0.8;
+}
+
+.work .content .list:hover .interact .more {
+  color: #fff;
+}
+
+/* news */
+.news {
+  width: 100%;
+  height: 810px;
+  background-image: url(../images/fc0b318c6290811274a12d7d12df89c6_ind_news_bg.jpg);
+}
+
+.news .co-title {
+  width: 1140px;
+}
+
+.news .co-title p:last-child {
+  color: #fff;
+}
+
+.news .content {
+  margin: 0 auto;
+  width: 1145px;
+  height: 525px;
+}
+
+.news .content > ul {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.news .content .list {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  width: 550px;
+  height: 170px;
+  background-color: #fff;
+}
+
+.news .content .list .left {
+  width: 170px;
+  height: 170px;
+}
+
+.news .content .list .left img {
+  width: 100%;
+  height: 100%;
+}
+
+.news .content .list .right {
+  padding-right: 20px;
+  width: 360px;
+  height: 170px;
+  color: grey;
+  font-size: 14px;
+}
+
+.news .content .list .right .ri-top {
+  margin: 15px 0 10px;
+  color: #000;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.news .content .list .right .ri-top:hover {
+  color: #1a9bd8;
+}
+
+.news .content .list .right > p {
+  text-indent: 2em;
+}
+
+.news .content .list .right .ri-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  color: #ccc;
+  font-size: 14px;
+}
+
+/* contact */
+.contact {
+  width: 100%;
+  height: 600px;
+  background-color: #2e2e2e;
+}
+
+.contact .co-title {
+  height: 115px;
+}
+
+.contact .content {
+  display: flex;
+  margin: 0 auto;
+  width: 1140px;
+}
+
+.contact .content .left {
+  width: 570px;
+  height: 385px;
+  color: #fff;
+  border-right: 1px solid #828282;
+}
+
+.contact .content .left > p,
+.contact .content .right > p {
+  margin-bottom: 20px;
+}
+
+.contact .content .left .item {
+  display: flex;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.contact .content .left .consult {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  width: 440px;
+}
+
+.contact .content .left .consult .one {
+  display: flex;
+  padding: 10px;
+  width: 205px;
+  height: 60px;
+  background-color: #414141;
+}
+
+.contact .content .left .consult .one .con-right {
+  margin-left: 10px;
+  color: #b2b2b2;
+  font-size: 14px;
+}
+
+.contact .content .left .code {
+  display: flex;
+  margin-top: 50px;
+  color: #fff;
+}
+
+.contact .content .left .code .pic {
+  margin-right: 20px;
+}
+
+.contact .content .right {
+  margin-left: 50px;
+  color: #fff;
+}
+
+.contact .content .right .item {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.contact .content .right .item .bd {
+  width: 270px;
+  height: 30px;
+  background-color: #828282;
+}
+
+.contact .content .right .item .bd2 {
+  width: 460px;
+  height: 130px;
+  background-color: #828282;
+}
+
+.contact .content .right .item .last {
+  margin-top: 50px;
+}
+
+.contact .content .right .bt {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  width: 220px;
+}
+
+.contact .content .right .bt > div {
+  padding: 0 15px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  background-color: #828282;
+}
+
+/* 底部 */
+.footer {
+  width: 100%;
+  height: 45px;
+  background-color: #000;
+  color: #ccc;
+}
+
+.footer > p {
+  width: 1140px;
+  font-size: 12px;
+  text-align: center;
+  line-height: 45px;
+}

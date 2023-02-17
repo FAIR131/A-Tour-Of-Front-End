@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            什么是js?
+                - js 高级的非编译的弱类型的脚本语言
+
+            js引入方式?
+                - 外联式 <script src="path">
+                - 内联式 <script> js
+                - 内嵌式 <a onclick="js">
+            js注释?
+                - 不解析
+                - 单行 : //
+                - 多行 :/*      *\/
+            
+            js变量?
+                - var 关键字
+                - var a,b,c;
+                - var a=1;
+
+            先赋值再声明?
+                - a = 1;
+                - var a;
+            
+            声明提升?
+                - 把js当中所有声明放到内存的最上方;
+            
+            标识符的命名?
+                - 不能以数字开头
+                - 不能使用特殊符号(不包含_和$)
+                - 不能使用关键字
+            
+            数据类型?
+                - 基本数据类型
+                    - Number
+                    - String
+                    - null
+                    - undefined
+                    - Boolean
+                - 复合数据类型
+                    - Array
+
+                - function
+                    - function不是数据类型
+                    - 数据类型最主要的功能是存储,而function不能存储
+            数据类型判断?
+                - typeof   : 基本类型(除null)
+                - instanceof
+                - constructor : 复杂数据类型
+                - Object.prototype.toString.call(variable);
+
+
+            数据类型的转换
+                - 数字类型?
+                  - Number()
+                    - "123a"   -> NaN
+                    - "a123"   -> NaN
+                    - "Infinity"  ->  Infinity
+                    - true      ->  1
+                  - parseInt()
+                    - "123a"   -> 123
+                    - true     -> NaN
+                - 布尔类型
+                    - "" -> false
+                    - " " -> true
+                    - undefined -> false
+                    - NaN   ->   false
+                    - null  ->   false
+                    - []    ->   true
+                
+            
+        
+        */
+
+        //基本数据(不包含null)
+        // console.log(typeof null); //object
+        // console.log(typeof []);   //object
+        // console.log(null === null); //
+
+        // console.log([] instanceof Object);
+        
+        //复合数据
+        // console.log([].constructor === Object);
+        // console.log([].constructor && Array);
+
+        //万能
+        // console.log(Object.prototype.toString.call(null));
+
+
+        console.log(Number("Infinity"));
+
+        console.log(isFinite(Infinity)); //Finite 有穷数
+
+        var a = NaN;  //是数字类型
+
+        console.log(isNaN(a)); //if(isNaN(a) || isFinite(a))
+
+
+        // console.log(parseInt(true)); 
+
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // == :对别的是数据的值
+        // console.log("123" == 123);   //true
+
+        //全等于
+        // === : 1.对别的是数据的值  2.数据类型 ，全相对返回true 
+        // console.log("123" === 123);  //false
+
+        // console.log("123" != 123);  //false
+
+        // console.log("123" !== 123);  //true
+
+    </script>
+
+    <script>
+        // console.log(1 > 2); //false
+        
+        // //"3" -> 3
+        // console.log("3" > 2); //true
+
+        // console.log("123a" > 100);  //false
+
+        // console.log("a" > "A");  //ASCII 阿斯科伊码
+
+        // console.log("安徽" < "北京");  //Unicode
+
+        // console.log(101 >= 101);
+
+    </script>
+
+    <script>
+        //三元运算符  三目   条件
+        // 第一个位置，只能是一个bool值
+        //语法 :  1 > 2 ? 返回为true的结果 : 返回为false的结果;
+
+        var age = 92;
+
+        //原先的比较运算符返回的是bool
+        //三元返回的自定义结果
+        // console.log(age >= 18 ? "成年,可以浪了" : "快回家写作业");
+
+        //三元可以嵌套
+        //去网吧熬夜
+        var res = age ? 
+            (age<=75 ? "欢快的玩耍" : "赔不起") 
+            : "快回家写作业";
+
+        console.log(res);
+
+
+    </script>
+</body>
+</html>

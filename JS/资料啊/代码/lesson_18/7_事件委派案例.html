@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            /* border-collapse: collapse; */
+            cursor: pointer;
+        }
+        table,td{
+            border: 1px solid orangered;
+        }
+        td {
+            width: 100px;
+            height: 50px;
+        }
+        input {
+            width: 98px;
+            height: 48px;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        //生成表格
+        //表格有好多个td
+        //点击td变成input
+        let table = document.createElement("table");
+
+        //生成100行
+        for(let i=0;i<100;i++){
+            let tr = document.createElement("tr");
+
+             //生成10列
+            for(let j=0;j<10;j++){
+                let td = document.createElement("td");
+                td.innerText = `${i}-${j}`
+                tr.append(td);
+            }
+
+            table.append(tr);
+        }
+
+        document.body.append(table);
+
+        table.addEventListener("click",function(event){
+
+            //比对标签
+            if(event.target.nodeName === "TD"){
+                if(event.target.children.length === 0 ){
+                    //把当前td的内容跟替换成input
+                    //1.获取td.innerText
+                    let v = event.target.innerText;
+                    //2.创建input-dom对象
+                    let inp = document.createElement("input");
+                    //3.把td.innerText 给 inp.value
+                    inp.value = v;
+                    //4.替换之前内容清空
+                    event.target.innerText = "";
+                    //5.替换
+                    event.target.append(inp);
+                }
+                
+            }
+        })
+
+        table.addEventListener("mouseout",function(event){
+            
+            if(event.target.nodeName === "INPUT"){
+                //1.把input当中的value保存下来
+                let v = event.target.value;
+                //2.把value写道innerText当中
+                event.target.parentNode.innerText = v;
+                //3.删除input
+                event.target.remove();
+            }
+        })
+
+        
+        
+    </script>
+</body>
+</html>

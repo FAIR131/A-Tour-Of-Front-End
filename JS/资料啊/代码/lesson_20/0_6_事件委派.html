@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            width: 100px;
+            height: 50px;
+            background-color: blue;
+            list-style: none;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li></li>
+        <li abc="1"></li>
+        <li ></li>
+        <div>123</div>
+        <li abc="1"></li>
+        <li></li>
+        <li abc="1"></li>
+        <li></li>
+        <span abc="1">321</span>
+        <li></li>
+        <li abc="1"></li>
+        <li></li>
+    </ul>
+    <script>
+        //事件委派 : 使用 事件冒泡
+        //1.先找到ul
+
+        let ul = document.querySelector("ul");
+
+        //enter-leave只能执行事件流捕获
+        //只给带有abc属性的LI绑定事件
+        ul.onmouseover = function(event){
+         
+            if(event.target.nodeName === "LI" && event.target.attributes?.abc?.value==="1"){
+                event.target.style.backgroundColor = "pink";
+            }
+        }
+
+        ul.onmouseout = function(){
+            if(event.target.nodeName === "LI" && event.target.attributes?.abc?.value==="1"){
+                event.target.style.backgroundColor = "blue";
+            }
+        }
+
+
+    </script>
+</body>
+</html>

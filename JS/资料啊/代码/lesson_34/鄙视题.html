@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        `
+        代码操作：有一个一维对象数组，根据field字段分组元素，实现方法groupBy(array,field)
+        输入：
+            [
+              {
+                categoryId: 1,
+                name: 'a',7
+              },
+              {
+                categoryId: 1,
+                name: 'b',
+              },
+              {
+                categoryId: 2,
+                name: 'c'
+              }
+            ]
+        输出：
+            {
+                1:[
+                 {
+                  categoryId: 1,
+                  name: 'a',
+                },
+                {
+                  categoryId: 1,
+                  name: 'b',
+                },
+              ],
+              2:[
+                 {
+                  categoryId: 2,
+                    name: 'c'
+                }
+              ]
+            }
+        `
+        let data = [
+            {
+                categoryId: 1,
+                name: 'a',
+            },
+            {
+                categoryId: 1,
+                name: 'b',
+            },
+            {
+                categoryId: 2,
+                name: 'a'
+            }
+        ]
+        //{1:[{categoryId:,name}],2:[]}
+
+        function groupBy(arr,field){
+            let obj = {};
+
+            if(Object.prototype.toString.call(arr) !== "[object Array]"){
+                return obj
+            }
+
+            for(let i=0;i<arr.length;i++){
+                if(!(arr[i][field] in obj)){
+                    obj[arr[i][field]] = [arr[i]];
+                }else{
+                    obj[arr[i][field]].push(arr[i])
+                }
+            }
+
+            return obj
+        }
+
+        console.log(groupBy(data,"name"));
+
+
+    </script>
+</body>
+
+</html>

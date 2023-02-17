@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <script>
+    var count = 0;
+    for (var i = 100; i < 1000; i++) {
+      // 153 
+      var g = i % 10;
+      var s = i /10 % 10; 
+      var b = i / 100;
+          g=parseInt(g);
+          s=parseInt(s);
+          b=parseInt(b);
+
+      if (g**3 + s**3 + b**3 == i) {
+        count++;
+        console.log(i);
+      }
+    }
+    console.log(count);
+  </script>
+</body>
+
+</html>

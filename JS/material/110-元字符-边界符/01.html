@@ -1,0 +1,37 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ^ 开头
+        // var reg = /^\d/
+
+        // console.log(reg.test("aabb2"))
+        // console.log(reg.test("1aabb"))
+
+        // $ 结尾边界
+        // var reg = /\d$/
+
+        // console.log(reg.test("aabb2"))
+        // console.log(reg.test("1aabb"))
+
+
+        // ^开头结束$
+
+        var reg = /^a\dc$/
+
+        console.log(reg.test("abc"))
+        console.log(reg.test("abcd"))
+        console.log(reg.test("dabc"))
+        console.log(reg.test("a6c"))
+    </script>
+</body>
+</html>

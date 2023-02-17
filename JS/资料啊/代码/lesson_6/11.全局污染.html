@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            /*
+                全局污染
+                    : 在同级作用域当中，相同的变量反复声明
+                    : debug当中找不到原始的变量赋值
+                    : 代码块当中回导致变量泄露(应该是在什么块当中使用的变量，只能在当前块里面打印)
+            */
+
+            // var a = 1;
+            // var a = 2;
+
+            // console.log(a);//2
+
+            // for(var i=0;i<10;i++){//代码块
+                
+            // }
+            // for(var i=0;i<20;i++){//代码块
+
+            // }
+
+            // console.log(i); //
+    </script>
+
+    <script>
+        var arr = [1,2,3,4,5];
+        var arr1 = [1,2,3,4,5,1,2,3,4,5];
+
+         
+
+        //对数组进行村换
+        var sum_ = (function(){//IIFE
+            //首先函数有局部作用域
+            //i定义在局部作用域当中
+            var a = 0;
+
+            for(var i=0;i<arr.length;i++){
+                a += arr[i];
+            }
+
+            return a
+        })()
+
+        //全局作用域找不到局部作用域定义i变量
+        console.log(i);
+
+
+        //如何在全局当中获取数组求和的结果
+
+        var sum = 0;
+
+        (function(){//IIFE
+            //首先函数有局部作用域
+            //i定义在局部作用域当中
+            for(var i=0;i<arr1.length;i++){
+                sum += arr1[i];
+            }
+        })()
+
+
+        console.log(sum);
+
+
+
+    </script>
+
+</body>
+</html>

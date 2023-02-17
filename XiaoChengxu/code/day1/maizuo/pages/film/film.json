@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "film-list":"/components/filmList"
+  },
+  "navigationBarTitleText": "电影",
+  "enablePullDownRefresh": true
+}

@@ -1,0 +1,41 @@
+<!--
+ * @作者: kerwin
+ * @公众号: 大前端私房菜
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" required id="mytext">
+        <input type="email">
+        <input type="submit" value="submit">
+    </form>
+    <script>
+        //正则表达式
+
+        // js复杂类型
+
+        //1 字面量 //
+
+        var reg = /abc/
+        
+        console.log(reg)
+        //2. 内置构造函数 
+        var reg2 = new RegExp("abc")
+        console.log(reg2)
+
+
+        mytext.onblur = function(){
+            console.log(mytext.value)
+
+
+            console.log(reg.test(mytext.value))
+        }
+    </script>
+</body>
+</html>

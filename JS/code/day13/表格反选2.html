@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Document</title>
+  <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+
+    td {
+      width: 80px;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <script>
+    var str = '';
+    function creatTable() {
+      str += '<table border="1px">';
+      str += '<tr>';
+      str += '<th><input type="checkbox">全选</th>'
+      str += '<th><a id="sel" href="javascript:;">反选</a></th>';
+      str += '<th><a id="del" href="javascript:;">删除</a></th>';
+      str += '</tr>';
+      for (var i = 0; i < 20; i++) {
+        str += '<tr>';
+
+        for (var j = 0; j < 10; j++) {
+          str += '<td>';
+          if (j == 0) {
+            str += '<input type="checkbox"> ';
+          } else {
+            str += i + '-' + j;
+          }
+          str += '</td>';
+        }
+        str += '</tr>';
+      }
+      str += '</table>';
+      return str;
+    }
+
+    document.write(creatTable())
+  </script>
+
+  <script>
+    var trs = document.querySelectorAll('tr');
+    trs.forEach(function (item, index) {
+      if (index % 2) {
+        item.style.backgroundColor = 'pink';
+      }
+
+      item.onmouseover = function () {
+        trs.forEach(function (item, index) {
+          if (index % 2) {
+            item.style.backgroundColor = 'pink';
+          } else {
+            item.style.backgroundColor = 'white';
+
+          }
+        })
+        this.style.backgroundColor = 'skyblue';
+      }
+    })
+  </script>
+  <script>
+    var thi = document.querySelector('th>input');
+    var tdi = document.querySelectorAll('td>input');
+    var flag = false;
+    // 全选
+    thi.onclick = function () {
+      if (flag) {
+        tdi.forEach(function (item) {
+          item.checked = '';
+
+        })
+        flag = false;
+
+      } else {
+        tdi.forEach(function (item) {
+          item.checked = 'checked';
+
+        })
+        flag = true;
+      }
+    }
+    // 反选
+    var sel = document.querySelector('#sel');
+    sel.onclick = function () {
+      tdi.forEach(function (item) {
+        if (item.checked) {
+
+          item.checked = '';
+        } else {
+
+          item.checked = 'checked';
+
+        }
+      })
+    }
+
+    // 删除行
+    /*
+        1.找到删除的a标签
+        2.循环checkbox数组
+        3.找到tr标签
+        4_express脚手架.循环checkbox
+        5.找到checked=true
+        6.根据索引找到对应的tr
+    */
+
+    var del = document.querySelector('#del');
+    var trArr=[];
+    trs.forEach(function(item){
+      trArr.push(item);
+    });
+    // console.log(trArr);
+    trArr.shift();
+    // console.log(trArr);
+
+    del.onclick = function () {
+      tdi.forEach(function (item,index) {
+        if (item.checked) {
+          trArr[index].style.display = 'none';
+        }
+      })
+    }
+
+  </script>
+</body>
+
+</html>

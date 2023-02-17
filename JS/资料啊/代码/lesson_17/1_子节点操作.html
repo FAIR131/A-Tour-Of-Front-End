@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- 你 -->
+        <div style="">
+            <!--1234 -->
+            12345
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>
+                <a href="">4</a>
+            </span>
+        </div>
+        
+        <script>
+            /*
+
+                        rootNode
+                /          |               \
+            childNode   childNode    childNode
+            /      \
+        leafNode   leafNode
+
+            */
+
+
+
+            //相对body进行查找
+            // console.time();
+            // let a1 = document.querySelector("a");
+            // console.timeEnd();
+            
+
+            // let div = document.querySelector("div");
+
+            // console.time();
+            // let a2 = div.querySelector("a");
+            // console.timeEnd();
+        </script>
+
+        <script>
+            let div = document.querySelector("div");
+
+            //字节点
+            /*
+                nodeName : 节点的名称
+                nodeValue : 节点的值
+            */
+            // console.log(div.childNodes);
+
+            //找到第一个span标记
+            /*  
+                nodeType 
+                元素节点  :  1
+                文本节点  :  3
+                注释节点  :  8
+
+            */
+            // div.childNodes.forEach((item)=>{
+            //     if(item.nodeType===1){
+            //         console.log(item)
+            //     }
+            // })
+
+
+
+            //子元素节点
+            console.log(div.children);
+        </script>
+    </body>
+</html>

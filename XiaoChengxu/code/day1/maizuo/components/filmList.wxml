@@ -1,0 +1,13 @@
+<view wx:for="{{films}}" wx:for-item="myItem" wx:key="id" class="film-list">
+  <image src="{{myItem.poster}}" class="poster" mode="widthFix"></image>
+  <view class="desc">
+    <text>{{myItem.name}}</text>
+    <view>
+      <text>主演:</text>
+      <block wx:for="{{myItem.actors}}" wx:key="index">
+        <text> {{item.name}} </text>
+      </block>
+    </view>
+  </view>
+  <button size="mini" class="collect-btn" bindtap="collectFilm" data-film="{{myItem}}">收藏</button>
+</view>

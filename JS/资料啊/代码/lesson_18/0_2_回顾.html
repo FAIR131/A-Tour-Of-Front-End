@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <span data-sign></span>
+    </div>
+    <div>
+        <span></span>
+    </div>
+
+    <script>
+        //父子
+        // console.log([...document.body.children]);
+
+        // console.log(document.body.parentNode);
+
+        //兄弟
+        // console.log(document.body.children[0].previousElementSibling);
+        // console.log(document.body.children[0].nextElementSibling);
+        HTMLElement.prototype.PES = function(){
+            return this.previousElementSibling;
+        }
+        HTMLElement.prototype.NES = function(){
+            return this.nextElementSibling;
+        }
+
+        // console.log(document.body.children[0].PES());
+        // console.log(document.body.children[0].NES());
+    </script>
+
+    <script>
+        //节点的创建
+        // let a = document.createElement("a");
+        // //a变量是一个dom对象
+
+        // let as = a.style;  //实例对象
+        // as.color = "red",as.backgroundColor = "yellow";
+
+        // a.innerText = "张三";
+
+        // //放入body当中
+        // document.body.append(a);
+    </script>
+
+    <script>
+        //替换节点
+        let span = document.querySelector("span[data-sign]");
+        
+        //span---->替换为strong
+        HTMLElement.prototype.replace = function(obj){
+            this.parentElement.replaceChild(obj,this);
+        }
+
+        let strong = document.createElement("strong");
+        strong.innerText = "123";
+        // span.replace(strong);
+        // span.replaceWith("1234");
+        
+    </script>
+
+    <script>
+        //删除节点
+        span.remove();
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        /*
+            沙箱 : 装了沙子的箱子
+                返回的是遗漏函数
+
+                漏出来的是外层函数当中的局部变量和函数
+        */
+
+        function outer(){
+            let a = 1;
+            let b = 2;
+            let c = "徐技师";
+            
+            const obj = {
+                getA : function(){return a},
+                getB : function(){return b},
+                getC : function(){return c},
+                setA : function(val){ a = val}
+            }
+
+            return obj
+        }
+
+        let func = outer();
+
+        //返回的是一个对象(对象当中全是方法)
+
+        console.log(func.getA());
+        func.setA(100);
+        console.log(func.getA());
+
+
+    </script>
+</body>
+</html>

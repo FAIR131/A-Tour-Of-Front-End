@@ -1,0 +1,22 @@
+.film-list{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 10px 5px;
+}
+.film-list .poster{
+  width: 66px;
+}
+
+.film-list .desc{
+  width: 165px;
+  margin: 0 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.film-list .collect-btn{
+  border: 1px solid #f60;
+  color: #f60;
+  font-weight: normal;
+}

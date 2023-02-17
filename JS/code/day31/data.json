@@ -1,0 +1,29 @@
+[
+    {
+        "name":"tom",
+        "age":18,
+        "sex":"male",
+        "uid":1,
+        "height":171,
+        "windex":165,
+        "eyesingt":5.0
+    },
+    {
+        "name":"jack",
+        "age":21,
+        "sex":"male",
+        "uid":2,
+        "height":172,
+        "windex":140,
+        "eyesingt":4.9
+    },
+    {
+        "name":"liliya",
+        "age":20,
+        "sex":"male",
+        "uid":3,
+        "height":163,
+        "windex":100,
+        "eyesingt":5.0
+    }
+]

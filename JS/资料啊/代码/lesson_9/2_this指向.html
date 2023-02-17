@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //this:自己
+        //全局中的this
+        // console.log(this);  //浏览器对象 window
+
+        //局部作用域
+        // function action(){
+        //     //this根据对象进行改变
+        //     //函数属于哪个对象了?函数属于window对象
+        //     return this 
+        // }
+        // console.log(action()); //window
+
+
+        // var obj = {a:this,b:function(){
+        //     return this
+        // }};
+
+        // console.log(obj.a); //window
+        // console.log(obj.b()); //obj
+
+        // //函数对象
+        // function Dog(){
+        //     this.myself = this;
+        // }
+
+        // //引用对象
+        // var d = new Dog();
+        // console.log(d.myself); //Dog
+
+        // var arr = [this,function(){return this}];  
+
+        // console.log(arr[0]); //window
+        // console.log(arr[1]()); //arr=[window,function(){return this}]
+
+        /*
+            this针对对象而言的
+                - 在全局当中代表的是window对象
+                - 在函数当中,由于函数不是对象,函数属于window对象,所以输出window对象
+                
+            如果this在对象+私有的作用域下,才能表达自己
+
+
+            this有指向  
+        
+        */
+    </script>
+
+
+    <script>
+        
+        //改变this指向
+
+        var obj1 = {
+            a : function(arg){
+                return arg
+            }
+        }
+
+        var obj2 = {
+            b : function(){
+                return false
+            },
+            c : function(){
+                //返回b方法的调用结果
+                return this.b()
+            }
+        }
+
+        // console.log(obj2.c());
+
+        // //console.log(obj2.a())---->this.a()
+
+        // //obj1.a--->this.a   =  把当前的this换成obj2
+        // console.log(obj1.a.call(obj2))
+
+
+    </script>
+
+    <script>
+        Object.prototype.varcall = function(obj,param){
+            obj.a = this; //a方法
+
+            //把参数param 传递到 a方法当中
+            var res = obj.a(param);
+
+            //把当前的借用函数删了
+            delete obj.a
+            
+            return res
+        }
+
+        console.log(obj1.a.varcall(obj2,"面条"));
+
+        console.log(obj2.a("面包"))
+
+    </script>
+</body>
+</html>

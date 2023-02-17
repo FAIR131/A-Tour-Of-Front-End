@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            柯里化是闭包函数(外层函数把内存函数作为返回值)
+            - 函数设计模式的一种
+        */
+        
+        // function outer(){
+        //     function inner(){
+
+        //     }
+        //     return  inner
+        // }
+
+        //传入一个值(相对固定),后面想要拼接某个字符串
+
+        // function mergeStr1(x){
+        //     return "徐技师" + x
+        // }
+
+        // console.log(mergeStr1("手法毒辣"));
+
+
+        // function mergeStr2(x,y){
+        //     return x + y
+        // }
+        // console.log(mergeStr2("98号徐技师","手法毒辣"));
+        // console.log(mergeStr2("98号徐技师","人帅"));
+        // console.log(mergeStr2("98号徐技师","聪明"));
+        // console.log(mergeStr2("98号徐技师","老迟到"));
+
+
+
+        //把函数称之为 模型
+        //柯里化 模型 当中返回 模型
+        function mergeStr3(x){
+            return function(y){
+                return x + y
+            }
+        }
+
+        let fn = mergeStr3("98号徐技师");
+        console.log(fn("手法毒辣"));
+        console.log(fn("人帅"));
+        console.log(fn("聪明"));
+    </script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>账号</td>
+        <td><input type="text" name="username">
+            <div></div>
+        </td>
+    </tr>
+    <tr>
+        <td>密码</td>
+        <td><input type="text" name="password"></td>
+    </tr>
+    <tr>
+        <td><input type="text" name="valicode"></td>
+        <td>
+            <button disabled>发送验证码</button>
+        </td>
+    </tr>
+    <tr>
+        <td><input type="submit" value="注册"></td>
+        <td></td>
+    </tr>
+</table>
+
+<script src="https://cdn.bootcss.com/js-sha256/0.9.0/sha256.min.js"></script>
+<script>
+    /*
+        1，获取username输入框的dom对象
+        2.给当前的dom对象当中绑定oninput时间
+        3.获取button
+        4.个体button绑定单击事件
+        5.获取注册按钮
+        6.给注册绑定事件
+
+    */
+    const username = document.querySelector("input[name=username]");
+    const pwd = username.parentElement.parentElement.nextElementSibling.lastElementChild.firstElementChild;
+    const button = username.parentElement.parentElement.nextElementSibling.nextElementSibling.lastElementChild.firstElementChild;
+    const vali = document.querySelector("input[name=valicode]");
+    const submit = username.parentElement.parentElement.parentElement.lastElementChild.firstElementChild.firstElementChild;
+    // console.log(submit)
+
+    // console.log(pwd)
+
+    username.oninput = window.onload = function () {
+        //使用正则验证邮箱格式
+        let reg = /^\w{5,26}@\w{2,10}\.com$/i;
+        // console.log(reg.test(username.value))
+        if (reg.test(username.value)) {
+
+            username.nextElementSibling.style.height = "30px";
+            username.nextElementSibling.style.width = "30px";
+            username.nextElementSibling.style.backgroundColor = "yellowgreen";
+
+            button.disabled = false;
+
+        } else {
+
+            username.nextElementSibling.style.height = "30px";
+            username.nextElementSibling.style.width = "30px";
+            username.nextElementSibling.style.backgroundColor = "red";
+
+            button.disabled = true;
+        }
+
+    }
+
+    new Promise((resolve, reject) => {
+        button.onclick = function () {
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "http://127.0.0.1/users/sendmail");
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhr.timeout = 60000;//1M
+            xhr.send(`username=${username.value}`);
+            xhr.onerror = function (error) {
+                reject(error);
+            }
+            xhr.onreadystatechange = function (response) {
+                if (xhr.readyState === 4 && xhr.status >= 200 && xhr.status < 300) {
+                    resolve(JSON.parse(response.target.response));
+                }
+            }
+        }
+    }).then(value => {
+        console.log(111);
+        if (value.code === 200) {
+            alert(value.msg);
+        } else {
+            alert(value.msg);
+        }
+    })
+
+
+    new Promise((resolve, reject) => {
+        submit.onclick = function () {
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "http://127.0.0.1/users/signup");
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhr.timeout = 60000;//1M
+            xhr.send(`username=${username.value}&password=${sha256(pwd.value)}&valicode=${vali.value}`);
+            xhr.onerror = function (error) {
+                reject(error);
+            }
+            xhr.onreadystatechange = function (response) {
+                if (xhr.readyState === 4 && xhr.status >= 200 && xhr.status < 300) {
+                    // console.log(JSON.parse(response.target.response));
+                    resolve(JSON.parse(response.target.response));
+                }
+            }
+        }
+    }).then(value => {
+        console.log("--->", value)
+        if (value.code === 1) {
+            location.href = "./signin.html";
+        } else {
+            alert(value.msg);
+        }
+    })
+
+
+</script>
+</body>
+</html>

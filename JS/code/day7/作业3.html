@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Document</title>
+  <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <script>
+    /*  
+              根据 key=b的 排序
+  
+          */
+
+    var data = [
+      { a: 1, b: 20, c: 3, d: 4, e: 5, f: 6 },
+      { a: 2, b: 21, c: 3, d: 4, e: 5, f: 6 },
+      { a: 3, b: 12, c: 3, d: 4, e: 5, f: 6 },
+      { a: 4, b: 1, c: 3, d: 4, e: 5, f: 6 },
+      { a: 5, b: 0, c: 3, d: 4, e: 5, f: 6 },
+      { a: 6, b: 3, c: 3, d: 4, e: 5, f: 6 }
+    ]
+
+    function sort(arr, name) {
+      var val = [];
+      for (var i = 0; i < arr.length; i++) {
+        val.push(arr[i][name]);
+      }
+      console.log(val);
+      for (var i = 0; i < val.length - 1; i++) {
+        for (var j = 0; j < arr.length - i - 1; j++) {
+          if (val[j] > val[j + 1]) {
+            var temp = val[j];
+            val[j] = val[j + 1];
+            val[j + 1] = temp;
+
+            var arr2 = arr[j];
+            arr[j] = arr[j + 1];
+            arr[j + 1] = arr2;
+          }
+        }
+      }
+      return arr
+    }
+    console.log(sort(data, "b"));;
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Document</title>
+  <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <script>
+    /* 2.生成随机整数数组
+       - 1.len如果是数组len = [5, 3]  生成的随机数组是5行3列
+         - 2. len = [5, 4_express脚手架, 3, 2, 3, .....] 多维数组
+           - [
+             [
+               [
+                 [
+                   [
+                     [],
+                     [],
+                     []
+                   ],
+                   []
+                 ],
+                 [],
+                 []
+               ],
+               [],
+               [],
+               []
+             ],
+             [],
+             [],
+             [],
+             []
+           ] */
+
+    /*  var a = Math.floor(Math.random() * 10);
+     console.log(a);
+     var arr = [];
+     for (var i = 0; i < a; i++) {
+       arr.push(Math.floor(Math.random() * 10));
+     }
+     console.log(arr); */
+
+    var arr = [3, 2, 1]
+
+    var creatArr = [];
+    function creat(arr) {
+      if (arr.length == 0) return
+      var num = arr[0];
+      arr.shift();
+      // console.log(num);
+      // console.log(arr);
+      for (var i = 0; i < num; i++) {
+        creatArr.push([]);    
+      }
+     
+         
+    }
+
+    creat(arr);
+    console.log(creatArr);
+
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+
+<script>
+  /*  console.log( typeof 'a'); // string 有效
+    console.log( typeof 1 );// number 有效
+    console.log( typeof true); //boolean 有效
+    console.log( typeof Symbol()); // symbol 有效
+    console.log( typeof undefined); //undefined 有效
+    console.log( typeof new Function()); // function 有效
+    console.log( typeof null); //object 无效
+    console.log( typeof [1]) ; //object 无效*/
+/*
+
+
+  console.log( [] instanceof Array); // true
+  console.log( [] instanceof Object); // true
+
+  function B(){}
+  let a = new B;
+  console.log(a instanceof B);//true
+  console.log(B instanceof Object);//true
+*/
+
+  /*
+    function Person(){}
+    console.log( new Person() instanceof Person);//true
+    console.log( new Person instanceof Object);// true*/
+
+ /* function F(){}
+  function A(){}
+  var f = new F()
+  console.log(f.constructor===F)//true
+  f.constructor=A;
+  console.log(f.constructor===F)//false
+*/
+
+  /*console.log('a'.constructor ===String);//true
+  console.log(true.constructor === Boolean);//true
+  console.log(new Function.constructor === Function);//true
+  console.log([].constructor === Array);//true*/
+/*
+  console.log( Object.prototype.toString.call('')) ;   // [object String]
+  console.log( Object.prototype.toString.call(1) );    // [object Number]
+  console.log( Object.prototype.toString.call(true)) ; // [object Boolean]
+  console.log( Object.prototype.toString.call(Symbol())); //[object Symbol]
+  console.log( Object.prototype.toString.call(undefined) ); // [object Undefined]
+  console.log( Object.prototype.toString.call(null) ); // [object Null]
+  console.log( Object.prototype.toString.call(new Function())) ; // [object Function]
+  console.log( Object.prototype.toString.call([])) ; // [object Array]
+*/
+
+  function Dog(){}
+  let xh = new Dog();
+  console.log(Object.prototype.toString.call(xh));//[object Object]
+</script>
+</body>
+</html>

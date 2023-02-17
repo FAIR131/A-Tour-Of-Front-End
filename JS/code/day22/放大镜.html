@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+    ul,li{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    .smallbox {
+        position: relative;
+        float: left;
+        width: 300px;
+        height: 300px;
+    }
+
+    .smallbox > img {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        display: block;
+
+    }
+
+    .bigbox {
+        display: none;
+        position: relative;
+        float: left;
+        width: 600px;
+        height: 600px;
+        overflow: hidden;
+    }
+
+    .bigbox > img {
+        position: absolute;
+        display: block;
+        width: 1200px;
+        height: 1200px;
+    }
+
+    span {
+        display: none;
+        position: absolute;
+        float: left;
+        width: 100px;
+        height: 100px;
+        background-color: peru;
+        opacity: .5;
+    }
+
+    .minbox{
+        position: absolute;
+        top: 310px;
+        width: 250px;
+        height: 50px;
+    }
+
+    .minbox li{
+        float: left;
+        width: 50px;
+        height: 50px;
+    }
+    .minbox li img{
+        width: 50px;
+        height: 50px;
+    }
+</style>
+<body>
+
+<div class="smallbox">
+    <img src="./img/1.webp" alt="">
+    <span></span>
+</div>
+<div class="bigbox">
+    <img src="./img/1.webp" alt="">
+</div>
+<ul class="minbox">
+    <li><img src="./img/1.webp" alt=""></li>
+    <li><img src="./img/2.webp" alt=""></li>
+    <li><img src="./img/3.webp" alt=""></li>
+    <li><img src="./img/4.webp" alt=""></li>
+    <li><img src="./img/5.webp" alt=""></li>
+</ul>
+
+<script>
+    let sbox = document.querySelector('.smallbox');
+    let bbox = document.querySelector('.bigbox');
+    let span = document.querySelector('span');
+    let bimg = bbox.querySelector('img');
+    let simg = sbox.querySelector('img');
+    let [sbw, sbh] = [sbox.offsetWidth, sbox.offsetHeight]
+let minbox = document.querySelector('.minbox');
+    minbox.addEventListener('click',(e)=>{
+        // console.log(`${e.target.src}`);
+        simg.src=`${e.target.src}`;
+        bimg.src=`${e.target.src}`;
+    })
+
+
+    sbox.addEventListener('mouseover', (e) => {
+        span.style.display = 'block';
+        bbox.style.display = 'block';
+
+        let wrate = bbox.offsetWidth / bimg.offsetWidth;
+        let hrate = bbox.offsetHeight / bimg.offsetHeight;
+        // console.log(sbw)
+        span.style.width = wrate * sbw + 'px';
+        span.style.height = hrate * sbh + 'px';
+
+        // console.log(span.style.width)
+    })
+
+    sbox.addEventListener('mousemove', (e) => {
+        let [sw, sh] = [span.offsetWidth, span.offsetHeight];
+        // console.log(sw, sh);
+
+        let [x, y] = [e.clientX, e.clientY];
+        // console.log(x,y)
+        let left = x - (sw / 2);
+        let top = y - (sh / 2);
+        if (left >= (sbw - sw)) {
+            left = sbw - sw;
+        } else if (left <= 0) {
+            left = 0;
+        }
+        if (top >= (sbh - sh)) {
+            top = sbh - sh;
+        } else if (top <= 0) {
+            top = 0;
+        }
+        span.style.left = left + 'px';
+        span.style.top = top + 'px';
+
+        let [bbw, bbh] = [bbox.offsetWidth, bbox.offsetHeight]
+        let movew = left / (sbw-sw);
+        let moveh = top / (sbw-sh);
+        // console.log(movew);
+
+        bimg.style.left = -bbw * movew + 'px';
+        bimg.style.top = -bbh * moveh + 'px';
+
+    })
+    sbox.addEventListener('mouseout', (e) => {
+        span.style.display = 'none';
+        bbox.style.display = 'none';
+    })
+</script>
+</body>
+</html>

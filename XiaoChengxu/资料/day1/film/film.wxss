@@ -1,0 +1,14 @@
+.top-menu{
+  display: flex;
+}
+.top-menu view{
+  width: 50%;
+  text-align: center;
+}
+.top-menu view.active{
+  color: #ff5f16;
+}
+.top-menu view.active text{
+  border-bottom: 2px solid #ff5f16;
+  padding: 10px 0;
+}

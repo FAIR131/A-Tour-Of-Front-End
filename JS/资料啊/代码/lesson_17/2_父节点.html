@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <ul>
+        <li>
+            <a href="">
+                <img src="" alt="">
+            </a>
+        </li>
+
+        <li>
+            <a href="">
+                <i></i>
+            </a>
+        </li>
+        <li></li>
+    </ul> -->
+
+    <script>
+        // //找到img
+        // let img = document.querySelector("img");
+
+        // //父节点 === 父元素
+        // console.log(img.parentNode === img.parentElement);
+
+        // //节点查找要比querySelector快
+    </script>
+
+
+
+
+    <!-- 
+        购物车
+
+        - 2 +
+        - 1 +
+    
+    -->
+
+    <ul>
+        <li>
+            <button class="sub">-</button>
+            <button class="num">1</button>
+            <button class="add">+</button>
+        </li>
+        <li>
+            <button class="sub">-</button>
+            <button class="num">1</button>
+            <button class="add">+</button>
+        </li>
+        <li>
+            <button class="sub">-</button>
+            <button class="num">1</button>
+            <button class="add">+</button>
+        </li>
+        <li>
+            <button class="sub">-</button>
+            <button class="num">1</button>
+            <button class="add">+</button>
+        </li>
+    </ul>
+
+    <script>
+        console.time();
+        let sub = document.querySelectorAll(".sub");
+        let num = document.querySelectorAll(".num");
+        // let add = document.querySelectorAll(".add");
+
+        //平常的写法
+        sub.forEach((item,index)=>{
+            item.onclick = function(){
+                num[index].innerText = Number(num[index].innerText) -1 ;
+            }
+        });
+        console.timeEnd();
+
+
+        // add.forEach((item,index)=>{
+        //     item.onclick = function(){
+        //         num[index].innerText = Number(num[index].innerText) + 1 ;
+        //     }
+        // });
+
+
+        console.time()
+        let sub_ = document.querySelectorAll(".sub");
+        //父子节点的写法
+        sub_.forEach((item)=>{
+            item.onclick = function(){
+                //this = -
+                let t = this.parentNode.children[1];
+                t.innerText = Number(t.innerText) - 1;
+            }
+        });
+        console.timeEnd()
+
+
+
+    </script>
+
+
+
+</body>
+</html>

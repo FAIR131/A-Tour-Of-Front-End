@@ -1,0 +1,67 @@
+@swidth : 300px;
+@sheight : 300px;
+
+ul,li{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+.smallbox {
+  position: relative;
+  float: left;
+  width: @swidth;
+  height: @sheight;
+
+  img{
+    position: absolute;
+    width: @swidth;
+    height: @sheight;
+    display: block;
+  }
+}
+
+.bigbox {
+  display: none;
+  position: relative;
+  float: left;
+  width:600px;
+  height: 600px;
+  overflow: hidden;
+
+  img{
+    position: absolute;
+    width: 1200px;
+    height: 1200px;
+    display: block;
+  }
+}
+
+span {
+  display: none;
+  position: absolute;
+  float: left;
+  width: 100px;
+  height: 100px;
+  background-color: peru;
+  opacity: .5;
+}
+
+.minbox{
+  position: absolute;
+  top: 310px;
+  width: 255px;
+  height: 50px;
+
+  li{
+    float: left;
+    width: 50px;
+    height: 50px;
+
+    img{
+      width: 50px;
+      height: 50px;
+    }
+  }
+}

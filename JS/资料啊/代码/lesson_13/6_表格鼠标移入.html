@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+
+
+    <script>
+         var table = "<table border='1px'>";
+        for(var i=0;i<100;i++){
+            table += "<tr>";
+            for(var j=0;j<20;j++){
+                table += "<td>";
+                table += i+"-"+j;
+                table += "</td>";
+            }
+            table += "</tr>";
+        }
+        table += "</table>";
+
+        document.write(table);
+    </script>
+    <script>
+        //1.先找到很多个tr对象
+        //2.奇偶判断设置不同的背景颜色
+        var trs = document.querySelectorAll("tr");
+
+        trs.forEach(function(tr,ind){
+            if(ind % 2){//1
+                tr.style.backgroundColor = "orange";
+            }
+
+
+            //
+            var bgcolor;
+            tr.onmouseover = function(){
+                //记录没有改变之前的颜色
+                bgcolor = this.style.backgroundColor;
+                //修改颜色
+                this.style.backgroundColor = "purple";
+
+            }
+            tr.onmouseout = function(){
+                this.style.backgroundColor = bgcolor;
+            }
+        })
+
+
+
+
+    </script>
+</body>
+</html>

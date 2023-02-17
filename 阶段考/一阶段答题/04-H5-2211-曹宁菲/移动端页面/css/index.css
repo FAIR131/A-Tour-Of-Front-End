@@ -1,0 +1,230 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  font-size: 26.67vw;
+}
+
+/* 头部 */
+.head {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0.15rem 0.15rem;
+  width: 100%;
+  height: 0.6rem;
+}
+
+.head .iconfont {
+  font-size: 0.2rem !important;
+}
+
+.head > p {
+  font-size: 0.16rem;
+  font-weight: 500;
+}
+.head .icon-feiji,
+.head .icon-xinxi1 {
+  color: red;
+}
+
+.head > span {
+  width: 6%;
+  font-size: 0.16rem;
+}
+
+.head .search {
+  padding-left: 0.1rem;
+  width: 65%;
+  height: 0.3rem;
+  text-align: center;
+  line-height: 0.3rem;
+  font-size: 0.16rem;
+  color: #ccc;
+  background-color: #f1f4f6;
+  border-radius: 0.03rem;
+}
+
+/* 内容大盒子 */
+
+.box {
+  position: fixed;
+  top: 0.6rem;
+  bottom: 0.5rem;
+  left: 0;
+  right: 0;
+  overflow: auto;
+}
+
+/* 版心 */
+.banner {
+  margin: 0 auto;
+  width: 90%;
+  height: 1.2rem;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+}
+
+/* 导航 */
+.nav {
+  width: 100%;
+  height: 1.6rem;
+  border-bottom: 1px solid #ccc;
+  /* background-color: pink; */
+}
+
+.nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  height: 1.5rem;
+}
+
+.nav .list {
+  width: 20%;
+  height: 0.75rem;
+  /* background-color: skyblue; */
+  text-align: center;
+  font-size: 0.12rem;
+}
+
+.nav .list img {
+  margin-top: 0.1rem;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+}
+
+/* 全球旅拍 */
+.travel {
+  padding: 0 0.15rem;
+  width: 100%;
+  height: 2.2rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 0.05rem;
+  height: 0.4rem;
+  line-height: 0.4rem;
+}
+
+.title .left {
+  font-size: 0.2rem;
+  font-weight: bold;
+}
+
+.title .right {
+  font-size: 0.12rem;
+  font-weight: bold;
+  color: #ccc;
+}
+
+.title .color {
+  position: absolute;
+  top: 0.1rem;
+  left: -0.15rem;
+  width: 0.04rem;
+  height: 0.2rem;
+  background-color: red;
+}
+
+.travel .travel-pic {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.1rem;
+  height: 1rem;
+}
+
+.travel .travel-pic div {
+  width: 33%;
+}
+
+.travel .travel-pic img {
+  width: 100%;
+  height: 100%;
+}
+
+.travel .travel-place {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.travel .travel-place > div {
+  margin-top: 0.1rem;
+  width: 23%;
+  height: 0.35rem;
+  font-size: 0.16rem;
+  text-align: center;
+  line-height: 0.35rem;
+  border-radius: 0.07rem;
+}
+
+.travel .travel-place > div:nth-child(1) {
+  background-color: #f2f7dc;
+}
+.travel .travel-place > div:nth-child(2) {
+  background-color: #e9fdef;
+}
+.travel .travel-place > div:nth-child(3) {
+  background-color: #faf1e7;
+}
+.travel .travel-place > div:nth-child(4) {
+  background-color: #e3f9f9;
+}
+
+/* 备婚工具 */
+.tool {
+  padding: 0 0.15rem;
+  width: 100%;
+  height: 2.2rem;
+  border-bottom: 1px solid #ccc;
+}
+
+/* 底部 */
+.footer {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.5rem;
+  /* background-color: skyblue; */
+}
+
+.footer > div {
+  width: 20%;
+  height: 0.7rem;
+  /* background-color: palegreen; */
+  text-align: center;
+  color: gray;
+  font-size: 0.12rem;
+  font-weight: 500;
+}
+
+.footer > div a {
+  display: inline-block;
+  width: 100%;
+  height: 0.7rem;
+  color: gray;
+  /* background-color: pink; */
+}
+
+.footer > div .iconfont {
+  font-size: 0.2rem !important;
+}
+
+.footer .actived a {
+  color: #e94544;
+}

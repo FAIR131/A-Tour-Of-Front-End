@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function setInter(s,fn){
+        let timeOut = (s,fn)=>{
+
+            setTimeout(()=>{
+                fn();
+                timeOut(s,fn);
+            },s)
+        }
+        timeOut(s,fn);
+    }
+
+    //调用上面的方法
+    setInter(60000,()=>{console.log("hello world!")})
+</script>
+
+</body>
+</html>

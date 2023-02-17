@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="javascript:;">
+        <input type="text" name="username"><br>
+        <input type="text" name="password"><br>
+        <input type="submit" value="提交"><br>
+    </form>
+
+    <script>
+        //1.获取dom元素
+        let [un, pwd, sub] = document.querySelectorAll("input");
+
+        //2.点击事件
+
+        let p = new Promise((resolve, reject) => {
+            sub.addEventListener("click", function () {
+
+                //3.获取username 和 password 的 value
+                let url = `http://127.0.0.1/index?uname=${un.value}&pwd=${pwd.value}`;
+                //4.发出ajax请求
+                let ajax = new XMLHttpRequest();//ajax.readystate 0
+                ajax.open("GET", url);
+                ajax.send();  //ajax.readystate 1 2 3
+
+                //同步的还是异步的
+                ajax.onerror = function(err){
+                    reject(err);
+                }
+                ajax.addEventListener("readystatechange", function (response) {
+                    //4 交互完成
+                    if (ajax.readyState === 4 && ajax.status >= 200 && ajax.status < 300) {
+                        resolve(JSON.parse(response.target.response));
+                    }
+                })
+            })
+        });
+
+
+        p.then(value=>{
+            console.log("---->",value);
+        })
+
+
+
+    </script>
+</body>
+
+</html>
