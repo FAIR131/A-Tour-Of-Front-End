@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .fa {
+
+      width: 1000px;
+      border: 1px solid pink;
+      /* overflow: hidden; */
+    }
+
+    .son_1 {
+      float: left;
+      width: 100px;
+      height: 100px;
+      background-color: skyblue;
+    }
+
+    .son_2 {
+      float: left;
+      width: 100px;
+      height: 100px;
+      background-color: palegreen;
+    }
+
+    .fa::after{
+      display: block;
+      content: "";
+      clear: both;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="fa">
+    <div class="son_1"></div>
+    <div class="son_2"></div>
+  </div>
+
+</body>
+
+</html>

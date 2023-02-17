@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .qwer {
+            color: rgb(200, 100, 50);
+            /* 
+                可选值
+                    颜色名称
+                    十六进制
+                        # _ _ _ _ _ _
+                        0 1 2 3 4 5 6 7 8 9 a b c d e f 
+                    rgb()
+                        !!!   0 - 255
+            */
+        }
+
+        .asd {
+            text-align: justify;
+            /* 
+                文本对齐方式
+                    left  			排列到左边 	
+                    right  			排列到右边
+                    center  		排列到中间
+                    justify			两端对齐   几乎不用
+            */
+        }
+
+        .zxc {
+            line-height: 50px;
+            /* 
+                行高  --- 设置单行文本垂直居中
+            */
+        }
+
+
+        .test {
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            border: 1px solid red;
+            /* 边框 */
+        }
+
+        .rtyu {
+            text-decoration: overline;
+            /* 文字线条修饰 */
+        }
+
+        .fgh {
+            font-size: 30px;
+        }
+
+        .textIndent {
+            /* text-indent: 60px; */
+            /*  em  -- 针对当前盒子 （父盒子）
+                1em  === 一个字体的大小
+            */
+
+            text-indent: 2em;
+            /* 一劳永逸的方法 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="test"> 这里有很多字 </div>
+
+    <div class="qwer">字体颜色</div>
+
+    <div class="asd">字乱跑</div>
+
+    <div class="zxc">产生部分距离</div>
+
+    <div class="rtyu">文字的线会在哪儿？</div>
+
+    <div class="fgh textIndent">一段话，很多很多字一段话，很多很多字一段话，很多很多字</div>
+    <div class="fgh">一段话，很多很多字一段话，很多很多字一段话，很多很多字</div>
+
+
+
+
+
+
+
+    <style>
+        .en {
+            text-transform: lowercase;
+            /* 
+                转换大小写
+            */
+            /* 
+                使用场景   验证码 
+
+                mMuN
+
+                MMUN   mmun
+
+
+                ---- UQas   ---- UQAS
+                ---- uQaS   ---- UQAS
+
+                js --- 
+            */
+        }
+
+        .text {
+            /* 设置元素的文字  不换行 */
+            white-space: nowrap;
+
+            letter-spacing: 40px;
+        }
+
+        .entext {
+            word-spacing: 40px;
+        }
+    </style>
+    <div class="en">AsdFhHjKhUn</div>
+
+
+    <div class="text">此前，经国务院同意，国家发 <br>
+        展改革委、文化和旅游部联合印发《国民旅游休闲发展纲要(2022—2030年)》，《纲要》提出部署培育现代休闲观念、保障旅游休闲时间、优化旅游休闲空间等10项重点任务，具体包括优化全国年节和法定节假日时间分布格局、规划建设环城市休闲度假带、以社区为中心打造休闲生活圈、完善休闲服务设施、发展新兴休闲业态、实施旅游休闲高品质服务行动、开发数字化文旅消费新场景等一系列具体举措，将有助于进一步激发旅游休闲发展内生动力。
+    </div>
+
+    <div class="entext">
+        　　2、Success is the ability to go from one failure to another with no loss of
+        enthusiasm.成功是，你即使 跨过 一个又一个失敗，但也沒有失去热情。
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .a {
+            color: red !important;
+        }
+    </style>
+
+
+
+    <style>
+        div {
+            color: skyblue !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+
+        提出问题： 在一个标签上，同时使用多个选择器选中，会出现什么结果？
+        * 
+        __
+        class
+        id
+        权重影响的, 权重的比较
+            *   <  ___  <  class  <  id
+
+            （内联） 			1000、
+			（id）  			0100、
+			（class）	        0010、
+			（标签）  	        0001、
+			 其他  				0000
+
+        如果未达到自己想要设置的样式，
+            1. 层叠性
+            2. 权重大小
+
+
+        标签 =  标记 = 元素 = 盒子   <__>
+
+     -->
+
+    <div class="a" id="b">到底哪个最厉害？？？</div>
+</body>
+
+</html>

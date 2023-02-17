@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href=''>
+    <title>Document</title>
+    <style>
+        @media only screen and (max-width: 300px) {
+            html {
+                font-size: 20px;
+                background-color: red;
+            }
+        }
+
+        @media only screen and (min-width: 300px) and (max-width: 600px) {
+            html {
+                font-size: 25px;
+                background-color: skyblue;
+            }
+
+            div {
+                background-color: pink;
+                column-count: 1;
+            }
+        }
+
+        @media only screen and (min-width: 600px) and (max-width: 900px) {
+            html {
+                font-size: 35px;
+                background-color: pink;   
+            }
+            div {
+                background-color: palegreen;
+                column-count: 2;
+            }
+        }
+
+        @media only screen and (min-width: 900px) {
+            html {
+                font-size: 35px;
+                background-color: palegreen;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+
+        需求
+            300px   显示   40px
+
+            300px - 600px  显示  50px
+
+            600px - 900px  显示  70px
+
+            900px    显示  80px
+
+     -->
+    <style>
+        div {
+            font-size: 2rem;
+        }
+    </style>
+    <div>
+        各种终端的字
+    </div>
+</body>
+
+</html>

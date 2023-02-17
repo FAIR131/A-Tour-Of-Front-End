@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href=''>
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <canvas id="AAA" width="300" height="300" class="bbb">
+        你的浏览器不支持 canvas，请升级你的浏览器。
+    </canvas>
+</body>
+
+<script>
+    // 获取  canvas 元素  ----  id   --- byId
+    // var canvas = document.getElementById('AAA');
+    var canvas = document.getElementsByClassName("bbb")
+    //获得 2d 上下文对象
+    var ctx = canvas[0].getContext('2d');
+    ctx.fillStyle = "rgb(200,0,0)";
+    //绘制矩形
+    ctx.fillRect(10, 10, 55, 50);
+
+    ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+    ctx.fillRect(30, 30, 55, 50);
+</script>
+
+</html>

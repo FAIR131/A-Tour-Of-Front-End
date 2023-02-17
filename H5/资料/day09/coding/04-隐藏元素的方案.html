@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href=''>
+    <title>Document</title>
+    <style>
+        .box,
+        .wrap {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            margin-top: 30px;
+        }
+
+
+        .box {
+            /* display: none; */
+
+            /* visibility: hidden; */
+
+            /*
+                使用场景 ---- 多个定位的盒子在同一个位置上
+                position: relative;
+                z-index: -999; 
+            */
+
+            /* 
+                height: 0;  
+                overflow: hidden;
+            */
+            /*  
+                如果只是使用 高度为 0 设置，会存在着内容溢出的可能
+                通常和 overflow ： hidden  搭配使用
+            */
+
+            /* opacity: 0; */
+            /* 设置透明度为零 */
+
+
+            transform: scale(0);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        1
+    </div>
+
+    <div class="wrap">
+        2
+    </div>
+</body>
+
+</html>

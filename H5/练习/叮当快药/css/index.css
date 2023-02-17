@@ -1,0 +1,387 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+html{
+  font-size: 26.67vw;
+}
+
+/* 头部 */
+.head {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: .15rem;
+  width: 100%;
+  height: .9rem;
+  background-color: #e94544;
+  font-size: .16rem;
+}
+.head .top {
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+}
+
+.head .iconfont{
+  font-size: .18rem !important;
+}
+
+.head .top > div {
+  width: 95%;
+  display: flex;
+}
+
+.head .top .sl {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: .14rem;
+}
+
+.head .search {
+  display: flex;
+  position: relative;
+  padding-left: 0.15rem;
+  margin-top: 0.1rem;
+  width: 100%;
+  height: .3rem;
+  border: 0.01rem solid #fff;
+  background-color: #fff;
+  border-radius: 0.15rem;
+}
+
+.head .search span:last-child {
+  position: absolute;
+  top: 0;
+  right: 0.15rem;
+  color: #e94544;
+}
+
+.head .search .color {
+  margin-left: 0.05rem;
+  color: #ccc;
+  font-size: .14rem;
+  line-height: .3rem;
+}
+/* 内容大盒子 */
+
+.box {
+  position: fixed;
+  top: .9rem;
+  bottom: .7rem;
+  left: 0;
+  right: 0;
+  overflow: auto;
+}
+
+/* 版心 */
+.banner {
+  width: 100%;
+  height: 1.2rem;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+}
+
+/* 导航 */
+.nav {
+  width: 100%;
+  height: 1rem;
+  /* background-color: pink; */
+}
+
+.nav ul {
+  display: flex;
+  height: 1rem;
+}
+
+.nav .list {
+  padding: 0.05rem;
+  width: 20%;
+  height: 1rem;
+  /* background-color: skyblue; */
+  text-align: center;
+  font-size: 0.12rem;
+}
+
+.nav .list img {
+  margin: 0.1rem 0;
+  width: .5rem;
+  height: .5rem;
+  border-radius: 50%;
+}
+
+/* 大图 */
+.img {
+  width: 100%;
+  height: 1.2rem;
+}
+
+.img img {
+  width: 100%;
+  height: 100%;
+}
+
+/* 配送 */
+.send {
+  width: 100%;
+  height: .8rem;
+}
+
+.send .top {
+  display: flex;
+  height: .3rem;
+  font-size: .14rem;
+  line-height: .3rem;
+  /* background-color: pink; */
+}
+
+.send .top .pic {
+  margin: 0 0.1rem;
+  width: .3rem;
+  height: .2rem;
+}
+
+.send .top .pic img {
+  width: 100%;
+  height: 100%;
+}
+
+.send .bottom {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin: 0 auto;
+  padding: 0 0.1rem;
+  width: 95%;
+  height: .5rem;
+  line-height: .5rem;
+  background-color: #fff8ee;
+  font-size: 0.14rem;
+  color: #e94544;
+}
+
+.send .bottom > div {
+  display: flex;
+}
+
+.send .bottom .iconfont {
+  font-size:.25rem !important;
+}
+
+/* 打折 */
+.discount {
+  display: flex;
+  width: 100%;
+  height: 1rem;
+}
+.discount > div {
+  display: flex;
+  width: 50%;
+
+  /* background-color: pink; */
+}
+
+.discount .text .ks {
+  margin: 0.1rem 0.05rem 0.05rem;
+  width: .72rem;
+  background-color: #ff5a5f;
+  color: #fff;
+  border-radius: 0.05rem 0 0.05rem 0;
+  font-size: 0.12rem;
+}
+
+.discount .text .title {
+  margin: 0 0.1rem;
+  width: .96rem;
+  font-size: 0.15rem;
+  font-weight: bold;
+}
+
+.discount .text .dc {
+  margin: 0 0.1rem;
+  width: .96rem;
+  font-size: 0.12rem;
+  color: #ccc;
+}
+
+.discount .pic {
+  padding-top: 0.1rem;
+  width: .6rem;
+  height: .8rem;
+}
+
+.discount .pic img {
+  width: 100%;
+  height: 100%;
+}
+
+/* 导航 */
+.nav2 {
+  height: 2rem;
+}
+
+.nav2 ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.nav2 .list {
+  width: 25%;
+}
+
+/* 商品 */
+.goods {
+  width: 100%;
+  height: 3.5rem;
+  border-top: 0.01rem solid #ccc;
+  /* background-color: pink; */
+}
+
+.goods > div {
+  display: flex;
+  padding: .08em 0.03rem 0.1rem;
+  width: 100%;
+  height: 1.7rem;
+  /* background-color: pink; */
+}
+
+.goods > div .pic {
+  margin-right: 0.08rem;
+  width: 45%;
+  height: 100%;
+}
+
+.goods > div .pic img {
+  width: 100%;
+  height: 100%;
+}
+
+.goods > div .info {
+  width: 57%;
+}
+
+.goods > div .info .title {
+  white-space: wrap;
+  font-weight: bold;
+  font-size: 0.14rem;
+}
+
+.goods > div .info .title .bg {
+  display: inline-block;
+  margin-right: 0.05rem;
+  width: .5rem;
+  height: .24rem;
+  background-color: #ff5a5f;
+  color: #fff;
+  font-size: .14rem;
+  font-weight: normal;
+  line-height: .25rem;
+  text-align: center;
+  border-radius: 15%;
+
+}
+
+.goods > div .info .main {
+  overflow: hidden;
+  color: #888;
+  font-size: .14rem;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.goods > div .info .dc {
+  display: flex;
+  /* justify-content: space-between; */
+  font-size: .12rem;
+}
+
+
+.goods > div .info .dc p {
+  /* margin-right: .01rem; */
+  padding: 0 .01rem;
+  height: .2rem;
+  border: .01rem solid #e94544;
+  color: #e94544;
+  font-size: 0.12rem;
+  line-height: .2rem;
+  border-radius: 10%;
+
+}
+
+.goods > div .info .bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.goods > div .info .bottom .money {
+  display: flex;
+  margin-top: 0.1rem;
+  font-size: .2rem;
+  color: #ff5a5f;
+}
+
+.goods > div .info .bottom .past {
+  margin: 0.05rem 0.1rem;
+  font-size: .16rem;
+  color: #888;
+}
+
+.goods > div .info .bottom .car {
+  margin-top: .1rem;
+  width:.3rem;
+  height: .3rem;
+  border-radius: 50%;
+  background-color: #e94544;
+  text-align: center;
+  line-height: .3rem;
+  color: #fff;
+}
+
+.goods > div .info .bottom .car .iconfont {
+  font-size: .18rem !important;
+}
+
+/* 底部 */
+.footer {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: .7rem;
+  /* background-color: skyblue; */
+  border-top: 1px solid #ccc;
+}
+
+.footer > div {
+  width: 25%;
+  height: .7rem;
+  /* background-color: palegreen; */
+  text-align: center;
+  color: gray;
+  font-size: 0.14rem;
+}
+
+.footer > div a {
+  display: inline-block;
+  width: 100%;
+  height: .7rem;
+  color: gray;
+  /* background-color: pink; */
+}
+
+.footer > div .iconfont {
+  font-size: .25rem !important;
+}
+
+.footer .actived a {
+  color: #e94544;
+}

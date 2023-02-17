@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href=''>
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        ol,
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* 自己的代码 */
+        .nav {
+            width: 1000px;
+            height: 50px;
+            background-color: skyblue;
+            margin: 100px auto 0;
+        }
+
+
+        /* 一级菜单 */
+
+        .nav>ul>li {
+            width: 200px;
+            height: 50px;
+            background-color: pink;
+            float: left;
+            text-align: center;
+        }
+
+        .nav ul li a {
+            display: block;
+            line-height: 50px;
+        }
+
+
+        /* 二级菜单 */
+        .nav ul li .list_item {
+            display: none;
+        }
+
+        .nav ul li a:hover .list_item {
+            display: block;
+            color: orange;
+            background-color: black !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <ul>
+            <li>
+                <a href="https://www.baidu.com/">
+                    导航一
+                    <ul class="list_item">
+                        <li>导航一-1</li>
+                        <li>导航一-2</li>
+                        <li>导航一-3</li>
+                        <div style="clear: both !important;"></div>
+                    </ul>
+                </a>
+            </li>
+            <li>
+                <a href="#" style="background-color: #ccc;">
+                    导航二
+                    <ul class="list_item">
+                        <li>导航二-1</li>
+                        <li>导航二-2</li>
+                        <li>导航二-3</li>
+                    </ul>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    导航三
+                    <ul class="list_item">
+                        <li>导航三-1</li>
+                        <li>导航三-2</li>
+                        <li>导航三-3</li>
+                    </ul>
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

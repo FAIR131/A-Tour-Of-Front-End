@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* span {
+            color: red;
+        }
+
+        p {
+            color: red;
+        } */
+
+
+        /* 群组选择器    ,    */
+        /* span,
+        p {
+            color: skyblue;
+        } */
+
+        /* 
+            后代选择器       空格
+            子代选择器        >    “儿子辈分”
+        */
+
+        .asd>span {
+            color: palegreen;
+        }
+
+        .qwer p {
+            color: blue;
+        }
+
+        p[class="text"] {
+            font-size: 40px;
+        }
+        /* 
+        
+            属性选择器
+                --- 表单元素 
+                input    type = ".........."
+                <input  type="text">
+                input[type="text"]
+        */
+    </style>
+</head>
+
+<body>
+    <div class="asd">
+        <span>1</span>
+        <span>2</span>
+        <span>1</span>
+        <span>2</span>
+        <span>1</span>
+        <span>2</span>
+        <span>1</span>
+        <span>2</span>
+        <p>第 <span class="text">N</span> 段话</p>
+    </div>
+
+    <div class="qwer">
+        <span>3</span>
+        <p class="text">第一段话</p>
+        <p class="xyz">第二段话</p>
+    </div>
+</body>
+
+</html>

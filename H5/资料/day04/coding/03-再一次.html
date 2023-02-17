@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        
+        后代   ---   有过血缘关系
+        子代   ---   直系血缘关系  
+            往下找
+
+     -->
+    <style>
+        .qwer>span {
+            color: skyblue;
+        }
+
+        .asd span {
+            color: palegreen;
+        }
+    </style>
+
+    <div class="qwer">
+        <p>p1 <span>4</span><span>5</span><span>6</span></p>
+        <p>p2</p>
+        <p>p3</p>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+    </div>
+
+    <div class="asd">
+        <p>p1 <span>4</span><span>5</span><span>6</span></p>
+        <p>p2</p>
+        <p>p3</p>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,310 @@
+/* 头部 */
+.head {
+  height: 53px;
+  background-color: #282633;
+}
+
+.head .top {
+  margin: 0 auto;
+  width: 1200px;
+  height: 53px;
+}
+
+.head .top .pic {
+  float: left;
+  margin-right: 100px;
+}
+
+.head .top .nav a {
+  float: left;
+  margin: 0 18px;
+  line-height: 53px;
+  color: #fff;
+}
+
+.head .top .nav a:hover {
+  background-color: black;
+}
+
+.head .top .btn1 {
+  margin-top: 12px;
+  margin-left: 60px;
+  width: 65px;
+  height: 28px;
+  border: 1px solid skyblue;
+  border-radius: 5px;
+  background-color: transparent;
+  color: #fff;
+}
+
+.head .top .btn2 {
+  margin-top: 12px;
+  width: 65px;
+  height: 28px;
+  border: 1px solid lightgreen;
+  border-radius: 5px;
+  background-color: transparent;
+  color: #fff;
+}
+
+/* .clear{
+  clear: both;
+} */
+
+/* 大图 */
+.pict{
+  width: 100%;
+  height: 520px;
+}
+
+.pict img {
+  width: 100%;
+  height: 100%;
+}
+/* 方向 */
+.ori {
+  margin: 0 auto;
+  width: 1200px;
+  height: 380px;
+}
+
+.ori .dir {
+  float: left;
+  width: 300px;
+  height: 380px;
+  text-align: center;
+}
+
+.ori .dir img {
+  margin-top: 60px;
+}
+
+.ori .dir .text {
+  color: #98918b;
+  margin: 0 auto;
+}
+
+.ori .dir h3 {
+  margin-top: 20px;
+  font-weight: normal;
+}
+
+.ori .dir p {
+  margin: 15px 35px;
+  width: 250px;
+  font-size: 14px;
+}
+
+/* 应用 */
+.apply {
+  margin: 0 auto;
+  padding-top: 21px;
+  width: 100%;
+  height: 118px;
+  background-color: #fafafa;
+}
+
+.apply h2 {
+  text-align: center;
+  color: #98918b;
+  font-weight: 500;
+}
+
+.apply .nav {
+  /* margin-top: 26px; */
+  width: 1205px;
+  margin: 26px auto;
+}
+
+.apply .area {
+  float: left;
+  text-align: center;
+  width: 200px;
+  color: #98918b;
+}
+
+.apply .area a {
+  /* margin-right: 50px; */
+  display: inline-block;
+  width: 198px;
+  color: #98918b;
+  border-right: 1px solid #98918b;
+  /* background-color: pink; */
+}
+
+.apply .area a:hover {
+  color: #6298b4;
+}
+
+/* 互动 */
+.interaction {
+  height: 520px;
+  background-color: #68ccaa;
+}
+
+.interaction .market {
+  margin: 0 auto;
+  width: 1200px;
+}
+
+.interaction .text {
+  margin-top: 100px;
+  float: left;
+  color: #f8ffff;
+}
+
+.interaction .text .one {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.interaction .text .two {
+  font-size: 22px;
+  margin-bottom: 48px;
+}
+.interaction .text .three {
+  font-size: 22px;
+  margin-bottom: 25px;
+}
+.interaction .text .four {
+  font-size: 14px;
+}
+
+.interaction .pic {
+  float: right;
+  margin-top: 38px;
+}
+
+/* 优秀作品 */
+.production {
+  height: 1030px;
+  background-color: #fafafa;
+}
+
+.production .title {
+  margin: 0 auto;
+  width: 1200px;
+  color: #98918b;
+}
+.production .title p {
+  padding-top: 45px;
+  padding-bottom: 40px;
+  text-align: center;
+  font-size: 35px;
+}
+
+.production .work {
+  width: 1300px;
+  margin: 0 auto;
+}
+
+.production .work .pro {
+  float: left;
+  width: 230px;
+  height: 260px;
+  /* margin-bottom: 20px; */
+  margin: 0 15px 20px;
+  /* background-color: pink; */
+}
+
+.production .work .pro p {
+  padding-top: 15px;
+  text-align: center;
+  color: #98918b;
+}
+
+.production .more {
+  margin: 0 auto;
+  width: 170px;
+  height: 37px;
+}
+
+.production .more a {
+  display: inline-block;
+  width: 170px;
+  height: 37px;
+  color: #98918b;
+  border: 1px solid #98918b;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 37px;
+}
+
+/* 使用 */
+.use {
+  margin: 0 auto;
+  width: 1080px;
+  height: 600px;
+  color: #fff;
+}
+
+.use .title {
+  color: #98918b;
+  padding-top: 45px;
+  padding-bottom: 40px;
+  text-align: center;
+  font-size: 35px;
+}
+
+/* 底部 */
+.footer{
+  height: 250px;
+  background-color: #57586d;
+}
+
+.footer .Right{
+  margin: 0 auto;
+padding-top: 40px;
+  width: 1100px;
+}
+
+.footer .Right .left{
+  float: left;
+  color: #fff;
+  font-size: 16px;
+}
+
+.footer .Right .left .one{
+  
+  margin-left: 15px;
+}
+.footer .Right .left .two{
+  
+  margin-left: 30px;
+}
+.footer .Right .left .three{
+  
+  margin-right: 10px;
+}
+
+.footer .Right .left .nav{
+  float: left;
+  margin-top: 45px;
+  margin-right: 23px;
+
+
+}
+
+.footer .Right .left a{
+    color: #fff;
+      font-size: 15px;
+}
+
+.footer .Right .left .clear{
+  clear: both;
+}
+
+.footer .Right .left .four{
+  font-size: 12px;
+}
+
+.footer .Right .right {
+float: right;
+padding-top: 8px;
+}
+
+.footer .Right .right .text{
+ margin-top: 10px;
+ font-size: 13px;
+ color: #fff;
+}

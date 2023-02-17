@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href=''>
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!-- 
+
+        元素显示模式
+            元素的种类
+                1. 块级元素
+                2. 行内元素
+                3. 行内块元素
+                    置换与非置换
+                        给什么显示什么
+                            img  input  type=""
+            
+            切换元素种类
+                display:
+                    block
+                    inline
+                    inline-block
+
+                    none
+
+
+        css中的 定位
+            1. 定位模式
+                1. 静态定位
+                2. 固定定位
+                3. 粘性定位
+                4. 相对定位
+                5. 绝对定位
+            
+            2. 偏移量
+                top
+                right
+                bottom
+                left
+
+            研究定位的出发点
+                1. 参考系
+                2. 是否脱标
+
+                -----------  什么是标准文档流？
+
+            边框倒角
+
+            利用定位实现元素水平垂直都居中？
+                子绝父相
+                
+                    top: (父高 - 子高)  / 2
+                    left: (父宽 - 子宽) / 2
+
+
+                    top: 50%
+                    left: 50%
+                    margin-top:- 子高的一半
+                    margin-left:- 子宽的一半
+
+        
+        css中的 BFC 
+            1. 什么是BFC
+
+            2. 怎么触发BFC
+
+            3，能够解决什么问题
+                1. 解决高度塌陷
+
+                2. 解决margin的传递问题
+
+        
+        css中的 伪元素
+            ::after  --- 内容显示区的后边
+            ::before  --- 内容显示区的前边
+
+
+        图片留存间隙？
+
+
+        隐藏元素的方案？
+
+
+        自适应布局
+            1. 纯浮动+margin
+
+            2. 定位 + margin
+            
+            3. 纯定位
+
+
+        HTML5新增
+            1. 语义化标签 --- 怎么理解语义化标签的？
+
+            2. 表单元素、表单属性
+
+            3. 音频和视频标签
+
+            4. canvas 和svg
+
+        CSS3 新增
+            1. css3的选择器
+                1.1  属性选择器   ^ $ *
+                1.2  结构伪类选择器   >:nth-child() {}
+                1.3  关系选择器         >  +
+
+            2. css3的属性
+                2.1  边框类
+                2.2  文本类
+                2.3  背景类
+
+            3. css3的 渐变、过渡、转换、 动画
+
+                渐变
+                    线性渐变
+                    径向渐变
+
+                    重复线性渐变
+                    重复径向渐变
+
+                过渡
+                     过渡属性  过渡时间  时间曲线  延迟时间
+
+                转换
+                    2d
+                        位移
+                        旋转
+                        缩放
+                        倾斜
+                    3d
+                        位移
+                        旋转
+                        缩放
+                        -------------  
+                            1. 给body加   景深
+                            2. 给父元素  开启3D空间,使得子元素在3D平面内显示
+                            3. 给子元素  加backface-visibility
+
+
+                    多个转换方法同时使用 ，需要注意什么？  轴的问题
+
+                    利用转换实现元素 水平垂直都居中
+                        子绝父相
+                            top:50%
+                            left:50%
+                            transform: translateX(-50%)  translateY(-50%)
+                
+                动画
+                    第一步：创建一个动画
+                        @keyframes name {
+                            关键帧
+                            from / 0% {}
+                            
+                            to / 100% {}
+                        }
+
+                    第二步，使用当前动画
+                        动画     动画名称  执行时间  时间曲线   延迟时间  效果  次数 
+     --> 
+</body>
+
+</html>

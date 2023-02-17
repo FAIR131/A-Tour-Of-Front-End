@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        表格相关
+            table  ===  创建一个表格
+                想要看到边框的话  就在  table 中加上  border 属性 
+                设置宽度和高度   width  height 属性即可
+            tr === 行
+                设置某一行文字的水平对齐方式      align = left  / center  / right
+                设置某一行文字的垂直对齐方式      valign = top  / center  / bottom
+            td === 列
+                设置某一个单元格文字的水平对齐方式   align = left  / center  / right
+                设置某一个单元格文字的垂直对齐方式   valign = top  / middle  / bottom
+                valign = vertical alignment
+
+                合并单元格
+                    合并水平方向上单元格        colspan    
+                    合并垂直方向上单元格        rowspan 
+
+    
+        表单相关
+            from !!!    谁写错了 ！！！  来我旁边听课
+
+            form   开启一个表单
+                action  ===  提交到哪里
+
+                name  === 给当前这个表单 取一个名字 并且  名字是独一无二的
+
+                method  === 表单的提交方式   get / post
+
+                    面试题： get 和 post 方式的区别？
+
+            表单元素
+                textarea    ===      多行文本输入域
+
+                select   === 选择框
+                    option  搭配使用   选择项
+
+                input  
+                    type = ""  文本框的类型
+                        text   ===    普通文本框
+                        password   === 密码框
+                        button    === 按钮 - 普通按钮
+
+                        submit  === 提交按钮  - 把表单的信息提交至后端 - 当前页面会刷新一次
+                        reset  === 重置按钮 - 把表单的信息全部情况，让用户重新输入
+
+                        file  ===  上传文件
+
+                        选择框
+                            radio  ===  单选框
+                                需要注意的是： 想要是联动， 在同一组单选框中加上  name 属性 并且 name的值必须一致
+                            checkbox  ===   复选框
+                    
+                    value = ""   默认填充的文本    记住账号密码功能
+
+                    placeholder = ""   提示文本
+                    如果说  value 和 placeholder 同时存在，会显示哪个？ 显示 value 的值
+
+
+                上传图片： <input type="image" src="" width="100" height="100" alt="上传图片">
+                ----------------------------------------------------------------------------------------------
+
+
+
+        html 的基本语法
+            <___   html属性名="html属性值"   html属性名1="html属性值1" >
+
+        css 的基本语法
+            css 选择器    {
+                css属性名: css属性值;
+                css属性名1: css属性值1;
+            }
+
+            ;   === 如果只有一句css属性 可以不加    
+                        如果这句css属性是最后一句 也可以不加
+
+            css 选择器  === 选择想要设置给哪些内容
+
+            css 属性名  === 想要设置哪种效果 
+                color  --- 字体颜色
+            
+            css 属性值  ===   具体是什么效果
+                red    ---  字体颜色是红的
+
+            -----------
+            如果直接在html 文件内使用css，必须要在<style></style> 内书写
+
+
+
+        创建 css  样式表
+            <style></style>内部直接书写     ===   内部样式表
+
+            先有一个css文件                 ===   外部样式表
+                html  ---- css 两个文件建立联系
+                1. link 
+                2. <style>
+                        @import url (路径);
+                   </style> 
+
+                路径    src      href    url  
+
+                面试题： 外部样式表的引入， link 与 @import 有什么区别？
+                    <link>	推荐使用
+                        1、属于XHTML
+                        2、优先加载CSS文件到页面
+                        3、任何浏览器都能识别
+                        4、能够使用javascript控制 dom 去改变样式的时候，只能使用link标签
+                    @import
+                            1、属于CSS2.1
+                            2、先加载HTML结构在加载CSS文件
+                            3、只有在IE5以上的才能识别
+
+            直接在标签内部书写，style属性     ===     行内样式/内联样式
+
+
+            三种样式表同时作用在一个html ，会是什么现象？
+            多重样式优先级：
+                一般情况下：内联样式 > 内部样式 > 外部样式 > 浏览器默认样式
+                需要注意的是：如果外部样式放在内部样式的后面，则外部样式将覆盖内部样式
+                css 的特性  --- 层叠性 （覆盖性）
+
+            如果某一个css属性，它的css属性值后边 加上了 !important,
+            那么这句css语句变成了最高级别	
+
+
+
+
+
+
+            简单的css 选择器
+                1. 统配符选择器        * {  }
+                    选择的是当前页面所有的标签
+                2. 标签选择器          __ {  }
+                    选择的是当前页面某一类标签
+                3. class 选择器  class="name"   .name {   }
+                    选择的是当前页面标签中含有 class="name" 的标签
+                    class 可以取多个名字，名字可以复用
+                4. id 选择器   id="name"     #name {    }
+                    择的是当前页面标签中含有 id="name" 的标签
+                    只能有一个，并且不给在其他标签上再使用了， === name 不能使用
+
+            提出问题： 在一个标签上，同时使用多个选择器选中，会出现什么结果？
+                * 
+                __
+                class
+                id
+                
+                权重影响的, 权重的比较
+                    *   <  ___  <  class  <  id
+
+                    （内联） 			1000、
+                    （id）  			0100、
+                    （class）	        0010、
+                    （标签）  	        0001、
+                    其他  				0000
+
+                如果未达到自己想要设置的样式，
+                    1. 层叠性
+                    2. 权重大小
+
+
+                标签 =  标记 = 元素 = 盒子   <__>
+     -->
+</body>
+
+</html>

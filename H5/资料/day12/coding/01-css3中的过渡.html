@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href=''>
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+
+            /* 
+                transition-property:  background-color;
+                transition-duration: 3s;
+                transition-timing-function: cubic-bezier(0, 0.1, 0, 2, 1);
+                transition-delay: 3s; 
+            */
+            /* 
+                颜色未发生延迟时间变化，也未发生过渡效果
+
+                因为  transition-property  只设置了  一个
+                */
+            transition: all 1500ms ease-in 1s;
+        }
+
+        div:hover {
+            width: 300px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            text-align: center;
+        }
+        span {
+            display: inline-block;
+            height: 60px;
+            width: 200px;
+            text-align: center;
+            line-height: 60px;
+        }
+        .box {
+            display: inline-block;
+            border: 1px solid #ccc;
+            margin: 200px auto 0px;
+
+        }
+        .box>span:nth-child(1) {
+            background-color: red;
+            /* overflow: hidden; */
+            position: relative;
+        }
+
+        .box>span:nth-child(1)::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border: 30px solid transparent;
+            border-left-color: red;
+            border-top-color: red;
+            position: absolute;
+            right: -60px;
+            top: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <span>列表浏览</span><span>卡片浏览</span>
+    </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href=''>
+    <title>Document</title>
+    <style>
+        .big {
+            width: 150px;
+            height: 150px;
+            margin: 200px auto 0;
+            position: relative;
+            text-align: center;
+            line-height: 150px;
+            color: skyblue;
+            font-weight: bold;
+            font-size: 40px;
+            transform-style: preserve-3d;
+
+            transform: rotateX(336deg)  rotateY(55deg)  rotateZ(0deg);
+        }
+
+        .big  div {
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #ccc;
+            border: 1px solid black;
+            transition: all 1s;
+        }
+      
+        .a {
+            transform: rotateX(90deg) translateZ(75px);
+        }
+        .big:hover .a {
+            transform: rotateX(90deg) translateZ(150px) ;
+        }
+        .b {
+            transform: rotateX(-90deg) translateZ(75px);
+        }
+
+        .c {
+            transform: rotateY(-90deg) translateZ(75px);
+        }
+
+        .d {
+            transform: rotateY(90deg) translateZ(75px);
+        }
+
+        .e {
+            transform: translateZ(75px);
+        }
+
+        .f {
+            transform: translateZ(-75px) rotateY(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="big">
+        <div class="a">上1</div>
+        <div class="b">下2</div>
+        <div class="c">左3</div>
+        <div class="d">右4</div>
+        <div class="e">前5</div>
+        <div class="f">后6</div>
+    </div>
+</body>
+
+</html>

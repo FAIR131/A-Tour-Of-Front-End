@@ -1,0 +1,211 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+html{
+  font-size: 26.67vw;
+}
+
+/* 头部导航 */
+.head {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: .45rem;
+  font-size: .16rem;
+}
+
+.head ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.head .nav {
+  width: 14%;
+  height: .45rem;
+  text-align: center;
+  line-height: .45rem;
+}
+
+.head .nav a {
+  display: block;
+  width: 100%;
+  height: .42rem;
+  /* background-color: pink; */
+  text-align: center;
+}
+
+.head .nav  .actived{
+  color: red;
+  border-bottom: .03rem solid red;
+  /* background-color: palegreen; */
+}
+
+/* 内容大盒子 */
+
+.box {
+  position: fixed;
+  top: .45rem;
+  bottom: .55rem;
+  left: 0;
+  right: 0;
+  overflow: auto;
+  background-color: #f8f8f9;
+}
+
+/* 版心 */
+.banner {
+  width: 100%;
+  height:1.4rem;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+}
+
+/* 导航 */
+.nav {
+  width: 100%;
+  height: 1.6rem;
+  background-color: white;
+}
+
+.nav ul {
+  display: flex;
+ flex-wrap: wrap;
+  height: 1.6rem;
+}
+
+.nav .list {
+  /* padding: 0.3125rem; */
+  width: 20%;
+  height: 50%;
+  /* background-color: skyblue; */
+  text-align: center;
+  font-size: 0.12rem;
+}
+
+.nav .list img {
+  margin: .05rem 0;
+  width: .45rem;
+  height: .45rem;
+  border-radius: 50%;
+}
+
+/* 大图 */
+.img {
+  margin-top: .1rem;
+  width: 100%;
+  height:1.2rem;
+}
+
+.img img {
+  width: 100%;
+  height: 100%;
+}
+
+/* 商品 */
+.goods {
+  margin-top: .15rem;
+  width: 100%;
+  height: 1.2rem;
+  background-color: white;
+}
+
+.goods > div {
+  display: flex;
+  padding: 0 0.08rem 0.1rem;
+  width: 100%;
+  height: 1.2rem;
+  /* background-color: pink; */
+}
+
+.goods > div .pic {
+  margin-right: 0.1rem;
+  width: 48%;
+  height: 1.2rem;;
+}
+
+.goods > div .pic img {
+  width: 100%;
+  height: 100%;
+}
+
+.goods > div .info {
+  width: 56%;
+}
+
+.goods > div .info .title {
+  position: relative;
+  display: flex;
+  white-space: wrap;
+  font-size: 0.14rem;
+  font-weight: 500;
+  text-indent: .35rem;
+}
+
+ .goods > div .info .title::before{
+  display: block;
+  content: "";
+  position: absolute;
+  top: .02rem;
+  left: 0;
+  width: .3rem;
+  height: .15rem;
+  background-color: pink;
+  background-image: url(../img/five-5.png);
+  background-size: 100%;
+ }
+
+.goods > div .info .main {
+  color: #ccc;
+  font-size: .12rem;
+}
+
+
+
+/* 底部 */
+.footer {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height:.6rem;
+  background-color: #fff;
+  border-top: .01rem solid #ccc;
+}
+
+.footer > div {
+  /* margin-top: -.05rem; */
+  width: 20%;
+  height: 0.6rem;
+  /* background-color: palegreen; */
+  text-align: center;
+  color: gray;
+  font-size:.12rem;
+}
+
+.footer > div>p{
+  line-height: .2rem;
+}
+
+.footer > div a {
+  display: inline-block;
+  width: 100%;
+  height: .6rem;
+  color: gray;
+  /* background-color: pink; */
+}
+
+.footer > div .iconfont {
+  font-size: .3rem !important;
+}
+
+.footer .actived a {
+  color: #e94544;
+}

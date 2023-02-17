@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Document</title>
+  <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'>
+  <style>
+    .box {
+      position: relative;
+      margin: 150px auto;
+      width: 300px;
+      height: 100px;
+      border: 1px solid skyblue;
+    }
+
+    .left {
+      width: 0;
+      height: 4px;
+      background-color: #fff;
+      position: absolute;
+      top: -4px;
+      left: -300px;
+      transition: all 3s;
+    }
+
+    .box:hover .left {
+      width: 308px;
+      left: -4px;
+      background-color: pink;
+    }
+
+    .top {
+      width: 4px;
+      height: 0px;
+      background-color: #fff;
+      position: absolute;
+      top: -100px;
+      left: -4px;
+      transition: all 3s;
+    }
+
+    .box:hover .top {
+      height: 108px;
+      top: -4px;
+      background-color: pink;
+    }
+
+
+    .right {
+      width: 4px;
+      height: 0px;
+      background-color: #fff;
+      position: absolute;
+      top: 200px;
+      right: -4px;
+      transition: all 3s;
+    }
+
+    .box:hover .right {
+      height: 104px;
+      top: 0px;
+      background-color: pink;
+    }
+
+    .bottom {
+      width: 0px;
+      height: 4px;
+      background-color: #fff;
+      position: absolute;
+      top: 100px;
+      right: -104px;
+      transition: all 3s;
+    }
+
+    .box:hover .bottom {
+      width: 308px;
+      right: -4px;
+      background-color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="left"></div>
+    <div class="top"></div>
+    <div class="right"></div>
+    <div class="bottom"></div>
+  </div>
+</body>
+
+</html>

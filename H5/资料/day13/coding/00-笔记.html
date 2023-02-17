@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href=''>
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!-- 
+
+        删除垃圾文件   
+            window 系统
+                win + r 弹出对话框  
+                    输入 %temp%  回车 --- > 弹出垃圾文件夹
+                    ctrl + a 全选
+                    直接永久删除 shift + delete
+
+                win + d   ===  直接回到桌面
+
+
+
+        CSS3 3D转换
+            translate3d(x,y,z)		定义 3D 移动
+                translateX(x)			定义 3D 移动，仅使用用于 X 轴的值
+                translateY(y)			定义 3D 移动，仅使用用于 Y 轴的值
+                translateZ(z)			定义 3D 移动，仅使用用于 Z 轴的值
+
+
+            rotate3d(x,y,z,angle)	定义 3D 旋转  沿着一个矢量方向
+                rotateX(angle)			定义沿 X 轴的 3D 旋转
+                rotateY(angle)			定义沿 Y 轴的 3D 旋转
+                rotateZ(angle)			定义沿 Z 轴的 3D 旋转
+
+            3D效果需要设置的属性
+                给父元素添加
+                    perspective: ____px			定义 3D 转换元素的透视视图 （景深）
+				
+				transform-style		属性指定嵌套元素是怎样在三维空间中呈现
+					flat		表示所有子元素在2D平面呈现
+					preserve-3d	表示所有子元素在3D空间中呈现
+					注意：transform-style属性需要设置在父元素中，并且高于任何嵌套的变形元素
+				
+				perspective-origin		定义 3D 元素所基于的 X 轴和 Y 轴
+					x-axis		定义该视图在 x 轴上的位置。默认值：50%
+					y-axis		定义该视图在 y 轴上的位置。默认值：50%
+                    
+                给子元素添加
+                    backface-visibility		定义当元素背面向屏幕时是否可见
+                        visible		背面是可见的
+                        hidden		背面是不可见的
+
+
+
+
+        CSS3 动画是使元素从一种样式逐渐变化为另一种样式的效果
+            要创建 CSS3 动画，需要了解 @keyframes 规则
+                @keyframes 规则是创建动画
+                @keyframes 规则内指定一个 CSS 样式和动画将逐步从目前的样式更改为新的样式
+                
+            当在 @keyframes 创建动画，把它绑定到一个选择器，否则动画不会有任何效果
+            指定至少这两个CSS3的动画属性绑定向一个选择器
+                    规定动画的名称
+                    规定动画的时长
+
+            第一步：定义一个动画
+            @keyframes 动画名称 {
+                
+                        /*定义关键帧*/
+                        from 或者 0%{
+                            css-styles:
+                        }
+                        
+                        50%{
+                            css-styles:
+                        }
+                        
+                        to 或者 100%{
+                            css-styles:
+                        }
+                    }
+            第二步：执行这个动画
+                animation: 动画名称  执行时间  速度效果  延迟时间  执行次数  往复执行;
+                    animation-name				动画名称
+                    animation-duration			执行时间
+                    animation-timing-function	速度效果
+                    animation-delay				延迟时间
+                    animation-iteration-count	执行次数	infinite
+                    animation-direction			往复执行	alternate
+            第三步：暂停这个动画
+                animation-play-state:paused;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            轮播图使用
+                    https://www.swiper.com.cn/usage/index.html 
+                    使用步骤
+     -->
+</body>
+
+</html>

@@ -1,0 +1,158 @@
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: url(../2.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.box {
+  position: absolute;
+  right: 100px;
+  top: 100px;
+  width: 400px;
+  height: 500px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+}
+
+.box .top {
+  margin: 0 auto;
+  padding-top: 40px;
+  width: 200px;
+  /* background-color: pink; */
+}
+
+.box .top .logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.box .top .logo img {
+  width: 60px;
+  height: 60px;
+}
+
+.box .top .title {
+  margin-left: 5px;
+  width: 120px;
+  height: 60px;
+  color: #fff;
+}
+
+.box .top .title .one {
+  margin-left: 15px;
+  font-weight: bold;
+  font-size: 26px;
+}
+
+.middle {
+  margin: 30px auto;
+  width: 300px;
+}
+
+.middle .line {
+  display: inline-block;
+  border-top: 3px solid #fff;
+  width: 80px;
+}
+
+.middle .text {
+  display: inline-block;
+  margin: 0 10px;
+  vertical-align: middle;
+  color: #fff;
+}
+
+.information {
+  margin: 0 auto;
+  width: 300px;
+  /* background-color: pink; */
+}
+
+.information .name {
+  position: relative;
+  margin-bottom: 25px;
+  width: 300px;
+  height: 50px;
+  border: 1px solid #fff;
+  border-radius: 25px;
+}
+
+.information .name .pic {
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 40px;
+  height: 30px;
+  text-align: center;
+  border-right: 1px solid #fff;
+}
+
+.information .name .icon-yonghu-yuan {
+  color: #fff;
+}
+.information .name .icon-mima {
+  color: #fff;
+}
+.information .name .icon-yanzhengyanzhengma {
+  color: #fff;
+}
+
+.information .name .in {
+  margin-left: 10px;
+  display: inline-block;
+  height: 50px;
+  line-height: 50px;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  background-color: transparent;
+}
+
+input::-webkit-input-placeholder {
+  color: #fff;
+}
+
+.information .yanzheng {
+  position: relative;
+}
+
+.information .num {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+ 
+  width: 100px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 40px;
+  font-weight: bold;
+}
+
+.information .com{
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 130px;
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  font-size: 14px;
+
+}
+
+.login {
+  margin: 0 auto;
+  margin-top: 25px;
+  width: 300px;
+  height: 50px;
+  background-color: rgb(28, 184, 246);
+  border-radius: 25px;
+  line-height: 50px;
+  text-align: center;
+  color: #fff;
+}

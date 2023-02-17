@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href=''>
+    <title>Document</title>
+    <style>
+        body {
+            perspective: 500px;
+            /* 产生景深效果 */
+        }
+
+        .big {
+            width: 300px;
+            height: 300px;
+            margin: 100px auto 0;
+            border: 1px solid skyblue;
+            border-radius: 50%;
+            position: relative;
+            transform-style: preserve-3d;
+            z-index: 999;
+            /* 让子元素在3d空间内显示 */
+            transition: all 3s;
+        }
+
+        .big div {
+            width: 300px;
+            height: 300px;
+            text-align: center;
+            line-height: 300px;
+            font-size: 40px;
+            font-weight: bold;
+            color: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all 3s;
+
+            backface-visibility: hidden;
+            /* 定义当元素背面向屏幕时是否可见 */
+        }
+
+        .a {
+            background-color: skyblue;
+            transform: rotateY(0deg);
+            z-index: 99;
+        }
+
+        .b {
+            background-color: pink;
+            transform: rotateY(180deg);
+            z-index: 9;
+        }
+
+        .big:hover {
+            transform: rotateY(180deg);
+        }
+
+        /* .big:hover div{
+            z-index: 0;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="big">
+        <div class="a">众爱妃</div>
+        <div class="b">皇后</div>
+    </div>
+</body>
+
+</html>

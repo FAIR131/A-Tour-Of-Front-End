@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang='en'>
+ 
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Document</title>
+  <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'>
+  <style>
+    body{
+      perspective: 500px;
+    }
+
+    div{
+      width: 100px;
+      height: 100px;
+      text-align: center;
+      line-height: 100px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      backface-visibility: hidden;
+      transition: all 3s;
+    }
+
+    .box{
+      margin: 100px auto;
+      transform-style: preserve-3d;
+      position: relative;
+      z-index: 999;
+    }
+
+    .a{
+      background-color: skyblue;
+      color: pink;
+      z-index: 99;
+    }
+
+    .b{
+      background-color: pink;
+      color: skyblue;
+      transform: rotateY(180deg);
+      z-index: 9;
+    }
+
+    .box:hover{
+      transform: rotateY(180deg);
+    }
+
+
+  </style>
+</head>
+ 
+<body>
+<div class="box">
+  <div class="a">blue</div>
+  <div class="b">pink</div>
+</div>
+</body>
+ 
+</html>

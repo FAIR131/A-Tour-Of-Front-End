@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href=''>
+    <title>Document</title>
+   
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!-- 
+
+        html 基本用法
+            语法 <___ html属性名="html属性值"  html属性名="html属性值" >
+
+            <__>    标签  元素  盒子   标记
+
+                单标签
+                    meta
+                双标签
+                    html
+
+            <!DOCTYPE html> 有什么作用？
+
+            补充： <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> 网页的小图标
+                .ico 文件
+
+            常用的标签
+                
+                标题标签
+
+                段落标签   ---  换行标签   --- 水平线
+
+                文本修饰类 
+                    加粗
+                    倾斜
+                    加下划线
+                    加删除线
+
+                上标，下标    sup, sub
+
+                图片标签
+                    img 
+                        src  alt  title   width   height
+                        alt 和 title 区别？
+
+                        src   路径
+                            绝对路径
+                                1. 网址式的
+                                2. 盘符类的
+                            相对路径
+                                同一级      ./
+                                上一级      ../
+                                下一级      /
+                            ../imgs/a.png
+
+                超链接标签
+                    a  
+                        href  target
+                            href  等同于 src
+                            target   控制在哪个窗口打开
+                                自己本身 _self
+                                新窗口 _blank
+
+                        锚点链接
+                                <a href="#name"></a>
+
+                                <div id="name"></div>
+
+                字体标签
+                    font
+                        color
+                        size
+                            1-7
+
+                列表标签
+                    有序列表
+                        ol 
+                            li
+
+                    无序列表
+                        ul
+                            li
+
+                    自定义
+                        dl
+                            dt
+                            dd
+                
+                表单
+                    form
+                        action  method  name
+                            get 和 post    /  put del
+
+                        input
+                            type
+
+                            <input  type="button">     <button><button>
+
+                表格
+                    table
+                            tr
+                            td
+                                横向 colspan
+                                纵向 rowspan
+
+                            thead
+                            tbody
+                            tfoot
+
+                            caption
+                        
+
+
+            css
+                基本语法
+                        css选择器 { css属性名:css属性值;  css属性名:css属性值[;]}
+
+                创建一个css样式表
+                        1. 内部样式表
+                            <style>   直接写css语句  </style>
+
+                        2. 外部样式表
+                                .css 文件  ---- .html 文件
+
+                                1. <link href="">
+                                2. <style>   @import url();   </style>
+
+                                两者区别？
+
+                        3. 行内（内联样式）
+                                <    style="">  style --- html属性名
+
+                        三者的优先级
+                                行内（内联）> 内部样式表 > 外部样式表 
+
+                                    内部样式表     外部样式表   优先级待定，看写入的是顺序
+
+                                !important
+
+                css的选择器
+                    简单选择器
+                                *    el     class     id
+                    复合选择器
+                                群组
+                                后代    .a  #b {}
+                                子代
+
+                    伪类选择器    a
+                                love - hate
+                                :link
+                                :visited
+                                :hover
+                                :active
+                css的常用属性
+                    字体类
+                                font-
+                    
+                    文本类
+                                t-a:c
+                                line-height: 高度值
+                                text-indent
+                                color
+                                text-d
+                                text-transform
+
+                    边框类
+                                border: 1px solid red
+                                    border-width
+                                    border-style
+                                    border-color
+
+                                利用边框绘制三角形
+
+                    列表类
+                                list-style: none;
+
+                    背景类
+                                bg-c
+                                bg-i
+                                    bg-r
+                                    bg-p ---  精灵图、雪碧图
+
+                    溢出类
+                                overflow
+                                    -x
+                                    -y
+                                设置单行文本溢出变成省略号
+
+                                多行文本
+
+                css中 的 浮动
+                                float
+                                    left
+                                    right
+                                    none
+
+                        使用目的： 是的多个div 块级元素在同一行内显示
+
+                        使用后存在的问题： 高度塌陷
+                    
+                        如何解决的?
+
+                css中的 盒模型
+                                margin
+                                    border
+                                        padding
+                                            content
+
+                        1. margin
+                            1.1  给左和上加  会影响自己当前元素
+                                设置正值    会向右/下
+                                设置负值    会向左/上
+                            1.2  给右和下加  会影响其  下一个元素
+
+
+                            1.3 margin的传递  --- 父子元素
+                                给子元素加 margin-top  
+                                    给父元素加border
+                                    给父元素设置为 bfc 盒
+
+                            1.4 margin的合并  --- 相邻兄弟元素
+                                
+
+                            1.5 特殊性用法
+                                margin : 0 auto
+
+                        2. padding
+                                使用之后 盒子会变大
+                                box-sizing: border-box;
+
+                        
+                        3. 盒子的种类
+                                标准盒  w3c     box-sizing: content-box
+                                怪异盒  ie      box-sizing: border-box
+                            
+                                两者的区别？
+                                    设置宽高度时
+     -->
+
+
+     <div class="fa">
+        <div class="son"></div>
+     </div>
+     <style>
+        .fa {
+            width: 500px;
+            height: 500px;
+            background-color: skyblue;
+            margin: 0 auto 0;
+
+            /* border: 1px solid transparent; */
+            overflow: hidden;
+        }
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin: 0 auto;
+
+            margin-top: 100px;
+        }
+     </style>
+</body>
+
+</html>

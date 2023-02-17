@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            通配符选择器   --- 选择页面中所有的标签
+
+            * {     }
+         */
+        /* * {
+            color: skyblue;
+         } */
+
+        /* 
+            需求 -- 只给 div 加上颜色 
+
+            标签选择器   ---   选择的是当前页面 所有的  某一类标签
+         */
+        /* div {
+            color: pink;
+         }
+         p {
+            color: palegreen;
+         } */
+        /* 
+            需求  -- 给div1 加上颜色
+
+            取名字  
+                class="a"     --- 选择的是当前页面 所有的 class 叫做 a 的标签  可以存在多个类名
+                    .a {   }  
+                id="y" --- 独一无二的  
+                    #y  {    }
+         */
+        .a {
+            color: red;
+        }
+        .x {
+            color: pink;
+        }
+
+        #y {
+            color: palegreen;
+        }
+
+
+        /* 
+        
+            简单的css 选择器
+                1. 统配符选择器        * {  }
+                    选择的是当前页面所有的标签
+                2. 标签选择器          __ {  }
+                    选择的是当前页面某一类标签
+                3. class 选择器  class="name"   .name {   }
+                    选择的是当前页面标签中含有 class="name" 的标签
+                    class 可以取多个名字，名字可以复用
+                4. id 选择器   id="name"     #name {    }
+                    择的是当前页面标签中含有 id="name" 的标签
+                    只能有一个，并且不给在其他标签上再使用了， === name 不能使用
+
+            提出问题： 在一个标签上，同时使用多个选择器选中，会出现什么结果？
+        */
+    </style>
+</head>
+
+<body>
+    <div class="a x">div1</div>
+    <p id="y">p1</p>
+    <div>div2</div>
+    <p class="a">p2</p>
+    <span id="yy">span1</span>
+    <span>span2</span>
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href=''>
+    <title>Document</title>
+    <style>
+        /* 
+            设置公共的类名
+
+            当我们使用 浮动之后 就要考虑到 高度是否为零 ---
+        */
+
+        .float_left {
+            float: left;
+        }
+
+        .float_right {
+            float: right;
+        }
+
+        .big {
+            width: 1000px;
+            height: 400px;
+            background-color: #ccc;
+
+            margin: 0 auto;
+            padding: 30px;
+            box-sizing: border-box;
+        }
+
+        .left {
+            width: calc((1000px - 60px) / 2);
+            height: calc(400px - 60px);
+            /* background-color: palegreen; */
+            /* float: left; */
+        }
+
+        .left .top h3 {
+            margin: 0;
+            padding: 0;
+        }
+        .left .center {
+            margin: 30px 0;
+        }
+        .left .center .center_content .news {
+            width: 350px;
+            float: left;
+        }
+
+        .left .center .center_content .date {
+            width: 120px;
+            float: right;
+        }
+
+        .left .bottom a {
+            text-decoration: none;
+
+            color: black;
+        }
+
+        .right {
+            width: calc((1000px - 60px) / 2);
+            height: calc(400px - 60px);
+            /* background-color: skyblue; */
+            float: right;
+
+            text-align: center;
+            padding-top: calc((400px - 60px - 283px) / 2);
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="big">
+        <div class="left float_left">
+            <div class="top">
+                <h3>新闻资讯</h3>
+                <h3>News and information</h3>
+            </div>
+            <div class="center">
+                <div class="center_content">
+                    <div class="center_left news">
+                        靠谱的北京网站建设公司
+                    </div>
+                    <div class="center_right date">
+                        2018-10-29
+                    </div>
+                    <div style="clear: both;"></div>
+                </div>
+
+                <div class="center_content">
+                    <div class="center_left news">
+                        靠谱的北京网站建设公司
+                    </div>
+                    <div class="center_right date">
+                        2018-10-29
+                    </div>
+
+                    <div style="clear: both;"></div>
+                </div>
+
+                <div class="center_content">
+                    <div class="center_left news">
+                        靠谱的北京网站建设公司
+                    </div>
+                    <div class="center_right date">
+                        2018-10-29
+                    </div>
+
+                    <div style="clear: both;"></div>
+                </div>
+
+                <div class="center_content">
+                    <div class="center_left news">
+                        靠谱的北京网站建设公司
+                    </div>
+                    <div class="center_right date">
+                        2018-10-29
+                    </div>
+
+                    <div style="clear: both;"></div>
+                </div>
+            </div>
+            <div class="bottom">
+                <a href="#">查看更多>>></a>
+            </div>
+        </div>
+
+        <div class="right">
+            <img src="../images/cosmo.png" alt="">
+        </div>
+    </div>
+</body>
+
+</html>

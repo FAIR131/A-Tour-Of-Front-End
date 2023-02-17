@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href=''>
+    <title>Document</title>
+    <style>
+        @media only screen and (max-width: 700px) {
+            .item {
+                width: 45%;
+            }
+        }
+
+        @media only screen and (min-width: 700px) and (max-width: 900px) {
+            .item {
+                width: 30%;
+            }
+        }
+
+        @media only screen and (min-width:900px) {
+            .item {
+                width: 23%;
+            }
+        }
+
+
+        #content {
+            width: 100%;
+            background-color: skyblue;
+
+            display: flex;
+
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        #content .item {
+            /* width: 45%; */
+            /* width: 30%; */
+
+            /* if() {}  如果在什么什么条件下，使用 。。。。。。  */
+
+
+            height: 200px;
+            background-color: pink;
+        }
+
+        #content .item img {
+            width: 100%;
+            height: 70%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="content">
+        <div class="item">
+            <img src="../../imgs/img.webp" alt="">
+            <p>描述信息</p>
+        </div>
+
+        <div class="item">
+            <img src="../../imgs/img.webp" alt="">
+            <p>描述信息</p>
+        </div>
+
+        <div class="item">
+            <img src="../../imgs/img.webp" alt="">
+            <p>描述信息</p>
+        </div>
+
+        <div class="item">
+            <img src="../../imgs/img.webp" alt="">
+            <p>描述信息</p>
+        </div>
+
+        <div class="item">
+            <img src="../../imgs/img.webp" alt="">
+            <p>描述信息</p>
+        </div>
+
+        <div class="item">
+            <img src="../../imgs/img.webp" alt="">
+            <p>描述信息</p>
+        </div>
+
+        <div class="item">
+            <img src="../../imgs/img.webp" alt="">
+            <p>描述信息</p>
+        </div>
+
+        <div class="item">
+            <img src="../../imgs/img.webp" alt="">
+            <p>描述信息</p>
+        </div>
+        <div class="item">
+            <img src="../../imgs/img.webp" alt="">
+            <p>描述信息</p>
+        </div>
+
+        <div class="item">
+            <img src="../../imgs/img.webp" alt="">
+            <p>描述信息</p>
+        </div>
+    </div>
+</body>
+
+</html>

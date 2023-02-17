@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href=''>
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            /* font-size: 100px; */
+            font-size: 26.67vw;
+        }
+        div {
+            /* width: 70px; */
+
+            /*  
+                375px - 所量的尺寸 
+                375 / 2 / 100   187.5
+            */
+            /* width: 50vw; */
+            width: 1.874rem;
+
+
+            /* 
+                70px   ---  iphone 678 下 占据比例为 ___%
+
+                70px     375px   ===  ___%  (50%  --- 50vw)
+
+
+                30px   40px   38px  20px  22px   21px  40px
+            */
+            /* height: 70px; */
+            height: 0.7rem;
+            background-color: skyblue;
+            float: left;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>字字字字字</div>
+    <div style="background-color: pink;"></div>
+
+    <!-- 
+        现在在工作
+            二倍图    --- 375px   iphone 678
+
+            所量尺寸为  140px
+
+            css代码  70px
+
+            为了避免每次都去算  css 代码尺寸   为 多少  __vw
+            处理方案
+
+            css代码尺寸  与   100px  进行等价替换   --- 利用的是  rem 单位
+
+                100px  ===  ___vw
+
+                __vw =   100px * 100vw    / 设备尺寸 px
+
+            常用尺寸： iphone5  - 31.25vw    iphone678  -  26.67vw  26.666666666666
+
+
+                设备尺寸  = 100vw
+                100px = __vw
+
+        工作过程中
+            1. 有设计图
+                N 倍图     ---   哪个设备
+
+            2. 量尺寸
+
+            3. 传化为css代码尺寸
+
+            -------------- 响应式布局 
+                1. 媒体查询
+
+                2. rem + vw 布局
+
+     -->
+</body>
+
+</html>

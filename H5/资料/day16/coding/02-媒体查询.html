@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href=''>
+    <title>Document</title>
+    <style>
+        @media only screen and (max-width: 321px) {
+            html {
+                /* font-size: 16px; */
+                font-size: 17px;
+                /* 
+                    160px  
+                    9.375rem  == _____   font-size = */
+            }
+
+            div {
+                background-color: pink;
+            }
+        }
+
+        @media only screen and (min-width: 321px) and (max-width: 480px) {
+            /*  [   ]  === [ ) */
+
+            html {
+                font-size: 20px;
+            }
+
+            div {
+                background-color: palegreen;
+            }
+        }
+
+        @media only screen and (min-width:481px) {
+
+            /* [ ) */
+            div {
+                background-color: skyblue;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            /* 
+                在 375px   ===  其 根元素字体大小为     20px
+                在 320px   ===  其 根元素字体大小为     16px 
+
+            在iPhone 678 下 设置的样式  字体大小 为 20px  div  375px / 2  = 187.5px
+
+
+            在iPhone 5 下 设置的样式  字体大小 为 16px  div  160px
+
+
+
+
+
+
+
+
+
+
+
+            678   187.5px   ==  20px                               根元素   20px
+            5      160px    ==  字体大小是 -  16px(但是我们会调整)   根元素   17px     --- 16px   __rem
+
+            187.5px / 20px = 160px / html-Fontsize  = 9.375rem
+
+
+
+
+            
+            
+            */
+            /* width: calc(375px / 2); */
+            width: 9.375rem;
+            /* width: 160px; */
+            /* width: 160px; */
+
+            font-size: 20px;
+            /* 基于20px */
+            height: 50px;
+            /* background-color: skyblue; */
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+
+    </div>
+</body>
+
+</html>

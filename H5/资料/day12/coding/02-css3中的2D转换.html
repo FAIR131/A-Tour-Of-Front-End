@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href=''>
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            margin: 0 auto;
+            transition: all 1s;
+        }
+
+        .a:hover {
+            transform: translateY(300px);
+        }
+
+        .b:hover {
+            transform: scale(0.5, 2);
+        }
+
+        .c:hover {
+            transform: rotate(45deg);
+        }
+
+        .d:hover {
+            transform: skewX(45deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="a">a</div>
+    <!-- 位移  --- translate() -->
+    <hr>
+    <div class="b">b</div>
+    <!-- 缩放 --- scale() -->
+    <hr>
+    <div class="c">c</div>
+    <!-- 旋转  ---rotate()  -->
+    <hr>
+    <div class="d">d</div>
+    <!-- 倾斜  --- skewX()
+    
+        正值  - 逆时针倾斜
+        负值  - 顺时针倾斜
+    -->
+</body>
+
+</html>

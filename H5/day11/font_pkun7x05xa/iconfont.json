@@ -1,0 +1,23 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "577343",
+      "name": "卡片形式",
+      "font_class": "qiapianxingshi",
+      "unicode": "e73f",
+      "unicode_decimal": 59199
+    },
+    {
+      "icon_id": "1304951",
+      "name": "列表",
+      "font_class": "liebiao",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    }
+  ]
+}

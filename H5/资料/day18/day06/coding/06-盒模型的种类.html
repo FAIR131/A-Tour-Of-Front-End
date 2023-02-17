@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href=''>
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+        }
+
+        .w3c {
+            background-color: pink;
+
+            /* padding-left: 100px; */
+            border: 10px solid skyblue;
+            margin-left: 100px;
+        }
+
+        .ie {
+            box-sizing: border-box;
+            background-color: palegreen;
+
+            border: 10px solid orange;
+            margin-left: 100px;
+            padding-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+
+        不做任何的操作，所有的 盒子 都是标准盒模型
+
+        怪异盒模型  --- box-sizing: border-box
+
+
+                        设置的 width / height
+        标准盒模型       内容显示区
+        怪异盒模型        占据空间
+
+
+        实际占据的空间
+            标准盒子 = 外边距值 + 边框值 + 内边距值 + 本身设置的 w / h
+
+            怪异盒子 = 外边距值 + 本身设置的 w / h
+
+        切换模型
+            box-sizing: 
+                content-box -----  标准盒模型
+                
+                border-box ------ 怪异盒模型
+                        
+
+     -->
+    <div class="w3c">
+
+    </div>
+    <div style="background-color: purple;"></div>
+
+    <div class="ie">
+
+    </div>
+</body>
+
+</html>

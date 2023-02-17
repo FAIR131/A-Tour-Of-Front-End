@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+
+        table  ===  创建一个表格
+            想要看到边框的话  就在  table 中加上  border 属性 
+            设置宽度和高度   width  height 属性即可
+        tr === 行
+            设置某一行文字的水平对齐方式      align = left  / center  / right
+            设置某一行文字的垂直对齐方式      valign = top  / center  / bottom
+        td === 列
+            设置某一个单元格文字的水平对齐方式   align = left  / center  / right
+            设置某一个单元格文字的垂直对齐方式   valign = top  / middle  / bottom
+
+            valign = vertical alignment
+
+            合并水平方向上单元格        colspan    
+            合并垂直方向上单元格        rowspan
+
+        3 行 4 列 
+
+        3 tr   4 td
+
+     -->
+    <table border="1" width="1000" height="300">
+        <tr align="center" valign="top">
+            <td valign="middle" colspan="2">1</td>
+            <!-- <td>2</td> -->
+            <td>3</td>
+            <td>0</td>
+        </tr>
+
+        <tr align="right">
+            <td>4</td>
+            <td align="center">5</td>
+            <td rowspan="2">6</td>
+            <td>0</td>
+        </tr>
+
+        <tr valign="bottom">
+            <td>7</td>
+            <td>8</td>
+            <!-- <td>9</td> -->
+            <td>0</td>
+        </tr>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            text-align: center;
+            font-size: 50px;
+        }
+
+        a:link {
+            color: red;
+        }
+
+        a:visited {
+            color: #ccc;
+            /* cc cc cc */
+        }
+
+        a:hover {
+            color: skyblue;
+        }
+
+        a:active {
+            color: palegreen;
+        }
+
+        /* 
+            点击之前  --- 点击之后
+        */
+    </style>
+</head>
+
+<body>
+    <!-- 
+        a 的选择器
+            伪类选择器
+            :link访问前的状态
+            :visited访问后的状态
+            :hover鼠标移入效果
+            :active激活状态(按下未松开)
+            
+            l-v-h-a : love-hate按照顺序书写
+
+
+
+            :hover   --- 全部标签
+
+        标签关系  父子关系
+
+            部分属性可以继承到父元素的 css 
+                font-  
+
+            有些不行   a  标签不能继承到父元素设置的 ----  color
+
+     -->
+
+    <div>
+        <a target="_blank" href="#a">新闻一</a>
+    </div>
+    <div>
+        <a target="_blank" href="#b">新闻二</a>
+    </div>
+    <div>
+        <a target="_blank" href="#c">新闻三</a>
+    </div>
+</body>
+
+</html>

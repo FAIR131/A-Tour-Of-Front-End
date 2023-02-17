@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .big {
+            width: 235px;
+            height: 170px;
+            background-color: #5f5750;
+        }
+        .item {
+            width: calc(235px / 3);
+            /* 
+                css的计算函数 
+                运算符 两侧  要有空格
+            */
+            /* border: 1px solid red; */
+            float: left;
+            text-align: center;
+            color: #ccc;
+        }
+        img {
+            width: 35px;
+            height: 35px;
+        }
+        p {
+            font-size: 12px;
+        }
+        /* 
+            item   --- div --- 块级元素
+            默认情况 不设置宽度  - 宽度 是父级元素的
+            但是，当设置了浮动之后，它的宽度变成了“行内元素”
+        */
+    </style>
+</head>
+
+<body>
+    <div class="big">
+        <div class="item a">
+            <img src="../images/small_nav/link1.png" alt="">
+            <p>选购手机</p>
+        </div>
+
+        <div class="item">
+            <img src="../images/small_nav/link2.png" alt="">
+            <p>企业团购</p>
+        </div>
+
+        <div class="item">
+            <img src="../images/small_nav/link3.png" alt="">
+            <p>F码通道</p>
+        </div>
+
+        <div class="item">
+            <img src="../images/small_nav/link4.png" alt="">
+            <p>米粉卡</p>
+        </div>
+
+        <div class="item">
+            <img src="../images/small_nav/link5.png" alt="">
+            <p>依旧换新</p>
+        </div>
+
+        <div class="item">
+            <img src="../images/small_nav/link6.png" alt="">
+            <p>话费充值</p>
+        </div>
+    </div>
+</body>
+
+</html>

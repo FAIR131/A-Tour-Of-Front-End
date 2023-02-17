@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.f_l {
+    float: left;
+}
+
+.f_r {
+    float: right;
+}
+
+.clear::after {
+    content: "";
+    display: block;
+    clear: both;
+    /* 
+        子元素统统浮动
+    */
+}
+
+
+
+/* 自己的样式 */
+/* 头部开始 */
+#top {
+    width: 100%;
+    height: 60px;
+    background-color: #282633;
+}
+
+#top .content {
+    width: 1200px;
+    height: 60px;
+    /* background-color: skyblue; */
+    margin: 0 auto;
+}
+
+/* 版心的左边部分 */
+#top .content .content_left {
+    width: 150px;
+    height: 60px;
+    /* background-color: #282633; */
+    line-height: 60px;
+}
+
+#top .content .content_left img {
+    vertical-align: middle;
+}
+
+/* 版心去的中间部分 */
+#top .content .content_center {
+    width: 800px;
+    height: 60px;
+    /* background-color: orangered; */
+}
+
+#top .content .content_center li {
+    float: left;
+    height: 60px;
+    padding: 0 20px;
+    line-height: 60px;
+    /* background-color: pink; */
+    color: white;
+}
+
+#top .content .content_center .active {
+    background-color: black;
+}
+
+/* 版心区右边 */
+#top .content .content_right {
+    width: 142px;
+    height: 60px;
+    text-align: center;
+}
+
+#top .content .content_right .login,
+#top .content .content_right .register {
+    width: 65px;
+    height: 20px;
+    line-height: 60px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    color: white;
+}
+
+#top .content .content_right .login {
+    margin-right: 5px;
+    border: 1px solid skyblue;
+}
+
+#top .content .content_right .register {
+    border: 1px solid palegreen;
+}
+
+/* 头部结束 */
+
+
+/* 轮播图开始 */
+#banner {
+    width: 100%;
+    height: 580px;
+    background-color: pink;
+}
+
+#banner img {
+    width: 100%;
+    height: 100%;
+}
+
+/* 轮播图 结束 */
+
+
+#intro {
+    width: 100%;
+    height: 380px;
+    /* background-color: palegreen; */
+}
+
+#intro .content {
+    width: 1200px;
+    height: 380px;
+    /* background-color: peru; */
+    margin: 0 auto;
+    padding-top: 70px;
+    box-sizing: border-box;
+}
+
+#intro .content .item {
+    width: calc(1200px / 4);
+    text-align: center;
+
+    color: #98918b;
+    float: left;
+}
+
+#intro .content .item .title {
+    font-size: 30px;
+    line-height: 70px;
+}
+
+
+
+
+
+
+#applicationArea {
+    width: 100%;
+    height: 120px;
+    background-color: #fafafa;
+}
+
+#applicationArea h2 {
+    text-align: center;
+    line-height: 60px;
+}
+
+#applicationArea ul {
+    width: 920px;
+    margin: 0 auto;
+}
+
+#applicationArea ul li {
+    float: left;
+    padding: 10px 30px;
+    border-right: 1px solid black;
+    color: #98918b;
+}
+
+#applicationArea ul .active {
+    color: #6298b4
+}
+
+#applicationArea ul .border_none {
+    border: none;
+}
+
+
+#application {
+    width: 100%;
+    height: 520px;
+    background-color: #68ccaa;
+}
+
+#application .content {
+    width: 1200px;
+    height: 520px;
+    /* background-color: springgreen; */
+    margin: 0 auto;
+}
+#application .content .text {
+    padding-top: 160px;
+    padding-left: 100px;
+
+    box-sizing: border-box;
+
+}
+#application .content .img {
+    margin-top: 38px;
+}
+
+
+
+
+#listItems {
+    width: 100%;
+    height: 1030px;
+    background-color: #fafafa;
+    text-align: center;
+}
+
+#listItems h2 {
+    line-height: 100px;
+}
+
+#listItems .content {
+    width: 1200px;
+    height: calc(260px * 3);
+    /* background-color: pink; */
+    margin: 0 auto;
+}
+
+#listItems .content .item {
+    width: calc(1200px / 5);
+    height: 260px;
+    /* background-color: skyblue; */
+    text-align: center;
+    color: #98918b;
+}
+
+#listItems .content .item p {
+    line-height: 40px;
+}
+

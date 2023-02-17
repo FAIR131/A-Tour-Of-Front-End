@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<!-- 
+
+    深入研究margin 存在的问题
+        margin-top 传递问题  --- 父子元素
+            给子元素添加margin-top , 并没有实现想要的效果
+            但是margin-top传给了父元素
+
+            方案一 给父元素加上边框
+        
+
+                margin的传递问题
+            margin-top  --- 父子元素  -- 必须是大儿子与父亲必须是垂直方向上  
+
+            怎么解决呢
+                给父元素加边框
+
+        margin的合并问题  
+            margin-垂直概念  --- 兄弟元素 -- 相邻兄弟
+
+
+            a 和 b 之前存在 50px 的距离，设置方案？
+                1、 给 a 加  margin-bottom: 50px;
+
+                2、 给 b 加  margin-top: 50px;
+
+                3、 给 a b 各一半  不行，只显示一半距离
+                    合并问题
+                        同时给大哥与二弟加上相对于的外边距 -- 大哥是下外边距 、 二弟是上外边距
+                        都是正值 --- 最终显示的是 两者之间较大的
+
+                        一正一负
+                            大哥是负数、二弟是正数  --- 显示的是两者之和
+
+                            大哥是正数、二弟是负数  --- 显示的是两者之和
+
+                        都是负值  --- 最终显示的是 两者之间绝对值较大的
+
+                        ------
+                            研究的是  垂直方向上的相邻兄弟元素
+                            都是正数/负数  --- 最终显示的是 两者之间绝对值较大的
+                            一正一负       --- 最终显示的是两者之和
+
+                            --- 给大哥一个人加 margin-bottom 正值 / 给二弟一个人加 margin-top 正值
+
+        使用padding之后，内容区会相应的产生移动, 盒子变大了
+
+            不能设置负值
+
+            需求一： 不希望盒子变大 
+                1、手动的减去相对于的尺寸大小
+
+                2、 改变盒子模型
+                    --- 标准盒模型
+
+                    --- 怪异盒模型
+                        box-sizing: border-box;  --- 会压缩 内容显示区的大小
+
+        盒模型的种类
+            不做任何的操作，所有的 盒子 都是标准盒模型
+
+            怪异盒模型  --- box-sizing: border-box
+
+
+                            设置的 width / height
+            标准盒模型       内容显示区
+            怪异盒模型        占据空间
+
+
+            实际占据的空间
+                标准盒子 = 外边距值 + 边框值 + 内边距值 + 本身设置的 w / h
+
+                怪异盒子 = 外边距值 + 本身设置的 w / h
+
+            切换模型
+                box-sizing: 
+                    content-box -----  标准盒模型
+                    
+                    border-box ------ 怪异盒模型
+
+        
+        元素的种类
+            1.块级元素
+                独占一整行
+
+                div --- 能设置宽高
+            2.行内元素
+                在一行内显示
+                span --- 不能设置宽高
+
+            3. 行内块元素
+                img --- 1、多张图片会在一行内显示
+                        2、 可以设置宽高
+
+            置换与非置换
+
+
+            display 属性
+                0、 隐藏掉
+                    none
+                1、块级元素
+                    block
+                2、行内元素
+                    inline
+                3、行内块元素
+                    inline-block
+
+                4、flex：弹性盒子
+
+                5、grid：网格布局
+
+
+
+
+            display常用的取值
+                1)block块状显示：类似在元素后面添加换行符，也就是说其他元素不能在其后面并列显示。或者就是让元素竖排显示
+                2)inline内联显示：在元素后面删除换行符，多个元素可以在一行内并列显示。或者就是让元素横排显示
+                3)inline-block行内块状显示：元素的内容以块状显示，行内的其他元素显示在同一行
+                （此元素类型支持vertical-align属性）img,input,select,textarea
+                4)none：隐藏元素
+                5)flex：弹性盒子
+                6)grid：网格布局
+
+            display不常用的取值
+                7)list-item:列表项，将元素转换成列表。li的默认类型
+                8)table：以表格形式显示 table表格的默认类型
+                9)table-row：以表格行形式显示 tr表格的行的默认类型
+                10)table-cell：以表格列形式显示 td表格的列默认类型
+
+                11)当行内元素设置了float属性后，就相当于该元素加了display:block，
+                    原留白也会消失，不会继承父元素的宽度
+ -->
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .fa {
+            width: 1200px;
+            height: 600px;
+            background-color: pink;
+
+
+            border: 1px solid transparent;
+        }
+
+        .a {
+            width: 1000px;
+            height: 300px;
+            background-color: skyblue;
+            margin-top: 50px;
+            margin-left: 50px;
+
+
+            margin-bottom: -50px;
+        }
+
+        .b {
+            width: 1000px;
+            height: 200px;
+            background-color: palegreen;
+            
+            margin-top: -60px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        margin的传递问题
+            margin-top  --- 父子元素  -- 必须是大儿子与父亲必须是垂直方向上  
+
+            怎么解决呢
+                给父元素加边框
+
+        margin的合并问题  
+            margin-垂直概念  --- 兄弟元素 -- 相邻兄弟
+
+
+            a 和 b 之前存在 50px 的距离，设置方案？
+                1、 给 a 加  margin-bottom: 50px;
+
+                2、 给 b 加  margin-top: 50px;
+
+                3、 给 a b 各一半  不行，只显示一半距离
+                    合并问题
+                        同时给大哥与二弟加上相对于的外边距 -- 大哥是下外边距 、 二弟是上外边距
+                        都是正值 --- 最终显示的是 两者之间较大的
+
+                        一正一负
+                            大哥是负数、二弟是正数  --- 显示的是两者之和
+
+                            大哥是正数、二弟是负数  --- 显示的是两者之和
+
+                        都是负值  --- 最终显示的是 两者之间绝对值较大的
+
+                        ------
+                            研究的是  垂直方向上的相邻兄弟元素
+                            都是正数/负数  --- 最终显示的是 两者之间绝对值较大的
+                            一正一负       --- 最终显示的是两者之和
+
+                            --- 给大哥一个人加 margin-bottom 正值 / 给二弟一个人加 margin-top 正值
+
+                            
+
+                        
+
+
+
+     -->
+
+    <div class="fa">
+        <div class="a"></div>
+        <div class="b"></div>
+    </div>
+</body>
+
+</html>

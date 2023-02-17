@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href=''>
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+
+            border: 30px solid skyblue;
+
+            border-image-source: url("./borderbg.jpg");
+            border-image-slice: 30;
+            border-image-repeat: stretch;
+
+
+            border-image-outset: 30px;
+
+
+            box-shadow: 30px 30px 15px #ccc inset;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+
+        边框图片
+            单色 ---  >  图片
+
+            1. 先写边框
+
+            2. 边框变图
+
+
+            3. 书写顺序
+                1. 先有图片
+
+                2. 中间 图片的位置，存在方式
+
+                3. 设置中间图的  显示模式
+
+                4. 设置图片的相对位置 （只向外展伸）
+
+
+
+        box-shadow				设置一个或多个下拉阴影的框
+            h-shadow	必需的。水平阴影的位置。允许负值
+            v-shadow	必需的。垂直阴影的位置。允许负值
+            blur		可选。模糊距离
+            spread		可选。阴影的大小
+            color		可选。阴影的颜色。在CSS颜色值寻找颜色值的完整列表
+            inset		可选。从外层的阴影（开始时）改变阴影内侧阴影
+            
+            box-shadow: h-shadow v-shadow blur spread color inset;
+
+     -->
+    <div class="box"></div>
+</body>
+
+</html>

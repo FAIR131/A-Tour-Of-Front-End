@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href=''>
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            /* 设置为单线 */
+
+            caption-side: bottom;
+            /* 设置标题的位置 */
+
+            table-layout: fixed;
+            /* 定死单元格 */
+        }
+
+
+
+        table tr td {
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+
+        行分组
+
+        <thead></thead>      表头   只能有一个
+	    <tbody></tbody>      表体必需存在的标签    可以有多个    
+        <tfoot></tfoot>      表尾   只能有一个
+
+        列分组
+        <colgroup></colgroup>
+
+     -->
+    <table border="1" width="1000" height="300">
+        <!-- <caption>标题</caption> -->
+        <thead>
+            <tr>
+                <td colspan="3" align="center">表头</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1红红火火恍恍惚惚</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr><td>表尾</td></tr>
+        </tfoot>
+    </table>
+</body>
+
+</html>

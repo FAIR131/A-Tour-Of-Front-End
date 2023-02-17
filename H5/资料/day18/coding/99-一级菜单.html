@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href=''>
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        ol,
+        li {
+            list-style: none;
+        }
+
+
+        .menu {
+            width: 1000px;
+            height: 300px;
+            border: 1px solid red;
+            margin: 100px auto 0;
+        }
+        .menu>ul {
+            width: 1000px;
+            height: 30px;
+            border: 1px solid skyblue;
+
+            display: flex;
+        }
+        .menu>ul li {
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            font-size: 21px;
+        }
+
+        .menu>ul>:nth-child(odd){
+            background-color: skyblue;
+        }
+        .menu>ul>:nth-child(even){
+            background-color: pink;
+        }
+        /* --------------   一级菜单  --------------- */
+    </style>
+</head>
+
+<body>
+    <div class="menu">
+        <ul>
+            <li>
+                导航一
+                <ul class="subMenu">
+                    <li>导航1-1</li>
+                    <li>导航1-2</li>
+                    <li>导航1-3</li>
+                </ul>
+            </li>
+            <li>导航二</li>
+            <li>导航三</li>
+            <li>导航四</li>
+            <li>导航五</li>
+            <li>导航六</li>
+            <li>导航七</li>
+        </ul>
+    </div>
+</body>
+
+</html>

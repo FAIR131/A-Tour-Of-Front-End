@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href=''>
+    <title>Document</title>
+    <style>
+        .a+.b {
+            font-size: 30px;
+        }
+        
+
+        .a~.c{
+            color: skyblue;
+        }
+
+        /* 
+            E+F    E~F
+            +    ~   
+            兄弟关系
+
+
+            相邻兄弟            + 
+            是兄弟就可以        ~
+        
+        */
+    </style>
+</head>
+
+<body>
+    <div class="fa">
+        <div class="a">div 1</div>
+        <div class="b">div 2</div>
+        <div class="c">div 3</div>
+        <p class="b">p 0</p>
+        <p class="c">p 1</p>
+        <p class="d">p 2</p>
+        <div class="e">div 4</div>
+    </div>
+</body>
+
+</html>

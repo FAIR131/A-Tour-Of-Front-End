@@ -1,0 +1,219 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+html{
+  font-size: 26.67vw;
+}
+
+/* 头部 */
+.head {
+ 
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: .15rem;
+  width: 100%;
+  height: 1.2rem;
+  background-color: #e94544;
+  font-size: .2rem;
+}
+.head .top {
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+}
+.head .top .iconfont{
+  font-size: .2rem !important;
+
+}
+
+.head a{
+  color: #fff;
+}
+
+.head .login {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding-left: .65rem;
+  margin-top: 0.1rem;
+  width: 100%;
+  height: .6rem;
+  color: #fff;
+  font-size:.16rem;
+  line-height: .6rem;
+}
+
+.head .login::before {
+  display: block;
+  position: absolute;
+  left: 3px;
+  top: 0;
+  content: "";
+  width: .5rem;
+  height: .5rem;
+  /* background-color: pink; */
+  background-image: url(../images/logo.png);
+  background-size: 100%;
+  border-radius: 50%;
+  
+}
+
+.head .login .sign {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+}
+
+.head .login .guide{
+  margin-top: .1rem;
+  margin-right: -.15rem;
+  width: 40%;
+  height: .3rem;
+  background-color: #f85660;
+  text-align: center;
+  line-height:.3rem;
+  border-radius: .15rem 0 0 .15rem;
+}
+
+.head .login .guide .iconfont{
+  font-size: .18rem !important;
+}
+
+
+
+/* 内容大盒子 */
+.box{
+  position: absolute;
+  top:1.2rem;
+  bottom: .7rem;
+  left: 0;
+  right: 0;
+  overflow: auto;
+  background-color: #efeff4;
+}
+
+/* 订单 */
+
+.box .order{
+  padding: .1rem;
+  margin-bottom: .1rem;
+  width: 100%;
+  height:1.4rem;
+  background-color: #fff;
+}
+
+.box .order .top{
+  display: flex;
+  justify-content: space-between;
+  height: .4rem;
+  font-size: .14rem;
+  color: #999;
+  border-bottom: 1px solid #e6e6e6;
+
+}
+
+.box .order .top .my{
+  padding-left: .1rem;
+  height: .2rem;
+  color: #000;
+  font-weight: 500;
+  font-size: .16rem;
+  border-left: .05rem solid #e94544;
+
+}
+
+.bottom {
+  display: flex;
+  padding-top: .1rem;
+  width: 100%;
+  height: .7rem;
+  /* background-color: skyblue; */
+}
+
+.bottom > div {
+  width: 25%;
+  height: .7rem;
+  /* background-color: palegreen; */
+  text-align: center;
+  /* font-size: 0.875rem; */
+}
+
+.bottom > div a {
+  display: inline-block;
+  width: 100%;
+  height: .7rem;
+  /* background-color: pink; */
+}
+
+.bottom > div .iconfont {
+  font-size: .3rem !important;
+}
+
+.tool{
+    height: 2rem !important;
+    /* background-color: #fff; */
+}
+
+.tool .bottom{
+
+  flex-wrap: wrap;
+}
+
+.tool .bottom .iconfont {
+  font-size: .25rem !important;
+  color:skyblue ;
+}
+
+/* .tool .bottom .color .iconfont{
+  color: orange;
+} */
+
+.tool .bottom>div:nth-child(-n+4) a .iconfont{
+  color: orange;
+}
+
+.tool .bottom{
+  font-size: .14rem;
+}
+
+
+/* 底部 */
+.footer {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: .7rem;
+  /* background-color: skyblue; */
+  border-top: 1px solid #ccc;
+}
+
+.footer > div {
+  width: 25%;
+  height: .7rem;
+  /* background-color: palegreen; */
+  text-align: center;
+  color: gray;
+  font-size: 0.14rem;
+}
+
+.footer > div a {
+  display: inline-block;
+  width: 100%;
+  height: .7rem;
+  color: gray;
+  /* background-color: pink; */
+}
+
+.footer > div .iconfont {
+  font-size: .25rem !important;
+}
+
+.footer .actived a {
+  color: #e94544;
+}

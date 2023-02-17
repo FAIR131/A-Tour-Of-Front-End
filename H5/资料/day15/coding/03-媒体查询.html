@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href=''>
+    <title>Document</title>
+    <style>
+
+        @media only screen and (max-width: 320px) {
+
+            /*  [0 , 320)   */
+            html {
+                font-size: 20px;
+                /* 设置  10px  8px   ----- 转换中的缩放 */
+            }
+        }
+
+        @media only screen and (min-width: 320px) and (max-width: 480px) {
+
+            /* [320. 480] */
+            html {
+                font-size: 50px;
+            }
+        }
+
+        @media only screen and (min-width:480px) {
+
+            /* [480, ~~) */
+            html {
+                font-size: 100px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <style>
+        .many {
+            font-size: 32px;
+            /* font-size: .5rem; */
+
+            /* font-size: 
+                20px ===== 1rem
+                40px      2rem; 
+            
+                50px       2.px
+                
+                33.3px    
+
+                px to rem
+            
+            */
+
+
+
+
+            width: 3rem;
+            border: 1px solid red;
+        }
+    </style>
+    <div class="many">各种终端的字</div>
+
+    <div class="text" style="font-size: 16px;">各种终端的字 20</div>
+</body>
+
+</html>

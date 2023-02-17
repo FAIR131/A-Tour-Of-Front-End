@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href=''>
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+<!-- 
+    div::first-letter {   设置首个字母
+        text-transform: uppercase;
+    }
+
+    div::first-line {  设置首行文本
+        color: skyblue;
+    }
+    详情 请见 da08/coding/13其他伪元素选择器
+
+
+
+
+    设置宽高 --- 使用设置的值
+
+    不设置宽高
+        宽度
+            1.块级元素
+                会使用父级元素的宽度值  --- 100%
+
+            2.行内元素
+                宽度由内容撑开
+        高度
+            1.块级元素
+                高度由内容撑开
+
+            2.行内元素
+                一行文本的高度
+
+    ---- 自适应高度宽度 --- 由内容控制
+
+
+
+
+    隐藏元素的方案
+
+    display: none
+
+	设置元素的显示模式
+	1、该属性会让元素完全从DOM中消失，浏览器不渲染设置该属性的元素，不占据DOM树空间
+	2、无法进行事件监听，不可点击
+	3、动态修改该属性会造成重排，性能较差
+	4、非继承性属性！设置了该属性的元素的子元素即使设置display:block依然不会显示它的子元素
+	5、transition不支持display的显示隐藏动画效果，但是display:none不会影响animation的动画效果！
+
+    visibility:hidden
+
+        设置元素是否可见
+        1、设置该属性的元素依然在DOM中，会被浏览器渲染，占据DOM树空间
+        2、但它无法被监听，因此不可点击
+        3、动态修改该属性会引成重绘，性能较display:none高
+        4、继承性属性！设置该元素的子元素如果修改visibility值是可以显示该子元素的！
+        5、transition支持该属性
+
+
+    opacity:0
+
+        设置元素的透明度  从0.0（完全透明）到1.0（完全不透明）
+        1、占据空间，仅仅是设置透明度让该元素不可见
+        2、可以被监听，可以点击
+        3、动态修改不会造成重绘和重排，性能较高！
+        4、非继承性属性！设置该属性元素的子元素若设置opacity:1依然无法显示
+        5、可以配合transition显示淡入淡出效果
+        
+
+
+    height:0px; + overflow:hidden;
+
+    position:
+    z-index: -1
+
+    transform:scale(0)
+
+    面试题： 什么是重绘，什么是回流？两者区别是什么？
+        display      --- 回流
+ 
+        visibility   --- 重绘
+
+        ---- 页面布局、结构是否发生了变化？
+            发生变化 --- 回流
+            无变化  --- 重绘 （样式会变， 字的颜色）
+
+        ----------- 性能？
+
+    z-index
+
+ -->
+</body>
+<a href=""></a>
+</html>

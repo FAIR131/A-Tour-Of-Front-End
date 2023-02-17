@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href=''>
+    <title>Document</title>
+    <style>
+        .fa {
+            width: 1000px;
+            height: 500px;
+            background-color: pink;
+            margin: 0 auto;
+
+            position: relative;
+        }
+
+        .son {
+            width: 500px;
+            height: 200px;
+            background-color: palegreen;
+            position: absolute;
+
+            /* top: 150px;  */
+            /* (500px - 200px)   / 2 */
+            /* left: 250px;  */
+            /* (1000px - 500px) / 2 */
+
+
+            /* top: 50%;
+            left: 50%;
+            margin-top: -100px;
+            margin-left: -250px; */
+
+
+
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        --------------- 盒模型的方法
+            水平方向上
+                ---  margin 
+                    方案一：设置单边 给值
+
+                    方案二： 适应  margin ： 0 auto;
+
+            垂直方向上
+                ---  margin-top
+
+                ---  padding-top
+
+        ----------------  定位的方法
+            方案一： 完全定位
+                已知条件 --- 父子 的 宽高
+                    父 - 相对定位
+                    子 - 绝对定位
+                        top: （父的高 - 子的高） / 2
+                        left:（父的宽 - 子的宽） / 2
+
+            方案二：
+
+                已知条件 --- 子 的 宽高
+                    父 - 相对定位
+                    子 - 绝对定位
+                        top: 50%   ---  针对父元素
+                        left:50%   ---  针对父元素
+
+
+                        子元素位移 自己 宽高的一半
+                        margin-top: 自己 高的一半
+                        margin-left: 自己 宽的一半
+
+            方案三：
+                父子都未知
+                    父 - 相对定位
+                    子 - 绝对定位
+                        margin: auto;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+
+
+        -------------------------------  待定
+        ........
+
+
+
+
+     -->
+    <div class="fa">
+        <div class="son"></div>
+    </div>
+
+
+    <div class="l_h">
+        字有很多字
+        字有很多字有很多字有很多字有很多
+        字有很多字有很多字有很多字有很多
+        字有很多字有很多字有很多字有很多有很多字有很多字有很多
+    </div>
+
+    <style>
+        .l_h {
+            width: 100px;
+            height: 50px;
+            background-color: skyblue;
+
+            line-height: 50px;
+        }
+    </style>
+</body>
+
+</html>

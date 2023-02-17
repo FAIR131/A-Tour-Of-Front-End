@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href=''>
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+
+            transition: all 1s;
+            transform-origin: 25px 25px;
+        }
+
+        .box:hover {
+            /* transform: translate(100px, 100px)  scale(2); */
+
+            /* 
+                css 层叠性 - 覆盖
+            */
+            transform:  translate(100px) rotate(45deg);
+
+            /* 旋转中心 */
+            /* transform: rotate(45deg); */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">box</div>
+</body>
+
+</html>

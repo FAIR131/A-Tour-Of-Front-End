@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        
+        css 选择器 
+            5、群组选择器
+                    使用逗号（,）表示
+                    把多个选择器写在一起，方便样式的组织管理，组内的选择器是任意类型的
+                    
+            复合选择器
+                
+                6、伪类选择器
+                    伪类，用于向某些选择器添加特殊的效果。
+                    用伪类定义的样式并不是作用在标记上，而是作用在标记的状态上
+                    
+                    设置 a标签 的四种状态
+                    :link访问前的状态
+                    :visited访问后的状态
+                    :hover鼠标移入效果
+                    :active激活状态(按下未松开)
+                    l-v-h-a : love-hate按照顺序书写
+                                    
+                7、后代选择器
+                    使用空格（ ）表示
+                    前面的一个选择器表示包含框对象的选择器，而后面的选择器表示被包含的选择器
+                    
+                8、子代选择器
+                    使用尖角号（>）表示
+                    准确定义HTML文档某个或一组子元素的样式
+
+                9、属性选择器
+                    E（标签名称）[attr="value"]：指定属性名和属性值(值完整)
+
+        css 属性名 、css 属性值
+            一、字体属性
+                1、字体的粗细：   font-weight:
+                    normal			默认值,定义标准的字符
+                    bold			粗体字符
+                    lighter			更细的字符
+                    100~900			由细到粗的字符,400 等同于 normal，而 700 等同于 bold
+
+                2、字体的样式：  font-style:
+                    normal			默认值,浏览器显示一个标准的字体样式
+                    italic			显示一个斜体的字体样式
+
+                3、字体的大小：  font-size:
+                    浏览器默认字体大小16px,默认情况下允许设置的最小字体12px
+
+                    面试题：常见的字体大小是多少？
+                        1. 浏览器默认的字体大小是 16px
+                        2. 浏览器在常规情况下，允许我们设置最小的字体大小为 12px
+                        3. 当我们设置字体大小为 0px时，字体会直接消失
+
+                        4. 常见的字体大小一般都是偶数
+
+                4、字体的系列：  font-family:
+                    family-name   	字体名称
+                    
+                    "微软雅黑",Arial,"arial narrow";
+
+                    当字体是中文字体时，需加双引号；
+                    当英文字体由多个单词组成时，需加双引号如（"arial narrow"）
+                    
+                    可以把多个字体名称作为一个"回退"系统来保存。如果浏览器不支持第一个字体，则会尝试下一个
+                    使用某种特定的字体系列（Geneva）完全取决于用户机器上该字体系列是否可用；这个属性没有指示任何字体下载
+                    因此，强烈推荐使用一个通用字体系列名作为后路
+                    
+                字体属性的简写
+                    font:  	font-weight 
+                            font-style
+                            font-size
+                            font-family
+
+
+            二、文本属性
+                1、文本的颜色：  color:
+	            十六进制值(0-9A-F), 
+                一个RGB值(0-255)
+                颜色的名称
+                eg: 纯白 #fff / rgb(255,255,255) / white
+                    纯黑 #000 / rgb(0,0,0) / black
+                        
+                2、文本的对齐方式：  text-align:
+                    left  			排列到左边 	
+                    right  			排列到右边
+                    center  		排列到中间
+                    justify			两端对齐	
+
+                3、文本的行高：  line-height:
+                    normal			默认，设置合理的行间距
+                    直接给数值
+                    
+                    特殊用法：单行文本的垂直居中，将行高设置为和父元素高度一致
+                    
+                4、文本的线条修饰：  text-decoration:
+                    none			默认，定义标准的文本，不设置任何线条
+                    underline		文本下方的一条线
+                    overline		文本上方的一条线
+                    line-through	穿过文本的一条线
+
+                5、缩进元素中文本的首行：  text-indent:
+                    text-indent: 2em;
+                    em 是什么？
+                    em 是相对长度单位，他会继承父级元素的字体大小，因此不是一个固定的值
+
+                    text-indent 可以取负值;
+                    text-indent 属性只对第一行起作用
+
+                /* 设置鼠标移入为小手 */      cursor: pointer;
+
+                6、设置字间距：	letter-spacing
+                    normal			默认，定义单个字间的标准空间
+                    length			定义单个字间的固定空间
+                    
+                    每一个中文文字作为一个“字”，而每一个英文字母也作为一个“字”
+                    
+                7、设置词间距：  word-spacing:
+                    normal			默认，定义单词间的标准空间
+                    length			定义单词间的固定空间
+                    
+                    以空格为基准进行调节，如果多个单词被连在一起，则被word-spacing视为一个单词
+                    如果汉字被空格分隔，则分隔的多个汉字就被视为不同的单词，word-spacing属性此时有效
+                    
+                8、设置元素中空白的处理方式：	white-space:
+                    normal			默认，空白会被浏览器忽略
+                    nowrap			文本不会换行，文本会在在同一行上继续，直到遇到 <br> 标签为止
+
+                9、元素中的字母：  text-transform:
+                    none			默认，定义带有小写字母和大写字母的标准的文本
+                    capitalize		文本中的每个单词以大写字母开头
+                    uppercase		全部转换为大写字母
+	                lowercase		全部转换为小写字母
+
+
+
+            三、 边框属性
+                1、边框的样式：  border-style:
+                    none 			默认无边框
+                    dotted			定义一个点线边框
+                    dashed			定义一个虚线边框
+                    solid			定义实线边框
+                    double			定义两个边框,两个边框的宽度和 border-width 的值相同
+
+                    单边框设置：
+                            上边框 border-top:
+                            下边框 border-bottom:
+                            左边框 border-left:
+                            右边框 border-right:
+                            
+                2、边框的宽度：  border-width:
+
+                3、边框的颜色：  border-color:
+                    name			指定 颜色名称
+                    RGB				指定 RGB 值
+                    Hex 			指定 十六进制值
+
+                利用边框制作一个三角形
+                    .box{
+                        width: 0px;
+                        border-top: 100px solid transparent;
+                        border-bottom: 100px solid yellow;
+                        border-left: 100px solid transparent;
+                        border-right: 100px solid transparent;
+                    }
+                    - transparent代表透明色
+
+                需要注意的是：border-color单独使用是不起作用的，必须得先使用border-style来设置边框样式
+
+                设置单边 border-方位值-border属性值
+
+                简写属性： border: 宽度，样式，颜色
+
+
+
+            四、 列表属性
+                    ol,
+                    ul {
+                        list-style: none;
+                        /* 除去默认的序号 */
+                    }
+
+
+
+            五、背景属性
+                1、背景的颜色：  background-color
+                    设置颜色透明度	rgba (255, 255, 255l, [0 ~ 1] )
+                        alpha   --- a  ----- 透明度   
+
+                2、背景的图像：  background-image
+                    URL			图像的URL
+
+                3、背景图像是否及如何重复：		background-repeat
+                    repeat		默认，背景图像将向垂直和水平方向重复
+                    repeat-x	只有水平位置会重复背景图像
+                    repeat-y	只有垂直位置会重复背景图像
+                    no-repeat	background-image不会重复
+                4、背景图像的起始位置：	background-position
+                    background-position:0px 0px;
+                    第一个值代表水平方向,正值代表向右移动
+                    第二个值代表垂直方向,正值代表向下移动
+                    
+                    background-position:right bottom;背景图在右下角
+                    水平：left左、right右、center居中
+                    垂直：top上、bottom下、center居中
+                    
+            什么是精灵图？ ！！！
+                css精灵(CSS sprites),是一种网页图片应用处理技术
+                主要是指将网页中需要的零星的小图片集成到一个大的图片中
+            为什么要用它？
+                1.减少对浏览器的请求次数，避免网页的延迟
+                2.方便小图标的统一管理
+            如何使用？
+                利用CSS的“background-image”，“background- repeat”，“background-position”的组合进行背景定位
+                background-position可以用数字能精确的定位出背景图片的位置
+
+            六、 溢出属性
+                overflow:	
+                    visible:	默认。溢出没有被剪裁。内容在元素框外渲染
+                    hidden:		溢出被剪裁，其余内容将不可见
+                    scroll:		溢出被剪裁，同时添加滚动条以查看其余内容
+                    auto:		与 scroll 类似，但仅在必要时添加滚动条
+
+                设置 单行文本溢出变成...
+                    CSS: {
+                        width: ___px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    };
+                    
+                多行文本：
+                    CSS: {
+                        width: ___px;
+                        overflow:hidden;
+                        text-overflow:ellipsis;
+                        -webkit-line-clamp:2;
+                        display:-webkit-box;
+                        -webkit-box-orient:vertical;
+                    }
+                    使用了WebKit的CSS扩展属性，该方法适用于WebKit浏览器及移动端
+                    
+                    1.-webkit-line-clamp 用来限制在一个块元素显示的文本的行数
+                    为了实现该效果，它需要组合其他的WebKit属性
+                    常见结合属性：
+                    2.display: -webkit-box; 必须结合的属性 ，将对象作为弹性伸缩盒子模型显示
+                    3.-webkit-box-orient 必须结合的属性 ，设置或检索伸缩盒对象的子元素的排列方式 
+
+     -->
+</body>
+
+</html>

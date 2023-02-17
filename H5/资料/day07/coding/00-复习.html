@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<!-- 
+
+    盒模型
+        1.margin
+            1.1 --- margin-top 传递   --- 父子 - 大儿子
+                解决方案 --- 给父元素加边框
+
+            1.2 --- 垂直方向上的 合并 问题 --- 兄弟 - 相邻
+                现象： 同时给正数/负数 --- 最终显示的是 绝对值较大的
+
+                        一正一负 --- 最终显示的是 两者之和
+
+                工作过程是
+                    --- 只给一个外边距
+        2.padding
+            给元素加了padding 之后，盒子本身会变大，
+                解决方案： box-sizing : border-box
+        3.种类
+            1.  标准盒模型  w3c
+                    box-sizing : content-box
+            2.  怪异盒模型  ie
+                    box-sizing : border-box
+
+            盒子最终的占据空间： 
+
+
+    元素的显示模式
+        diaplay:
+            行内
+            块级
+            行内块
+
+            隐藏
+
+            -------
+
+
+
+
+        元素
+            单元素
+                <__ />   --- XHTML
+                不过语法上更加严格。
+                XHTML 元素必须被正确地嵌套，
+                XHTML 元素必须被关闭，
+                XHTML标签名必须用小写字母，
+                XHTML 文档必须拥有根元素  --- html
+            双元素 
+                <__ >  </__>
+
+
+        font----
+
+        background: background-color
+            background-image
+            background-repeat
+            background-attachment
+            background-position / [ background-size
+
+
+        margin : 10px 5px
+        margin - top        10px  --- 5px
+                - right     5px  --- 10px
+                - bottom    10px
+                - left      5px
+        
+ -->
+<div class="a">字</div>
+
+<style>
+    .a {
+        font-family: "楷体";
+        font-size: 30px;
+
+       
+    }
+</style>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            width: 100px;
+            border: 1px solid red;
+            /* 
+                针对块级元素
+                    不设置宽度，宽度是 其父元素的宽度
+                    设置宽度  就用自己设置的
+                    不设置高度，高度由内容撑开
+                    设置高度  就用自己设置的
+            */
+        }
+
+        span {
+            width: 100px;
+            height: 100px;
+            border: 1px solid skyblue;
+            /* 
+                针对行内元素
+                    不设宽度，宽度由内容撑开
+
+                    不设高度， 高度是 默认浏览器给定的 一行字的高度
+
+                    设置了宽度高度，也没用
+            */
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        写字，好的，我写，别骂了，哎
+    </div>
+
+    <span>写字，好的，我写，别骂了，哎写字，好的，我写，别骂了，哎写字，好的，我写，别骂了，哎写字，好的，我写，别骂了，哎写字，好的，我写，别骂了，哎</span>
+</body>
+
+</html>

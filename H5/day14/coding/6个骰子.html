@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Document</title>
+  <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'>
+  <style>
+*{
+  margin: 0;
+  padding: 0;
+}
+
+    .box {
+      margin: 30px auto;
+      width: 1200px;
+      height: 300px;
+      display: flex;
+      justify-content: space-between;
+
+    }
+
+    .box>div {
+      display: flex;
+      width: 150px;
+      height: 150px;
+      background-color: #eee;
+      border-radius: 10%;
+      box-sizing: border-box;
+    }
+
+    p {
+      width: 30px;
+      height: 30px;
+      background-color: #000;
+      border-radius: 50%;
+    }
+
+    /* 1 */
+    .tou1 {
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* 2 */
+    .tou2 {
+      padding: 15px;
+      justify-content: space-around;
+    }
+
+    .tou2>p:nth-child(2),
+    .tou3>p:nth-child(3) {
+      align-self: flex-end;
+    }
+
+    /* 3 */
+    .tou3 {
+      padding: 15px;
+      justify-content: space-around;
+    }
+
+    .tou3>p:nth-child(2) {
+      align-self: center;
+    }
+
+    /* 4 */
+
+    .tou4,
+    .tou5,
+    .tou6 {
+      justify-content: space-around;
+    }
+
+    .tou4>div,
+    .tou5>div,
+    .tou6>div {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="tou1">
+      <p></p>
+    </div>
+    <div class="tou2">
+      <p></p>
+      <p></p>
+    </div>
+    <div class="tou3">
+      <p></p>
+      <p></p>
+      <p></p>
+    </div>
+    <div class="tou4">
+      <div>
+        <p></p>
+        <p></p>
+      </div>
+      <div>
+        <p></p>
+        <p></p>
+      </div>
+
+    </div>
+    <div class="tou5">
+      <div>
+        <p></p>
+        <p></p>
+      </div>
+      <div>
+        <p></p>
+      </div>
+      <div>
+        <p></p>
+        <p></p>
+      </div>
+    </div>
+    <div class="tou6">
+      <div>
+        <p></p>
+        <p></p>
+        <p></p>
+      </div>
+      <div>
+        <p></p>
+        <p></p>
+        <p></p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

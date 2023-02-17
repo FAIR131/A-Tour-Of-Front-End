@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            /* 
+                pc 端页面   ---  清除内外边距  --- 浏览器的适配
+            */
+        }
+        div {
+            width: 100px;
+            height: 100px;
+        }
+
+        .a {
+            background-color: palegreen;
+
+            position: absolute;
+            top: 100px;
+            left: 100px;
+
+            z-index: 9;
+        }
+
+        .b {
+            background-color: skyblue;
+
+            /* position: relative;
+            left: 100px;
+            top: 100px; */
+        }
+
+        .c {
+            background-color: pink;
+
+            /* position: relative; */
+        }
+
+        .d {
+            width: 50px;
+            height: 50px;
+            background-color: peru;
+
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="a"></div>
+    <div class="b"></div>
+    <div class="c">
+        <div class="d">
+
+        </div>
+    </div>
+</body>
+
+</html>

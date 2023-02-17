@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href=''>
+    <title>Document</title>
+    <style>
+        body {
+            perspective: 500px;
+        }
+
+        .fa {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border: 1px solid skyblue;
+            margin: 100px auto 0;
+            /* 控制子元素在3d空间 */
+            transform-style: preserve-3d;
+            
+            border-radius: 50%;
+
+            transition: all 3s;
+        }
+
+        .fa div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 300px;
+            height: 300px;
+            line-height: 300px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 30px;
+            color: white;
+            border-radius: 50%;
+            backface-visibility: hidden;
+
+        }
+
+        .a {
+            background-color: skyblue;
+            z-index: 99;
+        }
+
+        .b {
+            background-color: pink;
+            transform: rotateY(180deg);
+            z-index: 9;
+        }
+        .fa:hover {
+            transform: translateZ(100px) rotateY(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fa">
+        <div class="a">前</div>
+        <div class="b">后</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href=''>
+    <title>Document</title>
+    <style>
+        .wrap {
+            width: 1000px;
+            height: 50px;
+        }
+
+        .box>:nth-child(odd) {
+            background: repeating-linear-gradient(to right, pink 0% 10%, #fff 10% 20%);
+        }
+
+        .box>:nth-child(even) {
+            background: repeating-linear-gradient(to right, #fff 0% 10%, skyblue 10% 20%);
+        }
+
+        .box>:nth-child(3n) {
+            background: repeating-linear-gradient(to right, green 0% 20%, #fff 20% 40%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="wrap"></div>
+        <div class="wrap"></div>
+        <div class="wrap"></div>
+        <div class="wrap"></div>
+        <div class="wrap"></div>
+        <div class="wrap"></div>
+        <div class="wrap"></div>
+        <div class="wrap"></div>
+    </div>
+</body>
+
+</html>

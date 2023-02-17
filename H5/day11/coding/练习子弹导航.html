@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Document</title>
+  <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul,
+    li {
+      list-style: none;
+    }
+
+    .nav {
+      margin: 20px auto;
+      width: 1200px;
+      height: 100px;
+    }
+
+    .bullet{
+      margin-left: 100px;
+      float: left;
+      width: 160px;
+      height: 30px;
+    }
+
+    .bullet .center{
+      float: left;
+      width: 100px;
+      height: 30px;
+      background-color: skyblue;
+      text-align: center;
+      line-height: 30px;
+      color: white;
+    }
+
+    .before{
+      float: left;
+      width: 0;
+      height: 0;
+      border: 15px solid transparent;
+      border-left-color: skyblue;
+    }
+
+    .after{
+      float: left;
+      width: 0;
+      height: 0;
+      border: 15px solid skyblue;
+      border-left-color: transparent;
+    }
+
+   /*  .bullet:nth-child(even){
+      background-color: white;
+      border-color: white;
+    }
+ */
+
+  </style>
+</head>
+
+<body>
+  <div class="nav">
+    <ul>
+      <li class="bullet ">
+        <div class="after"></div>
+        <div class="center">导弹头导航</div>
+        <div class="before"></div>
+      </li>
+      <li class="bullet ">
+        <div class="after"></div>
+        <div class="center">导弹头导航</div>
+        <div class="before"></div>
+      </li>
+      <li class="bullet ">
+        <div class="after"></div>
+        <div class="center">导弹头导航</div>
+        <div class="before"></div>
+      </li>
+      <li class="bullet ">
+        <div class="after"></div>
+        <div class="center">导弹头导航</div>
+        <div class="before"></div>
+      </li>  
+    </ul>
+  </div>
+</body>
+
+</html>

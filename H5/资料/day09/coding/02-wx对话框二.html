@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href=''>
+    <title>Document</title>
+    <style>
+        /* 公共样式 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 全屏页面 */
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+
+        /* 自己的样式 */
+        .wxChat {
+            width: 100%;
+            height: 100%;
+        }
+
+        .top {
+            width: 100%;
+            height: 50px;
+            background-color: pink;
+            position: fixed;
+            top: 0;
+        }
+
+
+        .center {
+            position: fixed;
+            top: 50px;
+            bottom: 50px;
+            left: 0;
+            right: 0;
+            background-color: orchid;
+
+            overflow: auto;
+        }
+
+        .bottom {
+            width: 100%;
+            height: 50px;
+            background-color: skyblue;
+            position: fixed;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wxChat">
+        <div class="top"></div>
+        <style>
+            .center .date {
+                text-align: center;
+                color: white;
+                /* margin-top: 3px; */
+                clear: both;
+
+                /* margin-top: 10px; */
+                padding-top: 10px;
+                box-sizing: border-box;
+            }
+
+            .center .person {
+                max-width: 200px;
+                /* width: 100px; */
+                line-height: 30px;
+                background-color: white;
+                margin-left: 22px;
+
+                padding: 10px;
+                box-sizing: border-box;
+
+                position: relative;
+
+
+                float: left;
+
+                clear: both;
+                border-radius: 10%;
+                margin-top: 7px;
+            }
+
+            .center .person::before {
+                content: "";
+                display: block;
+
+                /* width: 10px;
+                height: 10px; */
+
+                width: 0;
+                height: 0;
+                border: 10px solid transparent;
+                border-right: 10px solid white;
+                /* border-right-color: white; */
+
+                position: absolute;
+                top: 15px;
+                left: -20px;
+            }
+
+            .center .mine {
+                margin-top: 7px;
+                max-width: 200px;
+                /* width: 100px; */
+                line-height: 30px;
+                background-color: palegreen;
+                margin-right: 22px;
+
+                padding: 10px;
+                box-sizing: border-box;
+
+                position: relative;
+
+                float: right;
+                /* 用过浮动之后 再清除浮动  --- */
+                clear: both;
+            }
+
+            .center .mine::after {
+                content: "";
+                display: block;
+
+                /* width: 10px;
+                height: 10px; */
+
+                width: 0;
+                height: 0;
+                border: 10px solid transparent;
+                border-left: 10px solid palegreen;
+                /* border-right-color: white; */
+
+                position: absolute;
+                top: 15px;
+                right: -20px;
+            }
+
+        </style>
+        <div class="center">
+            <div class="date">23：59</div>
+
+            <div class="person">睡了吗</div>
+
+            <!-- <div style="clear: both;"></div> -->
+
+            <div class="mine">睡了</div>
+
+            <!-- <div style="clear: both;"></div> -->
+
+            <div class="person">睡了还能回消息的吗</div>
+
+            <div class="mine">梦游呢</div>
+
+            <div class="person">得道者多助，失道者寡助。寡助之至，亲戚畔之；多助之至，天下顺之</div>
+
+            <div class="mine">说什么呢你，**********，能说人话吗，***</div>
+
+
+
+
+            <!-- ..................... -->
+
+
+            <div class="date">07：28</div>
+            <div class="mine">啊这，，，哥们不会生气了吧，不会吧不会吧</div>
+
+            <div class="person">哥哥，阴阳怪气还dai 是你啊</div>
+            <!-- ........... -->
+        </div>
+
+        <div class="bottom"></div>
+    </div>
+</body>
+
+</html>

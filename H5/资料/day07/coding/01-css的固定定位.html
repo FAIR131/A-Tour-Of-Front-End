@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href=''>
+    <title>Document</title>
+    <style>
+        .fixed {
+            width: 100px;
+            height: 100px;
+            background-color: #ccc;
+
+            text-align: center;
+            line-height: 100px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+
+            position: static;
+            /* 默认定位模式 --- 相当于没开启 */
+
+            position: fixed;
+            /* 
+                第一步，开启定位模式  --- 固定定位 
+                第二步, 设置盒子的位置
+            */
+            /* top: 50px;
+            left: 50px; */
+
+            right: 50px;
+            bottom: 50px;
+        }
+
+        .fixed:hover {
+            cursor: pointer;
+        }
+
+        .content {
+            width: 100px;
+            height: 9999999999px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fixed">
+        返回顶部
+    </div>
+
+    <div class="content"></div>
+</body>
+
+</html>

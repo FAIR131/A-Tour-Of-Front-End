@@ -1,0 +1,217 @@
+.box {
+  margin: 0 auto;
+  width: 100%;
+  /* height: 3000px; */
+  background-image: url(../img/bg.png);
+}
+
+/* 头部 */
+.top {
+  /* background-color: pink; */
+  margin: 0 auto;
+  width: 1200px;
+  height: 196px;
+}
+
+.pic {
+  float: left;
+}
+
+.pic img {
+  width: 220px;
+  height: 196px;
+}
+
+.nav {
+  float: left;
+  margin-left: 75px;
+  /* background-color: pink; */
+  width: 900px;
+  line-height: 196px;
+}
+
+.nav li {
+  float: left;
+  margin-right: 135px;
+}
+
+.nav li:last-child {
+  margin-right: 0;
+}
+
+/* 版心 */
+.img {
+  height: 453px;
+  /* width: 1400px; */
+}
+
+.img img {
+  width: 100%;
+  height: 100%;
+}
+
+/* 品牌优势 */
+.superiority {
+  text-align: center;
+  margin-top: 23px;
+  height: 362px;
+  background-color: #d7e691;
+}
+
+.title {
+  padding-top: 35px;
+  text-align: center;
+}
+
+.title .Ch {
+  font-weight: bold;
+  line-height: 22px;
+  font-size: 20px;
+}
+
+.title .En {
+  line-height: 12px;
+  font-size: 12px;
+}
+
+.item li {
+  display: inline-block;
+  margin-right: 5px;
+  width: 200px;
+  height: 250px;
+  /* background-color: pink; */
+  text-align: center;
+}
+
+.item li img {
+  margin-top: 20px;
+  margin-bottom: 28px;
+  width: 139px;
+}
+
+.item li .text1 {
+  height: 16px;
+}
+.item li .text2 {
+  margin-top: 6px;
+  height: 14px;
+}
+
+/* 加盟条件 */
+.join {
+  position: relative;
+  margin-top: 53px;
+  margin: 0 auto;
+  width: 1200px;
+  height: 488px;
+}
+
+.bgi {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 431px;
+  height: 306px;
+
+  /* background-color: pink; */
+  background-image: url(../img/join_24.png);
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+}
+
+.condition {
+  margin-bottom: 22px;
+  height: 200px;
+}
+
+.condition .pic {
+  float: left;
+  width: 378px;
+}
+
+.condition .pic img {
+  width: 100%;
+}
+
+.condition .text {
+  float: left;
+  margin-top: 66px;
+  margin-left: 40px;
+  font-size: 14px;
+}
+
+.condition .text .one {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+}
+
+/* 联系我们 */
+.contact {
+  margin: 0 auto;
+  width: 1200px;
+  height: 330px;
+}
+
+.contact .methods {
+  float: left;
+  margin-top: 24px;
+  margin-right: 5px;
+  width: 290px;
+  height: 235px;
+  text-align: center;
+  background-color: #809b4f;
+}
+
+.contact .methods img {
+  margin-top: 35px;
+  margin-bottom: 30px;
+  width: 105px;
+  height: 105px;
+}
+
+.contact .methods .text {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+/* 底部 */
+.footer {
+  margin-top: 50px;
+  padding-top: 20px;
+  width: 100%;
+  height: 230px;
+  background-color: #537220;
+}
+
+.footer .content {
+  margin: 0 auto;
+  width: 1150px;
+  height: 200px;
+  /* background-color: pink; */
+}
+
+.footer .content .left {
+  float: left;
+  color: #fff;
+  font-size: 14px;
+}
+
+.footer .content .left a{
+  color: #fff;
+}
+
+.footer .content .left .first,
+.footer .content .left .last{
+  margin: 15px 0;
+}
+
+.footer .content .right{
+  float: right;
+  text-align: center;
+  color: #fff;
+}
+.footer .content .right p{
+  margin-top: 10px;
+}

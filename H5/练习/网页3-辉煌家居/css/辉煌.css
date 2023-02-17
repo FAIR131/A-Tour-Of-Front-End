@@ -1,0 +1,223 @@
+/* 头部 */
+.head {
+  margin: 0 auto;
+  width: 1200px;
+  height: 92px;
+}
+
+.head .left {
+  width: 500px;
+}
+
+.nav {
+  margin-right: 80px;
+  line-height: 92px;
+  list-style: none;
+}
+
+.center {
+  margin: 0 auto;
+  width: 48px;
+  height: 81px;
+}
+
+.right li:first-child {
+  margin-right: 0;
+}
+
+/* 版心 */
+.banner {
+  width: 100%;
+  height: 600px;
+}
+
+.banner img {
+  width: 100%;
+  height: 600px;
+}
+
+/* 导航 */
+.index {
+  width: 100%;
+  height: 50px;
+  border-bottom: 1px solid #ccc;
+  /* background-color: pink; */
+}
+
+.index .bd {
+  margin: 0 auto;
+  margin-top: 23px;
+  width: 1200px;
+  padding-left: 11px;
+  border-left: 4px solid orange;
+}
+
+/* 新闻 */
+.news {
+  height: 1572px;
+  /* background-color: pink; */
+}
+
+.news .title {
+  margin: 0 auto;
+  width: 217px;
+  height: 100px;
+  padding: 40px 20px 20px;
+  /* background-color: skyblue; */
+  text-align: center;
+  font-size: 23px;
+}
+
+.news .item {
+  margin: 0 auto;
+  margin-top: 55px;
+  width: 1200px;
+  height: 385px;
+  border-bottom: 2px solid #ccc;
+  /* background-color: palegoldenrod; */
+}
+
+.news .item .left {
+  position: relative;
+  float: left;
+  width: 523px;
+  height: 304px;
+}
+
+.news .item .left img {
+  width: 523px;
+  height: 304px;
+}
+
+.time {
+  position: absolute;
+  padding: 10px;
+  top: -30px;
+  left: 30px;
+  width: 60px;
+  height: 60px;
+  background-color: rgb(64, 63, 61);
+  color: #fff;
+  text-align: center;
+}
+
+.news .right .text {
+  position: relative;
+  padding: 30px;
+  float: right;
+  width: 550px;
+  height: 304px;
+  border: 2px solid #ccc;
+}
+
+.news .right .text .h {
+  width: 350px;
+  height: 40px;
+  border-bottom: 2px solid #ccc;
+  font-size: 18px;
+}
+
+.news .right .text .circle {
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: rgb(64, 63, 61);
+  border-radius: 30px;
+  line-height: 30px;
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+}
+
+.news .right .text .content {
+  text-indent: 2em;
+  padding-top: 37px;
+  line-height: 28px;
+  font-size: 14px;
+}
+
+.news .right .text .h2 {
+  width: 400px;
+  height: 40px;
+  border-bottom: 2px solid #ccc;
+  font-size: 18px;
+}
+
+.more {
+  margin: 50px auto;
+  margin-bottom: 50px;
+  width: 103px;
+  height: 40px;
+  background-color: rgb(250, 192, 85);
+  border-radius: 30px;
+  text-align: center;
+  line-height: 40px;
+}
+
+/* 底部 */
+.footer {
+  width: 100%;
+  height: 310px;
+  background-color: #333;
+}
+
+.footer .content {
+  margin: 0 auto;
+  padding-top: 11px;
+  width: 800px;
+  height: 310px;
+}
+
+.footer .content .pic {
+  margin: 0 auto;
+  margin-bottom: 16px;
+  width: 85px;
+  height: 100px;
+}
+
+.footer .content .pic img {
+  width: 85px;
+  height: 100px;
+}
+
+.footer .content .na {
+  float: left;
+  margin-bottom: 20px;
+  width: 110px;
+  height: 25px;
+  color: #fffee2;
+  border-right: 1px solid #fffee2;
+  text-align: center;
+}
+
+.footer .content .na a {
+  color: #fffee2;
+  font-size: 12px;
+}
+
+.footer .content li:last-child {
+  border-right: 1px solid transparent;
+}
+
+.footer .content .img {
+  /* margin-top: 11px; */
+  margin: 0 auto;
+  width: 150px;
+  height: 60px;
+}
+
+.footer .content .text {
+  margin: 0 auto;
+  padding-top: 15px;
+  width: 675px;
+  height: 45px;
+  line-height: 30px;
+  color: #fffee2;
+  font-size: 12px;
+}
+
+.clear{
+  clear: both;
+}

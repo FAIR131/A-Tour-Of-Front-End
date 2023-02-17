@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .f-w {
+            font-weight: bold;
+            /* 
+             字体加粗
+                可选值
+                    bold			粗体字符
+                    lighter			更细的字符
+                    100~900			由细到粗的字符,400 等同于 normal（默认），而 700 等同于 bold
+            */
+        }
+
+        #f-style {
+            font-style: italic;
+            /* 
+                字体样式 --- 倾斜
+                italic 倾斜效果
+            */
+        }
+
+        #f-size {
+            font-size: 30px;
+            /* 
+                字体大小
+                    默认情况下是多少？ 默认16px
+
+                    最值问题？ 最大 最小
+                        最小设置的值 12px
+
+                    面试题：常见的字体大小是多少？
+                        1. 浏览器默认的字体大小是 16px
+                        2. 浏览器在常规情况下，允许我们设置最小的字体大小为 12px
+                        3. 当我们设置字体大小为 0px时，字体会直接消失
+
+                        4. 常见的字体大小一般都是偶数
+            */
+        }
+
+        .f-f {
+            font-family: "王式字体", "楷体";
+            /* 
+                字体种类
+                    当字体是中文字体时，需加双引号；
+                    当英文字体由多个单词组成时，需加双引号如（"arial narrow"）
+                    
+                    可以把多个字体名称作为一个"回退"系统来保存。如果浏览器不支持第一个字体，则会尝试下一个
+                    使用某种特定的字体系列（Geneva）完全取决于用户机器上该字体系列是否可用；这个属性没有指示任何字体下载
+                    因此，强烈推荐使用一个通用字体系列名作为后路
+            */
+        }
+
+        .all {
+            font: bold italic 30px "楷体";
+            /* 
+                font-weight 
+			    font-style
+			    font-size
+			    font-family
+            */
+        }
+    </style>
+</head>
+
+<body>
+    <div> 对照文本 </div>
+    <div class="f-w"> 这里有一段加粗的文本 </div>
+
+    <div id="f-style"> 这里有一段倾斜的文本 </div>
+    
+    <div id="f-size"> 这里有一段变大的文本 </div>
+
+    <div class="f-f"> 这里的字是楷体的 </div>
+
+    <div class="all">全部的字体属性</div>
+</body>
+
+</html>

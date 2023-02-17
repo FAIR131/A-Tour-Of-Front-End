@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang='en'>
+ 
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Document</title>
+  <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    ul,li{
+      list-style: none;
+    }
+
+    a{
+      text-decoration: none;
+      color: #000;
+    }
+
+    .fl{
+      float: left;
+    }
+
+    .box{
+      margin: 30px auto; 
+      width: 500px;
+      height: 50px;
+      background-color: pink;
+    }
+
+    .box .nav{
+      margin-top: 10px;
+      width: 100px;
+      height: 30px;
+      background-color: skyblue;
+      border-right: 1px solid #000;
+      text-align: center;
+      line-height: 30px;
+    }
+
+    .box .nav a{
+      display: block;
+    }
+
+    .box .nav:last-child{
+      border-right: none;
+    }
+
+
+  </style>
+</head>
+ 
+<body>
+ <div class="box">
+  <ul>
+    <li class="nav fl">
+      <a href="#">导航一</a>
+    </li>
+    <li class="nav fl">
+      <a href="#">导航二</a>
+    </li>
+    <li class="nav fl">
+      <a href="#">导航三</a>
+    </li>
+  </ul>
+ </div>
+</body>
+ 
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href=''>
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+<!-- 
+
+    BFC
+        --- 一个独立的盒子，里面的元素无论怎么“变”，不会影响其他盒子的内容
+
+    触发BFC
+        --- body
+            overflow 
+            float
+            position 
+            display
+
+    --- 解决浮动带来的高度塌陷
+        给父元素添加 overflow : hidden
+
+
+        高度塌陷的解决方案
+            1. 直接给父元素高度
+
+            2. 给父元素添加 某个属性 让其成为  BFC 盒子 
+                overflow: hidden
+
+            3. 在最后一个浮动的元素下面 加上 一个空的 <div style="clear: both"> </div>
+
+
+            4. 利用伪元素选择器实现
+                .fa::after {
+                    content: "";
+
+                    display: block;
+
+                    clear: both;
+                }
+
+    伪元素选择器
+            ::after
+
+            ::before
+
+            ::frist-letter
+
+            ::frist-line
+
+            -------
+
+    图片的留存间隙问题
+        1. 给 img 加 display: block
+
+        2. 给 img 加 vertical-align
+
+        3. 给父元素加 font-size : 0;
+ -->
+</body>
+
+</html>

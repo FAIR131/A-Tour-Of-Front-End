@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./08-my_css.css">
+    <style>
+        div {
+            color: skyblue;
+
+        
+
+
+
+
+
+            color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+
+        内部   外部   行内
+
+        外部 < 行内 
+
+        内部 < 行内
+
+        外部 ---  内部  
+
+
+        行内最高    内部   外部
+            内部  外部   同一个属性， 谁在下面使用的是哪一个
+            css 的特性  --- 层叠性 （覆盖性）
+
+            如果某一个css属性，它的css属性值后边 加上了 !important,
+            那么这句css语句变成了最高级别
+
+
+     -->
+    <div style="color: red;">字到底是什么颜色？</div>
+    <!-- <div>字到底是什么颜色？</div> -->
+</body>
+
+</html>

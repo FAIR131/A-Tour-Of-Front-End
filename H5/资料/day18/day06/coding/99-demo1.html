@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            给 名
+                top_big
+                大驼峰   TopBig
+                小驼峰   topBig
+        */
+
+        /* 
+            审查css样式不生效
+
+            1、先去看盒子在不在 - html标签
+
+            2、盒子在   -  css选择器
+
+            3、再看css属性名称以及属性值
+
+            最后，先重启，再摇人
+        */
+        .top_big {
+            width: 1000px;
+            height: 360px;
+            background-color: #d7e69e;
+        }
+
+        .top_text {
+            width: 1000px;
+            height: 60px;
+            background-color: skyblue;
+        }
+
+        .top_text h3,
+        .top_text P {
+            text-align: center;
+        }
+
+
+        .bottom_class {
+            width: 1000px;
+            height: 300px;
+            background-color: pink;
+
+            border: 1px solid transparent;
+        }
+
+        .bottom_class .item {
+            width: 200px;
+            height: 250px;
+            background-color: palegreen;
+            float: left;
+            margin-top: 25px;
+            /* 
+                margin-top 传递问题  --- 父子元素
+                    给子元素添加margin-top , 并没有实现想要的效果
+                    但是margin-top传给了父元素
+
+                    方案一 给父元素加上边框
+            
+            */
+
+            /* margin-bottom: 100px; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top_big">
+        <div class="top_text">
+            <h3>品牌优势</h3>
+            <p>ADVANTAGE</p>
+        </div>
+
+        <div class="bottom_class">
+            <div class="item">
+
+            </div>
+            
+            <div class="item" style="background-color: blue;">
+
+            </div>
+
+            <div class="item">
+
+            </div>
+
+            <div class="item" style="background-color: red;">
+
+            </div>
+
+            <div class="item">
+
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center; width: 1000px;">这里也是有内容的</div>
+</body>
+
+</html>

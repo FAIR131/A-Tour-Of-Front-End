@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href=''>
+    <title>Document</title>
+    <style>
+        .fa {
+            width: 1000px;
+            height: 300px;
+            background-color: pink;
+
+            padding-top: 50px;
+            box-sizing: border-box;
+        }       
+
+        .son {
+            width: 600px;
+            height: 200px;
+            background-color: palegreen;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+
+        方案一：    给大儿子加上 margin-top : 50px
+                    还需要再给父元素加上border
+        
+        方案二：    给父元素直接加 padding-top: 50px
+                    还需再加  box-sizing: border-box
+
+     -->
+    <div class="fa">
+        <div class="son"></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href='./iconfont/iconfont.css'>
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        .top {
+            width: 100%;
+            height: 80px;
+            background-color: green;
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .top .center {
+            width: 30%;
+            height: 50px;
+            background-color: greenyellow;
+            /* border-radius: 25px; */
+            display: flex;
+        }
+
+        .top .center div {
+            width: 50%;
+            height: 50px;
+            line-height: 50px;
+            font-weight: bold;
+            text-align: center;
+            color: white;
+        }
+
+        .top .center>:nth-child(1) {
+            background-color: skyblue;
+            border-radius: 25px 0 0 25px;
+        }
+
+        .top .center>:nth-child(2) {
+            background-color: palegreen;
+            border-radius: 0 25px 25px 0;
+        }
+
+        .bottom {
+            width: 100%;
+            height: 50px;
+            background-color: pink;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+
+            display: flex;
+        }
+
+        .bottom div {
+            width: 20%;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .bottom .active {
+            color: peru;
+        }
+
+        .bottom div span {
+            font-size: 30px !important;
+        }
+
+        .center {
+            position: fixed;
+            top: 80px;
+            bottom: 50px;
+            left: 0;
+            right: 0;
+            background-color: skyblue;
+
+            overflow: auto;
+        }
+
+        .big {
+            column-count: 2;
+        }
+
+        .big .item {
+            /* 避免分家 */
+            break-inside: avoid;
+        }
+
+        .big .item>:nth-child(2) {
+            font-size: 16px;
+            color: pink;
+        }
+
+        .big .item img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <div class="center">
+            <div class="left">热点</div>
+            <div class="right">关注</div>
+        </div>
+    </div>
+
+
+
+
+    <div class="center">
+        <!-- 选项卡 -->
+        <div class="tabs">
+            <div class="a active">国漫</div>
+            <div class="b">日漫</div>
+        </div>
+
+        <style>
+            .tabs {
+                width: 100%;
+                height: 50px;
+                background-color: pink;
+                position: fixed;
+                top: 79px;
+                left: 0;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .tabs div {
+                width: 50%;
+                height: 50px;
+                background-color: palegreen;
+                text-align: center;
+                line-height: 50px;
+                font-weight: bold;
+            }
+            .tabs .active {
+                background-color: green;
+                color: white;
+            }
+        </style>
+        <div class="big">
+            <div class="item">
+                <img src="./images/01.webp" alt="">
+
+                <p>动漫人物</p>
+                <p>番名</p>
+                <p>动漫简介.......</p>
+            </div>
+            <div class="item">
+                <img src="./images/02.webp" alt="">
+
+                <p>动漫人物</p>
+                <p>番名</p>
+                <p>动漫简介.......</p>
+            </div>
+            <div class="item">
+                <img src="./images/03.webp" alt="">
+
+                <p>动漫人物</p>
+                <p>番名</p>
+                <p>动漫简介.......</p>
+            </div>
+            <div class="item">
+                <img src="./images/04.webp" alt="">
+
+                <p>动漫人物</p>
+                <p>番名</p>
+                <p>动漫简介.......</p>
+            </div>
+            <div class="item">
+                <img src="./images/05.webp" alt="">
+
+                <p>动漫人物</p>
+                <p>番名</p>
+                <p>动漫简介.......</p>
+            </div>
+            <div class="item">
+                <img src="./images/06.webp" alt="">
+
+                <p>动漫人物</p>
+                <p>番名</p>
+                <p>动漫简介.......</p>
+            </div>
+            <div class="item">
+                <img src="./images/07.webp" alt="">
+
+                <p>动漫人物</p>
+                <p>番名</p>
+                <p>动漫简介.......</p>
+            </div>
+            <div class="item">
+                <img src="./images/08.webp" alt="">
+
+                <p>动漫人物</p>
+                <p>番名</p>
+                <p>动漫简介.......</p>
+            </div>
+            <div class="item">
+                <img src="./images/09.webp" alt="">
+
+                <p>动漫人物</p>
+                <p>番名</p>
+                <p>动漫简介.......</p>
+            </div>
+            <div class="item">
+                <img src="./images/10.webp" alt="">
+
+                <p>动漫人物</p>
+                <p>番名</p>
+                <p>动漫简介.......</p>
+            </div>
+            <div class="item">
+                <img src="./images/11.webp" alt="">
+
+                <p>动漫人物</p>
+                <p>番名</p>
+                <p>动漫简介.......</p>
+            </div>
+            <div class="item">
+                <img src="./images/12.webp" alt="">
+
+                <p>动漫人物</p>
+                <p>番名</p>
+                <p>动漫简介.......</p>
+            </div>
+            <div class="item">
+                <img src="./images/13.webp" alt="">
+
+                <p>动漫人物</p>
+                <p>番名</p>
+                <p>动漫简介.......</p>
+            </div>
+            <div class="item">
+                <img src="./images/14.webp" alt="">
+
+                <p>动漫人物</p>
+                <p>番名</p>
+                <p>动漫简介.......</p>
+            </div>
+            <div class="item">
+                <img src="./images/15.webp" alt="">
+
+                <p>动漫人物</p>
+                <p>番名</p>
+                <p>动漫简介.......</p>
+            </div>
+            <div class="item">
+                <img src="./images/16.webp" alt="">
+
+                <p>动漫人物</p>
+                <p>番名</p>
+                <p>动漫简介.......</p>
+            </div>
+            <div class="item">
+                <img src="./images/17.webp" alt="">
+
+                <p>动漫人物</p>
+                <p>番名</p>
+                <p>动漫简介.......</p>
+            </div>
+            <div class="item">
+                <img src="./images/18.webp" alt="">
+
+                <p>动漫人物</p>
+                <p>番名</p>
+                <p>动漫简介.......</p>
+            </div>
+            <div class="item">
+                <img src="./images/19.webp" alt="">
+
+                <p>动漫人物</p>
+                <p>番名</p>
+                <p>动漫简介.......</p>
+            </div>
+            <div class="item">
+                <img src="./images/20.webp" alt="">
+
+                <p>动漫人物</p>
+                <p>番名</p>
+                <p>动漫简介.......</p>
+            </div>
+            <div class="item">
+                <img src="./images/31.webp" alt="">
+
+                <p>动漫人物</p>
+                <p>番名</p>
+                <p>动漫简介.......</p>
+            </div>
+            <div class="item">
+                <img src="./images/32.webp" alt="">
+
+                <p>动漫人物</p>
+                <p>番名</p>
+                <p>动漫简介.......</p>
+            </div>
+            <div class="item">
+                <img src="./images/33.webp" alt="">
+
+                <p>动漫人物</p>
+                <p>番名</p>
+                <p>动漫简介.......</p>
+            </div>
+            <div class="item">
+                <img src="./images/34.webp" alt="">
+
+                <p>动漫人物</p>
+                <p>番名</p>
+                <p>动漫简介.......</p>
+            </div>
+            <div class="item">
+                <img src="./images/35.webp" alt="">
+
+                <p>动漫人物</p>
+                <p>番名</p>
+                <p>动漫简介.......</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="bottom">
+        <div>
+            <span class="iconfont icon-shouyetianchong"></span>
+            <p>首页</p>
+        </div>
+
+        <div class="active">
+            <span class="iconfont icon-faxian"></span>
+            <p>发现</p>
+        </div>
+
+        <div class="border">
+            <span class="iconfont icon-zhaoxiangji"></span>
+        </div>
+
+        <style>
+            .bottom .border {
+                width: 20%;
+                height: 70px;
+                line-height: 70px;
+                border: 3px solid #ccc;
+                border-radius: 50%;
+                text-align: center;
+
+                position: relative;
+                top: -25px;
+            }
+
+            .bottom .border span {
+                font-size: 60px !important;
+            }
+        </style>
+
+        <div>
+            <span class="iconfont icon-wodedamaijihuo"></span>
+            <p>我的</p>
+        </div>
+
+        <div>
+            <span class="iconfont icon-tuichu"></span>
+            <p>退出</p>
+        </div>
+    </div>
+</body>
+
+</html>

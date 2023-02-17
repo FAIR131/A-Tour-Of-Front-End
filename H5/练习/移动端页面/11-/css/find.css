@@ -1,0 +1,241 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  font-size: 26.67vw;
+}
+
+/* 头部 */
+.head {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: .15rem 0.15rem;
+  width: 100%;
+  height: 0.6rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.head .iconfont {
+  font-size: 0.2rem !important;
+  font-weight: bold;
+}
+
+.head > span {
+  width: 6%;
+  font-size: 0.16rem;
+}
+
+.head .search {
+  padding-left: 0.1rem;
+  width: 80%;
+  height: 0.3rem;
+  line-height: 0.3rem;
+  font-size: 0.16rem;
+  color: #ccc;
+  background-color: #f1f4f6;
+  border-radius: 0.03rem;
+}
+
+/* 内容大盒子 */
+
+.box {
+  position: fixed;
+  top: 0.6rem;
+  bottom: 0rem;
+  left: 0;
+  right: 0;
+  overflow: auto;
+  background-color: #f2f3f6;
+}
+
+
+/* 导航 */
+.nav {
+  width: 100%;
+  height: 1.6rem;
+  background-color: #fff;
+}
+
+.nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  height: 1.6rem;
+}
+
+.nav .list {
+  width: 20%;
+  height: .8rem;
+  /* background-color: skyblue; */
+  text-align: center;
+  font-size: 0.12rem;
+}
+.nav .list a{
+  color: #666;
+
+}
+
+.nav .list img {
+  margin: 0.1rem 0;
+  width: .35rem;
+  height: .35rem;
+
+}
+
+
+
+/* 摄影 */
+.photo{
+  margin-top: 0.15rem;
+  padding: 0 .15rem;
+  width: 100%;
+  background-color: #fff;
+}
+
+.photo .photo-top{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 0.45rem;
+  line-height: 0.45rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.photo .photo-list{
+  display: flex;
+  justify-content: space-between;
+    position: relative;
+    margin-top: 0.1rem;
+  width: 100%;
+  height: 1.6rem;
+  /* background-color: pink; */
+  border-bottom: 1px solid #ccc;
+}
+
+.photo .photo-list .left{
+  width: .7rem;
+  height: .7rem;
+}
+
+.photo .photo-list .left img{
+  width: 100%;
+  height: 100%;
+}
+
+.photo .photo-list .right{
+width: 2.65rem;
+height: 1.6rem;
+/* background-color: skyblue; */
+}
+
+.photo .photo-list .ri-top{
+  display: flex;
+ 
+}
+
+.photo .photo-list .ri-top p:nth-child(1){
+  margin-right: 0.1rem;
+  width: 0.4rem;
+  height: 0.25rem;
+}
+.photo .photo-list .ri-top p:nth-child(2){
+ font-size: .2rem;
+ font-weight: bold;
+  width:1.85rem ;
+ overflow: hidden;
+ white-space: nowrap;
+ text-overflow: ellipsis;
+}
+
+.photo .photo-list .ri-top p:nth-child(1) img{
+  width: 100%;
+  height: 100%;
+}
+
+.photo .photo-list .star{
+  margin-top: 0.05rem;
+  font-size: 0.12rem;
+  color: #aaa;
+}
+
+.photo .photo-list .star span:first-child{
+  color: #ffd31f;
+  font-size: .16rem;
+}
+
+.photo .photo-list .ri-center{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.05rem;
+}
+
+.photo .photo-list .ri-center p:nth-child(1){
+  font-size: .14rem;
+  color: #aaa;
+}
+
+.photo .photo-list .ri-center p:nth-child(2){
+  display: flex;
+}
+
+.photo .photo-list .ri-center p:nth-child(2) span{
+  height: 0.18rem;
+  line-height: 0.18rem;
+  margin-right: .05rem;
+  color: #f83244;
+  font-size: .12rem;
+  background-color: #ffeff0;
+}
+
+.photo .photo-list .info{
+  display: flex;
+  margin-top: 0.1rem;
+
+}
+
+.photo .photo-list .info .info-left{
+  margin-right: 0.05rem;
+  width: .4rem;
+  height: 0.15rem;
+}
+
+.photo .photo-list .info .info-left .pic,
+.photo .photo-list .info .info-left .pic img{
+  width: 100%;
+  height: 100%;
+}
+
+.photo .photo-list .info>p{
+  color: #aaa;
+  width: 2.1rem;
+  font-size: .14rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.photo .photo-list .info .info-left>p{
+  width: .4rem;
+  height: 0.15rem;
+  font-size: .12rem;
+  color: #f83244;
+  border: 1px solid #f83244;
+}
+
+.photo .photo-list .crown{
+  position: absolute;
+  right: 0rem;
+  top: 0;
+  width: 0.25rem;
+  height: 0.3rem;
+}
+
+.photo .photo-list .crown img{
+  width: 100%;
+  height: 100%;
+}

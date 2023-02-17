@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Document</title>
+  <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul,
+    li,
+    li {
+      list-style: none;
+    }
+
+    .box {
+      margin: 100px auto;
+      width: 1200px;
+      height: 500px;
+      border: 1px solid skyblue;
+    }
+
+    .box>ul {
+      display: flex;
+    }
+
+    .menu {
+      margin-right: 5px;
+      width: 100px;
+      height: 50px;
+      color: #fff;
+      text-align: center;
+      line-height: 50px;
+      background-color: pink;
+    }
+
+    .menu .submenu {
+      display: none;
+      position: relative;
+      margin-bottom: 5px;
+      width: 100px;
+      height: 50px;
+      color: #fff;
+      text-align: center;
+      line-height: 50px;
+      background-color: palegreen;
+    }
+
+     .menu:hover{
+      cursor: pointer;
+     }
+
+    .menu:hover .submenu{
+      display: block;
+    }
+
+    .menu .submenu>ul {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 100px;
+      width: 100px;
+      height: 150px;
+      color: #fff;
+      text-align: center;
+      line-height: 50px;
+      background-color: paleturquoise;
+    }
+
+    .menu .submenu:hover{
+      cursor: pointer;
+    }
+
+     .menu .submenu:hover ul{
+      display: block;
+     }
+
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <ul>
+      <li class="menu">导航一
+        <ul>
+          <li class="submenu">1-1
+            <ul>
+              <li class="thmenu">1-1-1</li>
+              <li class="thmenu">1-1-2</li>
+              <li class="thmenu">1-1-3</li>
+            </ul>
+          </li>
+          <li class="submenu">1-2
+            <ul>
+              <li class="thmenu">1-1-1</li>
+              <li class="thmenu">1-1-2</li>
+              <li class="thmenu">1-1-3</li>
+            </ul>
+          </li>
+          <li class="submenu">1-3
+            <ul>
+              <li class="thmenu">1-1-1</li>
+              <li class="thmenu">1-1-2</li>
+              <li class="thmenu">1-1-3</li>
+            </ul>
+          </li>
+          <li class="submenu">1-4
+            <ul>
+              <li class="thmenu">1-1-1</li>
+              <li class="thmenu">1-1-2</li>
+              <li class="thmenu">1-1-3</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class="menu">导航二
+        <ul>
+          <li class="submenu">1-1
+            <ul>
+              <li class="thmenu">1-1-1</li>
+              <li class="thmenu">1-1-2</li>
+              <li class="thmenu">1-1-3</li>
+            </ul>
+          </li>
+          <li class="submenu">1-2
+            <ul>
+              <li class="thmenu">1-1-1</li>
+              <li class="thmenu">1-1-2</li>
+              <li class="thmenu">1-1-3</li>
+            </ul>
+          </li>
+          <li class="submenu">1-3
+            <ul>
+              <li class="thmenu">1-1-1</li>
+              <li class="thmenu">1-1-2</li>
+              <li class="thmenu">1-1-3</li>
+            </ul>
+          </li>
+          <li class="submenu">1-4
+            <ul>
+              <li class="thmenu">1-1-1</li>
+              <li class="thmenu">1-1-2</li>
+              <li class="thmenu">1-1-3</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class="menu">导航三
+        <ul>
+          <li class="submenu">1-1
+            <ul>
+              <li class="thmenu">1-1-1</li>
+              <li class="thmenu">1-1-2</li>
+              <li class="thmenu">1-1-3</li>
+            </ul>
+          </li>
+          <li class="submenu">1-2
+            <ul>
+              <li class="thmenu">1-1-1</li>
+              <li class="thmenu">1-1-2</li>
+              <li class="thmenu">1-1-3</li>
+            </ul>
+          </li>
+          <li class="submenu">1-3
+            <ul>
+              <li class="thmenu">1-1-1</li>
+              <li class="thmenu">1-1-2</li>
+              <li class="thmenu">1-1-3</li>
+            </ul>
+          </li>
+          <li class="submenu">1-4
+            <ul>
+              <li class="thmenu">1-1-1</li>
+              <li class="thmenu">1-1-2</li>
+              <li class="thmenu">1-1-3</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</body>
+
+</html>

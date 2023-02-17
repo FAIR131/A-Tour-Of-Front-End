@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- 
+
+        使用 css
+        <style></style>                 ===   内部样式表
+
+        先有一个css文件                 ===   外部样式表
+            html  ---- css
+            1. link 
+            2. <style></style> 
+                @import url (路径);
+
+            路径    src      href    url  
+
+            面试题： 外部样式表的引入， link 与 @import 有什么区别？
+                <link>	推荐使用
+                    1、属于XHTML
+                    2、优先加载CSS文件到页面
+                    3、任何浏览器都能识别
+                    4、能够使用javascript控制 dom 去改变样式的时候，只能使用link标签
+                @import
+                        1、属于CSS2.1
+                        2、先加载HTML结构在加载CSS文件
+                        3、只有在IE5以上的才能识别
+
+        直接在标签内部书写，style属性     ===     行内样式/内联样式
+
+
+     -->
+    <div style="color:red;">这里的字会被我写入颜色</div>
+</body>
+
+</html>

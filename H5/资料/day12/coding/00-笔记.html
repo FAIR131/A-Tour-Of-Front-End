@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href=''>
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!-- 
+
+        CSS3 过渡是元素从一种样式逐渐改变为另一种的效果
+            要实现这一点，必须规定两项内容
+                指定 要添加效果的CSS属性
+                指定 效果的持续时间
+                
+            transition-property			过渡的 CSS 属性的名称
+                none		没有属性会获得过渡效果。
+                all			所有属性都将获得过渡效果。
+                property	应用过渡效果的 CSS 属性名称列表，列表以逗号分隔
+                
+            transition-duration			过渡效果花费的时间，默认是 0
+                time		过渡效果需要花费的时间（以秒或毫秒计），默认值是 0，意味着不会有效果
+                
+            transition-timing-function	过渡效果的时间曲线，默认是 "ease"
+                linear		规定以相同速度开始至结束的过渡效果（等于 cubic-bezier(0,0,1,1)）
+                ease		规定以慢速开始，然后变快，然后慢速结束的过渡效果（cubic-bezier(0.25,0.1,0.25,1)）
+                ease-in		规定以慢速开始的过渡效果（等于 cubic-bezier(0.42,0,1,1)）
+                ease-out	规定以慢速结束的过渡效果（等于 cubic-bezier(0,0,0.58,1)）
+                ease-in-out	规定以慢速开始和结束的过渡效果（等于 cubic-bezier(0.42,0,0.58,1)）
+                cubic-bezier(n,n,n,n)	在 cubic-bezier 函数中定义自己的值。可能的值是 0 至 1 之间的数值
+                
+            transition-delay			过渡效果何时开始，默认是 0
+                time		指定秒或毫秒数之前要等待切换效果开始
+                
+            transition	简写属性，用于在一个属性中设置四个过渡属性
+
+
+        CSS3 转换可以对元素进行移动、缩放、转动、拉长或拉伸
+            transform			适用于2D或3D转换的元素
+            deg 				角度
+
+            默认转换中心是物体的几何中心
+
+
+        css3中的2D转换
+            translate(x,y)			定义 2D 移动，沿着 X 和 Y 轴移动元素
+            translateX(n)			定义 2D 移动，沿着 X 轴移动元素
+            translateY(n)			定义 2D 移动，沿着 Y 轴移动元素
+
+            scale(x,y)				定义 2D 缩放，改变元素的宽度和高度
+            scaleX(n)				定义 2D 缩放，改变元素的宽度
+            scaleY(n)				定义 2D 缩放，改变元素的高度
+
+            rotate(angle)			定义 2D 旋转，在参数中规定角度
+            /* 旋转中心 */
+            transform-origin: 25px 25px;
+                可以写方位值
+
+            skew(x-angle,y-angle)	定义 2D 倾斜，沿着 X 和 Y 轴
+            skewX(angle)			定义 2D 倾斜，沿着 X 轴
+            skewY(angle)			定义 2D 倾斜，沿着 Y 轴
+            正值 - 是逆时针
+            负值 - 是顺时针
+
+        转换的多个使用
+            注意 最好优先写位移
+     -->
+</body>
+
+</html>

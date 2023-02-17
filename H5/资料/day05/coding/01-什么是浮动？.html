@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div,
+        p,
+        span {
+            border: 1px solid skyblue;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+        }
+
+        .a {
+            background-color: red;
+            float: left;
+        }
+
+        .b {
+            background-color: skyblue;
+            float: left;
+        }
+
+        .c {
+            background-color: palegreen;
+            float: left;
+
+            /* 
+            
+                绿  蓝
+                
+                蓝  绿
+
+            */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+
+        面试题： 什么叫做标准文档流？
+            标准文档流指的是元素排版布局过程中，元素会默认自动从左往右，从上往下的流式排列方式
+        当前面内容发生了变化，后面的内容位置也会随着发生变化
+
+        渲染时，只和 html 结构顺序有关，与 css 顺序无关
+
+        float:
+            none:	默认值。元素不浮动，并会显示在其在文本中出现的位置
+            left: 	元素向左浮动
+            right:	元素向右浮动
+     -->
+
+    <div class="a"></div> 
+    <div class="c"></div>
+    <div class="b"></div>
+     <!--  
+        a -- red 
+        b -- blue
+        c -- green
+    -->
+</body>
+
+</html>

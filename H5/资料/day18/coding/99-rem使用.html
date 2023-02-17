@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href=''>
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 
+            切换手机 
+            
+            iphone5     320px   === div font-size: 32px;    18px   22px
+            iphone678   375px   === div font-size: 37.5px;
+
+             iphone5              html {font-size: 320px}     div {  0.1rem  }
+             iphone678            html {font-size: 375px}     div {  0.1rem  }
+
+        */
+
+
+        html {
+            /* font-size: 100px; */
+            /*
+                100vw   === 320px
+                ____vw  === 100px
+
+                ___vw  = 100vw * 100px / 320px
+
+                ___vw = 100vw * 100px / 设备的宽度
+                
+                31.15vw     5
+                26.67vw   678
+
+            */
+            font-size: 31.15vw;
+        }
+        
+
+        div {
+            /* font-size: 32px; */
+            /* font-size: 10vw; */
+            font-size: .32rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 目标 、 需求     
+            一个字的大小 为 当前屏幕的 十分之一
+        
+
+        用到 px   -----  100px
+
+        html { font-size: 100px  === ____vw }
+        13px  .13rem
+        15  .15rem
+        
+    -->
+    <div>一二三四五六七八九十</div>
+</body>
+
+</html>

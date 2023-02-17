@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Document</title>
+  <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'>
+  <link rel="stylesheet" href="../iconfont/iconfont.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+    }
+
+    .top {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background-color: #0cc53f;
+ 
+    }
+
+    .top .center {
+      display: flex;
+      justify-content: center;
+      width: 30%;
+      height: 30px;
+      background-color: #0cc53f;
+      border-radius: 25px;
+    }
+
+    .top .center .left {
+      width: 50%;
+      height: 30px;
+      text-align: center;
+      line-height: 30px;
+      color: #fff;
+      background-color: rgba(255, 255, 255, .7);
+      border-radius: 25px 0 0 25px;
+    }
+
+    .top .center .right {
+      width: 50%;
+      height: 30px;
+      text-align: center;
+      line-height: 30px;
+      color: #fff;
+      background-color: rgba(255, 255, 255, .5);
+      border-radius: 0 25px 25px 0;
+
+    }
+
+
+    /* nav */
+    .nav {
+      position: fixed;
+      top: 60px;
+      left: 0;
+      display: flex;
+      width: 100%;
+      height: 40px;
+      background-color: #fff;
+      opacity: .8;
+      color: #686566;
+      z-index: 9;
+    }
+
+    .nav>div {
+      width: 33.3%;
+      height: 40px;
+      text-align: center;
+      line-height: 40px;
+    }
+
+    .nav .actived {
+      color: #0cc53f;
+      border-bottom: 2px solid #0cc53f;
+    }
+
+
+    /* content */
+    .content {
+  /*     position: relative;
+      top: 40px;
+      z-index: -1; */
+      position: fixed;
+      top: 60px;
+      bottom: 60px;
+      overflow: auto;
+      column-count: 2;
+      column-gap: 5px;
+    }
+
+    .content img {
+      width: 100%;
+    }
+
+
+    /* bottom */
+
+    .bottom {
+      padding-top: 5px;
+      display: flex;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background-color: #fff;
+      box-sizing: border-box;
+    }
+
+    .bottom .ico {
+      width: 20%;
+      height: 60px;
+      color: #ccc;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    .bottom .iconfont {
+      font-size: 25px !important;
+
+    }
+
+    .bottom .boder {
+      position: relative;
+      top: -20px;
+      width: 20%;
+      height: 70px;
+      border-radius: 70px;
+      border: 1px solid #ccc;
+      text-align: center;
+      line-height: 70px;
+      background-color: #fff;
+    }
+
+    .bottom .boder .iconfont {
+      font-size: 40px !important;
+    }
+
+    .bottom .actived {
+      color: #0cc53f;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="top">
+    <div class="center">
+      <div class="left">热点</div>
+      <div class="right">关注</div>
+    </div>
+  </div>
+  <!-- nav -->
+  <div class="nav">
+    <div class="actived">足球现场</div>
+    <div>足球生活</div>
+    <div>足球美女</div>
+  </div>
+
+
+  <!-- content -->
+  <div class="content">
+    <div class="item">
+      <img src="../images/20.webp" alt="">
+      <p>小丸子啊小丸子！</p>
+    </div>
+    <div class="item">
+      <img src="../images/21.webp" alt="">
+      <p>小丸子啊小丸子！</p>
+    </div>
+    <div class="item">
+      <img src="../images/20.webp" alt="">
+      <p>小丸子啊小丸子！</p>
+    </div>
+    <div class="item">
+      <img src="../images/22.webp" alt="">
+      <p>小丸子啊小丸子！</p>
+    </div>
+    <div class="item">
+      <img src="../images/20.webp" alt="">
+      <p>小丸子啊小丸子！</p>
+    </div>
+    <div class="item">
+      <img src="../images/21.webp" alt="">
+      <p>小丸子啊小丸子！</p>
+    </div>
+    <div class="item">
+      <img src="../images/20.webp" alt="">
+      <p>小丸子啊小丸子！</p>
+    </div>
+    <div class="item">
+      <img src="../images/22.webp" alt="">
+      <p>小丸子啊小丸子！</p>
+    </div>
+    <div class="item">
+      <img src="../images/20.webp" alt="">
+      <p>小丸子啊小丸子！</p>
+    </div>
+    <div class="item">
+      <img src="../images/20.webp" alt="">
+      <p>小丸子啊小丸子！</p>
+    </div>
+  </div>
+
+
+
+  <!-- bottom -->
+
+  <div class="bottom">
+    <div class="ico actived">
+      <span class="iconfont icon-shouyetianchong"></span>
+      <p>首页</p>
+    </div>
+    <div class="ico">
+      <span class="iconfont icon-faxian"></span>
+      <p>发现</p>
+    </div>
+    <div class="ico boder">
+      <span class="iconfont icon-zhaoxiangji
+"></span>
+      <!-- <p>首页</p> -->
+    </div>
+    <div class="ico">
+      <span class="iconfont icon-wodedamaijihuo
+"></span>
+      <p>我的</p>
+    </div>
+    <div class="ico">
+      <span class="iconfont icon-tuichu"></span>
+      <p>退出</p>
+    </div>
+  </div>
+</body>
+
+</html>

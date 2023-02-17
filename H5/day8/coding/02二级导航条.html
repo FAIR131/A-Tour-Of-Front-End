@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang='en'>
+ 
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Document</title>
+  <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'>
+  <link rel="stylesheet" href="../练习/base.css">
+  <style>
+    .box{
+      margin: 50px auto;
+      width: 1200px;
+      height: 30px;
+      background-color: pink;
+    }
+
+    .box .nav{
+      /* margin-top: 10px; */
+      width: 100px;
+      height: 30px;
+      background-color: skyblue;
+      line-height: 30px;
+      text-align: center;
+    }
+
+    .box .nav a{
+      display: block;
+    }
+
+    .box .nav .nav_2{
+      display: none;
+      background-color: palevioletred;
+    }
+
+    .box .nav:hover .nav_2{
+      display: block;
+    }
+  </style>
+</head>
+ 
+<body>
+  <div class="box">
+    <ul>
+      <li class="nav fl">
+        <a href="#">
+          导航一
+          <ul class="nav_2">
+            <li>
+              <a href="#">二级导航1-1</a>
+            </li>
+            <li>
+              <a href="#">二级导航1-2</a>
+            </li>
+            <li>
+              <a href="#">二级导航1-3</a>
+            </li>
+          </ul>
+        </a>
+      </li>
+      <li class="nav fl">
+        <a href="#">
+          导航二
+          <ul class="nav_2">
+            <li>
+              <a href="#">二级导航2-1</a>
+            </li>
+            <li>
+              <a href="#">二级导航2-2</a>
+            </li>
+            <li>
+              <a href="#">二级导航2-3</a>
+            </li>
+          </ul>
+        </a>
+      </li>
+      <li class="nav fl">
+        <a href="#">
+          导航三
+          <ul class="nav_2">
+            <li>
+              <a href="#">二级导航3-1</a>
+            </li>
+            <li>
+              <a href="#">二级导航3-2</a>
+            </li>
+            <li>
+              <a href="#">二级导航3-3</a>
+            </li>
+          </ul>
+        </a>
+      </li>
+    </ul>
+  </div>
+</body>
+ 
+</html>

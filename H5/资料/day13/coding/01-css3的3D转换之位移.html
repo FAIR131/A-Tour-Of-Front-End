@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href=''>
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            perspective: 500px;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+            background-color: skyblue;
+
+
+            transform: translateZ(-400px);
+            /* transform: translateY(100px); */
+
+            /* 
+                给父级元素 加上 景深  透视效果
+
+
+                XY  可以使用 百分比  --- 自己本身
+
+                Z   但是一般是固定的像素值
+            */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

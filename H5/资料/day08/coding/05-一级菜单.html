@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href=''>
+    <title>Document</title>
+    <style>
+        /* 公共样式   common.css     reset.css */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        ol,
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .float_left {
+            float: left;
+        }
+
+        .float_right {
+            float: right;
+        }
+
+        /* 自己的样式 */
+
+        .nav {
+            /* 第一步设置宽度，第二步加上 margin : 0 auto;" */
+            width: 1000px;
+            margin: 0px auto 0;
+            background-color: skyblue;
+            height: 50px;
+        }
+
+        .nav ul {
+            margin-top: 10px;
+        }
+
+        .nav li {
+            width: 100px;
+            background-color: palegreen;
+
+            border-right: 1px solid black;
+            /* 类名 + 标签名 */
+            text-align: center;
+            font-size: 12px;
+            /* height: 50px; */
+
+            margin-top: 10px;
+            line-height: 30px;
+        }
+
+        li:hover {
+            cursor: pointer;
+        }
+
+        .nav .border_none {
+            /* 类名 */
+            /* border: none !important; */
+            border: none;
+        }
+
+        .nav ul li a {
+            display: block;
+            /* line-height: 50px; */
+
+            /* 
+                display: inline-block;
+                width: 100px; 
+            */
+            /* 
+                给 a 设置了 块级元素 ， 能继承高度吗？ 不能
+
+                但是行高 -- 可以继承  --- css的文本属性 、 字体属性
+
+                但是 针对 a 文本属性的  color 无法继承
+            */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <ul>
+            <li class="float_left"> <a href="https://www.baidu.com/" target="_blank">导航一</a> </li>
+            <li class="float_left"> <a href="#">导航二</a> </li>
+            <li class="float_left border_none"> <a href="#">导航三</a> </li>
+            <div style="clear: both;"></div>
+        </ul>
+    </div>
+</body>
+
+</html>

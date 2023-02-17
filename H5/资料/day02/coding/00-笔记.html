@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+
+        注意一个点： 创建文件/文件夹时，它的命名
+                    命名规则
+            1、尽量不要使用中文
+            2、不要数字开头
+            3、能够使用：字母，数字，下划线配合使用，建议以小写的字母开头
+            4、不要包含特殊字符!@#$%^&等等
+            5、建议命名的时候见名知意
+
+        明确前端任务
+            1. 高度还原设计图
+                html + css   静态页面
+            2. 获取数据并且渲染到页面上
+                js  --- ajax
+
+        面试题： 网页的组成部分有哪些？
+                HTML            --- 结构
+                CSS             --- 表现
+                JavaScript      --- 行为
+
+        https://www.w3school.com.cn/
+
+        HTML、XHTML、HTML5的区别
+            1、HTML 指的是超文本标记语言 (Hyper Text Markup Language) www万维网的描述性语言
+            2、XHTML指可扩展超文本标记语言（标识语言）（EXtensible HyperText Markup Language）是一种置标语言，表现方式与超文本标记语言（HTML）类似，不过语法上更加严格。XHTML 元素必须被正确地嵌套，XHTML 元素必须被关闭，XHTML标签名必须用小写字母，XHTML 文档必须拥有根元素
+            3、HTML5指的是HTML的第五次重大修改（第5个版本）(HTML5 是 W3C 与 WHATWG 合作的结果)，H5网络标准统一，可以跨平台，多设备使用，语义化比较强
+
+        W3C ECMA
+            W3C制定了结构HTML、XHTML、XML 的语法、标准
+            W3C制定了表现Css的语法、标准
+            ECMA制定了行为标准（DOM ECMAScript）
+
+        Q: 补充知识  W3C ECMA
+
+
+        初识网页基本结构
+            面试题：<!DOCTYPE html> 有什么作用？
+                声明当前文档类型  、 是一个 　HTML 文件
+
+            <html> </html> 根元素，在根元素之中包含两大块主要内容
+            <head> </head> 网页的头部内容 head
+            <body> </body> 网页的主体内容 body，用于书写浏览器中展示的所有内容
+
+            <meta charset="utf-8"> 定义字符的编码方式,万国码
+            <title></title> 网页的标题
+            
+            <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"> 可以设置网页小图标
+            https://www.bitbug.net/    ===>  比特虫网站制作 .ico 文件
+
+            文件快捷键 Ctrl + / 注释文本，被注释的文本，不会体现在网页之中
+
+
+        html的基本语法
+            标签  也叫做 标记 ，也叫做 元素， 也叫做 盒子
+            <标签  属性名="属性值" 属性名="属性值"></标签>
+                标签名字和属性之间需要有空格，键值对
+                属性和属性值之间需要 = 连接
+                每一组键值对 之间需要有空格
+                属性值需要带引号
+                常见的属性值 id="",class=""
+                全部使用小写字母
+
+
+        html的常用标签
+            1. 标题元素
+                <h1></h1> <h2></h2> <h3></h3> <h4></h4> <h5></h5> <h6></h6>
+                特点：  字号由大到小，h1最大，h6最小
+                自动加粗
+                有默认的间距
+                自动换行（独占一整行的意思）
+                应用: h1作为一级标题应用再文章标题或者是布局logo区域
+                h2，h3作为的文章内部的标题
+                h4，h5，h6 根据实际情况进行使用
+
+            2. 段落元素
+                <p></p>
+                包裹一段描述性的文本
+                有默认的间距
+                &nbsp; &nbsp; &nbsp; &nbsp;    产生空格 通过html的手段
+
+
+            3. 换行的标签
+                <br/>
+                强制换行
+
+            4. 水平分割线
+                <hr/>
+                应用：分割区域内容
+
+            5. 字体加粗的标签
+                <b></b>
+                <strong></strong>有强调的意思
+
+            6. 字体倾斜的标签
+                <i></i>
+                <em></em>有强调的意思
+
+            7. 加下划线的标签
+                <u></u>
+
+            8. 加删除线的标签
+                <s></s>
+                <del></del>有强调的意思
+
+            9. 加上角标的标签
+                <sup></sup>
+
+            10. 加下角标的标签
+                <sub></sub>
+
+            转义字符：
+                空格 ：&nbsp;
+                小于号 < : &lt;
+                大于号 > : &gt;
+
+                注册标识：&reg; ®
+                商标标识：&trade;	™
+                版权标识：&copy; ©
+
+                Q: 了解其他的转义字符
+
+            11. 图片标签
+                <img src=""  alt="" title="" width="" height=""> 
+                src  ==  图片的地址
+
+                1. 在线的，网址式   ===  绝对路径地址
+
+                2. 本地的图片
+                    纯纯的盘符路径  ===  绝对路径地址
+
+
+                    相对路径 ！！！
+                        /             ==  下一级
+                        ./            ==  同一级   兄弟关系
+                        ../           ==  上一级   “父子”关系
+
+                        .../  不存在   "爷孙关系"   ===  父亲的父亲
+
+                面试题：alt 与 title 的区别？
+                    alt  == 图片未能正常显示时，给用户看的提示文本
+
+                    title == 鼠标悬停在图片上显示的文本
+                
+                设置图片的宽度高度
+                    width    height
+
+                网页上常用的图片格式 ？ 
+                    1）jpg :有损压缩格式，靠损失图片本身的质量来减小图片的体积，
+                        适用于颜色丰富的图像;(像素点组成的，像素点越多会越清晰 )
+                    2）gif：无损压缩格式，支持透明，支持动画，
+                        适用于颜色数量较少的图像;
+                    3）png:无损压缩格式，支持透明，不支持动画，
+                        适用于颜色数量较少的图像;
+                        ......
+                        、
+            12. 超链接标签
+                <a href="" target="" id=""></a>
+                href : 链接指向的页面的 URL
+                target : 在何处打开链接文档
+                    _self : 在当前窗口打开 （默认的）
+                    _blank : 在新的窗口打开
+
+            
+                锚点链接 使用步骤
+                    第一步： 给想要跳转到的  标签上 加  id="name"
+                    第二步： 在a 标签的 href = "#name"
+
+            13. 字体标签
+                <font color="" size=""> </font>
+                应用：通过html的手段设置字体颜色和大小
+                size的取值范围为 从 1 到 7 的数字。浏览器默认值是 3
+            14. 列表标签
+
+            + 有序列表
+            <ol type="1 / A / a / i / I ">
+            <li></li>
+            </ol>
+
+            - 1数字 / A大写英文字母 / a小写英文字母 / i小写罗马数字 / I大写罗马数字
+            type表示哪种类型    start表示从第几个开始
+
+            + 无序列表
+            <ul type="disc / circle / square ">
+            <li>无序列表1</li>
+            </ul>
+
+            - disc实心圆 / circle空心圆 / square实心方块
+
+            + 自定义列表
+            <dl>
+            <dt>名词</dt>
+            <dd>名词解释</dd>
+            </dl>
+        -->
+</body>
+
+</html>

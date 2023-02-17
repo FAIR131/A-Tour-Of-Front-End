@@ -1,0 +1,44 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1075",
+      "name": "照相机",
+      "font_class": "zhaoxiangji",
+      "unicode": "f0092",
+      "unicode_decimal": 983186
+    },
+    {
+      "icon_id": "145725",
+      "name": "首页_填充",
+      "font_class": "shouyetianchong",
+      "unicode": "e692",
+      "unicode_decimal": 59026
+    },
+    {
+      "icon_id": "3170636",
+      "name": "我的大麦激活",
+      "font_class": "wodedamaijihuo",
+      "unicode": "e656",
+      "unicode_decimal": 58966
+    },
+    {
+      "icon_id": "6548530",
+      "name": "发现",
+      "font_class": "faxian",
+      "unicode": "e654",
+      "unicode_decimal": 58964
+    },
+    {
+      "icon_id": "15546339",
+      "name": "推出",
+      "font_class": "tuichu",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    }
+  ]
+}
